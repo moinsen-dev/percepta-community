@@ -49,7 +49,7 @@ Die Baseline spricht von „aktuellen räumlichen Modellen“. Der Markt ist inz
 - **Gemini Robotics ER 2** ist laut Google-Dokumentation ein Preview-Modell mit den Endpunkten `gemini-robotics-er-2-preview` und `gemini-robotics-er-2-streaming-preview`. ER 1.6 wurde am 2026-08-31 abgekündigt. Der Streaming-Endpunkt verarbeitet JPEG mit höchstens 1 Bild pro Sekunde, Audio und Text und gibt Text aus. Ein Videobild allein löst keinen Denkschritt aus, es braucht zusätzlich Text oder Audio. Die Dokumentation nennt selbst Halluzinationen, Abhängigkeit von der Promptqualität und höhere Latenz bei komplexen Anfragen. Der Privatsphäre-Hinweis verlangt, dass identifizierbare Personen in der Umgebung vorher informiert und einverstanden sind, wenn ihre Daten an Google gehen. Das ist für eine Hilfe im öffentlichen Raum und für die Interaktion mit fremden Menschen ein sehr hoher praktischer Maßstab. Quelle J-06, J-07.
 - **NVIDIA Cosmos Reason 2** wird als anpassbares Reasoning-VLM für physische KI beschrieben, mit räumlich-zeitlichem Verständnis, 2D/3D-Lokalisierung und bis zu 256K Kontext. Ein Smartphone-Benchmark oder eine Fußgängerstudie ist dort nicht belegt. Quelle J-08.
 - **NVIDIA Cosmos 3** wird als offenes Omnimodell mit Vision Reasoning, Weltsimulation und Aktionsvorhersage beschrieben. Super und Nano sind verfügbar, Edge ist angekündigt. Die genannten Leaderboard-Werte sind Herstellerangaben. Ein Einsatz auf einem Smartphone für blinde Fußgänger ist damit nicht belegt. Quelle J-09.
-- **Qwen3.5-4B** ist ein offenes multimodales Modell mit 4B Parametern, langem Kontext und Apache-2.0-Lizenz. Die Modellkarte nennt Benchmarks, aber keine mobile Echtzeitmessung in unserer Aufgabe. Ein kleines offenes Modell ist ein sinnvoller Kandidat für einen späteren Vergleich, keine Architekturentscheidung. Quelle J-10.
+- **Qwen3.5-4B** ist ein offenes multimodales Modell. Die Modellkarte nennt 4B Parameter für das Sprachmodell und 262.144 Token Kontext; die Safetensors-Angabe weist 5B Gesamtparameter aus. Die Lizenz ist Apache-2.0. Die Modellkarte nennt Benchmarks, aber keine mobile Echtzeitmessung in unserer Aufgabe. Ein kleines offenes Modell ist ein sinnvoller Kandidat für einen späteren Vergleich, keine Architekturentscheidung. Quelle J-10.
 
 ### 1.2 Was die belastbarste Navigationsstudie zeigt
 
@@ -410,7 +410,7 @@ Die folgenden Empfehlungen sind Vorschläge, keine angenommenen Entscheidungen. 
 - Empfehlung: Erst Betreiber, Rechtsgrundlage, Aufbewahrung, Löschung, Kontaktweg und Moderation klären, dann einen schlanken privaten Endpunkt bauen.
 - Alternative: Nur GitHub-Issues. Nachteil: öffentlich, nicht anonym, kein geschützter Weg für Menschen ohne Konto.
 - Evidenz/Annahme: DSGVO Art. 9 und die Baseline-Spezifikation verlangen ausdrückliche Einwilligung und einen Rücknahmeweg. Annahme: ein kleiner privater Dienst ist ohne eigene Datenbank beherrschbar.
-- Nächster Test: Datenschutz-Folgenabschätzung und Löschprobe mit Testdaten, bevor echte Daten angenommen werden.
+- Nächster Test: Prüfen, ob eine Datenschutz-Folgenabschätzung erforderlich ist. Löschprobe mit Testdaten, bevor echte Daten angenommen werden.
 
 **E-3: Vier getrennte Einwilligungen**
 
@@ -495,7 +495,7 @@ Alle Quellen wurden am 2026-10-20 abgerufen. HTTP-Status der geprüften URLs: 20
 - **J-07:** Google, *Robotics with streaming*, zuletzt aktualisiert 2026-09-11, https://ai.google.dev/gemini-api/docs/robotics-streaming. Belegt JPEG mit höchstens 1 FPS, Textausgabe und Heartbeat-Muster.
 - **J-08:** NVIDIA, *Cosmos-Reason2*, zuletzt aktualisiert 2026-08-18, https://docs.nvidia.com/cosmos/latest/reason2/index.html. Herstellerdokumentation, kein Smartphone-Benchmark.
 - **J-09:** NVIDIA Newsroom, *NVIDIA Launches Cosmos 3*, 2026-05-31, https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai. Herstellerangaben und Leaderboard-Claims.
-- **J-10:** Qwen, *Qwen3.5-4B*, Modellkarte, https://huggingface.co/Qwen/Qwen3.5-4B. Offenes multimodales Modell, Herstellerbenchmarks, keine mobile Alltagsmessung.
+- **J-10:** Qwen, *Qwen3.5-4B*, Modellkarte, https://huggingface.co/Qwen/Qwen3.5-4B. Offenes multimodales Modell. Modellkarte: 4B Sprachparameter, 262.144 Token Kontext, Apache-2.0; Safetensors: 5B Gesamtparameter. Herstellerbenchmarks, keine mobile Alltagsmessung.
 - **J-11:** Liu, R. und Slade, P., *Improving outdoor navigation for people with blindness using an AI-driven smartphone application and personalized audio guidance*, *Nature Biomedical Engineering*, publiziert 2026-08-24, DOI 10.1038/s41551-026-01772-x, https://www.nature.com/articles/s41551-026-01772-x. Peer-reviewed, n=14, kontrollierte Wege und Parcours.
 - **J-12:** Liu, R. und Slade, P., Preprint-Fassung, arXiv:2605.29120, eingereicht 2026-05-27, https://arxiv.org/abs/2605.29120. Gleiche Studie, für Details der Autorenfassung.
 - **J-13:** Wu, Y. et al., *NavSight in the Wild*, arXiv:2608.12759, v3 vom 2026-10-06, https://arxiv.org/abs/2608.12759. Tagebuchstudie mit 12 Personen mit Sehbehinderung, mobile AR.

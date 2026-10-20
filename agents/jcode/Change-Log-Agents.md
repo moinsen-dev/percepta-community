@@ -132,3 +132,42 @@ Synthese der drei unabhängigen Analysen durch den Koordinator. Danach die Ablau
 - Die Behauptung, dass keine fremden Zweitanalysen gelesen wurden, ist eine Prozessangabe und kein technischer Nachweis.
 
 **Nächster Schritt:** Nachprüfung committen und den bestehenden PR #2 aktualisieren. Kein Merge.
+
+## Lauf 1b: Tiefere Quellen- und Integritätsprüfung
+
+**Datum:** 2026-10-20.
+
+**Anlass:** Weitere Validierung der abgeschlossenen Analyse, insbesondere der Prozessangaben, der zitierten WCAG-/DSGVO-Artikel und der Übereinstimmung zwischen lokalem Commit und veröffentlichtem Branch.
+
+**Ergebnis:**
+
+- Die Bestandsaufnahme des Altprojekts [legacy-review.md](../codex/legacy-review.md) wurde vollständig gelesen. Damit ist die Angabe in den Laufdaten, dass diese Quelle gelesen wurde, belegt. Die dort genannten Grenzen (keine Laufzeitprüfung, keine bestandene UAT-Abnahme, Heuristiken statt validierter Geometrie) stützen die Analyse, ersetzen aber keine neue Messung.
+- Elf zusätzlich zitierte WCAG-2.2-Understanding-Seiten wurden abgerufen. Alle lieferten HTTP 200 und den erwarteten Titel:
+  - 1.4.3 Contrast (Minimum)
+  - 1.4.11 Non-text Contrast
+  - 1.4.4 Resize Text
+  - 1.4.10 Reflow
+  - 2.1.1 Keyboard
+  - 2.4.7 Focus Visible
+  - 2.4.11 Focus Not Obscured (Minimum)
+  - 3.2.6 Consistent Help
+  - 3.3.1 Error Identification
+  - 3.3.3 Error Suggestion
+  - 4.1.2 Name, Role, Value
+- Sechs weitere DSGVO-Artikel wurden über die Textspiegelung geprüft. Alle lieferten HTTP 200 und den erwarteten Titel: Art. 5 (Grundsätze), Art. 7 (Einwilligung), Art. 13 (Information), Art. 17 (Löschung), Art. 32 (Sicherheit), Art. 44 (Datenübermittlung).
+- Die Qwen3.5-4B-Angabe wurde präzisiert: Die Modellkarte nennt 4B Parameter für das Sprachmodell und 262.144 Token Kontext. Die Safetensors-Angabe weist 5B Gesamtparameter aus. Die frühere Formulierung „Modell mit 4B Parametern“ war für die Gesamtgröße zu ungenau.
+- Die Empfehlung E-2 wurde präzisiert: Es ist zu prüfen, ob eine Datenschutz-Folgenabschätzung erforderlich ist. Eine pauschale Pflicht wird nicht behauptet.
+- Der Branch `analysis/jcode` liegt drei Commits vor der Baseline und keinen dahinter. Es gibt keine Merge-Commits. Der Diff gegen die Baseline enthält ausschließlich `agents/jcode/analysis.md` und `agents/jcode/Change-Log-Agents.md`.
+- Die lokalen Blob-SHAs der beiden Dateien stimmen mit den über die GitHub-API gelesenen Blob-SHAs auf `origin/analysis/jcode` überein. Der veröffentlichte Branch entspricht damit dem lokalen Commit.
+- PR #2 ist offen, gegen `main` gerichtet und als mergeable gemeldet. Die PR-Dateiliste enthält ausschließlich die beiden Dateien im eigenen Ordner.
+- Der Remote-Tag `research-baseline-v0.1` zeigt weiterhin auf `fe68acae4142baca25408124f85e353fb9786674`.
+- Die Arbeitsbäume `main` und `.worktrees/omp` waren unverändert.
+
+**Nicht bestätigt oder weiterhin offen:**
+
+- Die exakte Modell-ID des JCode-Laufs bleibt unbekannt.
+- Die vollständige Methodik der Nature-Studie ist nicht im Detail geprüft.
+- Keine Rechtsprüfung, keine reale Barrierefreiheitsprüfung, keine Nutzerstudie.
+- Die Prozessangabe, keine fremden Zweitanalysen gelesen zu haben, bleibt eine Prozessangabe ohne technischen Nachweis.
+
+**Nächster Schritt:** Diese Präzisierungen committen und den bestehenden PR #2 aktualisieren. Kein Merge.
