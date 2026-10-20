@@ -25,6 +25,9 @@ for (const route of routes) {
     }
     await page.setViewportSize({ width: 320, height: 800 });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    expect(await page.locator('h1, h2, h3').evaluateAll(elements =>
+      elements.filter(el => el.scrollWidth > el.clientWidth + 1).map(el => el.textContent),
+    )).toEqual([]);
   });
 }
 

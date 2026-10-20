@@ -10,7 +10,7 @@ Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt au
 
 Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
-Website v0.1 ist mit Astro in DE/EN implementiert und lokal geprüft: 14 HTML-Seiten, 4 Textdownloads, kurzer Interview-Prompt und gleichwertige Vorlage ohne KI. Hostingziel ist Cloudflare unter `percepta.moinsen.dev`. Die öffentliche Freischaltung wartet auf bestätigte Betreiber-/Kontaktangaben und ergänzte Hosting-Datenschutzhinweise. Eine geschützte Sites-Vorschau wird vorbereitet; ihr tatsächlicher Veröffentlichungsstatus wird nach dem Deployment ergänzt.
+Website v0.1 ist mit Astro in DE/EN implementiert und lokal geprüft: 14 HTML-Seiten, 4 Textdownloads, kurzer Interview-Prompt und gleichwertige Vorlage ohne KI. Hostingziel ist Cloudflare unter `percepta.moinsen.dev`. Die öffentliche Freischaltung wartet auf bestätigte Betreiber-/Kontaktangaben und ergänzte Hosting-Datenschutzhinweise. Die [geschützte Sites-Vorschau](https://percepta-community.leafy-leaf-9434.chatgpt.site/de/) ist veröffentlicht; Zugriff nur für den Eigentümer, ohne Anmeldung HTTP 401. Die Zieldomain ist beim Provider registriert, aber noch im Status `pending`; DNS-/TLS-Verifizierung steht aus.
 
 Kein App-Code, Backend, Kontaktregister oder Interview-Empfang implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt. [Website-Prüfbericht](agents/codex/website-validation.md), [fiktive redaktionelle Probe](agents/codex/participation-dry-run.md) und [Pilot-Leitfaden](docs/participation-pilot.md) liegen vor. Der Pilot ist vorbereitet, nicht gestartet.
 
@@ -115,6 +115,6 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Nächste Schritte
 
-Geschützte Website-Vorschau bereitstellen, Betreiber-/Kontaktangaben ergänzen und anschließend die bestätigte Zieldomain anbinden. Danach den privaten Teilnahmeweg mit erfundenen Daten erproben. Erst bei geklärtem Betrieb und zugänglichem Ablauf den Pilot starten. Keine Personenansprache erfolgt. Technische Aufgaben und Modellanbieter werden aus den Pilot-Ergebnissen abgeleitet, nicht vorweggenommen.
+Betreiber-/Kontaktangaben ergänzen und anschließend DNS/TLS sowie öffentliche Freischaltung der bestätigten Zieldomain abschließen. Danach den privaten Teilnahmeweg mit erfundenen Daten erproben. Erst bei geklärtem Betrieb und zugänglichem Ablauf den Pilot starten. Keine Personenansprache erfolgt. Technische Aufgaben und Modellanbieter werden aus den Pilot-Ergebnissen abgeleitet, nicht vorweggenommen.
 
 Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.

@@ -30,7 +30,7 @@ Hostingziel laut Auftrag: Cloudflare mit `percepta.moinsen.dev`. Wrangler-Konfig
 
 Im ersten Browserlauf blieben Kopierknöpfe verborgen: Astros automatisches Inlining wurde durch die CSP blockiert. `vite.build.assetsInlineLimit: 0` erzeugt jetzt eine separate Script-Datei. Nach dieser Korrektur wurden Build und vollständige Browserprüfung erfolgreich wiederholt. Die spätere Typprüfung der Testdatei benötigte `@types/node`; ergänzt und erneut geprüft.
 
-GitHub Actions führt denselben Build-/Browser-/Dry-run-Pfad auf Änderungen aus. Ein erfolgreicher lokaler Lauf belegt noch keinen erfolgreichen CI-Lauf; Remote-Ergebnis im Übergabeprotokoll festhalten.
+GitHub Actions führt denselben Build-/Browser-/Dry-run-Pfad auf Änderungen aus. Der erste Linux-Lauf fand einen zusätzlichen Fehler: lange deutsche Überschriften liefen bei 320 Pixeln mit anderer Systemschrift über. Wortumbruch/Silbentrennung ergänzt und die Reflow-Prüfung auf überlaufende Überschriften erweitert. Der erneute lokale Lauf besteht 19/19; Remote-Ergebnis nach dem Fix im Übergabeprotokoll festhalten.
 
 ## Nicht ausgeführt und Grenzen
 

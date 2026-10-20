@@ -14,6 +14,8 @@ Alle vier Zweitanalysen sind gemergt. Die [Synthese](agents/codex/synthesis.md) 
 
 Öffentliches Repository: [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community). Percepta ist ein Neustart; [das frühere Projekt](https://github.com/moinsen-dev/percepta) wird nicht als Codebasis übernommen.
 
+Geschützte Vorschau für den Projekteigentümer: [Percepta auf Deutsch](https://percepta-community.leafy-leaf-9434.chatgpt.site/de/) und [English](https://percepta-community.leafy-leaf-9434.chatgpt.site/en/). Die öffentliche Zieldomain ist noch nicht aktiv.
+
 ## Einstieg
 
 - [Vision und Alltagssituationen](docs/vision.md)
