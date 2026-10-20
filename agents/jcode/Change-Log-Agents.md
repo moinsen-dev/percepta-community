@@ -66,7 +66,7 @@ Diese Vorschläge sind keine angenommenen Entscheidungen. Die Integration in gem
 - Relative Markdown-Dateilinks: 24 Markdown-Dateien geprüft, alle relativen Ziele vorhanden. Keine externen URLs oder Überschriftenanker durch dieses Skript geprüft.
 - `git diff --check`: Exitcode 0, keine Befunde.
 - Leerzeichen am Zeilenende in den geänderten Dateien: keine Befunde.
-- URL-Erreichbarkeit: 23 von 24 geprüften Quellen lieferten HTTP 200. EUR-Lex lieferte für den HTML-Volltext HTTP 202 ohne Inhalt. Art. 9 DSGVO wurde deshalb zusätzlich über die Textspiegelung `dsgvo-gesetz.de` gelesen. Die offizielle Fundstelle bleibt EUR-Lex.
+- URL-Erreichbarkeit: 23 von 24 geprüften URLs lieferten HTTP 200. EUR-Lex lieferte für den HTML-Volltext HTTP 202 ohne Inhalt. Art. 9 DSGVO wurde deshalb zusätzlich über die Textspiegelung `dsgvo-gesetz.de` gelesen. Die offizielle Fundstelle bleibt EUR-Lex.
 - Änderungsumfang: `git status --short` zeigte ausschließlich `agents/jcode/analysis.md` vor dem Protokolleintrag. Nach dem Protokolleintrag kommen nur `agents/jcode/Change-Log-Agents.md` und der Commit selbst hinzu.
 
 **Nicht ausgeführte Prüfungen:**
@@ -90,3 +90,45 @@ Diese Vorschläge sind keine angenommenen Entscheidungen. Die Integration in gem
 **Nächster sinnvoller Schritt:**
 
 Synthese der drei unabhängigen Analysen durch den Koordinator. Danach die Ablaufstudie mit 3 bis 5 Betroffenen gemäß Abschnitt 6.2 der Analyse. Die statische Website folgt als eigener Implementierungsauftrag ohne Backend. Der moderierte Einreichungsweg wird erst nach den offenen Betriebs- und Rechtsentscheidungen aktiviert.
+
+## Lauf 1a: Nachprüfung nach dem ersten Commit
+
+**Datum:** 2026-10-20.
+
+**Anlass:** Zusätzliche Validierung der abgeschlossenen Arbeit, ohne den Analyseumfang zu erweitern. Keine neuen Nutzerdaten, keine Modellaufrufe, keine Website oder App.
+
+**Ausgangsstand:** Commit `16f852c282d13c8c9d6cbf47d063cc7dc496455c`, Branch `analysis/jcode`, PR #2 gegen `main`.
+
+**Geänderte Dateien in dieser Nachprüfung:**
+
+- [analysis.md](analysis.md): Präzisierung der Mobilio-Einschränkung. Statt „kein öffentlicher Straßenverkehr, keine Straßenüberquerung“ steht nun, dass die Experimente auf einem community path und einem Hindernisparcours stattfanden und eine Validierung im öffentlichen Straßenverkehr oder für Straßenüberquerungen nicht berichtet wird. Das ist durch die Quelle gedeckt und vermeidet eine Überinterpretation.
+- [Change-Log-Agents.md](Change-Log-Agents.md): dieser Nachprüfungseintrag und die präzisere Bezeichnung „geprüfte URLs“ statt „geprüfte Quellen“.
+
+**Ergebnis der Nachprüfung:**
+
+- Die sechs geforderten Themen sind als eigene Abschnitte vorhanden: technische Machbarkeit, Nutzerbedürfnisse, Barrierefreiheit, Architektur, Veröffentlichung/Datenschutz, kleinster nächster Schritt.
+- Das Empfehlungsregister enthält acht Empfehlungen mit Problem, Empfehlung, Alternative/Nachteil, Evidenz oder Annahme und nächstem Test.
+- Die Überschriftenhierarchie springt nicht über Ebenen. Keine Platzhalter wie TODO oder TBD. Das einzige Vorkommen von „ausstehend“ beschreibt den Baseline-Status der fremden Analysen, nicht einen offenen eigenen Abschnitt.
+- Keine absoluten lokalen Pfade, keine E-Mail-Adressen, keine Telefonnummern und keine Namen in den beiden geänderten Dateien.
+- 23 Quelleneinträge J-01 bis J-23 und 24 eindeutige URLs im Quellenregister.
+- 43 Stichproben zu Zahlen, Daten, Kriterien und Wortlauten aus den Primärquellen wurden nach HTML-Normalisierung bestätigt. Fünf Rohvergleiche scheiterten zunächst an HTML-Entities oder eingefügten Leerzeichen, nicht am Inhalt:
+  - Natur-Studie: `13 ± 3%`, `41 ± 5%` und `n = 14` sind im bereinigten Text vorhanden.
+  - Gemini-Streaming: `JPEG <= 1FPS` ist als HTML-Entity `JPEG &lt;= 1FPS` vorhanden.
+  - BFSG: „Dienstleistungen im elektronischen Geschäftsverkehr“ ist als HTML-Entity im Fließtext vorhanden.
+- Die Aussage „higher hallway completion time“ ist in den Extended Data der Nature-Studie vorhanden.
+- Die Aussage, dass eine Straßenüberquerung nicht berichtet wird, ist eine vorsichtige Formulierung. Die Studie untersucht einen community path und einen Hindernisparcours. Eine darüber hinausgehende Validierung wird in den gelesenen Teilen nicht berichtet.
+- Alle 24 URLs wurden erneut geprüft: 23 lieferten HTTP 200, EUR-Lex HTTP 202 ohne Inhalt. Die DSGVO-Wortlaute wurden weiterhin über die Textspiegelung gelesen und die offizielle Fundstelle angegeben.
+- `git diff --check fe68acae4142baca25408124f85e353fb9786674..HEAD` vor dieser Nachprüfung: Exitcode 0.
+- Der erste Commit änderte ausschließlich `agents/jcode/analysis.md` und `agents/jcode/Change-Log-Agents.md`.
+- Der Remote-Tag `research-baseline-v0.1` zeigt weiterhin auf `fe68acae4142baca25408124f85e353fb9786674`. Der Remote-Branch `analysis/jcode` zeigt auf den lokalen Analyse-Commit. PR #2 ist offen, gegen `main` gerichtet und als mergeable gemeldet.
+- Die PR-Dateiliste enthält ausschließlich die beiden Dateien im eigenen Ordner.
+
+**Nicht bestätigt oder weiterhin offen:**
+
+- Die exakte Modell-ID des JCode-Laufs bleibt unbekannt.
+- Die vollständige Methodik der Nature-Studie ist hinter einer Bezahlschranke und wurde nicht im Detail geprüft. Bestätigt sind Abstract, Extended Data und die Preprint-Fassung.
+- Die Übertragbarkeit der Studien auf deutsche Verhältnisse ist nicht geprüft.
+- Es gab keine Rechtsprüfung, keine Barrierefreiheitsprüfung einer realen Website und keine Nutzerstudie.
+- Die Behauptung, dass keine fremden Zweitanalysen gelesen wurden, ist eine Prozessangabe und kein technischer Nachweis.
+
+**Nächster Schritt:** Nachprüfung committen und den bestehenden PR #2 aktualisieren. Kein Merge.

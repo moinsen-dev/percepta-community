@@ -59,7 +59,7 @@ Mobilio (Liu und Slade, *Nature Biomedical Engineering*, publiziert 2026-08-24) 
 - Experiment mit 14 Teilnehmenden auf einem community path und einem Hindernisparcours.
 - Mit Mobilio und Langstock: 13 ± 3 Prozent weniger Zeit auf dem community path und 41 ± 5 Prozent weniger Umgebungskontakte im Vergleich zu Google Maps und Langstock.
 - Die Studie berichtet ähnliche Zuverlässigkeit wie ein menschlicher Guide.
-- Einschränkungen: kontrollierte Wege und Parcours, kein öffentlicher Straßenverkehr, keine Straßenüberquerung. Die erweiterte Abbildung 5c zeigt eine höhere Bewältigungszeit im Hindernisparcours mit Mobilio. Die Autoren nennen selbst Fehlklassifikationen bei Gehwegen, die Straßen ähneln, bei beschädigten Zebrastreifen und bei Schnee. Die Segmentierung nutzt unter anderem Tiefe aus RGB und, falls vorhanden, LiDAR.
+- Einschränkungen: Die Experimente fanden auf einem community path und einem Hindernisparcours statt. Eine Validierung im öffentlichen Straßenverkehr oder für Straßenüberquerungen wird nicht berichtet. Die erweiterte Abbildung 5c zeigt eine höhere Bewältigungszeit im Hindernisparcours mit Mobilio. Die Autoren nennen selbst Fehlklassifikationen bei Gehwegen, die Straßen ähneln, bei beschädigten Zebrastreifen und bei Schnee. Die Segmentierung nutzt unter anderem Tiefe aus RGB und, falls vorhanden, LiDAR.
 
 Quelle J-11 (peer-reviewed) und J-12 (Preprint). Das ist ein Beleg für Machbarkeit unter Begleitung, kein Sicherheitsnachweis.
 
@@ -433,7 +433,7 @@ Die folgenden Empfehlungen sind Vorschläge, keine angenommenen Entscheidungen. 
 - Problem: 1 FPS plus Latenz erzeugt einen zu großen blinden Fleck für Gehanweisungen.
 - Empfehlung: Stationäre Fragen, lokale Hinderniswarnung mit klarer Grenze oder deutliches Stoppsignal. Keine Straßenüberquerung.
 - Alternative: Kontinuierliche VLM-Führung. Nachteil: ungemessene Latenz, Halluzinationsrisiko, keine Sicherheitsvalidierung.
-- Evidenz/Annahme: Gemini-Streaming dokumentiert höchstens 1 FPS. Mobilio validiert kontrollierte Wege, keine Straßenüberquerung. Die Latenzrechnung ist eine Annahme.
+- Evidenz/Annahme: Gemini-Streaming dokumentiert höchstens 1 FPS. Mobilio validiert kontrollierte Wege; eine Straßenüberquerung wird nicht berichtet. Die Latenzrechnung ist eine Annahme.
 - Nächster Test: Geschlossener Parcours mit Spotter, p50/p95-Latenz, falsche Entwarnungen und übersehene Hindernisse messen.
 
 **E-6: Ablaufstudie mit 3 bis 5 Betroffenen vor der App-Architektur**
