@@ -1,6 +1,6 @@
 # Startprompts für JCode, OMP und DeepSeek
 
-Vorbereitet von Codex am 2026-10-20. Die folgenden Prompts dienen zum Start der tatsächlichen Harnesses; sie sind keine ausgeführten Analysen. Der Projektverantwortliche startet die Harnesses selbst. DeepSeek folgt erst nach Abschluss von OMP.
+Vorbereitet von Codex am 2026-10-20. **Archiv des ersten Durchlaufs:** JCode, OMP und DeepSeek / DSH sind abgeschlossen; PR #2 bis PR #4 sind gemergt. Die folgenden Prompts dokumentieren die damaligen Aufträge und lösen keinen erneuten Start aus. Aktuell sind [Projektstand](../../state.md) und [Synthese](synthesis.md).
 
 Die lokalen Arbeitsbereiche wurden vom Tag `research-baseline-v0.1` angelegt:
 
@@ -113,7 +113,7 @@ Beginne mit einem kurzen Vorgehen und führe die Analyse anschließend aus.
 
 ## DeepSeek
 
-OMPs Abschluss wurde am 2026-10-20 vom Projektverantwortlichen bestätigt; PR #3 ist gemergt. Der vorgesehene DeepSeek-Harness kann jetzt im Verzeichnis `.worktrees/deepseek` gestartet werden. Die konkrete CLI und Modell-ID sind noch nicht festgelegt; beim Start tatsächliches Programm, Version und Modell getrennt dokumentieren. Diesen Prompt übergeben:
+Historischer Startprompt nach OMPs Abschluss. Der DSH-Lauf ist inzwischen mit PR #4 abgeschlossen; tatsächliche Laufdaten und Grenzen stehen in seiner [Analyse](../deepseek/analysis.md). Der Worktree bleibt erhalten; kein erneuter Lauf ist beauftragt.
 
 ```text
 Du führst den zusätzlichen unabhängigen DeepSeek-Analyselauf

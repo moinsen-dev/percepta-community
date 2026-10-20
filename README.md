@@ -6,9 +6,9 @@
 
 ## Aktueller Stand / Current status
 
-Dies ist die Dokumentations- und Analysephase. Es gibt noch keine Website, Alltagshilfe-App oder aktive Einreichungsstelle. Die Analysen von [Claude Code](agents/claude-code/analysis.md), [JCode](agents/jcode/analysis.md) und [OMP](agents/omp/analysis.md) sind abgeschlossen und mit PR #1 bis PR #3 gemergt; die inhaltliche Integration ihrer Vorschläge steht aus. Als Nächstes folgt [DeepSeek](agents/deepseek/assignment.md); Worktree und Startprompt sind vorbereitet. Der genaue Arbeits- und Veröffentlichungsstand steht in [state.md](state.md).
+Dies ist die Dokumentations- und Analysephase. Es gibt noch keine Website, Alltagshilfe-App oder aktive Einreichungsstelle. Die Analysen von [Claude Code](agents/claude-code/analysis.md), [JCode](agents/jcode/analysis.md), [OMP](agents/omp/analysis.md) und [DeepSeek / DSH](agents/deepseek/analysis.md) sind abgeschlossen und mit PR #1 bis PR #4 gemergt. Die [Koordinator-Synthese](agents/codex/synthesis.md) liegt vor; Entscheidungen über ihre Vorschläge und Änderungen der Spezifikationen stehen aus. Der genaue Arbeits- und Veröffentlichungsstand steht in [state.md](state.md).
 
-This repository currently contains project documentation and analysis reports and assignments. There is no deployed website, everyday-assistance app or active submission service. The [Claude Code](agents/claude-code/analysis.md), [JCode](agents/jcode/analysis.md) and [OMP](agents/omp/analysis.md) reviews are complete and were merged through PR #1, PR #2 and PR #3 respectively; their recommendations still await evaluation and incorporation into shared specifications. [DeepSeek](agents/deepseek/assignment.md) is next; its worktree and start prompt are ready. Please do not post personal stories or contact details while the participation process is being prepared.
+This repository currently contains project documentation and analysis reports and assignments. There is no deployed website, everyday-assistance app or active submission service. The [Claude Code](agents/claude-code/analysis.md), [JCode](agents/jcode/analysis.md), [OMP](agents/omp/analysis.md) and [DeepSeek / DSH](agents/deepseek/analysis.md) reviews are complete and merged through PR #1–4. The [coordinator synthesis](agents/codex/synthesis.md) compares the findings and records limitations, including DSH's prior exposure to summary keywords. Its proposals await project decisions and changes to shared specifications. Please do not post personal stories or contact details while the participation process is being prepared.
 
 Öffentliches Repository: [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community). Percepta ist ein Neustart; [das frühere Projekt](https://github.com/moinsen-dev/percepta) wird nicht als Codebasis übernommen.
 
@@ -22,13 +22,14 @@ This repository currently contains project documentation and analysis reports an
 - [Gemeinsame Agentenregeln](AGENTS.md)
 - [Agenten-Protokolle und Startanleitung](Change-Log-Agents.md)
 - [Codex-Erstanalyse](agents/codex/analysis.md)
+- [Synthese der vier Zweitanalysen und offene Entscheidungsvorlage](agents/codex/synthesis.md)
 - [Bestandsaufnahme des früheren Percepta — Code, Grenzen und Erkenntnisse](agents/codex/legacy-review.md)
 
 ## Zusammenarbeit
 
 Betroffene bestimmen mit, welche Probleme relevant sind. Entwickler, Selbsthilfeorganisationen, Forschung und mögliche Praxispartner können die vorgeschlagene Richtung prüfen. Technische Beiträge und Diskussionen sollen keine sensiblen persönlichen Informationen enthalten.
 
-Nach den abgeschlossenen Analysen von Claude Code, JCode und OMP (Oh My Pi) folgt DeepSeek im eigenen Ordner und auf derselben fachlichen Ausgangsversion. DeepSeeks Branch ergänzt die eingefrorene Baseline ausschließlich um seinen Auftrag und leere Vorlagen. Das Hand-off benötigt keine spezielle, unbestätigte CLI-Syntax: den passenden Harness im eigenen Checkout öffnen und den verlinkten Auftrag explizit laden.
+Die vier Analyseläufe sind abgeschlossen; ihre Ordner und Branches bleiben als Nachweise erhalten. Alle verwendeten dieselbe fachliche Baseline, DeepSeek zusätzlich einen Vorbereitungs-Commit nur für Auftrag und Vorlagen. DSH legt Kenntnis neuerer Statusstichworte offen; die Synthese berücksichtigt diese Einschränkung der Unabhängigkeit. Als Nächstes wird der Umfang des Teilnahme-Pakets und eines kleinen Pilots entschieden. Ein weiterer Harness wird nicht automatisch gestartet.
 
 ## Dokumentation prüfen
 

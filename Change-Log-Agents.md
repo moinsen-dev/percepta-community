@@ -10,11 +10,11 @@ Gemeinsame Regeln: [AGENTS.md](AGENTS.md). Verbindliche Entscheidungen und aktue
 | Claude Code | [Auftrag](agents/claude-code/assignment.md) | [Abgeschlossen](agents/claude-code/analysis.md) | [Protokoll](agents/claude-code/Change-Log-Agents.md) |
 | JCode | [Auftrag](agents/jcode/assignment.md) | [Abgeschlossen](agents/jcode/analysis.md) | [Protokoll](agents/jcode/Change-Log-Agents.md) |
 | OMP / Oh My Pi | [Auftrag](agents/omp/assignment.md) | [Abgeschlossen](agents/omp/analysis.md) | [Protokoll](agents/omp/Change-Log-Agents.md) |
-| DeepSeek | [Auftrag](agents/deepseek/assignment.md) | [Ausstehend, startbereit](agents/deepseek/analysis.md) | [Protokoll](agents/deepseek/Change-Log-Agents.md) |
+| DeepSeek / DSH | [Auftrag](agents/deepseek/assignment.md) | [Abgeschlossen](agents/deepseek/analysis.md) | [Protokoll](agents/deepseek/Change-Log-Agents.md) |
 
-Die Dateien für DeepSeek sind weiterhin Vorlagen von Codex. Sie stellen keine ausgeführte Arbeit dieses Harnesses dar. Die abgeschlossenen Analysen von Claude Code, JCode und OMP liegen mit PR #1 bis PR #3 auf `main`.
+Die abgeschlossenen Analysen von Claude Code, JCode, OMP und DeepSeek / DSH liegen mit PR #1 bis PR #4 auf `main`. Die tatsächlichen Laufdaten und Prüfgrenzen stehen in den jeweiligen Berichten.
 
-Aktueller Laufstatus steht in `state.md`: Die Analysen von Claude Code, JCode und OMP sind abgeschlossen und gemergt; die inhaltliche Integration steht aus. Als Nächstes folgt DeepSeek; OMPs Abschluss ist bestätigt. Dafür sind ein eigener Worktree und ein [kopierbarer Startprompt](agents/codex/start-prompts.md#deepseek) vorbereitet. Jeder Harness bleibt in seinem eigenen Checkout und liest andere Zweitanalysen erst nach seiner eigenen Erstbewertung.
+Aktueller Status steht in `state.md`: Die [Koordinator-Synthese](agents/codex/synthesis.md) ist als Entscheidungsvorlage abgeschlossen; Annahme von Empfehlungen und Spezifikationsänderungen stehen aus. DSHs offengelegte Kenntnis neuerer Statusstichworte begrenzt die Unabhängigkeit seines Laufs. Die folgenden Startanleitungen und [Prompts](agents/codex/start-prompts.md) dokumentieren den abgeschlossenen Durchlauf, sie beauftragen keinen neuen Start.
 
 ## Startanleitung für eine unabhängige Analyse
 
