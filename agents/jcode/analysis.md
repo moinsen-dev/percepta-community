@@ -20,7 +20,7 @@ Die Statusangaben der eingefrorenen Baseline können älter sein als `main`. Die
 2. **Die vier Bereiche sind gleichberechtigt erklärt, aber nicht gleich belegt.** Für Navigation liegen inzwischen belastbare Studien vor. Für Einkaufen, Fragen an die App und Unterstützung menschlicher Interaktion fehlen in der Baseline aufgabenspezifische Nachweise. Das ist kein Argument gegen die Bereiche, sondern gegen eine vorschnelle Gleichbehandlung bei der Priorisierung.
 3. **Navigation ist machbar, aber nur in engen Grenzen belegt.** Die Mobilio-Studie in *Nature Biomedical Engineering* (2026) zeigt mit 14 Teilnehmenden Verbesserungen auf einem community path und einem Hindernisparcours. Sie belegt keine sichere Straßenüberquerung. Im Hindernisparcours war die Bewältigungszeit mit Mobilio sogar höher. Segmentierungsfehler bei Gehweg/Straße, beschädigten Zebrastreifen und Schnee sind dokumentiert.
 4. **Verkehrs- und Bewegungsanweisungen dürfen nicht aus einem plausiblen Modelltext abgeleitet werden.** Die dokumentierte Streaming-Rate von Gemini Robotics ER 2 liegt bei höchstens einem JPEG pro Sekunde. Bei 1,0 bis 1,4 m/s Gehgeschwindigkeit liegen zwischen zwei Bildern bereits 1,0 bis 1,4 m. Modelllatenz, Netzwerk und Sprachausgabe kommen hinzu. Eine kontinuierliche Gehführung ist damit in dieser Form nicht verantwortbar.
-5. **Die Baseline unterschätzt die bereits vorhandene On-Device-Konkurrenz.** Apples Magnifier Detection Mode erkennt Türen, Personen und Möbel, meldet Annäherung über Ton, Sprache oder Haptik und schätzt Sitzplatzbelegung. Eine eigene Funktion, die nur „Tür erkannt“ oder „Stuhl frei“ ausgibt, muss sich an dieser vorhandenen Basisfunktion messen lassen.
+5. **Die Baseline unterschätzt die bereits vorhandene On-Device-Konkurrenz.** Apples Magnifier Detection Mode erkennt Türen, Personen und Möbel, meldet Annäherung über Ton, Sprache oder Haptik und schätzt Sitzplatzbelegung. Eine eigene Funktion, die nur „Tür erkannt“ oder „Stuhl frei“ ausgibt, muss sich an dieser vorhandenen Basisfunktion messen lassen. Quelle J-17.
 
 **Mittlere Auswirkung**
 
@@ -63,6 +63,8 @@ Mobilio (Liu und Slade, *Nature Biomedical Engineering*, publiziert 2026-08-24) 
 
 Quelle J-11 (peer-reviewed) und J-12 (Preprint). Das ist ein Beleg für Machbarkeit unter Begleitung, kein Sicherheitsnachweis.
 
+Apple dokumentiert für ARKit-Tiefendaten eine geringere Konfidenz bei stark reflektierenden oder stark lichtabsorbierenden Oberflächen. Tiefe ist damit nicht flächendeckend gleich belastbar. Quelle J-18.
+
 NavSight (arXiv 2608.12759, v3 vom 2026-10-06) ergänzt die Alltagsperspektive: sieben Tage Tagebuchstudie mit 12 Personen mit Sehbehinderung, mobile AR mit Echtzeit-Erkennung von Bordsteinen, Fahrzeugen und anderen Objekten. Die Studie berichtet Erkennungsfehler, Einflüsse von Wetter, Licht und Schatten, nicht standardisierten Straßenmarkierungen und Fragen der sozialen Akzeptanz. Das ist wichtig für die Frage, ob Menschen ein Hilfsmittel tatsächlich dauerhaft tragen und bedienen wollen. Quelle J-13.
 
 NavAble (arXiv 2610.19330, 2026-10-14) zeigt den Datenbedarf: elf barrierefreiheitskritische Objektklassen, 41K kuratierte Bilder, 8K neu gesammelte reale Bilder und 452K synthetische Frames. Fine-Tuning erreicht über 80 Prozent mIoU auf dem eigenen Testset. Das ist ein Perception-Benchmark, keine Nutzerstudie und kein Nachweis für Bewegungssicherheit. Quelle J-14.
@@ -100,6 +102,7 @@ NavAble (arXiv 2610.19330, 2026-10-14) zeigt den Datenbedarf: elf barrierefreihe
 
 - Technisch am weitesten untersucht, aber auch am strengsten zu prüfen.
 - Sinnvolle Trennung: statische Beschreibung (Tür, Schild, Treppe, Rolltreppe, Fahrzeuganzeige), lokale Hinderniswarnung und eigentliche Bewegungsführung. Das sind drei verschiedene Risikoklassen.
+- Der DBSV kritisiert reine Nähe-Warntöne und die Beanspruchung einer Hand. Ein Warnton allein beantwortet nicht, wo das Hindernis liegt. Quelle J-19.
 - Keine Straßenüberquerung, keine unbegleitete Pilotierung, keine Sicherheitszusage aus einer Demo.
 - Gegenprobe: geschlossener Parcours mit Spotter, mindestens 10 Teilnehmende, Hindernisse aus verschiedenen Materialien und Höhen, Spiegel, Glas, dünne Stangen, Menschenmenge, Gegenlicht, Dunkelheit, Nässe, Bewegungsunschärfe, falsche Kamerahaltung. Messen: übersehene Hindernisse, falsche Entwarnungen, Fehlwarnungen pro Minute, Zeit bis zur hörbaren Warnung, Abbruchquote, Vertrauen und Fehlerkorrektur.
 
@@ -301,7 +304,7 @@ Das ist keine Rechtsberatung. Vor dem öffentlichen Start ist eine juristische P
 
 ### 5.2 Öffentliches GitHub-Issue
 
-- Das Issue ist öffentlich lesbar, suchbar und kopierbar.
+- Das Issue ist öffentlich lesbar, suchbar und kopierbar. Die öffentliche Lesbarkeit folgt aus dem öffentlichen Repository. Die GitHub-Dokumentation zur Erstellung belegt den Mechanismus, nicht die Löschgrenzen. Quelle J-20.
 - Das veröffentlichende Konto bleibt als Autor sichtbar.
 - Auch nach Löschen können Kopien, Suchmaschinen-Caches, Benachrichtigungen und Forks bestehen.
 - Ein entferkter Name garantiert keine Anonymität. Seltene Berufe, genaue Wege, kleine Orte, Kombinationen von Merkmalen können identifizieren.

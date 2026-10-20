@@ -187,3 +187,19 @@ Synthese der drei unabhängigen Analysen durch den Koordinator. Danach die Ablau
 - Die PR-Beschreibung wird ebenfalls ohne feste Commit-Zähler aktualisiert.
 
 **Nächster Schritt:** Diesen Eintrag committen, den PR aktualisieren und die Validierung beenden. Weitere Prüfungen ohne neue Quellen, Nutzerdaten oder einen realen Build würden nur bereits bestätigte Aussagen wiederholen.
+
+## Lauf 1d: Quellenabdeckung im Text
+
+**Datum:** 2026-10-20.
+
+**Anlass:** Prüfung, ob jeder Eintrag im Quellenregister im Fließtext tatsächlich referenziert wird und ob die Zählungen im Protokoll reproduzierbar sind.
+
+**Ergebnis:**
+
+- Das Quellenregister enthält 23 Einträge J-01 bis J-23. Alle 23 werden im Fließtext referenziert. Es gibt keine Referenz auf eine nicht definierte Quelle.
+- Die Prüfdatei der ersten Stichprobe enthält 43 Zeilen. Die Angabe „43 Stichproben“ ist damit reproduzierbar.
+- J-17, J-18 und J-19 werden nun direkt an den zugehörigen Aussagen zitiert: Apple Detection Mode, ARKit-Tiefenkonfidenz und DBSV-Kritik an Nähe-Warntönen.
+- J-20 wird mit einer Einschränkung zitiert: Die GitHub-Dokumentation zur Issue-Erstellung belegt den Mechanismus. Die öffentliche Lesbarkeit folgt aus dem öffentlichen Repository, nicht aus dieser einen Seite. Die Seite „About issues“ wurde zusätzlich geprüft, enthielt aber keine belastbare Formulierung zur öffentlichen Sichtbarkeit.
+- Die sechs geforderten Themen, das Empfehlungsregister und die Prüfabschnitte bleiben unverändert vollständig.
+
+**Nächster Schritt:** Diesen Eintrag committen und den PR aktualisieren. Die Quellenabdeckung ist damit abgeschlossen.
