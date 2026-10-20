@@ -1,0 +1,36 @@
+---
+import type { Lang } from '../content/site';
+interface Props { id: 'prompt' | 'manual'; text: string; lang: Lang; }
+const { id, text, lang } = Astro.props;
+const de = lang === 'de';
+const copy = id === 'prompt' ? (de ? 'Interview-Prompt kopieren' : 'Copy the interview prompt') : (de ? 'Textvorlage kopieren' : 'Copy the text template');
+---
+<div class="template"><pre id={`${id}-text`}>{text}</pre></div>
+<div class="template-tools">
+  <button
+    type="button"
+    class="button secondary"
+    data-copy={id}
+    data-success={de ? 'Kopiert. Du kannst den Text jetzt einfügen.' : 'Copied. You can now paste the text.'}
+    data-failure={de ? 'Kopieren nicht möglich. Bitte markiere den Text oder lade die Textdatei herunter.' : 'Copying failed. Please select the text or download the text file.'}
+    hidden
+  >{copy}</button>
+  <a href={`/templates/${lang}-${id}.txt`} download={`percepta-${lang}-${id}.txt`}>{de ? 'Als Textdatei herunterladen' : 'Download as a text file'}</a>
+</div>
+<p class="copy-status" id={`${id}-status`} role="status" aria-live="polite" aria-atomic="true"></p>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('button[data-copy]').forEach(button => {
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      const text = document.getElementById(`${button.dataset.copy}-text`)?.textContent ?? '';
+      const status = document.getElementById(`${button.dataset.copy}-status`)!;
+      status.textContent = '';
+      try {
+        await navigator.clipboard.writeText(text);
+        status.textContent = button.dataset.success!;
+      } catch {
+        status.textContent = button.dataset.failure!;
+      }
+    });
+  });
+</script>

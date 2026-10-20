@@ -21,3 +21,8 @@ Die angenommene Dokumentationslieferung erstellen, ohne Website oder App zu impl
 Bei späteren eigenen Analysedurchläufen gelten dieselben sechs Themen wie für die anderen Harnesses: Machbarkeit, Nutzerbedürfnisse, Barrierefreiheit, Architektur, Interview-Veröffentlichung und kleinster sinnvoller nächster Schritt.
 
 Ergänzung vom 2026-10-20: Alle vier Bereiche — Einkaufen, Fragenstellen, Interaktion mit Menschen und Orientierung/Navigation — in die Bewertung einbeziehen. Die [Bestandsaufnahme des letzten alten Percepta-Branches](legacy-review.md) ist zusätzlich beauftragt; nur tatsächliche Codebefunde dokumentieren.
+
+
+## Folgeauftrag: Website und Beteiligung, 2026-10-20
+
+Als Koordinator die erste Astro-Website DE/EN für Cloudflare unter `percepta.moinsen.dev` umsetzen. Die vier empfohlenen Arbeitsschritte konkretisieren: kurze Interview- und manuelle Entwurfshilfen, fiktive Probe, privater Betrieb und kleiner Pilot, anschließend auf dessen Ergebnissen beruhende Technikvergleiche. Reale Tests, Empfang und Veröffentlichung nur als abgeschlossen dokumentieren, wenn tatsächlich ausgeführt. Gemeinsame Spezifikationen und `state.md` gezielt aktualisieren; fremde Harness-Ordner bleiben unverändert.

@@ -6,11 +6,13 @@ Stand: 2026-10-20. Verantwortlicher Harness für die erste Lieferung: Codex.
 
 Die Dokumentationsgrundlage ist unter [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community) öffentlich veröffentlicht. Der Projektverantwortliche hat das Repository angelegt; Codex hat den ersten Commit `ee24e5623502f911807ea1ba257f938ef78362b4` auf `main` gepusht und über den GitHub-Connector bestätigt. `main` ist der Default-Branch. Die Vergleichsversion für weitere Analysen wird durch den unveränderlichen Tag `research-baseline-v0.1` bestimmt.
 
-Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Alle vier Zweitanalysen sind abgeschlossen und mit PR #1 bis PR #4 gemergt. Die [Koordinator-Synthese](agents/codex/synthesis.md) liegt als Entscheidungsvorlage vor; die Übernahme von Empfehlungen in gemeinsame Spezifikationen steht aus. Kein weiterer Harness-Lauf ist vorgesehen. Der Tag enthält die geprüften 25 Dokumentationsdateien; spätere Nachträge auf `main` verändern ihn nicht.
+Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Alle vier Zweitanalysen sind abgeschlossen und mit PR #1 bis PR #4 gemergt. Die [Koordinator-Synthese](agents/codex/synthesis.md) liegt vor. Der Folgeauftrag zur Website und den vier empfohlenen Arbeitsschritten ist erteilt (D-13/D-14); nicht sämtliche Einzelvorschläge der Berichte sind damit angenommen. Kein weiterer Harness-Lauf ist vorgesehen. Der Tag enthält die geprüften 25 Dokumentationsdateien; spätere Nachträge auf `main` verändern ihn nicht.
 
 Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
-Keine Website, App, Datenbank, Kontaktregistrierung oder Interview-Einreichungsstelle implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt.
+Website v0.1 ist mit Astro in DE/EN implementiert und lokal geprüft: 14 HTML-Seiten, 4 Textdownloads, kurzer Interview-Prompt und gleichwertige Vorlage ohne KI. Hostingziel ist Cloudflare unter `percepta.moinsen.dev`. Die öffentliche Freischaltung wartet auf bestätigte Betreiber-/Kontaktangaben und ergänzte Hosting-Datenschutzhinweise. Eine geschützte Sites-Vorschau wird vorbereitet; ihr tatsächlicher Veröffentlichungsstatus wird nach dem Deployment ergänzt.
+
+Kein App-Code, Backend, Kontaktregister oder Interview-Empfang implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt. [Website-Prüfbericht](agents/codex/website-validation.md), [fiktive redaktionelle Probe](agents/codex/participation-dry-run.md) und [Pilot-Leitfaden](docs/participation-pilot.md) liegen vor. Der Pilot ist vorbereitet, nicht gestartet.
 
 ## Übergabestatus: unabhängige Analysen
 
@@ -30,7 +32,7 @@ DeepSeeks Analyse-Commit `d423758feb34dea7a9dcfee860f4736ad2178fc3` baut direkt 
 
 Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branches und wurden bei der Integration nicht verändert. DeepSeeks Worktree `.worktrees/deepseek` steht sauber am Analyse-Commit. Die Analyse-Branches bleiben erhalten; die Startprompts dokumentieren den abgeschlossenen ersten Durchlauf.
 
-**Übergabe an den Projektverantwortlichen:** Die [Synthese](agents/codex/synthesis.md) vergleicht alle sechs Themen, korrigiert überzogene Schlussfolgerungen und legt sechs offene Vorschläge für den nächsten Auftrag vor. Empfohlen sind eine fiktive Prozessprobe, geklärter privater Empfang und danach ein kleiner Beteiligungs-Pilot. Es wurden keine neuen D-Entscheidungen eingetragen oder bestehenden Spezifikationen geändert.
+**Übergang zur Umsetzung:** Der Projektverantwortliche hat Website und vier nächste Arbeitsschritte beauftragt. D-13/D-14 halten Umfang und Hosting fest. Die erste Implementierung macht die Entwurfshilfen nutzbar; privater Empfang, echte Chat-Proben und Pilot folgen nach Klärung ihrer Voraussetzungen. Die ursprünglichen Analyseberichte bleiben unverändert.
 
 ## Bestätigte Entscheidungen
 
@@ -48,6 +50,8 @@ Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branc
 | D-10 | Letzten Branch des alten Percepta getrennt klonen und als Erfahrungsquelle analysieren | Folgeauftrag, 2026-10-20 |
 | D-11 | Frühere Alltagssituationen als Ausgangspunkt nutzen; wenige vollständige Abläufe gemeinsam mit Betroffenen prüfen, bevor die neue App-Architektur festgelegt wird | Empfehlung nach Altprojekt-Analyse ausdrücklich angenommen, 2026-10-20 |
 | D-12 | Nach Abschluss von OMP zusätzlich DeepSeek als unabhängigen Analyselauf aufnehmen; gleiche fachliche Baseline, eigener Ordner und Worktree, anschließend gemeinsame Synthese | Ausdrücklicher Folgeauftrag des Projektverantwortlichen, 2026-10-20 |
+| D-13 | Website mit Astro, Hosting bei Cloudflare, Zieldomain `percepta.moinsen.dev` | Ausdrücklicher Umsetzungsauftrag, 2026-10-20 |
+| D-14 | Website und vier empfohlene Schritte beginnen: kurze DE/EN-Entwurfshilfen mit gleichwertiger Alternative ohne KI; fiktive Prozessprobe; privaten Betrieb klären und Pilot mit 3–5 Erwachsenen vorbereiten; daraus später wenige Abläufe für Technikvergleiche auswählen. Im ersten Schritt ausschließlich eigene Entwürfe, keine automatischen Issues oder öffentliche persönliche Geschichten | Auftrag „Webpage inklusive der vier Empfehlungen“, 2026-10-20; vor Umsetzung so konkretisiert. Keine Freigabe persönlicher Inhalte oder ungefragter Kontaktaufnahme |
 
 ## Annahmen, keine bestätigten Nutzermerkmale
 
@@ -69,11 +73,13 @@ Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branc
 | JCode | Analyse abgeschlossen, PR #2 gemergt; in Synthese bewertet | [Analyse](agents/jcode/analysis.md) |
 | OMP | Analyse abgeschlossen, PR #3 gemergt; in Synthese bewertet | [Analyse](agents/omp/analysis.md) |
 | DeepSeek / DSH | Analyse abgeschlossen, PR #4 gemergt; eingeschränkte Unabhängigkeit dokumentiert | [Analyse](agents/deepseek/analysis.md) |
-| Koordinator-Synthese | Vergleich abgeschlossen; Projektentscheidungen und Spezifikationsänderungen ausstehend | [Entscheidungsvorlage](agents/codex/synthesis.md) |
+| Koordinator-Synthese | Vergleich abgeschlossen; Folgeauftrag D-13/D-14 in Spezifikationen übernommen | [Entscheidungsvorlage](agents/codex/synthesis.md) |
 | Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
 | Vergleichsbaseline | Veröffentlicht, von `origin` abgerufen und remote gelesen | `research-baseline-v0.1` → `fe68acae4142baca25408124f85e353fb9786674` |
-| Astro-Website | Nur spezifiziert | [Brief](docs/website-brief.md) |
-| Interview-Einreichung | Nur spezifiziert; keine aktiven Endpunkte | [Spezifikation](docs/interview-spec.md) |
+| Astro-Website | Implementiert; 19/19 lokale Browserprüfungen bestanden; öffentliche Domain noch nicht freigeschaltet | [Brief](docs/website-brief.md), [Prüfbericht](agents/codex/website-validation.md) |
+| Interview-Einreichung | DE/EN-Entwurfshilfen verfügbar; privater Empfang inaktiv | [Spezifikation](docs/interview-spec.md), [Pilot-Vorbereitung](docs/participation-pilot.md) |
+| Fiktive Prozessprobe | Redaktioneller Durchgang dokumentiert; unabhängige KI-Chat-Proben ausstehend | [Probe](agents/codex/participation-dry-run.md) |
+| Beteiligungs-Pilot / Technikvergleiche | Ablauf und Auswahlkriterien vorbereitet; keine Teilnehmenden oder Messergebnisse | [Leitfaden](docs/participation-pilot.md) |
 | Modelle und Alltagshilfe | Bisher Schwerpunkt Navigationsrecherche; weitere Bereiche als Forschungsaufträge ergänzt | [Recherche](docs/research.md) |
 | Früheres Percepta klonen und analysieren | Kopie vom Projektverantwortlichen bereitgestellt; statische Bestandsaufnahme abgeschlossen | [Branch-/Commitnachweis und Befunde](agents/codex/legacy-review.md); keine Laufzeitprüfung |
 
@@ -99,17 +105,16 @@ Nach Aktivierung von Full Access am 2026-10-20 funktionieren auch `git fetch ori
 
 Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit Betroffenen priorisiert; die Beispiele aus der Analyse sind noch keine ausgewählte Funktionsliste. Plattform und Anbieter bleiben offen. Quellen und Grenzen stehen in der [Bestandsaufnahme](agents/codex/legacy-review.md).
 
-## Vor dem Website-Bau zu entscheiden
+## Vor öffentlichem Start und Pilot zu klären
 
-1. Die [sechs Vorschläge der Synthese](agents/codex/synthesis.md#5-entscheidungsvorlage-für-den-nächsten-auftrag) auswählen oder ändern: KI nur als Entwurfshilfe im Pilot, manueller Weg und fiktive Probe, statische Seite mit zu prüfendem Postfach, zunächst keine öffentliche persönliche Geschichte, Beteiligungs-Pilot mit 3–5 Erwachsenen, danach gezielte Technikvergleiche. Quellenkritik und Abweichungen sind dokumentiert; keine dieser Empfehlungen ist bereits beschlossen. Der frühere WCAG-Vorbehalt ist in der Synthese fachlich eingeordnet; rechtliche Anwendbarkeit bleibt offen.
-2. Hosting, Domain, Backend und Betrieb des moderierten Einreichungswegs auswählen.
-3. Verantwortliche Moderation, private Aufbewahrung/Löschung, Kontakt- und Rücknahmekanal sowie rechtliche Texte klären.
-4. Open-Source-/Dokumentationslizenz und Bedingungen für freiwillige öffentliche Beiträge bestimmen.
-5. Technische Anforderungen der barrierefreien Teilnahme testen; Einladung weiterer Betroffener planen.
-6. Erst danach den Website-Implementierungsauftrag freigeben. Keine fiktive Anmeldemöglichkeit veröffentlichen.
+1. Bestätigte Betreiberangaben, Anschrift, Kontaktadresse und Hosting-Datenverarbeitung für die öffentliche Website. Im laufenden Auftrag angefragt; nicht aus fremden Seiten oder persönlichen Angaben abgeleitet.
+2. Privater Empfang, Moderation, Zugriff, konkrete Aufbewahrung/Löschung, Rücknahme und rechtliche Prüfung vor Einsendungen. Postfach ist ein Kandidat, kein bereits eingerichteter Dienst.
+3. Domainanbindung und öffentliche Freischaltung nach diesen Angaben. Die in dieser Sitzung vorgegebene Sites-Instanz ist getrennt vom bestehenden Cloudflare-Account; die lokale Wrangler-Konfiguration bereitet das ausdrücklich gewünschte Cloudflare-Ziel vor. Keine Änderung bestehender DNS-Einträge und kein direkter Wrangler-Deploy erfolgt.
+4. Lizenz für Code/Dokumentation und Bedingungen späterer freiwilliger öffentlicher Beiträge.
+5. Reale Screenreader-/Tastaturabnahme, externe KI-Chat-Probe mit fiktiven Daten und anschließend Rekrutierung, Betreuung und Aufwandsentschädigung des Pilots.
 
 ## Nächste Schritte
 
-Als Nächstes entscheidet der Projektverantwortliche über die Vorschläge der Synthese. Der [konkrete Folgeauftrag](agents/codex/synthesis.md#6-konkreter-folgeauftrag-nach-auswahl-der-vorschläge) beschreibt Lieferumfang und Prüfungen für Teilnahme-Paket, fiktive Probe und späteren Pilot. Nach der Auswahl aktualisiert der Koordinator die betroffenen gemeinsamen Spezifikationen gezielt. Kein weiterer Analyse-Harness, keine Personenansprache und kein Pilot wurden gestartet.
+Geschützte Website-Vorschau bereitstellen, Betreiber-/Kontaktangaben ergänzen und anschließend die bestätigte Zieldomain anbinden. Danach den privaten Teilnahmeweg mit erfundenen Daten erproben. Erst bei geklärtem Betrieb und zugänglichem Ablauf den Pilot starten. Keine Personenansprache erfolgt. Technische Aufgaben und Modellanbieter werden aus den Pilot-Ergebnissen abgeleitet, nicht vorweggenommen.
 
 Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.

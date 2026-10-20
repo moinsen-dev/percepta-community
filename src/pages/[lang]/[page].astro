@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { articles, languages, labels, type Lang, type ArticleKey } from '../../content/site';
+export function getStaticPaths() {
+  return languages.flatMap(lang => Object.keys(articles[lang]).map(page => ({ params: { lang, page } })));
+}
+const lang = Astro.params.lang as Lang;
+const page = Astro.params.page as ArticleKey;
+const t = articles[lang][page];
+---
+<Layout lang={lang} page={page} title={labels[lang][page]} description={t.intro}>
+  <article class="article wrap">
+    <header class="article-header"><p class="eyebrow">{labels[lang][page]}</p><h1>{t.title}</h1><p class="lede">{t.intro}</p></header>
+    <div class="prose">
+      {t.sections.map(section => <section>
+        <h2>{section.heading}</h2>
+        {section.paragraphs?.map(text => <p>{text}</p>)}
+        {section.items && <ul>{section.items.map(text => <li>{text}</li>)}</ul>}
+        {section.links && <ul class="resource-links">{section.links.map(link => <li><a href={link.href}>{link.text}<span aria-hidden="true"> →</span></a></li>)}</ul>}
+      </section>)}
+    </div>
+  </article>
+</Layout>

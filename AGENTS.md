@@ -77,4 +77,4 @@ Bei Dokumentationsänderungen: relative Links, widerspruchsfreie Statusangaben, 
 
 Für die spätere Website gelten die Anforderungen in [website-brief.md](docs/website-brief.md), für Interviews [interview-spec.md](docs/interview-spec.md). Automatische Accessibility-Prüfungen ergänzen manuelle Tastatur- und Screenreader-Tests sowie Tests mit Betroffenen.
 
-Hosting, Backend, Finanzierung und Lizenz sind derzeit offene Entscheidungen. Das alte Repository wird weder umbenannt noch überschrieben. Keine zusätzliche Pflicht zur Rückfrage erfinden, wenn eine konkrete Arbeit bereits beauftragt ist.
+Astro, Cloudflare und die Zieldomain `percepta.moinsen.dev` sind für Website v0.1 bestätigt (D-13/D-14). Backend, privater Empfang, Betrieb, Finanzierung und Lizenz bleiben offen. Die erste Website bietet nur Entwurfshilfen; sie sammelt und veröffentlicht keine persönlichen Beiträge. Das alte Repository wird weder umbenannt noch überschrieben. Keine zusätzliche Pflicht zur Rückfrage erfinden, wenn eine konkrete Arbeit bereits beauftragt ist.

@@ -1,6 +1,6 @@
 # Percepta — Interview und Veröffentlichung
 
-Status: Spezifikation und redaktionell geprüfte Prompt-Entwürfe. Kein laufender Einreichungsdienst, keine automatisierte Verarbeitung und keine Studie.
+Status: Teilnahme-Paket v0.1 für die statische Astro-Website, Stand 2026-10-20. Kurze DE/EN-Prompts und eine gleichwertige Vorlage ohne KI sind implementiert. Kein laufender Einreichungsdienst und keine Studie. D-14 begrenzt den ersten Schritt auf private Entwürfe; eine öffentliche persönliche Geschichte gehört nicht zum Pilot.
 
 ## Zweck
 
@@ -8,7 +8,7 @@ Alltagserfahrungen und Prioritäten verstehen, ohne eine bestimmte technische L�
 
 Der Umfang schließt Einkaufen, Fragen an eine App oder andere Menschen, menschliche Interaktion sowie Orientierung und Navigation ein. Zunächst offen nach einer Situation fragen. Beispiele nur bei Bedarf geben; niemand muss alle Bereiche behandeln oder ein Problem beim Gehen beschreiben.
 
-Die beiden kopierbaren Entwürfe stehen in [Deutsch](interview-prompt.de.md) und [Englisch](interview-prompt.en.md). Der Prompt ist eine Anweisung an eine fremde KI-Anwendung, keine Garantie für deren Verhalten. Antworten werden vom jeweiligen Chat-Anbieter verarbeitet; darauf vor dem Kopieren hinweisen.
+Die kurzen Interview-Prompts stehen in [Deutsch](interview-prompt.de.md) und [Englisch](interview-prompt.en.md). Gleichwertig verfügbar sind die Textvorlagen ohne KI in [Deutsch](experience-template.de.md) und [Englisch](experience-template.en.md). Die Website und die Textdownloads verwenden diese Dateien als gemeinsame Quelle. Der Prompt ist eine Anweisung an eine fremde KI-Anwendung, keine Garantie für deren Verhalten. Antworten werden vom jeweiligen Chat-Anbieter verarbeitet; darauf vor dem Kopieren hinweisen.
 
 ## Interview
 
@@ -20,38 +20,42 @@ Jeweils nur eine kurze Frage stellen. Auf Wunsch einfacher formulieren oder ein 
 4. Welche Information wäre wann hilfreich, und welche würde stören?
 5. Handhabung von Smartphone, Sprache, Vibration oder anderen Eingabeformen.
 6. Wichtigste Verbesserung und Merkmale eines hilfreichen Ergebnisses.
-7. Zusammenfassung, Korrekturen und freiwillige Veröffentlichungsentscheidungen.
+7. Zusammenfassung, Korrekturen und freiwilliges Beenden. Keine Veröffentlichung im ersten Schritt.
 
 Funktionale Angaben zur Sehfähigkeit nur freiwillig und nur, wenn für das Problem nötig. Keine Person auf eine Diagnose reduzieren. Keine gefährlichen Tests oder Live-Navigation während des Interviews anleiten.
 
 ## Zusammenfassung als gemeinsame Schnittstelle
 
-Keine festgelegte API oder Datenbank in dieser Phase. Das spätere Issue und der moderierte Weg nutzen dieselben minimalen Inhalte:
+Keine festgelegte API oder Datenbank in dieser Phase. Die beiden Entwurfswege nutzen dieselben minimalen Inhalte:
 
 - Neutraler Titel ohne Name oder genauen Ort.
 - Alltagssituation, Ziel und Schwierigkeit.
 - Bestehende Hilfsmittel, nur soweit freiwillig und relevant.
 - Gewünschte Information/Unterstützung und Priorität.
 - Einschränkungen und offene Fragen, ohne erfundene Antworten.
-- Optional selbst gewählter öffentlicher Name; Standard ist keine Namensnennung.
+- Keine Namen im Pilotentwurf. Eine spätere öffentliche Namensnennung ist eine gesonderte Entscheidung.
 
-Die Person erhält den vollständigen Veröffentlichungstext einschließlich Titel in ihrer Sprache. Vermutungen des Modells werden nicht als Aussagen der Person ausgegeben. Keine Rohtranskripte anhängen.
+Die Person erhält den vollständigen Entwurf einschließlich Titel in ihrer Sprache. Vermutungen des Modells werden nicht als Aussagen der Person ausgegeben. Keine Rohtranskripte anhängen.
 
-## Zustimmung und Veröffentlichungswege
+## Aktueller Weg: nur vorbereiten
 
-**Öffentlichkeit:** Issues im Zielrepo sind öffentlich lesbar und möglicherweise kopierbar. Änderungen und Löschung können fremde Kopien nicht zurückholen. Namen entfernen verringert Identifizierbarkeit, gewährleistet sie aber nicht. Kontext wie ein seltener Arbeitsplatz oder ein genauer täglicher Weg kann ebenfalls identifizieren.
+Die KI erstellt ausschließlich Text. Sie soll keine Tools, Konten oder GitHub-Anbindung verwenden und nichts versenden, auch bei einer späteren Bitte im selben Interview. Eine Prompt-Anweisung ist keine technische Zugriffssperre der fremden App; Verhalten muss separat erprobt werden. Keine Zugangsdaten erfragen.
 
-**Direkt aus einer KI mit GitHub-Anbindung:** Nach Vorschau ausdrücklich Zustimmung zum genauen Text und Ziel `moinsen-dev/percepta-community` erfragen. Vorher erklären, dass das verwendete Konto als Autor sichtbar bleibt. Keine Zugangsdaten erfragen. Keine verknüpften Accounts automatisch benutzen. Ohne ausdrückliche Zustimmung kein Tool-Aufruf zur Erstellung.
+Die manuelle Vorlage bietet dieselben Fragen und denselben Entwurf. Sie lässt sich auf Papier, im eigenen Dokument oder freiwillig mit einer vertrauten Person verwenden. Website und Downloads erfordern kein GitHub-Konto. Die Website enthält keine Antwortfelder, Speicherung oder Absendeaktion. Der Kopierknopf kopiert ausschließlich den angezeigten Vorlagentext; bei Fehlern stehen Markieren und Textdownload bereit.
 
-**Ohne GitHub-Anbindung:** Den fertigen Text zum Kopieren bereitstellen und die fehlende Anbindung klar nennen. Kein Issue-Link und keine erfolgreiche Veröffentlichung erfinden.
+Ein Entwurf im eigenen Dokument oder KI-Chat erreicht Percepta nicht automatisch. Keine Veröffentlichungs- oder Namensfreigabe im aktuellen Interview einsammeln. Die Person kann jederzeit aufhören. Keine Löschung beim externen KI-Anbieter versprechen.
 
-**Moderierter Weg ohne öffentliches Absenderkonto:** Später über ein zugängliches Formular die freigegebene Zusammenfassung privat einreichen. Moderation prüft Identifizierbarkeit und Inhalt; ein Projektkonto veröffentlicht den freigegebenen Text. Keine automatische Veröffentlichung beim Eingang. Inhaltliche Änderungen benötigen erneute Freigabe, sonst zurückstellen oder ablehnen. Rückfragen dürfen keine verpflichtende öffentliche Kontaktangabe voraussetzen.
+Der private Pilot mit 3–5 Erwachsenen wird erst geöffnet, wenn die Voraussetzungen des [Pilot-Leitfadens](participation-pilot.md) erfüllt sind. Ein privates Projektpostfach ist ein zu prüfender Kandidat, noch keine gewählte oder aktive Lösung.
 
-**Namensnennung:** Separat und freiwillig, Standard aus. Bei Zustimmung nur den selbst angegebenen gewünschten Namen übernehmen, keine Kontaktdaten oder Namen Dritter.
+## Spätere Veröffentlichung: gesondert zu entscheiden
 
-**Website-Geschichte:** Getrennte Zustimmung zur Website-Darstellung. In v0 wird nur ein Issue-Entwurf vorbereitet; Website-Zustimmung wird nicht bereits über das Interview eingesammelt. Eine GitHub-Freigabe umfasst keine Website-Nutzung.
+Die ursprüngliche Idee einer unterstützten Issue-Erstellung bleibt dokumentiert, wird in v0.1 aber nicht angeboten. Vor Aktivierung müssen Ziel, Betrieb und konkrete Freigaben neu festgelegt werden.
 
-**Keine Veröffentlichung:** Text auf Wunsch lokal kopierbar bereitstellen, keine Übermittlung an Percepta. Keine Aussagen über Löschung durch den externen Chat-Anbieter machen.
+- Öffentliche Issues können kopiert werden. Entfernte Inhalte können in fremden Kopien fortbestehen. Ohne Namen ist ein Text nicht automatisch anonym; ein eigenes GitHub-Konto bleibt als Autor sichtbar.
+- Eine zukünftige Freigabe muss den vollständigen konkreten Text und das Ziel benennen. Private Teilnahme oder Zustimmung zum Entwurf genügt nicht.
+- Ein moderiertes Projektkonto verringert die öffentliche Zuordnung zum Absender; absolute Anonymität wird nicht versprochen. Änderungen benötigen erneute Freigabe.
+- Namensnennung ist eine eigene, freiwillige Entscheidung. Website-Nutzung erfordert eine eigene Freigabe und folgt nicht aus einer GitHub-Zustimmung.
+- Ohne Einwilligung zur Veröffentlichung kein öffentliches Issue und keine Website-Geschichte.
 
 ## Schutz vor versehentlicher Preisgabe
 
@@ -65,22 +69,8 @@ Verantwortliche Moderation und Kontakt-/Rücknahmekanal, private Speicherung und
 
 Der Begriff „anonyme Einreichung“ bezeichnet das Ziel, kein persönliches Konto öffentlich anzuzeigen. Aussagen über technische Anonymität gegenüber Betreiber, Chat-Anbieter oder Infrastruktur erfordern eine tatsächlich geprüfte Implementierung.
 
-## Zu prüfende Szenarien
+## Prüfung
 
-| Fall | Erwartetes Verhalten |
-| --- | --- |
-| Deutsch / Englisch | Eine Frage je Schritt, gleiche Wahlmöglichkeiten und Veröffentlichungshinweise |
-| Frage überspringen / früh abschließen | Kein Zwang; kurze Zusammenfassung ohne erfundene Lückenfüllung |
-| Keine GitHub-Anbindung | Kopierbarer Entwurf; keine behauptete Issue-Erstellung |
-| Veröffentlichung abgelehnt | Keine Übermittlung oder öffentliche Anlage |
-| Name versehentlich genannt | Vor Vorschau entfernen; keine stillschweigende Namensfreigabe |
-| Name ausdrücklich gewünscht | Getrennte Entscheidung und erneute Vorschau |
-| Exakter Ort oder Daten Dritter | Verallgemeinern/entfernen, Ergebnis zur Korrektur zeigen |
-| Anonymität bei eigenem Konto erwartet | Sichtbarkeit erklären; moderierten Weg nennen, sofern tatsächlich verfügbar |
-| Veröffentlichung fehlgeschlagen/unklar | Kein Erfolg behaupten; vor Wiederholung nach vorhandenem Issue prüfen |
-| Website-Nutzung | Nicht aus GitHub-Zustimmung ableiten |
-| Einkauf ohne Navigationsproblem | Produkt-/Informationsbedarf vollständig erfassen, kein Wegproblem voraussetzen |
-| Frage an App oder an eine Person | Bedeutung bei Bedarf klären, keine bestimmte Lösung vorgeben |
-| Begegnung oder Gespräch | Informations-/Kommunikationsbedarf erfragen, keine ungefragte Aufzeichnung oder Kontaktaufnahme |
+Die [Prozessprobe](../agents/codex/participation-dry-run.md) verwendet ausschließlich erfundene Situationen und kennzeichnet redaktionelle Durchgänge. Sie ist kein Nachweis über eine externe KI-App oder eine echte Nutzerstudie. Die [Website-Validierung](../agents/codex/website-validation.md) dokumentiert Browserprüfungen und noch fehlende manuelle Tests.
 
-Aktueller Prüfstatus: [Codex-Validierung](../agents/codex/validation.md). Diese Fälle sind noch keine mit externen Chat-Apps oder Betroffenen durchgeführten Tests.
+Vor dem Pilot: DE und EN, beide Entwurfswege, Überspringen, Pause, Abbruch, Korrektur, versehentliche Identifikatoren, unklare Frage an eine App oder einen Menschen, eine reine Einkaufs-/Gesprächssituation und eine Bitte um Veröffentlichung prüfen. Bei einer solchen Bitte muss die Entwurfshilfe bei Text bleiben. Kein Erfolg darf behauptet werden, solange keine Einreichungsstelle existiert.

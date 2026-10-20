@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Template from '../../components/Template.astro';
+import { templates } from '../../content/templates';
+import { languages, labels, pathFor, type Lang } from '../../content/site';
+export function getStaticPaths() { return languages.map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const t = lang === 'de' ? {
+  title: 'Was würde deinen Alltag leichter machen?',
+  intro: 'Du musst keine technische Lösung kennen. Beschreibe einfach eine Situation und was du darin erreichen möchtest.',
+  status: 'Vorbereiten ist schon möglich. Einreichen noch nicht.',
+  statusText: 'Du kannst die Vorlagen lesen, herunterladen und für dich ausprobieren. Wir empfangen hier noch keine Berichte. Bitte teile persönliche Erfahrungen nicht in öffentlichen GitHub-Issues.',
+  choices: 'Zwei gleichwertige Wege',
+  choicesText: 'Nutze die Textvorlage selbst oder lass dich von einer KI durch ein kurzes Gespräch führen. Ein GitHub-Konto brauchst du für beides nicht. Eine Situation reicht; du darfst jede Frage auslassen, pausieren oder aufhören.',
+  manualTitle: 'Ohne KI: die Textvorlage',
+  manualIntro: 'Kopiere die Vorlage in dein eigenes Dokument, schreibe auf Papier oder bitte eine vertraute Person um Hilfe. Auf dieser Website gibst du keine Antworten ein.',
+  promptTitle: 'Mit KI: ein kurzes Interview',
+  promptIntro: 'Kopiere den Prompt in eine KI-Chat-App deiner Wahl. Die KI soll jeweils nur eine Frage stellen und am Ende einen Entwurf zeigen, den du korrigieren kannst.',
+  provider: 'Dein KI-Anbieter verarbeitet deine Eingaben. Bitte keine Namen, Kontaktdaten, Diagnosen oder genauen Orte eingeben. Der Prompt kann das Verhalten einer fremden KI nicht garantieren.',
+  manualLink: 'Zur Textvorlage ohne KI', promptLink: 'Zum Interview-Prompt',
+  afterTitle: 'Was passiert mit meinem Entwurf?',
+  after: 'Der Text bleibt in deinem gewählten Dokument oder deiner KI-App. Percepta erhält ihn nicht automatisch. Du entscheidest, ob du ihn behältst. Der private Einreichungsweg ist noch in Vorbereitung.',
+  later: 'Eine spätere öffentliche Geschichte braucht deine Zustimmung zum genauen Text und Veröffentlichungsort. Eine Namensnennung ist eine zusätzliche, freiwillige Entscheidung. Für die Vorbereitung hier wird keine Veröffentlichungsfreigabe verlangt.',
+  help: 'Wenn Kopieren nicht funktioniert: Markiere den Text oder nutze die Textdatei. Beide Wege funktionieren ohne Kopierknopf.',
+} : {
+  title: 'What would make your everyday life easier?',
+  intro: 'You do not need a technical solution. Just describe one situation and what you want to achieve.',
+  status: 'You can prepare an experience. Submissions are not open yet.',
+  statusText: 'Read, download and try the templates for yourself. We do not receive reports here yet. Please do not share personal experiences in public GitHub issues.',
+  choices: 'Two equally valid ways',
+  choicesText: 'Use the text template yourself or let an AI guide you through a short conversation. Neither requires a GitHub account. One situation is enough; skip any question, pause or stop.',
+  manualTitle: 'Without AI: the text template',
+  manualIntro: 'Copy the template into your own document, write on paper or ask someone you trust for help. You do not enter answers on this website.',
+  promptTitle: 'With AI: a short interview',
+  promptIntro: 'Copy the prompt into an AI chat app of your choice. The AI should ask one question at a time and show you a draft to correct at the end.',
+  provider: 'Your AI provider processes your input. Please omit names, contact details, diagnoses and exact locations. The prompt cannot guarantee another AI’s behaviour.',
+  manualLink: 'Go to the template without AI', promptLink: 'Go to the interview prompt',
+  afterTitle: 'What happens to my draft?',
+  after: 'The text stays in the document or AI app you chose. Percepta does not receive it automatically. You decide whether to keep it. A private submission channel is still being prepared.',
+  later: 'Any later public story needs your agreement to the exact text and destination. Being named is an additional optional choice. Preparing a draft here does not ask for publication consent.',
+  help: 'If copying fails, select the text or use the text file. Both options work without the copy button.',
+};
+---
+<Layout lang={lang} page="participate" title={labels[lang].participate} description={t.intro}>
+  <article class="article wrap">
+    <header class="article-header"><p class="eyebrow">{labels[lang].participate}</p><h1>{t.title}</h1><p class="lede">{t.intro}</p></header>
+    <div class="prose">
+      <aside class="notice" aria-labelledby="intake-status"><h2 id="intake-status">{t.status}</h2><p>{t.statusText}</p></aside>
+      <section aria-labelledby="choices-title"><h2 id="choices-title">{t.choices}</h2><p>{t.choicesText}</p>
+        <ul class="jump-links"><li><a href="#manual">{t.manualLink}</a></li><li><a href="#prompt">{t.promptLink}</a></li></ul>
+      </section>
+      <section id="manual" aria-labelledby="manual-title"><h2 id="manual-title">{t.manualTitle}</h2><p>{t.manualIntro}</p>
+        <Template id="manual" text={templates[lang].manual} lang={lang} />
+      </section>
+      <section id="prompt" aria-labelledby="prompt-title"><h2 id="prompt-title">{t.promptTitle}</h2><p>{t.promptIntro}</p><p class="notice">{t.provider}</p>
+        <Template id="prompt" text={templates[lang].prompt} lang={lang} />
+      </section>
+      <section><h2>{t.afterTitle}</h2><p>{t.after}</p><p>{t.later}</p><p>{t.help}</p><a href={pathFor(lang, 'privacy')}>{labels[lang].privacy}</a></section>
+    </div>
+  </article>
+</Layout>

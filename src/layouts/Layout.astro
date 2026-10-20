@@ -1,0 +1,52 @@
+---
+import { labels, pathFor, repo, type Lang } from '../content/site';
+import '../styles/global.css';
+interface Props { lang: Lang; title: string; description: string; page?: string; }
+const { lang, title, description, page = '' } = Astro.props;
+const t = labels[lang];
+const other = lang === 'de' ? 'en' : 'de';
+const navigation = ['participate', 'collaborate', 'research'] as const;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#173f38" />
+    <title>{title} — Percepta</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="alternate" hreflang="de" href={new URL(pathFor('de', page), Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL(pathFor('en', page), Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.skip}</a>
+    <header class="site-header wrap">
+      <a class="brand" href={pathFor(lang)} aria-label={`Percepta — ${t.home}`}>
+        <span class="brand-mark" aria-hidden="true">p.</span>percepta
+      </a>
+      <nav aria-label={t.nav}>
+        <ul>
+          {navigation.map(key => <li><a href={pathFor(lang, key)} aria-current={page === key ? 'page' : undefined}>{t[key]}</a></li>)}
+        </ul>
+      </nav>
+      <a class="language" href={pathFor(other, page)} lang={other} hreflang={other} aria-label={t.language}>{t.languageShort}<span aria-hidden="true"> ↗</span></a>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="site-footer">
+      <div class="wrap footer-top">
+        <div><a class="brand" href={pathFor(lang)}>percepta</a><p>{t.tagline}</p></div>
+        <nav aria-label={t.footer}>
+          <ul>
+            <li><a href={pathFor(lang, 'accessibility')}>{t.accessibility}</a></li>
+            <li><a href={pathFor(lang, 'privacy')}>{t.privacy}</a></li>
+            <li><a href={repo}>{t.github}</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="wrap footer-bottom"><p>{t.note}</p><p>{t.copyright}</p></div>
+    </footer>
+  </body>
+</html>
