@@ -9,12 +9,12 @@ Gemeinsame Regeln: [AGENTS.md](AGENTS.md). Verbindliche Entscheidungen und aktue
 | Codex | [Auftrag](agents/codex/assignment.md) | [Erstanalyse](agents/codex/analysis.md) | [Protokoll](agents/codex/Change-Log-Agents.md) |
 | Claude Code | [Auftrag](agents/claude-code/assignment.md) | [Abgeschlossen](agents/claude-code/analysis.md) | [Protokoll](agents/claude-code/Change-Log-Agents.md) |
 | JCode | [Auftrag](agents/jcode/assignment.md) | [Abgeschlossen](agents/jcode/analysis.md) | [Protokoll](agents/jcode/Change-Log-Agents.md) |
-| OMP / Oh My Pi | [Auftrag](agents/omp/assignment.md) | [Ausstehend](agents/omp/analysis.md) | [Protokoll](agents/omp/Change-Log-Agents.md) |
-| DeepSeek | [Auftrag](agents/deepseek/assignment.md) | [Ausstehend, nach OMP](agents/deepseek/analysis.md) | [Protokoll](agents/deepseek/Change-Log-Agents.md) |
+| OMP / Oh My Pi | [Auftrag](agents/omp/assignment.md) | [Abgeschlossen](agents/omp/analysis.md) | [Protokoll](agents/omp/Change-Log-Agents.md) |
+| DeepSeek | [Auftrag](agents/deepseek/assignment.md) | [Ausstehend, startbereit](agents/deepseek/analysis.md) | [Protokoll](agents/deepseek/Change-Log-Agents.md) |
 
-Die Dateien für OMP und DeepSeek sind weiterhin Vorlagen von Codex. Sie stellen keine ausgeführte Arbeit dieser Harnesses dar. Die abgeschlossenen Analysen von Claude Code und JCode liegen mit PR #1 beziehungsweise PR #2 auf `main`.
+Die Dateien für DeepSeek sind weiterhin Vorlagen von Codex. Sie stellen keine ausgeführte Arbeit dieses Harnesses dar. Die abgeschlossenen Analysen von Claude Code, JCode und OMP liegen mit PR #1 bis PR #3 auf `main`.
 
-Aktueller Laufstatus steht in `state.md`: Die Analysen von Claude Code und JCode sind abgeschlossen und gemergt; die inhaltliche Integration steht aus. Als Nächstes folgt OMP, nach dessen Abschluss DeepSeek. Dafür sind getrennte lokale Worktrees und [kopierbare Startprompts](agents/codex/start-prompts.md) vorbereitet. Jeder Harness bleibt in seinem eigenen Checkout und liest andere Zweitanalysen erst nach seiner eigenen Erstbewertung.
+Aktueller Laufstatus steht in `state.md`: Die Analysen von Claude Code, JCode und OMP sind abgeschlossen und gemergt; die inhaltliche Integration steht aus. Als Nächstes folgt DeepSeek; OMPs Abschluss ist bestätigt. Dafür sind ein eigener Worktree und ein [kopierbarer Startprompt](agents/codex/start-prompts.md#deepseek) vorbereitet. Jeder Harness bleibt in seinem eigenen Checkout und liest andere Zweitanalysen erst nach seiner eigenen Erstbewertung.
 
 ## Startanleitung für eine unabhängige Analyse
 

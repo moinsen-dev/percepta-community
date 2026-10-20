@@ -113,13 +113,13 @@ Beginne mit einem kurzen Vorgehen und führe die Analyse anschließend aus.
 
 ## DeepSeek
 
-Erst nach bestätigtem Abschluss von OMP den vorgesehenen DeepSeek-Harness im Verzeichnis `.worktrees/deepseek` öffnen. Die konkrete CLI und Modell-ID sind noch nicht festgelegt; beim Start tatsächliches Programm, Version und Modell getrennt dokumentieren. Diesen Prompt übergeben:
+OMPs Abschluss wurde am 2026-10-20 vom Projektverantwortlichen bestätigt; PR #3 ist gemergt. Der vorgesehene DeepSeek-Harness kann jetzt im Verzeichnis `.worktrees/deepseek` gestartet werden. Die konkrete CLI und Modell-ID sind noch nicht festgelegt; beim Start tatsächliches Programm, Version und Modell getrennt dokumentieren. Diesen Prompt übergeben:
 
 ```text
 Du führst den zusätzlichen unabhängigen DeepSeek-Analyselauf
-des Projekts Percepta nach OMP durch. Starte erst, wenn der
-Projektverantwortliche OMPs Abschluss bestätigt hat. Lies dafür
-nicht OMPs Analyse; eine Statusbestätigung genügt.
+des Projekts Percepta nach OMP durch. Der Projektverantwortliche
+hat OMPs Abschluss am 2026-10-20 bestätigt. Diese Voraussetzung
+ist erfüllt; lies OMPs Analyse nicht zur erneuten Statusprüfung.
 
 Arbeite im vorbereiteten Worktree .worktrees/deepseek des
 Hauptcheckouts, Branch analysis/deepseek.
