@@ -1,6 +1,6 @@
 # Codex — Validierung der Dokumentationslieferung
 
-Stand: 2026-10-20, einschließlich der Erweiterung um Einkaufen, Fragenstellen und menschliche Interaktion sowie der statischen Altprojekt-Analyse. Lokale Dokumentationsprüfungen abgeschlossen; erster Commit öffentlich veröffentlicht und remote bestätigt.
+Stand: 2026-10-20, einschließlich der Erweiterung um Einkaufen, Fragenstellen und menschliche Interaktion sowie der statischen Altprojekt-Analyse. Dokumentation und Baseline öffentlich veröffentlicht und geprüft; Übergabe an Claude Code bereit.
 
 ## Strukturelle Prüfung
 
@@ -11,7 +11,9 @@ Stand: 2026-10-20, einschließlich der Erweiterung um Einkaufen, Fragenstellen u
 - Konsistente Statusangaben: geprüft; Website, Backend und App nur spezifiziert, drei Fremd-Harness-Analysen ausdrücklich nicht gestartet.
 - Nach manueller Einrichtung geprüft: `origin` zeigt auf das richtige Ziel. Der Connector bestätigt `moinsen-dev/percepta-community` als öffentlich und mit Schreibberechtigungen. Der erste Commit `ee24e5623502f911807ea1ba257f938ef78362b4` wurde erfolgreich gepusht und anschließend remote gelesen. Default-Branch ist `main`.
 - Veröffentlichungsumfang: genau 25 Dokumentationsdateien gestaged; 96 relative Dateilinks und gezielter Suchlauf auf bekannte persönliche Angaben ohne Befund. `git diff --cached --check` erfolgreich. `git check-ignore` bestätigt den Ausschluss von `private/`, `.env` und `.env.local`.
-- Die Abschlussprüfung vergleicht lokale und veröffentlichte Commit-/Tag-Referenzen sowie den veröffentlichten Dateibaum. Ihr Ergebnis wird nach dem unveränderlichen Baseline-Tag protokolliert; spätere Statusprotokolle auf `main` verschieben diesen Tag nicht.
+- Abschlussprüfung erfolgreich: `main` und Tag atomar veröffentlicht; `git pull --ff-only --tags origin main` hat den Tag von GitHub lokal abgerufen. Er zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. `git ls-tree` bestätigt die 25 Dokumentationsdateien ohne private Inhalte. Der Connector liest `AGENTS.md` erfolgreich über den Tag; Arbeitsbaum anschließend sauber.
+- Der Tag zeigt direkt auf den Commit. Die lokale Erstellung eines annotierten Tags scheiterte an einem temporären Git-Schreibzugriff; der Tag wurde stattdessen beim autorisierten Git-Push auf GitHub angelegt und danach abgerufen. Keine bestehende Referenz überschrieben.
+- Dieser Bestätigungsnachtrag auf `main` verändert den Baseline-Tag nicht.
 
 ## Redaktionelle Interview-Szenarien
 

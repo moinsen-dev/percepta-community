@@ -6,6 +6,8 @@ Stand: 2026-10-20. Verantwortlicher Harness für die erste Lieferung: Codex.
 
 Die Dokumentationsgrundlage ist unter [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community) öffentlich veröffentlicht. Der Projektverantwortliche hat das Repository angelegt; Codex hat den ersten Commit `ee24e5623502f911807ea1ba257f938ef78362b4` auf `main` gepusht und über den GitHub-Connector bestätigt. `main` ist der Default-Branch. Die Vergleichsversion für weitere Analysen wird durch den unveränderlichen Tag `research-baseline-v0.1` bestimmt.
 
+Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Damit ist die Übergabe an Claude Code bereit. Der Tag enthält die geprüften 25 Dokumentationsdateien; die späteren Bestätigungsprotokolle auf `main` verändern ihn nicht.
+
 Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
 Keine Website, App, Datenbank, Kontaktregistrierung oder Interview-Einreichungsstelle implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt.
@@ -51,12 +53,12 @@ Der nächste Auftrag ist eine unabhängige Bewertung der Grundlage, einschließl
 | Paket | Status | Nachweis / nächster Schritt |
 | --- | --- | --- |
 | Gemeinsame Dokumentation | Geprüft und auf `main` veröffentlicht | [README](README.md), [AGENTS](AGENTS.md) |
-| Codex-Erstanalyse | Inhaltlich abgeschlossen; Folgeanalysen verwenden die feste Übergabereferenz | [Analyse](agents/codex/analysis.md), [Validierung](agents/codex/validation.md) |
+| Codex-Erstanalyse | Abgeschlossen und zur Übergabe bereit | [Analyse](agents/codex/analysis.md), [Validierung](agents/codex/validation.md) |
 | Claude Code | Nicht gestartet | [Auftrag](agents/claude-code/assignment.md) |
 | JCode | Nicht gestartet | [Auftrag](agents/jcode/assignment.md) |
 | OMP | Nicht gestartet | [Auftrag](agents/omp/assignment.md) |
 | Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
-| Vergleichsbaseline | Verbindliche Übergabereferenz; vor Start aus `origin` auflösen | Unveränderlicher Tag `research-baseline-v0.1` |
+| Vergleichsbaseline | Veröffentlicht, von `origin` abgerufen und remote gelesen | `research-baseline-v0.1` → `fe68acae4142baca25408124f85e353fb9786674` |
 | Astro-Website | Nur spezifiziert | [Brief](docs/website-brief.md) |
 | Interview-Einreichung | Nur spezifiziert; keine aktiven Endpunkte | [Spezifikation](docs/interview-spec.md) |
 | Modelle und Alltagshilfe | Bisher Schwerpunkt Navigationsrecherche; weitere Bereiche als Forschungsaufträge ergänzt | [Recherche](docs/research.md) |

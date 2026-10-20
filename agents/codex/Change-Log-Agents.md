@@ -115,3 +115,13 @@ Die Dateien in den drei anderen Harness-Ordnern wurden in diesem Schritt von Cod
 - **Prüfungen:** Veröffentlichter Commit über den Connector gelesen; Remote-Ziel und Default-Branch abgeglichen. Keine private Referenzkopie, Umgebungsdateien oder alte Git-Historie eingecheckt.
 - **Korrektur des Zugriffsstands:** Frühere CLI-/DNS-Fehler verhindern den jetzt erfolgreich ausgeführten Git-Push nicht. Keine erneute Authentifizierung erforderlich.
 - **Nächster Schritt:** Diesen Übergabestand prüfen, committen und als `research-baseline-v0.1` markieren; Commit und Tag veröffentlichen und anschließend remote verifizieren. Den Tag danach unverändert lassen.
+
+## 2026-10-20 — Baseline veröffentlicht und Übergabe bereit
+
+- **Harness / Modell:** Codex / GPT-6-Familie wie oben. **Ausgangs-Commit:** `fe68acae4142baca25408124f85e353fb9786674`.
+- **Ergebnis:** `research-baseline-v0.1` zeigt unveränderlich auf diesen Commit. `main` und Tag wurden atomar nach `origin` veröffentlicht. Der Tag wurde anschließend von GitHub abgerufen.
+- **Geändert:** Abschlussstatus in `state.md`, eigener Validierungsbericht und dieses Protokoll. Dieser Nachtrag auf `main` wird nicht Teil einer verschobenen Baseline.
+- **Prüfungen:** 25 versionierte Dokumentationsdateien, 96 relative Dateilinks, gezielter Suchlauf auf persönliche Angaben und Whitespace-Prüfung erfolgreich. Tag-Auflösung stimmt mit dem Baseline-Commit überein; `git ls-tree` bestätigt den Umfang ohne private Referenzkopie. `AGENTS.md` über den Remote-Tag per Connector gelesen. Arbeitsbaum vor diesem Nachtrag sauber.
+- **Technischer Ablauf:** Lokaler Versuch eines annotierten Tags scheiterte am Schreiben einer temporären Git-Datei. Stattdessen einen direkt auf den Commit zeigenden Tag per `git push --atomic origin main HEAD:refs/tags/research-baseline-v0.1` veröffentlicht und mit `git pull --ff-only --tags origin main` abgerufen. Kein bestehender Tag verschoben.
+- **Nicht ausgeführt:** Weitere Harnesses, Nutzerstudie, Website-/App-Implementierung oder Modelltests.
+- **Nächster Schritt:** Claude Code im eigenen Checkout/Worktree vom Tag mit `agents/claude-code/assignment.md` starten. JCode und OMP verwenden denselben Commit; der Projektverantwortliche startet die tatsächlichen Harnesses.
