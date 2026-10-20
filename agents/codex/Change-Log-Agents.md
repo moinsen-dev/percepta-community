@@ -239,3 +239,13 @@ Die Dateien in den drei anderen Harness-Ordnern wurden in diesem Schritt von Cod
 - **Geändert:** `src/styles/global.css` mit Wortumbruch/Silbentrennung für Überschriften, `tests/website.spec.ts` mit zusätzlicher Überlaufprüfung, README/Projektstand/Website-Prüfbericht und eigenes Protokoll aktualisiert.
 - **Prüfungen:** Nach Korrektur erneut `npm run check`, Build und 19/19 lokale Browserprüfungen erfolgreich; `git diff --check` sauber. CI-Wiederholung und aktualisiertes Deployment folgen. Keine echte Screenreader-Abnahme abgeleitet.
 - **Grenzen / nächster Schritt:** Aktuelle Wrangler-Anmeldung hat Zone-Leserechte, aber keinen ausgewiesenen DNS-Schreibscope; Plugin-Suche lieferte keinen passenden Cloudflare-DNS-Connector. Betreiber-/Kontaktangaben bleiben offen. Diese Voraussetzungen vor öffentlicher Freischaltung und Pilot klären; keine neue öffentliche Erreichbarkeit behaupten.
+
+
+## 2026-10-20 — Website-Übergabe nach erfolgreicher CI
+
+- **Harness / Modell / Ausgangspunkt:** Codex, GPT-6 laut Sitzung, genaue Build-ID unbekannt; `cdc203f5ac72a635e2190a86f87a98c0f322aa15`.
+- **Ergebnis:** Zweiter GitHub-Run `39464211108` vollständig erfolgreich: Installation, Typprüfung, Build, 19/19 Browserprüfungen und Wrangler-Dry-run auf Linux. Derselbe gepushte Quellstand über Sites-Helper paketiert und als Version 2 veröffentlicht; Deployment `appgdep_6ad7a1ac89a481919c967deae69b444c` meldet `succeeded`. Eigentümerzugriff unverändert.
+- **Geändert:** Ausschließlich Statusdokumentation in `README.md`, `state.md`, gemeinsamer `Change-Log-Agents.md`-Übersicht, eigenem Synthese-Status, Website-Prüfbericht und diesem Protokoll. Keine neue Website-Funktion; der Statuscommit verwendet `[skip ci]`, da der Website-Build unverändert und am vorigen Commit vollständig geprüft ist.
+- **Prüfungen:** Relative Dateilinks und `git diff --check` für den Abschluss; Remote-Commit und Baseline nach Push verifizieren. Früherer Geheimnis-/Personenmustertest über neue/geänderte Dateien ohne Treffer. Archiv enthält nur gebaute Assets, Vorlagen und Hosting-Zuordnung, keine Interviews oder private Referenzkopie.
+- **Offen:** Öffentliche Domain DNS/TLS `pending`; bestätigte Betreiber-/Kontaktangaben und Hosting-Informationen; privater Empfang mit Moderation/Löschung; reale Screenreader- und externe KI-Chat-Proben; danach Pilot und darauf beruhende Technikvergleiche. Keine Personen kontaktiert und keine persönliche Geschichte veröffentlicht.
+- **Nächster Schritt:** Eigentümer prüft die geschützte Vorschau und ergänzt die angefragten Betreiber-/Kontaktangaben sowie einen geeigneten DNS-Zugriff. Danach öffentlichen Start und privaten Pilot getrennt weiterführen.

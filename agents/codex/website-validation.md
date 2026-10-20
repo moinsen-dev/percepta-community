@@ -30,7 +30,7 @@ Hostingziel laut Auftrag: Cloudflare mit `percepta.moinsen.dev`. Wrangler-Konfig
 
 Im ersten Browserlauf blieben Kopierknöpfe verborgen: Astros automatisches Inlining wurde durch die CSP blockiert. `vite.build.assetsInlineLimit: 0` erzeugt jetzt eine separate Script-Datei. Nach dieser Korrektur wurden Build und vollständige Browserprüfung erfolgreich wiederholt. Die spätere Typprüfung der Testdatei benötigte `@types/node`; ergänzt und erneut geprüft.
 
-GitHub Actions führt denselben Build-/Browser-/Dry-run-Pfad auf Änderungen aus. Der erste Linux-Lauf fand einen zusätzlichen Fehler: lange deutsche Überschriften liefen bei 320 Pixeln mit anderer Systemschrift über. Wortumbruch/Silbentrennung ergänzt und die Reflow-Prüfung auf überlaufende Überschriften erweitert. Der erneute lokale Lauf besteht 19/19; Remote-Ergebnis nach dem Fix im Übergabeprotokoll festhalten.
+GitHub Actions führt denselben Build-/Browser-/Dry-run-Pfad auf Änderungen aus. Der erste Linux-Lauf fand einen zusätzlichen Fehler: lange deutsche Überschriften liefen bei 320 Pixeln mit anderer Systemschrift über. Wortumbruch/Silbentrennung ergänzt und die Reflow-Prüfung auf überlaufende Überschriften erweitert. Der erneute lokale Lauf besteht 19/19. Auch [GitHub Actions Run 39464211108](https://github.com/moinsen-dev/percepta-community/actions/runs/39464211108) am Quellstand `cdc203f5ac72a635e2190a86f87a98c0f322aa15` besteht vollständig, einschließlich aller 19 Browserprüfungen und Wrangler-Dry-run unter Linux.
 
 ## Nicht ausgeführt und Grenzen
 
@@ -50,3 +50,10 @@ Offizielle Quellen, abgerufen 2026-10-20:
 - [Astro: Scripts and event handling](https://docs.astro.build/en/guides/client-side-scripts/): automatische Verarbeitung und mögliches Inlining kleiner Scripts. Konfiguration zusätzlich am installierten Astro-Quellcode geprüft.
 - [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/): Prüfziel, keine aus automatisierten Ergebnissen abgeleitete Konformität.
 - Versionen und Node-Anforderung über npm-Metadaten geprüft und im Lockfile festgehalten. GitHub-Action-Versionen über die offiziellen Release-Endpunkte der Repositories `actions/checkout` und `actions/setup-node` geprüft.
+
+
+## Veröffentlichungsnachweis
+
+Die geschützte Vorschau ist unter `https://percepta-community.leafy-leaf-9434.chatgpt.site` veröffentlicht. Version 2 verwendet exakt den gepushten und in CI geprüften Quellstand `cdc203f5ac72a635e2190a86f87a98c0f322aa15`; Build/Archiv wurden daraus mit dem Sites-Helper erstellt. Deployment `appgdep_6ad7a1ac89a481919c967deae69b444c`: `succeeded` am 2026-10-20. Zugriff bleibt auf den Eigentümer beschränkt. Unangemeldeter Abruf der ersten Veröffentlichung ergab HTTP 401; keine öffentliche Zugriffsfreigabe vorgenommen.
+
+`percepta.moinsen.dev` ist als Custom Domain registriert, DNS-/TLS-Verifizierung jedoch ausstehend. Kein DNS-Eintrag wurde verändert. Die vorhandene Wrangler-Anmeldung weist keinen DNS-Schreibscope aus; eine ergänzende Plugin-Suche lieferte keine passende Cloudflare-DNS-Anbindung. Die öffentliche Domain wird nicht als live ausgewiesen. Statusnachträge in Markdown verändern den veröffentlichten statischen Build nicht.

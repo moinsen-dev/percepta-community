@@ -12,6 +12,8 @@ Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch
 
 Website v0.1 ist mit Astro in DE/EN implementiert und lokal geprüft: 14 HTML-Seiten, 4 Textdownloads, kurzer Interview-Prompt und gleichwertige Vorlage ohne KI. Hostingziel ist Cloudflare unter `percepta.moinsen.dev`. Die öffentliche Freischaltung wartet auf bestätigte Betreiber-/Kontaktangaben und ergänzte Hosting-Datenschutzhinweise. Die [geschützte Sites-Vorschau](https://percepta-community.leafy-leaf-9434.chatgpt.site/de/) ist veröffentlicht; Zugriff nur für den Eigentümer, ohne Anmeldung HTTP 401. Die Zieldomain ist beim Provider registriert, aber noch im Status `pending`; DNS-/TLS-Verifizierung steht aus.
 
+Veröffentlichter Website-Quellstand: `cdc203f5ac72a635e2190a86f87a98c0f322aa15`. [GitHub Actions](https://github.com/moinsen-dev/percepta-community/actions/runs/39464211108) erfolgreich einschließlich aller 19 Browserprüfungen unter Linux. Sites-Version 2, Deployment `appgdep_6ad7a1ac89a481919c967deae69b444c`, Status `succeeded`. Nachfolgende reine Statusdokumentation ändert diesen geprüften Website-Build nicht.
+
 Kein App-Code, Backend, Kontaktregister oder Interview-Empfang implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt. [Website-Prüfbericht](agents/codex/website-validation.md), [fiktive redaktionelle Probe](agents/codex/participation-dry-run.md) und [Pilot-Leitfaden](docs/participation-pilot.md) liegen vor. Der Pilot ist vorbereitet, nicht gestartet.
 
 ## Übergabestatus: unabhängige Analysen
@@ -76,7 +78,7 @@ Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branc
 | Koordinator-Synthese | Vergleich abgeschlossen; Folgeauftrag D-13/D-14 in Spezifikationen übernommen | [Entscheidungsvorlage](agents/codex/synthesis.md) |
 | Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
 | Vergleichsbaseline | Veröffentlicht, von `origin` abgerufen und remote gelesen | `research-baseline-v0.1` → `fe68acae4142baca25408124f85e353fb9786674` |
-| Astro-Website | Implementiert; 19/19 lokale Browserprüfungen bestanden; öffentliche Domain noch nicht freigeschaltet | [Brief](docs/website-brief.md), [Prüfbericht](agents/codex/website-validation.md) |
+| Astro-Website | Implementiert; 19/19 Browserprüfungen lokal und in CI bestanden; geschützte Vorschau live, öffentliche Domain noch nicht freigeschaltet | [Brief](docs/website-brief.md), [Prüfbericht](agents/codex/website-validation.md) |
 | Interview-Einreichung | DE/EN-Entwurfshilfen verfügbar; privater Empfang inaktiv | [Spezifikation](docs/interview-spec.md), [Pilot-Vorbereitung](docs/participation-pilot.md) |
 | Fiktive Prozessprobe | Redaktioneller Durchgang dokumentiert; unabhängige KI-Chat-Proben ausstehend | [Probe](agents/codex/participation-dry-run.md) |
 | Beteiligungs-Pilot / Technikvergleiche | Ablauf und Auswahlkriterien vorbereitet; keine Teilnehmenden oder Messergebnisse | [Leitfaden](docs/participation-pilot.md) |

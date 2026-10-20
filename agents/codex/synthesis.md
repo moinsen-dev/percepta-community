@@ -2,7 +2,9 @@
 
 Stand: 2026-10-20. Verfasst von Codex als Koordinator, Modellfamilie laut Sitzung GPT-6; genaue Build-ID unbekannt. Ausgangsstand auf `main`: `3d795cb665ed56d7f3234d05e0ef23e0b2465e91`; PR #4 anschließend mit `1cd561ecedb76566d8df42b70e64b737133cf6fa` übernommen.
 
-**Status: Vergleich und Entscheidungsvorlage abgeschlossen; Umsetzung und Projektentscheidungen ausstehend.** Die Bewertungen unten sind Codex' Synthese, kein nachträglicher Konsens der Harnesses. D-01 bis D-12 und die gemeinsamen Spezifikationen bleiben unverändert. Es gibt weiterhin keine Website, App, Studie oder Modellmessung.
+**Abgeschlossene Entscheidungsvorlage; historischer Stand vor dem Website-Auftrag.** Die Bewertungen unten sind Codex' Synthese, kein nachträglicher Konsens der Harnesses. Bei Erstellung waren D-01 bis D-12 und die gemeinsamen Spezifikationen unverändert; es gab keine Website, App, Studie oder Modellmessung.
+
+Nachtrag 2026-10-20: Der anschließende Website-Auftrag ist als D-13/D-14 in [state.md](../../state.md) festgehalten. Astro-Website und Entwurfshilfen sind inzwischen implementiert und geprüft; Pilot und Modellmessungen bleiben ausstehend. Die damaligen Vorschläge unten bleiben als Entscheidungsgrundlage nachvollziehbar.
 
 ## Ergebnis
 

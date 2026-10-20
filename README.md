@@ -6,9 +6,9 @@
 
 ## Aktueller Stand / Current status
 
-Die erste Astro-Website in Deutsch und Englisch ist implementiert: Vorhaben, Teilnahmevorbereitung, Mitarbeit, Forschung, Barrierefreiheit und Datenschutz-/Kontaktstatus. Ein kurzer Interview-Prompt und eine gleichwertige Textvorlage ohne KI sind lesbar, kopierbar und als Textdownload verfügbar. 19 lokale Browserprüfungen bestehen. Cloudflare und `percepta.moinsen.dev` sind festgelegt; die öffentliche Freischaltung wartet auf bestätigte Betreiber-/Kontaktangaben. Es gibt noch keine Assistenz-App oder aktive Interview-Einreichung.
+Die erste Astro-Website in Deutsch und Englisch ist implementiert: Vorhaben, Teilnahmevorbereitung, Mitarbeit, Forschung, Barrierefreiheit und Datenschutz-/Kontaktstatus. Ein kurzer Interview-Prompt und eine gleichwertige Textvorlage ohne KI sind lesbar, kopierbar und als Textdownload verfügbar. 19 Browserprüfungen bestehen lokal und in GitHub Actions. Cloudflare und `percepta.moinsen.dev` sind festgelegt; die öffentliche Freischaltung wartet auf bestätigte Betreiber-/Kontaktangaben. Es gibt noch keine Assistenz-App oder aktive Interview-Einreichung.
 
-The first German/English Astro website is implemented, with project information, a short interview prompt and an equivalent template without AI. All 19 local browser checks pass. Cloudflare and `percepta.moinsen.dev` are the selected hosting target; public launch awaits confirmed operator and contact details. There is no assistance app or active interview submission service. Please do not post personal stories or contact details in public issues.
+The first German/English Astro website is implemented, with project information, a short interview prompt and an equivalent template without AI. All 19 browser checks pass locally and in GitHub Actions. Cloudflare and `percepta.moinsen.dev` are the selected hosting target; public launch awaits confirmed operator and contact details. There is no assistance app or active interview submission service. Please do not post personal stories or contact details in public issues.
 
 Alle vier Zweitanalysen sind gemergt. Die [Synthese](agents/codex/synthesis.md) und die bestätigten Folgeentscheidungen D-13/D-14 stehen in [state.md](state.md). Der [Prüfbericht](agents/codex/website-validation.md) trennt technische Checks von noch ausstehenden Screenreader- und Nutzertests.
 

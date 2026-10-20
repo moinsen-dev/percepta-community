@@ -14,7 +14,7 @@ Gemeinsame Regeln: [AGENTS.md](AGENTS.md). Verbindliche Entscheidungen und aktue
 
 Die abgeschlossenen Analysen von Claude Code, JCode, OMP und DeepSeek / DSH liegen mit PR #1 bis PR #4 auf `main`. Die tatsächlichen Laufdaten und Prüfgrenzen stehen in den jeweiligen Berichten.
 
-Aktueller Status steht in `state.md`: Die [Koordinator-Synthese](agents/codex/synthesis.md) ist als Entscheidungsvorlage abgeschlossen; Annahme von Empfehlungen und Spezifikationsänderungen stehen aus. DSHs offengelegte Kenntnis neuerer Statusstichworte begrenzt die Unabhängigkeit seines Laufs. Die folgenden Startanleitungen und [Prompts](agents/codex/start-prompts.md) dokumentieren den abgeschlossenen Durchlauf, sie beauftragen keinen neuen Start.
+Aktueller Status steht in `state.md`: Die [Koordinator-Synthese](agents/codex/synthesis.md) ist abgeschlossen; der Folgeauftrag D-13/D-14 ist in die gemeinsame Spezifikation übernommen. Website und Teilnahme-Paket v0.1 sind implementiert und als geschützte Vorschau veröffentlicht. [Website-Prüfungen](agents/codex/website-validation.md) und [Pilot-Vorbereitung](docs/participation-pilot.md) dokumentieren Ergebnisse und offene Arbeiten. DSHs offengelegte Kenntnis neuerer Statusstichworte begrenzt die Unabhängigkeit seines Laufs. Die folgenden Startanleitungen und [Prompts](agents/codex/start-prompts.md) dokumentieren den abgeschlossenen Durchlauf, sie beauftragen keinen neuen Start.
 
 ## Startanleitung für eine unabhängige Analyse
 
