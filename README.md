@@ -6,9 +6,9 @@
 
 ## Aktueller Stand / Current status
 
-Dies ist die Dokumentations- und Analysephase. Es gibt noch keine Website, Alltagshilfe-App oder aktive Einreichungsstelle. Die Analysen von [Claude Code](agents/claude-code/analysis.md) und [JCode](agents/jcode/analysis.md) sind abgeschlossen und mit PR #1 beziehungsweise PR #2 gemergt; die inhaltliche Integration ihrer Vorschläge steht aus. Als Nächstes folgt OMP; Worktree und Startprompt sind vorbereitet. Der genaue Arbeits- und Veröffentlichungsstand steht in [state.md](state.md).
+Dies ist die Dokumentations- und Analysephase. Es gibt noch keine Website, Alltagshilfe-App oder aktive Einreichungsstelle. Die Analysen von [Claude Code](agents/claude-code/analysis.md) und [JCode](agents/jcode/analysis.md) sind abgeschlossen und mit PR #1 beziehungsweise PR #2 gemergt; die inhaltliche Integration ihrer Vorschläge steht aus. Als Nächstes folgt OMP, nach dessen Abschluss zusätzlich [DeepSeek](agents/deepseek/assignment.md); Worktrees und Startprompts sind vorbereitet. Der genaue Arbeits- und Veröffentlichungsstand steht in [state.md](state.md).
 
-This repository currently contains project documentation and analysis reports and assignments. There is no deployed website, everyday-assistance app or active submission service. The [Claude Code](agents/claude-code/analysis.md) and [JCode](agents/jcode/analysis.md) reviews are complete and were merged through PR #1 and PR #2 respectively; their recommendations still await evaluation and incorporation into shared specifications. OMP is next; its worktree and start prompt are ready. Please do not post personal stories or contact details while the participation process is being prepared.
+This repository currently contains project documentation and analysis reports and assignments. There is no deployed website, everyday-assistance app or active submission service. The [Claude Code](agents/claude-code/analysis.md) and [JCode](agents/jcode/analysis.md) reviews are complete and were merged through PR #1 and PR #2 respectively; their recommendations still await evaluation and incorporation into shared specifications. OMP is next, followed by an additional [DeepSeek review](agents/deepseek/assignment.md) after OMP finishes; their worktrees and start prompts are ready. Please do not post personal stories or contact details while the participation process is being prepared.
 
 Öffentliches Repository: [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community). Percepta ist ein Neustart; [das frühere Projekt](https://github.com/moinsen-dev/percepta) wird nicht als Codebasis übernommen.
 
@@ -28,7 +28,7 @@ This repository currently contains project documentation and analysis reports an
 
 Betroffene bestimmen mit, welche Probleme relevant sind. Entwickler, Selbsthilfeorganisationen, Forschung und mögliche Praxispartner können die vorgeschlagene Richtung prüfen. Technische Beiträge und Diskussionen sollen keine sensiblen persönlichen Informationen enthalten.
 
-Nach den abgeschlossenen Analysen von Claude Code und JCode folgt OMP (Oh My Pi), im eigenen Ordner und auf derselben Ausgangsversion. Das Hand-off benötigt keine spezielle, unbestätigte CLI-Syntax: den passenden Harness im eigenen Checkout öffnen und den verlinkten Auftrag explizit laden.
+Nach den abgeschlossenen Analysen von Claude Code und JCode folgt OMP (Oh My Pi), danach DeepSeek, jeweils im eigenen Ordner und auf derselben fachlichen Ausgangsversion. DeepSeeks Branch ergänzt die eingefrorene Baseline ausschließlich um seinen Auftrag und leere Vorlagen. Das Hand-off benötigt keine spezielle, unbestätigte CLI-Syntax: den passenden Harness im eigenen Checkout öffnen und den verlinkten Auftrag explizit laden.
 
 ## Dokumentation prüfen
 

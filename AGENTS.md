@@ -4,7 +4,7 @@
 
 Percepta erforscht Alltagshilfen für blinde und sehbehinderte Menschen gemeinsam mit Betroffenen. Dazu gehören Einkaufen, Fragen zu Informationen und Situationen, selbstbestimmte Interaktion mit anderen Menschen sowie Orientierung und Navigation. Ziel ist mehr Selbstständigkeit im Alltag. Das neue öffentliche Projekt heißt `moinsen-dev/percepta-community`; Produktname ist Percepta.
 
-Zuerst entstehen Dokumentation und unabhängige Analysen durch **Codex, Claude Code, JCode und OMP (Oh My Pi)**. Anschließend folgen die barrierearme Astro-Website in Deutsch und Englisch sowie ein moderierter Weg zur Bedarfserhebung. Die App für Alltagshilfe einschließlich Navigation ist eine spätere Forschungs- und Entwicklungsphase. Bedarfsinterviews und technische Analysen müssen alle vier Bereiche berücksichtigen; Navigation ist ein Teilbereich.
+Zuerst entstehen Dokumentation und unabhängige Analysen durch **Codex, Claude Code, JCode, OMP (Oh My Pi) und anschließend DeepSeek**. Anschließend folgen die barrierearme Astro-Website in Deutsch und Englisch sowie ein moderierter Weg zur Bedarfserhebung. Die App für Alltagshilfe einschließlich Navigation ist eine spätere Forschungs- und Entwicklungsphase. Bedarfsinterviews und technische Analysen müssen alle vier Bereiche berücksichtigen; Navigation ist ein Teilbereich.
 
 Bestätigtes Vorgehen nach der Altprojekt-Analyse (D-11 in `state.md`): Frühere Alltagssituationen als Ausgangspunkt nutzen und wenige vollständige Abläufe gemeinsam mit Betroffenen prüfen, bevor die neue App-Architektur festgelegt wird. Die ersten Abläufe sind gemeinsam zu priorisieren; Beispiele im Analysebericht sind keine bereits ausgewählte Funktionsliste.
 
@@ -25,14 +25,16 @@ Lies vor jeder Arbeit [state.md](state.md), [README.md](README.md) und deinen Au
 | Claude Code | `agents/claude-code/` | Unabhängige Zweitanalyse |
 | JCode | `agents/jcode/` | Unabhängige Zweitanalyse |
 | OMP / Oh My Pi | `agents/omp/` | Unabhängige Zweitanalyse |
+| DeepSeek | `agents/deepseek/` | Zusätzliche unabhängige Zweitanalyse nach OMP |
 
 - Jeder Harness dokumentiert tatsächlichen Namen, Modell/Version soweit bekannt, Datum und Ausgangs-Commit. Unbekannte Versionsangaben ausdrücklich als unbekannt kennzeichnen.
 - Codex darf die gemeinsame Grundlage für diese erste Lieferung anlegen. Danach bearbeiten Analyse-Harnesses ausschließlich ihren eigenen Ordner. Gemeinsame Änderungen werden vorgeschlagen.
 - Die Zweitanalysen beginnen am selben unveränderten Tag `research-baseline-v0.1`. Der Tag wird nach Prüfung der ersten Lieferung erstellt und nicht verschoben. Seinen aufgelösten Commit im Analysebericht festhalten.
+- DeepSeek wurde nach Einfrieren der Baseline ergänzt. Sein Branch darf zusätzlich genau einen Vorbereitungs-Commit von Codex enthalten, der ausschließlich Auftrag und leere Vorlagen in `agents/deepseek/` ergänzt. Baseline und tatsächlichen Ausgangs-Commit getrennt dokumentieren; fachliche Ausgangsdokumente bleiben unverändert. Der Analyse-Lauf beginnt erst nach bestätigtem Abschluss von OMP.
 - Separate Branches/Worktrees verwenden. Keine gleichzeitigen Schreibzugriffe auf denselben Checkout; keine fremden Änderungen überschreiben.
 - Die anderen Analyseberichte erst nach Abschluss der eigenen Erstbewertung lesen. Codex' veröffentlichte Grundlage ist Kontext, keine verbindliche technische Entscheidung.
 - Nur ein ausdrücklich als Koordinator arbeitender Agent integriert abgestimmte Ergebnisse in gemeinsame Dateien und `state.md`. Die erste Einrichtung durch Codex ist bereits beauftragt.
-- Keine Analyse unter dem Namen eines nicht ausgeführten Harnesses schreiben. Ein Codex-Unteragent ist weiterhin Codex und ersetzt weder Claude Code noch JCode oder OMP.
+- Keine Analyse unter dem Namen eines nicht ausgeführten Harnesses schreiben. Ein Codex-Unteragent ist weiterhin Codex und ersetzt weder Claude Code noch JCode, OMP oder DeepSeek. Bei DeepSeek sind tatsächliches Harness-Programm und Modell getrennt zu erfassen; konkrete Versionen stehen vor dem ersten Lauf noch nicht fest.
 - Harnesses werden vom Projektverantwortlichen gestartet; aus dem Vorhandensein eines Auftrags folgt kein automatischer Aufruf kostenpflichtiger Fremd-Harnesses.
 
 ## Protokoll und Übergabe

@@ -6,7 +6,7 @@ Stand: 2026-10-20. Verantwortlicher Harness für die erste Lieferung: Codex.
 
 Die Dokumentationsgrundlage ist unter [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community) öffentlich veröffentlicht. Der Projektverantwortliche hat das Repository angelegt; Codex hat den ersten Commit `ee24e5623502f911807ea1ba257f938ef78362b4` auf `main` gepusht und über den GitHub-Connector bestätigt. `main` ist der Default-Branch. Die Vergleichsversion für weitere Analysen wird durch den unveränderlichen Tag `research-baseline-v0.1` bestimmt.
 
-Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Die Analysen von Claude Code und JCode sind abgeschlossen und mit PR #1 beziehungsweise PR #2 gemergt; die inhaltliche Integration steht aus. Als nächster Harness ist OMP vorgesehen; Worktree und Startprompt sind vorbereitet. Der Tag enthält die geprüften 25 Dokumentationsdateien; spätere organisatorische Nachträge auf `main` verändern ihn nicht.
+Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Die Analysen von Claude Code und JCode sind abgeschlossen und mit PR #1 beziehungsweise PR #2 gemergt; die inhaltliche Integration steht aus. Als nächster Harness ist OMP vorgesehen, nach dessen Abschluss zusätzlich DeepSeek gemäß D-12; Worktrees und Startprompts sind vorbereitet. Der Tag enthält die geprüften 25 Dokumentationsdateien; spätere organisatorische Nachträge auf `main` verändern ihn nicht.
 
 Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
@@ -23,6 +23,10 @@ Keine Website, App, Datenbank, Kontaktregistrierung oder Interview-Einreichungss
 **JCodes Analyse ist abgeschlossen:** [PR #2](https://github.com/moinsen-dev/percepta-community/pull/2) wurde mit Merge-Commit `0ad41a5c965f81b05a9246f6ad918bbbeb9eeffa` übernommen. Die [Analyse](agents/jcode/analysis.md) behandelt alle sechs Auftragsthemen; dokumentiert sind JCode `v0.99.0` (Commit `774613c90`) und eine unbekannte exakte Modell-ID. Die inhaltliche Integration und Bewertung der Empfehlungen stehen aus.
 
 **Nächster Harness: OMP.** OMP arbeitet vom selben unveränderten Tag `research-baseline-v0.1` und liest die Berichte von Claude Code und JCode erst nach Abschluss seiner eigenen Erstbewertung. Die [Startanleitung](Change-Log-Agents.md) und der [OMP-Startprompt](agents/codex/start-prompts.md#omp--oh-my-pi) beschreiben den Ablauf. Die bestätigte Entscheidung D-11 ist Bestandteil der gemeinsamen Grundlage.
+
+**Danach: DeepSeek.** Der zusätzliche Lauf ist vorbereitet, aber erst nach bestätigtem Abschluss von OMP vorgesehen. [Auftrag](agents/deepseek/assignment.md) und [Startprompt](agents/codex/start-prompts.md#deepseek) behandeln dieselben sechs Themen. Tatsächliches Harness-Programm, Version und Modell-ID werden beim Lauf erfasst; „DeepSeek“ ist bis dahin die Arbeitsbezeichnung.
+
+DeepSeeks Worktree `.worktrees/deepseek` liegt auf `analysis/deepseek` am Vorbereitungs-Commit `b506a180412a2e7c38bd0fce357aa247a716ad4c`. Dessen einziger Eltern-Commit ist die fachliche Baseline `fe68acae4142baca25408124f85e353fb9786674`; ergänzt sind ausschließlich drei Dateien in `agents/deepseek/` (Auftrag und leere Vorlagen). Der Vorbereitungs-Commit ist auch in `main` enthalten. DeepSeek dokumentiert beide Commit-IDs und liest Claude Codes, JCodes und OMPs Berichte erst nach seiner eigenen Erstbewertung. Die gemeinsame Synthese folgt nach allen vier Zweitanalysen.
 
 Lokal vorbereitet: `.worktrees/omp` auf `analysis/omp`, weiterhin exakt am Baseline-Commit und mit sauberem Arbeitsbaum. `.worktrees/jcode` bleibt auf dem eigenen Analyse-Branch. Die Worktrees liegen im ignorierten Verzeichnis `.worktrees/`; die Vorbereitung startet keinen Harness. Die Arbeitsbereiche von Claude Code und JCode wurden bei der Integration nicht verändert.
 
@@ -43,6 +47,7 @@ Der nächste Auftrag ist eine unabhängige Bewertung der Grundlage, einschließl
 | D-09 | Alltagshilfe umfasst Einkaufen, Fragenstellen, Interaktion mit Menschen und Orientierung/Navigation | Umfangserweiterung, 2026-10-20 |
 | D-10 | Letzten Branch des alten Percepta getrennt klonen und als Erfahrungsquelle analysieren | Folgeauftrag, 2026-10-20 |
 | D-11 | Frühere Alltagssituationen als Ausgangspunkt nutzen; wenige vollständige Abläufe gemeinsam mit Betroffenen prüfen, bevor die neue App-Architektur festgelegt wird | Empfehlung nach Altprojekt-Analyse ausdrücklich angenommen, 2026-10-20 |
+| D-12 | Nach Abschluss von OMP zusätzlich DeepSeek als unabhängigen Analyselauf aufnehmen; gleiche fachliche Baseline, eigener Ordner und Worktree, anschließend gemeinsame Synthese | Ausdrücklicher Folgeauftrag des Projektverantwortlichen, 2026-10-20 |
 
 ## Annahmen, keine bestätigten Nutzermerkmale
 
@@ -63,6 +68,7 @@ Der nächste Auftrag ist eine unabhängige Bewertung der Grundlage, einschließl
 | Claude Code | Analyse abgeschlossen, PR #1 gemergt; inhaltliche Integration ausstehend | [Analyse](agents/claude-code/analysis.md) |
 | JCode | Analyse abgeschlossen, PR #2 gemergt; inhaltliche Integration ausstehend | [Analyse](agents/jcode/analysis.md) |
 | OMP | Worktree und Startprompt bereit; Harness noch nicht gestartet | [Auftrag](agents/omp/assignment.md), [Startprompt](agents/codex/start-prompts.md#omp--oh-my-pi) |
+| DeepSeek | Vorbereitet; Start erst nach OMP, noch keine Analyse | [Auftrag](agents/deepseek/assignment.md), [Startprompt](agents/codex/start-prompts.md#deepseek) |
 | Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
 | Vergleichsbaseline | Veröffentlicht, von `origin` abgerufen und remote gelesen | `research-baseline-v0.1` → `fe68acae4142baca25408124f85e353fb9786674` |
 | Astro-Website | Nur spezifiziert | [Brief](docs/website-brief.md) |
@@ -94,7 +100,7 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Vor dem Website-Bau zu entscheiden
 
-1. Ergebnisse der drei unabhängigen Analysen integrieren; Abweichungen und abgelehnte Vorschläge begründen. Die Claude-Code-Vorschläge (u. a. Art. 9 DSGVO, GitHub-Bearbeitungsverlauf und Prompt-Probe) sowie JCodes Vorschläge (u. a. Ablaufstudie mit 3 bis 5 Betroffenen, statische Website ohne Backend und manueller Interviewweg) werden in dieser späteren Synthese bewertet; sie sind noch nicht beschlossen. Reihenfolge und Umfang der nächsten Schritte bleiben bis dahin offen.
+1. Ergebnisse der vier unabhängigen Zweitanalysen integrieren; Abweichungen und abgelehnte Vorschläge begründen. Die Claude-Code-Vorschläge (u. a. Art. 9 DSGVO, GitHub-Bearbeitungsverlauf und Prompt-Probe) sowie JCodes Vorschläge (u. a. Ablaufstudie mit 3 bis 5 Betroffenen, statische Website ohne Backend und manueller Interviewweg) werden in dieser späteren Synthese bewertet; sie sind noch nicht beschlossen. Reihenfolge und Umfang der fachlichen Umsetzungsschritte bleiben bis dahin offen.
 2. Hosting, Domain, Backend und Betrieb des moderierten Einreichungswegs auswählen.
 3. Verantwortliche Moderation, private Aufbewahrung/Löschung, Kontakt- und Rücknahmekanal sowie rechtliche Texte klären.
 4. Open-Source-/Dokumentationslizenz und Bedingungen für freiwillige öffentliche Beiträge bestimmen.
@@ -103,6 +109,6 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Nächste Schritte
 
-Als Nächstes startet der Projektverantwortliche OMP in `.worktrees/omp` mit dem [vorhandenen Startprompt](agents/codex/start-prompts.md#omp--oh-my-pi). OMP verwendet denselben Baseline-Tag und liest keine fremden Zweitanalysen vor Abschluss seiner eigenen Erstbewertung. Anschließend bewertet der Koordinator die Vorschläge aller Berichte in einer gemeinsamen Synthese; erst angenommene Empfehlungen werden in gemeinsame Spezifikationen und Entscheidungen übernommen.
+Als Nächstes startet der Projektverantwortliche OMP in `.worktrees/omp` mit dem [vorhandenen Startprompt](agents/codex/start-prompts.md#omp--oh-my-pi). Nach OMPs Abschluss folgt DeepSeek in `.worktrees/deepseek` mit seinem [Startprompt](agents/codex/start-prompts.md#deepseek). Beide verwenden dieselbe fachliche Baseline und lesen keine fremden Zweitanalysen vor Abschluss ihrer eigenen Erstbewertung. Anschließend bewertet der Koordinator die Vorschläge aller Berichte in einer gemeinsamen Synthese; erst angenommene Empfehlungen werden in gemeinsame Spezifikationen und Entscheidungen übernommen.
 
 Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.
