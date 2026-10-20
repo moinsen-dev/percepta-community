@@ -8,12 +8,12 @@ Gemeinsame Regeln: [AGENTS.md](AGENTS.md). Verbindliche Entscheidungen und aktue
 | --- | --- | --- | --- |
 | Codex | [Auftrag](agents/codex/assignment.md) | [Erstanalyse](agents/codex/analysis.md) | [Protokoll](agents/codex/Change-Log-Agents.md) |
 | Claude Code | [Auftrag](agents/claude-code/assignment.md) | [Abgeschlossen](agents/claude-code/analysis.md) | [Protokoll](agents/claude-code/Change-Log-Agents.md) |
-| JCode | [Auftrag](agents/jcode/assignment.md) | [Ausstehend](agents/jcode/analysis.md) | [Protokoll](agents/jcode/Change-Log-Agents.md) |
+| JCode | [Auftrag](agents/jcode/assignment.md) | [Abgeschlossen](agents/jcode/analysis.md) | [Protokoll](agents/jcode/Change-Log-Agents.md) |
 | OMP / Oh My Pi | [Auftrag](agents/omp/assignment.md) | [Ausstehend](agents/omp/analysis.md) | [Protokoll](agents/omp/Change-Log-Agents.md) |
 
-Die Dateien für JCode und OMP sind weiterhin Vorlagen von Codex. Sie stellen keine ausgeführte Arbeit dieser Harnesses dar. Claude Codes abgeschlossene Analyse liegt mit PR #1 auf `main`.
+Die Dateien für OMP sind weiterhin Vorlagen von Codex. Sie stellen keine ausgeführte Arbeit dieses Harnesses dar. Die abgeschlossenen Analysen von Claude Code und JCode liegen mit PR #1 beziehungsweise PR #2 auf `main`.
 
-Aktueller Laufstatus steht in `state.md`: Claude Codes Analyse ist abgeschlossen und gemergt; die inhaltliche Integration steht aus. Als Nächstes folgt JCode, danach OMP. Für beide sind lokale Worktrees vom selben Baseline-Tag und [kopierbare Startprompts](agents/codex/start-prompts.md) vorbereitet. Jeder Harness bleibt in seinem eigenen Checkout und liest andere Zweitanalysen erst nach seiner eigenen Erstbewertung.
+Aktueller Laufstatus steht in `state.md`: Die Analysen von Claude Code und JCode sind abgeschlossen und gemergt; die inhaltliche Integration steht aus. Als Nächstes folgt OMP. Dafür sind ein lokaler Worktree vom selben Baseline-Tag und ein [kopierbarer Startprompt](agents/codex/start-prompts.md#omp--oh-my-pi) vorbereitet. Jeder Harness bleibt in seinem eigenen Checkout und liest andere Zweitanalysen erst nach seiner eigenen Erstbewertung.
 
 ## Startanleitung für eine unabhängige Analyse
 

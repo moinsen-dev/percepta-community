@@ -80,8 +80,9 @@ Erstelle keinen weiteren Worktree und wechsle nicht auf main.
 Lies AGENTS.md, README.md, state.md und agents/omp/assignment.md
 sowie die dort genannten Dokumente und beide Interview-Prompts.
 Die Statusangaben im eingefrorenen Baseline-Stand können älter sein:
-Claude Code läuft inzwischen separat. Lies dessen neue Ergebnisse
-und die JCode-Analyse nicht vor Abschluss deiner eigenen Erstbewertung.
+Die Analysen von Claude Code und JCode sind inzwischen abgeschlossen
+und auf main gemergt. Lies beide Berichte nicht vor Abschluss deiner
+eigenen Erstbewertung; bleibe für deine Analyse auf der Baseline.
 
 Percepta umfasst Einkaufen, Fragenstellen, Interaktion mit Menschen
 und Orientierung/Navigation. Prüfe alle sechs Themen deines Auftrags:
