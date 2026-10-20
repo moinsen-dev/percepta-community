@@ -6,7 +6,7 @@ Stand: 2026-10-20. Verantwortlicher Harness für die erste Lieferung: Codex.
 
 Die Dokumentationsgrundlage ist unter [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community) öffentlich veröffentlicht. Der Projektverantwortliche hat das Repository angelegt; Codex hat den ersten Commit `ee24e5623502f911807ea1ba257f938ef78362b4` auf `main` gepusht und über den GitHub-Connector bestätigt. `main` ist der Default-Branch. Die Vergleichsversion für weitere Analysen wird durch den unveränderlichen Tag `research-baseline-v0.1` bestimmt.
 
-Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Claude Code läuft laut Projektverantwortlichem; JCode und OMP sind mit eigenen Worktrees und Startprompts vorbereitet. Der Tag enthält die geprüften 25 Dokumentationsdateien; spätere organisatorische Nachträge auf `main` verändern ihn nicht.
+Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Die Claude-Code-Analyse ist abgeschlossen und mit PR #1 gemergt; die inhaltliche Integration steht aus. Als nächster Harness ist JCode vorgesehen, danach OMP; beide sind mit eigenen Worktrees und Startprompts vorbereitet. Der Tag enthält die geprüften 25 Dokumentationsdateien; spätere organisatorische Nachträge auf `main` verändern ihn nicht.
 
 Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
@@ -18,7 +18,9 @@ Keine Website, App, Datenbank, Kontaktregistrierung oder Interview-Einreichungss
 
 **Übergabereferenz:** `research-baseline-v0.1`. Jeder weitere Harness prüft vor seiner Analyse, dass der Tag aus `origin` verfügbar ist, arbeitet in einem eigenen Checkout/Worktree davon und hält den mit `git rev-parse HEAD` ermittelten Commit fest. Ein fehlender oder abweichender Tag ist keine Freigabe, ersatzweise den neuesten Stand von `main` zu verwenden.
 
-**Claude Code läuft** laut Mitteilung des Projektverantwortlichen vom 2026-10-20 in seinem separaten Arbeitsbereich. JCode und OMP können ihre unabhängigen Analysen parallel auf derselben Baseline beginnen. Die [Startanleitung](Change-Log-Agents.md) und die [Startprompts](agents/codex/start-prompts.md) beschreiben den Ablauf. Die bestätigte Entscheidung D-11 ist Bestandteil der gemeinsamen Grundlage.
+**Claude Codes Analyse ist abgeschlossen:** [PR #1](https://github.com/moinsen-dev/percepta-community/pull/1) wurde mit Merge-Commit `e8b2080c99ce90503a1770223d13615920d2ee37` übernommen. Die [Analyse](agents/claude-code/analysis.md) liegt damit auf `main`; ihre inhaltliche Integration und die Bewertung ihrer Vorschläge stehen aus.
+
+**Nächster Harness: JCode, danach OMP.** Beide arbeiten vom selben unveränderten Tag `research-baseline-v0.1` und lesen andere Zweitanalysen erst nach Abschluss ihrer eigenen Erstbewertung. Die [Startanleitung](Change-Log-Agents.md) und die [Startprompts](agents/codex/start-prompts.md) beschreiben den Ablauf. Die bestätigte Entscheidung D-11 ist Bestandteil der gemeinsamen Grundlage.
 
 Lokal vorbereitet: `.worktrees/jcode` auf `analysis/jcode` und `.worktrees/omp` auf `analysis/omp`, beide zunächst exakt am Baseline-Commit. Die Worktrees liegen im ignorierten Verzeichnis `.worktrees/`; die Vorbereitung startet keinen Harness. Der bereits vorhandene Claude-Code-Worktree wurde nicht verändert.
 
@@ -56,7 +58,7 @@ Der nächste Auftrag ist eine unabhängige Bewertung der Grundlage, einschließl
 | --- | --- | --- |
 | Gemeinsame Dokumentation | Geprüft und auf `main` veröffentlicht | [README](README.md), [AGENTS](AGENTS.md) |
 | Codex-Erstanalyse | Abgeschlossen und zur Übergabe bereit | [Analyse](agents/codex/analysis.md), [Validierung](agents/codex/validation.md) |
-| Claude Code | Läuft laut Projektverantwortlichem; noch kein Ergebnis integriert | [Auftrag](agents/claude-code/assignment.md) |
+| Claude Code | Analyse abgeschlossen, PR #1 gemergt; inhaltliche Integration ausstehend | [Analyse](agents/claude-code/analysis.md) |
 | JCode | Worktree und Startprompt bereit; Harness noch nicht gestartet | [Auftrag](agents/jcode/assignment.md), [Startprompt](agents/codex/start-prompts.md#jcode) |
 | OMP | Worktree und Startprompt bereit; Harness noch nicht gestartet | [Auftrag](agents/omp/assignment.md), [Startprompt](agents/codex/start-prompts.md#omp--oh-my-pi) |
 | Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
@@ -76,7 +78,7 @@ Vor Bereitstellung der Kopie scheiterten Connector-Zugriffe mit 404 und CLI-/Git
 
 Die früheren Initialisierungsversuche scheiterten am `.git`-Schreibschutz. Nach der manuellen Einrichtung durch den Projektverantwortlichen funktionieren lokale Statusabfrage und Staging. `origin` zeigt auf `https://github.com/moinsen-dev/percepta-community.git`; der Connector bestätigt das öffentliche Repository und Schreibberechtigungen.
 
-Direkte CLI/API-Abfragen und `git ls-remote` scheiterten in dieser Sitzung weiterhin an Verbindungs-/DNS-Fehlern. `git push -u origin main` war dagegen erfolgreich; der Connector bestätigt den veröffentlichten Commit und Default-Branch `main`. Der Commit-/Push-Weg ist damit tatsächlich nutzbar. Frühere Fehlschläge bleiben im Protokoll erhalten.
+Nach Aktivierung von Full Access am 2026-10-20 funktionieren auch `git fetch origin`, `git ls-remote` und die PR-Abfragen mit `gh`. PR #1 wurde erfolgreich gemergt und mit `git pull --ff-only origin main` lokal übernommen. Frühere Zugriffsfehler bleiben im Protokoll erhalten.
 
 ## Erkenntnisse aus dem Altprojekt
 
@@ -90,7 +92,7 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Vor dem Website-Bau zu entscheiden
 
-1. Ergebnisse der drei unabhängigen Analysen integrieren; Abweichungen und abgelehnte Vorschläge begründen.
+1. Ergebnisse der drei unabhängigen Analysen integrieren; Abweichungen und abgelehnte Vorschläge begründen. Die Claude-Code-Vorschläge (u. a. Art. 9 DSGVO, GitHub-Bearbeitungsverlauf und Prompt-Probe) werden in dieser späteren Synthese bewertet; sie sind noch nicht beschlossen.
 2. Hosting, Domain, Backend und Betrieb des moderierten Einreichungswegs auswählen.
 3. Verantwortliche Moderation, private Aufbewahrung/Löschung, Kontakt- und Rücknahmekanal sowie rechtliche Texte klären.
 4. Open-Source-/Dokumentationslizenz und Bedingungen für freiwillige öffentliche Beiträge bestimmen.
@@ -99,6 +101,6 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Nächste Schritte
 
-Der Projektverantwortliche startet JCode und OMP in den vorbereiteten Worktrees mit den jeweiligen Startprompts. Sie können parallel zum laufenden Claude-Code-Durchlauf arbeiten, lesen aber keine fremden Zweitanalysen vor Abschluss ihrer eigenen Erstbewertung. Gemeinsame Änderungen werden anschließend durch den Koordinator integriert.
+Der Projektverantwortliche startet als Nächstes JCode in `.worktrees/jcode` mit dem [vorhandenen Startprompt](agents/codex/start-prompts.md#jcode), danach OMP in `.worktrees/omp`. Beide verwenden denselben Baseline-Tag und lesen keine fremden Zweitanalysen vor Abschluss ihrer eigenen Erstbewertung. Anschließend bewertet der Koordinator die Vorschläge aller Berichte in einer gemeinsamen Synthese; erst angenommene Empfehlungen werden in gemeinsame Spezifikationen und Entscheidungen übernommen.
 
 Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.
