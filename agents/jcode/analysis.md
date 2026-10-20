@@ -112,8 +112,8 @@ Eine einfache Rechnung, ausdrücklich als Annahme:
 
 - 1,0 m/s Gehgeschwindigkeit und 1 Bild pro Sekunde ergeben 1,0 m zwischen zwei Bildern.
 - 1,4 m/s ergeben 1,4 m.
-- Kommen 500 ms Modell- und Netzwerklatenz sowie 300 ms bis zur hörbaren Ausgabe hinzu, liegt die Information bereits 1,3 bis 2,1 m zurück.
-- Bei p95-Latenz ist der Abstand größer. Ein Durchschnittswert ist für Sicherheitsfragen ungeeignet.
+- 500 ms Modell- und Netzwerklatenz sowie 300 ms bis zur hörbaren Ausgabe ergeben 0,8 s zusätzliche Verzögerung. Bei 1,0 bis 1,4 m/s ist die Information damit mindestens 0,8 bis 1,1 m alt.
+- Beruht die Antwort auf dem bis zu 1 s alten letzten Bild, sind es 1,8 bis 2,5 m. Bei p95-Latenz ist der Abstand größer. Ein Durchschnittswert ist für Sicherheitsfragen ungeeignet.
 
 Daraus folgt für die erste Phase: keine kontinuierliche Bewegungsanweisung. Sinnvoll sind stationäre Fragen („Was ist vor mir?“), eine lokale, nicht-modellbasierte Hinderniswarnung mit klarer Grenze oder ein deutliches „Stopp“ bei erkanntem Hindernis. Ob ein solcher Stopp zuverlässig genug ist, muss gemessen werden, nicht behauptet.
 

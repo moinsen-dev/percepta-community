@@ -203,3 +203,22 @@ Synthese der drei unabhängigen Analysen durch den Koordinator. Danach die Ablau
 - Die sechs geforderten Themen, das Empfehlungsregister und die Prüfabschnitte bleiben unverändert vollständig.
 
 **Nächster Schritt:** Diesen Eintrag committen und den PR aktualisieren. Die Quellenabdeckung ist damit abgeschlossen.
+
+## Lauf 1e: Rechenprüfung der Latenzspanne
+
+**Datum:** 2026-10-20.
+
+**Anlass:** Nachrechnen der in der Analyse genannten Latenz- und Distanzwerte.
+
+**Befund:** Die frühere Formulierung „1,3 bis 2,1 m“ war arithmetisch nicht sauber hergeleitet. Sie vermischte Bildalter und Zusatzlatenz.
+
+**Korrektur:**
+
+- 1 Bild pro Sekunde und 1,0 bis 1,4 m/s ergeben 1,0 bis 1,4 m zwischen zwei Bildern. Das bleibt unverändert.
+- 500 ms Modell-/Netzwerklatenz plus 300 ms bis zur hörbaren Ausgabe ergeben 0,8 s Zusatzverzögerung. Bei 1,0 bis 1,4 m/s sind das 0,8 bis 1,1 m.
+- Beruht die Antwort auf dem bis zu 1 s alten letzten Bild, sind es 1,8 bis 2,5 m.
+- Die Schlussfolgerung bleibt: keine kontinuierliche Bewegungsführung in der ersten Phase, p50 und p95 messen.
+
+**Prüfung:** Die Rechnung wurde manuell nachvollzogen. Es handelt sich um eine Annahme mit beispielhaften Latenzen, nicht um eine Messung.
+
+**Nächster Schritt:** Korrektur committen, PR aktualisieren, Validierung beenden. Die Rechenprüfung war der letzte gefundene inhaltliche Fehler.
