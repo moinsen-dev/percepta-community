@@ -106,3 +106,12 @@ Die Dateien in den drei anderen Harness-Ordnern wurden in diesem Schritt von Cod
 - **Prüfungen:** 25 freigegebene Dokumentationsdateien, 96 interne Dateilinks, gezielter Suchlauf auf bekannte persönliche Angaben und `git diff --cached --check` ohne Befund. `private/` und Umgebungsdateien werden ignoriert.
 - **Verbleibende Grenze:** CLI/API- und DNS-Abfragen weiterhin nicht nutzbar. Die erfolgreiche Repository-Erstellung ist davon unabhängig bestätigt.
 - **Nächster Schritt:** Commit und Veröffentlichung ausführen, Remote-Inhalt prüfen und den unveränderlichen Baseline-Tag bereitstellen.
+
+## 2026-10-20 — Erstveröffentlichung erfolgreich, Übergabestand vorbereitet
+
+- **Harness / Modell:** Codex / GPT-6-Familie wie oben. **Ausgangs-Commit:** `ee24e5623502f911807ea1ba257f938ef78362b4`.
+- **Ergebnis:** Ersten Commit mit 25 Dokumentationsdateien erstellt und per `git push -u origin main` veröffentlicht. Connector bestätigt den Commit, öffentliche Sichtbarkeit und Default-Branch `main`.
+- **Geändert:** `state.md` und eigener Validierungsbericht auf die erfolgreiche Veröffentlichung aktualisiert; dieses Protokoll ergänzt.
+- **Prüfungen:** Veröffentlichter Commit über den Connector gelesen; Remote-Ziel und Default-Branch abgeglichen. Keine private Referenzkopie, Umgebungsdateien oder alte Git-Historie eingecheckt.
+- **Korrektur des Zugriffsstands:** Frühere CLI-/DNS-Fehler verhindern den jetzt erfolgreich ausgeführten Git-Push nicht. Keine erneute Authentifizierung erforderlich.
+- **Nächster Schritt:** Diesen Übergabestand prüfen, committen und als `research-baseline-v0.1` markieren; Commit und Tag veröffentlichen und anschließend remote verifizieren. Den Tag danach unverändert lassen.

@@ -1,6 +1,6 @@
 # Codex — Validierung der Dokumentationslieferung
 
-Stand: 2026-10-20, einschließlich der Erweiterung um Einkaufen, Fragenstellen und menschliche Interaktion sowie der statischen Altprojekt-Analyse. Lokale Dokumentationsprüfungen abgeschlossen. Neues Git-Repository und öffentliches Ziel inzwischen angelegt; erster Commit und Baseline-Veröffentlichung in Vorbereitung.
+Stand: 2026-10-20, einschließlich der Erweiterung um Einkaufen, Fragenstellen und menschliche Interaktion sowie der statischen Altprojekt-Analyse. Lokale Dokumentationsprüfungen abgeschlossen; erster Commit öffentlich veröffentlicht und remote bestätigt.
 
 ## Strukturelle Prüfung
 
@@ -9,9 +9,9 @@ Stand: 2026-10-20, einschließlich der Erweiterung um Einkaufen, Fragenstellen u
 - Whitespace-/Diff-Prüfung: nach Umfangserweiterung 25 Dateien mit `git diff --no-index --check` gegen `/dev/null` sowie auf nachgestellte Leerzeichen und finalen Zeilenumbruch geprüft; keine Befunde. Beim ersten Prüfskript wurde Exitcode 1 irrtümlich als Fehler behandelt; korrigiert, da er hier einen Dateiunterschied anzeigt.
 - Personenbezogene Originalnachrichten: redaktionell geprüft; keine Original-E-Mail oder alten Nutzerinnenbeiträge übernommen. Ergänzender Suchlauf auf bekannte persönliche Angaben aus dem Gespräch ohne Treffer. Keine Anhänge oder Zugangsdaten hinzugefügt.
 - Konsistente Statusangaben: geprüft; Website, Backend und App nur spezifiziert, drei Fremd-Harness-Analysen ausdrücklich nicht gestartet.
-- Nach manueller Einrichtung geprüft: lokaler Branch `main` ohne bisherigen Commit; `origin` zeigt auf das richtige Ziel. Der Connector bestätigt `moinsen-dev/percepta-community` als öffentlich und mit Schreibberechtigungen. CLI-/DNS-Zugriffe bleiben eingeschränkt.
+- Nach manueller Einrichtung geprüft: `origin` zeigt auf das richtige Ziel. Der Connector bestätigt `moinsen-dev/percepta-community` als öffentlich und mit Schreibberechtigungen. Der erste Commit `ee24e5623502f911807ea1ba257f938ef78362b4` wurde erfolgreich gepusht und anschließend remote gelesen. Default-Branch ist `main`.
 - Veröffentlichungsumfang: genau 25 Dokumentationsdateien gestaged; 96 relative Dateilinks und gezielter Suchlauf auf bekannte persönliche Angaben ohne Befund. `git diff --cached --check` erfolgreich. `git check-ignore` bestätigt den Ausschluss von `private/`, `.env` und `.env.local`.
-- Commit, veröffentlichter Dateibaum und Baseline-Tag werden nach der Veröffentlichung separat geprüft.
+- Die Abschlussprüfung vergleicht lokale und veröffentlichte Commit-/Tag-Referenzen sowie den veröffentlichten Dateibaum. Ihr Ergebnis wird nach dem unveränderlichen Baseline-Tag protokolliert; spätere Statusprotokolle auf `main` verschieben diesen Tag nicht.
 
 ## Redaktionelle Interview-Szenarien
 

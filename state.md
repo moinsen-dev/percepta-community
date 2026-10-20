@@ -4,9 +4,9 @@ Stand: 2026-10-20. Verantwortlicher Harness für die erste Lieferung: Codex.
 
 ## Aktuelle Phase
 
-Dokumentationsgrundlage lokal erstellt und geprüft. Der Projektverantwortliche hat das lokale Git-Repository und das öffentliche Repository `moinsen-dev/percepta-community` angelegt. Branch `main` und Remote `origin` sind lokal bestätigt; die öffentliche Sichtbarkeit ist über den GitHub-Connector geprüft. Der erste Commit und die Veröffentlichung der Vergleichsbaseline werden vorbereitet.
+Die Dokumentationsgrundlage ist unter [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community) öffentlich veröffentlicht. Der Projektverantwortliche hat das Repository angelegt; Codex hat den ersten Commit `ee24e5623502f911807ea1ba257f938ef78362b4` auf `main` gepusht und über den GitHub-Connector bestätigt. `main` ist der Default-Branch. Die Vergleichsversion für weitere Analysen wird durch den unveränderlichen Tag `research-baseline-v0.1` bestimmt.
 
-Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist inzwischen statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Die lokale Kopie löst den bisherigen Analyseblocker; daraus folgt kein bestätigter Veröffentlichungszugriff.
+Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
 Keine Website, App, Datenbank, Kontaktregistrierung oder Interview-Einreichungsstelle implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt.
 
@@ -14,9 +14,9 @@ Keine Website, App, Datenbank, Kontaktregistrierung oder Interview-Einreichungss
 
 **Codex' erster Dokumentations- und Analysedurchlauf ist inhaltlich abgeschlossen.** Vorliegen: gemeinsame Arbeitsregeln, Vision und Recherche, Website-/Interview-Spezifikation, DE/EN-Interview-Prompts, Codex-Erstanalyse, Altprojekt-Bestandsaufnahme, Validierung und Protokoll. Die angenommene Vorgehensempfehlung ist als D-11 festgehalten.
 
-**Die versionierte Übergabe wird vorbereitet.** Das neue Git-Repository ist initialisiert und mit dem öffentlichen Ziel verbunden. Ausgangs-Commit und Tag `research-baseline-v0.1` werden vor dem Start der weiteren Harnesses erstellt und geprüft. Die separate alte Referenzkopie bleibt ausgeschlossen.
+**Übergabereferenz:** `research-baseline-v0.1`. Jeder weitere Harness prüft vor seiner Analyse, dass der Tag aus `origin` verfügbar ist, arbeitet in einem eigenen Checkout/Worktree davon und hält den mit `git rev-parse HEAD` ermittelten Commit fest. Ein fehlender oder abweichender Tag ist keine Freigabe, ersatzweise den neuesten Stand von `main` zu verwenden.
 
-Als nächster Harness ist **Claude Code** vorgesehen, mit [eigenem Analyseauftrag](agents/claude-code/assignment.md). Vor dessen Start muss der Koordinator die geprüfte Grundlage einschließlich D-11 versionieren und den unveränderlichen Tag bereitstellen. Die [Startanleitung](Change-Log-Agents.md) beschreibt die anschließende Arbeit im eigenen Checkout/Worktree. JCode und OMP beginnen später vom selben Tag.
+Als nächster Harness ist **Claude Code** vorgesehen, mit [eigenem Analyseauftrag](agents/claude-code/assignment.md). Die [Startanleitung](Change-Log-Agents.md) beschreibt die Arbeit im eigenen Checkout/Worktree. JCode und OMP beginnen später vom selben Tag. Die bestätigte Entscheidung D-11 ist Bestandteil dieser Grundlage.
 
 Der nächste Auftrag ist eine unabhängige Bewertung der Grundlage, einschließlich begründeter Gegenargumente und konkreter Prüfempfehlungen. Ergebnisse und Vorschläge gehören in den eigenen Harness-Ordner; gemeinsame Entscheidungen werden danach durch den Koordinator integriert.
 
@@ -50,13 +50,13 @@ Der nächste Auftrag ist eine unabhängige Bewertung der Grundlage, einschließl
 
 | Paket | Status | Nachweis / nächster Schritt |
 | --- | --- | --- |
-| Gemeinsame Dokumentation | Lokal erstellt und geprüft | [README](README.md), [AGENTS](AGENTS.md) |
-| Codex-Erstanalyse | Inhaltlich abgeschlossen; versionierte Übergabe noch offen | [Analyse](agents/codex/analysis.md), [Validierung](agents/codex/validation.md) |
+| Gemeinsame Dokumentation | Geprüft und auf `main` veröffentlicht | [README](README.md), [AGENTS](AGENTS.md) |
+| Codex-Erstanalyse | Inhaltlich abgeschlossen; Folgeanalysen verwenden die feste Übergabereferenz | [Analyse](agents/codex/analysis.md), [Validierung](agents/codex/validation.md) |
 | Claude Code | Nicht gestartet | [Auftrag](agents/claude-code/assignment.md) |
 | JCode | Nicht gestartet | [Auftrag](agents/jcode/assignment.md) |
 | OMP | Nicht gestartet | [Auftrag](agents/omp/assignment.md) |
-| Repository-Veröffentlichung | Öffentliches Repository angelegt und bestätigt; Dokumente zur Veröffentlichung vorbereitet | `moinsen-dev/percepta-community`, Remote `origin` |
-| Vergleichsbaseline | In Vorbereitung; erster Commit und Tag noch ausstehend | Geplanter unveränderlicher Tag `research-baseline-v0.1` |
+| Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
+| Vergleichsbaseline | Verbindliche Übergabereferenz; vor Start aus `origin` auflösen | Unveränderlicher Tag `research-baseline-v0.1` |
 | Astro-Website | Nur spezifiziert | [Brief](docs/website-brief.md) |
 | Interview-Einreichung | Nur spezifiziert; keine aktiven Endpunkte | [Spezifikation](docs/interview-spec.md) |
 | Modelle und Alltagshilfe | Bisher Schwerpunkt Navigationsrecherche; weitere Bereiche als Forschungsaufträge ergänzt | [Recherche](docs/research.md) |
@@ -72,7 +72,7 @@ Vor Bereitstellung der Kopie scheiterten Connector-Zugriffe mit 404 und CLI-/Git
 
 Die früheren Initialisierungsversuche scheiterten am `.git`-Schreibschutz. Nach der manuellen Einrichtung durch den Projektverantwortlichen funktionieren lokale Statusabfrage und Staging. `origin` zeigt auf `https://github.com/moinsen-dev/percepta-community.git`; der Connector bestätigt das öffentliche Repository und Schreibberechtigungen.
 
-Die CLI erreicht die GitHub-API in dieser Sitzung weiterhin nicht; `git ls-remote` scheitert an DNS. Diese Netzwerkgrenze ist von der inzwischen erfolgreichen Repository-Erstellung zu unterscheiden. Der Veröffentlichungsweg wird am tatsächlichen Push-/Remote-Ergebnis geprüft. Frühere Fehlschläge bleiben im Protokoll erhalten.
+Direkte CLI/API-Abfragen und `git ls-remote` scheiterten in dieser Sitzung weiterhin an Verbindungs-/DNS-Fehlern. `git push -u origin main` war dagegen erfolgreich; der Connector bestätigt den veröffentlichten Commit und Default-Branch `main`. Der Commit-/Push-Weg ist damit tatsächlich nutzbar. Frühere Fehlschläge bleiben im Protokoll erhalten.
 
 ## Erkenntnisse aus dem Altprojekt
 
@@ -95,8 +95,6 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Nächste Schritte
 
-Die geprüften 25 Dokumentationsdateien committen und auf `origin` veröffentlichen. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen. Den tatsächlichen Remote-Stand prüfen, den Tag `research-baseline-v0.1` auf die geprüfte Ausgangsversion setzen und ebenfalls veröffentlichen; nicht später verschieben.
+Nach erfolgreicher Prüfung der Übergabereferenz Claude Code anhand der [Startanleitung](Change-Log-Agents.md) starten; danach JCode und OMP auf derselben Basis. Der Projektverantwortliche startet die tatsächlichen Harnesses. Gemeinsame Änderungen werden anschließend durch den Koordinator integriert.
 
-Anschließend den Status mit den tatsächlichen Commit-/Tag-Nachweisen aktualisieren. Danach die drei Harnesses anhand der [Startanleitung](Change-Log-Agents.md) unabhängig analysieren lassen. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt.
-
-Die abgeschlossene Altprojekt-Bestandsaufnahme in die gemeinsame Ausgangsversion aufnehmen. Den noch nicht erstellten Baseline-Tag erst auf die aktualisierte, geprüfte Grundlage setzen; später hinzukommende Erkenntnisse über gesonderte, versionierte Nachträge einbringen. Die private Referenzkopie bleibt ausgeschlossen.
+Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.
