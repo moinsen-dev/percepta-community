@@ -157,7 +157,7 @@ Synthese der drei unabhängigen Analysen durch den Koordinator. Danach die Ablau
 - Sechs weitere DSGVO-Artikel wurden über die Textspiegelung geprüft. Alle lieferten HTTP 200 und den erwarteten Titel: Art. 5 (Grundsätze), Art. 7 (Einwilligung), Art. 13 (Information), Art. 17 (Löschung), Art. 32 (Sicherheit), Art. 44 (Datenübermittlung).
 - Die Qwen3.5-4B-Angabe wurde präzisiert: Die Modellkarte nennt 4B Parameter für das Sprachmodell und 262.144 Token Kontext. Die Safetensors-Angabe weist 5B Gesamtparameter aus. Die frühere Formulierung „Modell mit 4B Parametern“ war für die Gesamtgröße zu ungenau.
 - Die Empfehlung E-2 wurde präzisiert: Es ist zu prüfen, ob eine Datenschutz-Folgenabschätzung erforderlich ist. Eine pauschale Pflicht wird nicht behauptet.
-- Zum Zeitpunkt dieser Prüfung lag der Branch `analysis/jcode` drei Commits vor der Baseline und keinen dahinter. Mit dem vorliegenden Nachprüfungseintrag sind es vier. Es gibt keine Merge-Commits. Der Diff gegen die Baseline enthält ausschließlich `agents/jcode/analysis.md` und `agents/jcode/Change-Log-Agents.md`.
+- Zum Zeitpunkt dieser Prüfung lag der Branch `analysis/jcode` drei Commits vor der Baseline und keinen dahinter. Es gibt keine Merge-Commits. Der Diff gegen die Baseline enthält ausschließlich `agents/jcode/analysis.md` und `agents/jcode/Change-Log-Agents.md`.
 - Die lokalen Blob-SHAs der beiden Dateien stimmen mit den über die GitHub-API gelesenen Blob-SHAs auf `origin/analysis/jcode` überein. Der veröffentlichte Branch entspricht damit dem lokalen Commit.
 - PR #2 ist offen, gegen `main` gerichtet und als mergeable gemeldet. Die PR-Dateiliste enthält ausschließlich die beiden Dateien im eigenen Ordner.
 - Der Remote-Tag `research-baseline-v0.1` zeigt weiterhin auf `fe68acae4142baca25408124f85e353fb9786674`.
@@ -183,7 +183,7 @@ Synthese der drei unabhängigen Analysen durch den Koordinator. Danach die Ablau
 - 24 Markdown-Dateien auf Anker geprüft. Alle relativen Links mit Fragment zeigen auf eine vorhandene Überschrift. Der Link `analysis.md#quellen-mit-abrufdatum` ist gültig.
 - Code-Fences sind in allen Dateien paarig. Keine Tabs, keine Steuerzeichen und keine unsichtbaren Formatierungszeichen in den beiden geänderten Dateien.
 - Die Formulierung „kostenlose Basisfunktion“ wurde zu „vorhandene Basisfunktion“ präzisiert. Der Preis oder die Gerätevoraussetzung von Apples Magnifier wird damit nicht behauptet.
-- Der Commit-Zähler in Lauf 1b wurde historisch präzisiert: Zum damaligen Prüfzeitpunkt waren es drei Commits vor der Baseline, mit dem vorliegenden Eintrag sind es vier.
-- Die PR-Beschreibung wird auf vier Commits aktualisiert.
+- Der Commit-Zähler in Lauf 1b wurde historisch präzisiert. Feste Zähler werden vermieden, weil jeder Nachprüfungs-Commit sie veralten lässt.
+- Die PR-Beschreibung wird ebenfalls ohne feste Commit-Zähler aktualisiert.
 
 **Nächster Schritt:** Diesen Eintrag committen, den PR aktualisieren und die Validierung beenden. Weitere Prüfungen ohne neue Quellen, Nutzerdaten oder einen realen Build würden nur bereits bestätigte Aussagen wiederholen.
