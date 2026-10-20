@@ -29,3 +29,12 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - `git diff --check research-baseline-v0.1`: keine Befunde.
 - `git diff --name-only research-baseline-v0.1`: ausschließlich `agents/claude-code/analysis.md` und `agents/claude-code/Change-Log-Agents.md`.
 - Keine absoluten lokalen Pfade, Namen aus früheren Interviews oder Kontaktdaten in den eigenen Dateien.
+
+## 2026-10-20 — Korrektur und Nachprüfung
+
+- **Harness / Modell:** wie oben. **Ausgangs-Commit:** weiterhin `fe68aca…`; Korrektur auf `analysis/claude-code` nach Commit `b363f13`.
+- **Korrektur zum vorigen Eintrag:** Die Aussage, externe URLs seien „beim Abruf einzeln geöffnet“ worden, stimmt für C-12 (Microsoft/Seeing AI) nicht — diese URL stammt nur aus einem Suchtreffer. In der Analyse entsprechend gekennzeichnet.
+- **Geändert in `analysis.md`:** F-02-Evidenz präzisiert (P für Kommentar-Verlauf und Löschen; Verlauf von Issue-Beschreibungen O). `moinsen-dev` per `gh api users/moinsen-dev` als Organisation bestätigt. Abwesenheit von Art.-9-Bezügen per `git grep` über `fe68aca` belegt (einziger Treffer: allgemeiner Hinweis auf „Datenschutzkonformität“ in der Codex-Analyse). Astro-Einstellung `redirectToDefaultLocale: false` ergänzt.
+- **Geprüft:** `git diff --name-only fe68aca origin/main` — `main` ändert gemeinsame Dateien und Codex-Dateien, nicht `agents/claude-code/`; PR #1 laut GitHub `MERGEABLE` / `CLEAN`. Kein Rebase auf `main`, Ausgangsstand bleibt die Baseline. Links, Anker, `git diff --check` und Dateiliste nach der Korrektur erneut ausgeführt (Ergebnis unten).
+
+- **Ergebnis der Nachprüfung:** 24 Markdown-Dateien, 146 relative Verweise inkl. eigener Anker ohne Befund; `git diff --check research-baseline-v0.1` ohne Befund; Diff weiterhin nur `agents/claude-code/`.
