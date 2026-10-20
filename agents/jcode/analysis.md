@@ -520,6 +520,7 @@ Alle Quellen wurden am 2026-10-20 abgerufen. HTTP-Status der geprüften URLs: 20
 - Primärquellen gelesen, soweit angegeben. Widersprüche und Grenzen im Text markiert.
 - Keine fremden Zweitanalysen gelesen.
 - `git diff --check` und Linkprüfung nach dem Schreiben ausgeführt, Ergebnis im [Protokoll](Change-Log-Agents.md).
+- Zusätzliche Nachprüfung nach dem ersten Commit: 43 Stichproben zu Zahlen, Daten und Wortlauten nach HTML-Normalisierung bestätigt. 24 URLs erneut geprüft, davon 23 mit HTTP 200 und EUR-Lex mit HTTP 202. Die Mobilio-Einschränkung wurde auf „eine Straßenüberquerung wird nicht berichtet“ präzisiert. Details im [Protokoll](Change-Log-Agents.md).
 
 **Nicht ausgeführt**
 
