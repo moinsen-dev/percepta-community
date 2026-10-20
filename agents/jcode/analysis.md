@@ -20,7 +20,7 @@ Die Statusangaben der eingefrorenen Baseline können älter sein als `main`. Die
 2. **Die vier Bereiche sind gleichberechtigt erklärt, aber nicht gleich belegt.** Für Navigation liegen inzwischen belastbare Studien vor. Für Einkaufen, Fragen an die App und Unterstützung menschlicher Interaktion fehlen in der Baseline aufgabenspezifische Nachweise. Das ist kein Argument gegen die Bereiche, sondern gegen eine vorschnelle Gleichbehandlung bei der Priorisierung.
 3. **Navigation ist machbar, aber nur in engen Grenzen belegt.** Die Mobilio-Studie in *Nature Biomedical Engineering* (2026) zeigt mit 14 Teilnehmenden Verbesserungen auf einem community path und einem Hindernisparcours. Sie belegt keine sichere Straßenüberquerung. Im Hindernisparcours war die Bewältigungszeit mit Mobilio sogar höher. Segmentierungsfehler bei Gehweg/Straße, beschädigten Zebrastreifen und Schnee sind dokumentiert.
 4. **Verkehrs- und Bewegungsanweisungen dürfen nicht aus einem plausiblen Modelltext abgeleitet werden.** Die dokumentierte Streaming-Rate von Gemini Robotics ER 2 liegt bei höchstens einem JPEG pro Sekunde. Bei 1,0 bis 1,4 m/s Gehgeschwindigkeit liegen zwischen zwei Bildern bereits 1,0 bis 1,4 m. Modelllatenz, Netzwerk und Sprachausgabe kommen hinzu. Eine kontinuierliche Gehführung ist damit in dieser Form nicht verantwortbar.
-5. **Die Baseline unterschätzt die bereits vorhandene On-Device-Konkurrenz.** Apples Magnifier Detection Mode erkennt Türen, Personen und Möbel, meldet Annäherung über Ton, Sprache oder Haptik und schätzt Sitzplatzbelegung. Eine eigene Funktion, die nur „Tür erkannt“ oder „Stuhl frei“ ausgibt, muss sich an dieser kostenlosen Basisfunktion messen lassen.
+5. **Die Baseline unterschätzt die bereits vorhandene On-Device-Konkurrenz.** Apples Magnifier Detection Mode erkennt Türen, Personen und Möbel, meldet Annäherung über Ton, Sprache oder Haptik und schätzt Sitzplatzbelegung. Eine eigene Funktion, die nur „Tür erkannt“ oder „Stuhl frei“ ausgibt, muss sich an dieser vorhandenen Basisfunktion messen lassen.
 
 **Mittlere Auswirkung**
 
@@ -446,7 +446,7 @@ Die folgenden Empfehlungen sind Vorschläge, keine angenommenen Entscheidungen. 
 
 **E-7: Bestehende Hilfsmittel als Vergleichsbasis**
 
-- Problem: Eine neue Funktion kann schlechter sein als eine bereits vorhandene, kostenlose Lösung.
+- Problem: Eine neue Funktion kann schlechter sein als eine bereits vorhandene Lösung.
 - Empfehlung: Apple Detection Mode, Be My Eyes, Seeing AI, Google Maps und menschliche Hilfe in die Tests aufnehmen.
 - Alternative: Nur die eigene Lösung testen. Nachteil: kein Nachweis eines Zusatznutzens.
 - Evidenz/Annahme: Apple Detection Mode ist dokumentiert. Die Baseline nennt bestehende Hilfen, vergleicht sie aber nicht systematisch.
