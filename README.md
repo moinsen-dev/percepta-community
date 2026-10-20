@@ -6,9 +6,9 @@
 
 ## Aktueller Stand / Current status
 
-Dies ist die Dokumentations- und Analysephase. Es gibt noch keine Website, Alltagshilfe-App oder aktive Einreichungsstelle. Es wurden keine unabhängigen Analysen durch Claude Code, JCode oder OMP ausgeführt. Der genaue Arbeits- und Veröffentlichungsstand steht in [state.md](state.md).
+Dies ist die Dokumentations- und Analysephase. Es gibt noch keine Website, Alltagshilfe-App oder aktive Einreichungsstelle. Claude Code läuft laut Projektverantwortlichem; JCode und OMP sind zum Start vorbereitet. Noch kein Ergebnis dieser unabhängigen Analysen ist integriert. Der genaue Arbeits- und Veröffentlichungsstand steht in [state.md](state.md).
 
-This repository currently contains project documentation and analysis assignments. There is no deployed website, everyday-assistance app or active submission service. Claude Code, JCode and OMP reviews are pending. Please do not post personal stories or contact details while the participation process is being prepared.
+This repository currently contains project documentation and analysis assignments. There is no deployed website, everyday-assistance app or active submission service. Claude Code is running according to the project owner; JCode and OMP are prepared to start. None of these independent reviews has been integrated yet. Please do not post personal stories or contact details while the participation process is being prepared.
 
 Öffentliches Repository: [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community). Percepta ist ein Neustart; [das frühere Projekt](https://github.com/moinsen-dev/percepta) wird nicht als Codebasis übernommen.
 

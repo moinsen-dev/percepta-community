@@ -6,19 +6,21 @@ Stand: 2026-10-20. Verantwortlicher Harness für die erste Lieferung: Codex.
 
 Die Dokumentationsgrundlage ist unter [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community) öffentlich veröffentlicht. Der Projektverantwortliche hat das Repository angelegt; Codex hat den ersten Commit `ee24e5623502f911807ea1ba257f938ef78362b4` auf `main` gepusht und über den GitHub-Connector bestätigt. `main` ist der Default-Branch. Die Vergleichsversion für weitere Analysen wird durch den unveränderlichen Tag `research-baseline-v0.1` bestimmt.
 
-Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Damit ist die Übergabe an Claude Code bereit. Der Tag enthält die geprüften 25 Dokumentationsdateien; die späteren Bestätigungsprotokolle auf `main` verändern ihn nicht.
+Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Claude Code läuft laut Projektverantwortlichem; JCode und OMP sind mit eigenen Worktrees und Startprompts vorbereitet. Der Tag enthält die geprüften 25 Dokumentationsdateien; spätere organisatorische Nachträge auf `main` verändern ihn nicht.
 
 Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
 Keine Website, App, Datenbank, Kontaktregistrierung oder Interview-Einreichungsstelle implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt.
 
-## Übergabestatus: Codex → Claude Code
+## Übergabestatus: unabhängige Analysen
 
 **Codex' erster Dokumentations- und Analysedurchlauf ist inhaltlich abgeschlossen.** Vorliegen: gemeinsame Arbeitsregeln, Vision und Recherche, Website-/Interview-Spezifikation, DE/EN-Interview-Prompts, Codex-Erstanalyse, Altprojekt-Bestandsaufnahme, Validierung und Protokoll. Die angenommene Vorgehensempfehlung ist als D-11 festgehalten.
 
 **Übergabereferenz:** `research-baseline-v0.1`. Jeder weitere Harness prüft vor seiner Analyse, dass der Tag aus `origin` verfügbar ist, arbeitet in einem eigenen Checkout/Worktree davon und hält den mit `git rev-parse HEAD` ermittelten Commit fest. Ein fehlender oder abweichender Tag ist keine Freigabe, ersatzweise den neuesten Stand von `main` zu verwenden.
 
-Als nächster Harness ist **Claude Code** vorgesehen, mit [eigenem Analyseauftrag](agents/claude-code/assignment.md). Die [Startanleitung](Change-Log-Agents.md) beschreibt die Arbeit im eigenen Checkout/Worktree. JCode und OMP beginnen später vom selben Tag. Die bestätigte Entscheidung D-11 ist Bestandteil dieser Grundlage.
+**Claude Code läuft** laut Mitteilung des Projektverantwortlichen vom 2026-10-20 in seinem separaten Arbeitsbereich. JCode und OMP können ihre unabhängigen Analysen parallel auf derselben Baseline beginnen. Die [Startanleitung](Change-Log-Agents.md) und die [Startprompts](agents/codex/start-prompts.md) beschreiben den Ablauf. Die bestätigte Entscheidung D-11 ist Bestandteil der gemeinsamen Grundlage.
+
+Lokal vorbereitet: `.worktrees/jcode` auf `analysis/jcode` und `.worktrees/omp` auf `analysis/omp`, beide zunächst exakt am Baseline-Commit. Die Worktrees liegen im ignorierten Verzeichnis `.worktrees/`; die Vorbereitung startet keinen Harness. Der bereits vorhandene Claude-Code-Worktree wurde nicht verändert.
 
 Der nächste Auftrag ist eine unabhängige Bewertung der Grundlage, einschließlich begründeter Gegenargumente und konkreter Prüfempfehlungen. Ergebnisse und Vorschläge gehören in den eigenen Harness-Ordner; gemeinsame Entscheidungen werden danach durch den Koordinator integriert.
 
@@ -54,9 +56,9 @@ Der nächste Auftrag ist eine unabhängige Bewertung der Grundlage, einschließl
 | --- | --- | --- |
 | Gemeinsame Dokumentation | Geprüft und auf `main` veröffentlicht | [README](README.md), [AGENTS](AGENTS.md) |
 | Codex-Erstanalyse | Abgeschlossen und zur Übergabe bereit | [Analyse](agents/codex/analysis.md), [Validierung](agents/codex/validation.md) |
-| Claude Code | Nicht gestartet | [Auftrag](agents/claude-code/assignment.md) |
-| JCode | Nicht gestartet | [Auftrag](agents/jcode/assignment.md) |
-| OMP | Nicht gestartet | [Auftrag](agents/omp/assignment.md) |
+| Claude Code | Läuft laut Projektverantwortlichem; noch kein Ergebnis integriert | [Auftrag](agents/claude-code/assignment.md) |
+| JCode | Worktree und Startprompt bereit; Harness noch nicht gestartet | [Auftrag](agents/jcode/assignment.md), [Startprompt](agents/codex/start-prompts.md#jcode) |
+| OMP | Worktree und Startprompt bereit; Harness noch nicht gestartet | [Auftrag](agents/omp/assignment.md), [Startprompt](agents/codex/start-prompts.md#omp--oh-my-pi) |
 | Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
 | Vergleichsbaseline | Veröffentlicht, von `origin` abgerufen und remote gelesen | `research-baseline-v0.1` → `fe68acae4142baca25408124f85e353fb9786674` |
 | Astro-Website | Nur spezifiziert | [Brief](docs/website-brief.md) |
@@ -97,6 +99,6 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Nächste Schritte
 
-Nach erfolgreicher Prüfung der Übergabereferenz Claude Code anhand der [Startanleitung](Change-Log-Agents.md) starten; danach JCode und OMP auf derselben Basis. Der Projektverantwortliche startet die tatsächlichen Harnesses. Gemeinsame Änderungen werden anschließend durch den Koordinator integriert.
+Der Projektverantwortliche startet JCode und OMP in den vorbereiteten Worktrees mit den jeweiligen Startprompts. Sie können parallel zum laufenden Claude-Code-Durchlauf arbeiten, lesen aber keine fremden Zweitanalysen vor Abschluss ihrer eigenen Erstbewertung. Gemeinsame Änderungen werden anschließend durch den Koordinator integriert.
 
 Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.

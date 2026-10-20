@@ -13,6 +13,8 @@ Gemeinsame Regeln: [AGENTS.md](AGENTS.md). Verbindliche Entscheidungen und aktue
 
 Die vorbereiteten Dateien für die drei weiteren Harnesses sind Vorlagen von Codex. Sie stellen keine ausgeführte Arbeit dieser Harnesses dar.
 
+Aktueller Laufstatus steht in `state.md`: Claude Code läuft laut Projektverantwortlichem. Für JCode und OMP sind lokale Worktrees und [kopierbare Startprompts](agents/codex/start-prompts.md) vorbereitet. Die unabhängigen Analysen können parallel stattfinden; jeder Harness bleibt in seinem eigenen Checkout und liest andere Zweitanalysen erst nach seiner eigenen Erstbewertung.
+
 ## Startanleitung für eine unabhängige Analyse
 
 Voraussetzung: Repository und Tag sind laut `state.md` verfügbar. Alle drei Harnesses verwenden den Tag `research-baseline-v0.1`, nicht den jeweils neuesten Stand von `main`.

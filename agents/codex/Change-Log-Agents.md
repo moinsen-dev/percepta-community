@@ -125,3 +125,14 @@ Die Dateien in den drei anderen Harness-Ordnern wurden in diesem Schritt von Cod
 - **Technischer Ablauf:** Lokaler Versuch eines annotierten Tags scheiterte am Schreiben einer temporären Git-Datei. Stattdessen einen direkt auf den Commit zeigenden Tag per `git push --atomic origin main HEAD:refs/tags/research-baseline-v0.1` veröffentlicht und mit `git pull --ff-only --tags origin main` abgerufen. Kein bestehender Tag verschoben.
 - **Nicht ausgeführt:** Weitere Harnesses, Nutzerstudie, Website-/App-Implementierung oder Modelltests.
 - **Nächster Schritt:** Claude Code im eigenen Checkout/Worktree vom Tag mit `agents/claude-code/assignment.md` starten. JCode und OMP verwenden denselben Commit; der Projektverantwortliche startet die tatsächlichen Harnesses.
+
+## 2026-10-20 — JCode und OMP parallel zu Claude Code vorbereitet
+
+- **Harness / Modell:** Codex / GPT-6-Familie wie oben. **Ausgangs-Commit auf main:** `bbd874d6614e2e903290df0263c736101860d9e2`.
+- **Auftrag / Quelle:** JCode und OMP vorbereiten; Claude Code läuft laut Projektverantwortlichem bereits.
+- **Geändert:** `state.md`, `README.md`, gemeinsame Protokollübersicht, neuer eigener Leitfaden `agents/codex/start-prompts.md` und dieses Protokoll. Keine Analyseergebnisse anderer Harnesses geschrieben.
+- **Vorbereitet:** Worktrees `.worktrees/jcode` mit Branch `analysis/jcode` und `.worktrees/omp` mit Branch `analysis/omp`, jeweils vom Tag `research-baseline-v0.1` am Commit `fe68acae4142baca25408124f85e353fb9786674`.
+- **Unverändert:** Baseline-Tag, vorhandene Folgeaufträge und Claude-Code-Arbeitsbereich. Die neuen Startprompts sind organisatorische Nachträge auf `main` und werden nicht in die Baseline übernommen.
+- **Prüfungen:** Vorhandene Worktrees/Branches vor Anlage geprüft; neue Arbeitsbereiche auf richtigen Branch, Baseline und sauberen Zustand geprüft. Dokumentlinks, Prompt-Zuordnung und Whitespace geprüft; Worktree-Verzeichnis wird ignoriert.
+- **Nicht ausgeführt:** Start von JCode oder OMP, Lesen laufender Claude-Code-Ergebnisse, Modellaufrufe oder neue Produktimplementierung.
+- **Nächster Schritt:** Projektverantwortlicher startet beide tatsächlichen Harnesses mit ihren Prompts in den vorbereiteten Arbeitsbereichen. Danach Ergebnisse und PRs durch den Koordinator vergleichen und integrieren.
