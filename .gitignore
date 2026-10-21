@@ -12,3 +12,4 @@ private/
 .dev.vars.*
 test-results/
 playwright-report/
+worker/configuration.d.ts

@@ -8,7 +8,7 @@ const lang = Astro.params.lang as Lang;
 const page = Astro.params.page as ArticleKey;
 const t = articles[lang][page];
 ---
-<Layout lang={lang} page={page} title={labels[lang][page]} description={t.intro}>
+<Layout lang={lang} page={page} title={t.title.replace(/\.$/, '')} description={t.intro}>
   <article class="article wrap">
     <header class="article-header"><p class="eyebrow">{labels[lang][page]}</p><h1>{t.title}</h1><p class="lede">{t.intro}</p></header>
     <div class="prose">

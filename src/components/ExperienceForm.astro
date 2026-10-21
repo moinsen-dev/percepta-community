@@ -1,0 +1,170 @@
+---
+import { operator, pathFor, type Lang } from '../content/site';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = (de: string, en: string) => lang === 'de' ? de : en;
+---
+<section id="report" aria-labelledby="report-title" data-experience data-lang={lang} hidden>
+  <h2 id="report-title" tabindex="-1">{t('Deine Erfahrung aufschreiben', 'Write about your experience')}</h2>
+  <p>{t('Eine Situation reicht. Schreibe selbst oder füge die geprüfte Zusammenfassung aus deinem KI-Chat ein. Ein Konto brauchst du nicht.', 'One situation is enough. Write it yourself or paste the summary you have checked in your AI chat. You do not need an account.')}</p>
+  <p id="intake-message" class="notice" role="status">{t('Wir prüfen, ob der private Empfang geöffnet ist. Bis dahin bleibt dein Text in diesem Browserfenster.', 'Checking whether private submissions are open. Until then, your text stays in this browser window.')}</p>
+  <p id="report-help">{t('Bitte keine Namen, Kontaktdaten, Diagnosen, genauen Orte oder Angaben über andere Personen. Nichts wird während des Schreibens übertragen oder von Percepta auf deinem Gerät gespeichert. Beim Verlassen oder Neuladen der Seite kann der Entwurf verloren gehen.', 'Please omit names, contact details, diagnoses, exact locations and information about other people. Nothing is transmitted while you type or saved on your device by Percepta. Leaving or reloading the page may lose your draft.')}</p>
+  <div id="experience-edit">
+    <label for="experience-category">{t('Worum geht es?', 'What is it about?')}</label>
+    <select id="experience-category">
+      <option value="other">{t('Anderes oder noch offen', 'Something else or not sure yet')}</option>
+      <option value="shopping">{t('Einkaufen', 'Shopping')}</option>
+      <option value="questions">{t('Fragen und Informationen', 'Questions and information')}</option>
+      <option value="interaction">{t('Mit Menschen sprechen', 'Interacting with people')}</option>
+      <option value="orientation">{t('Sich orientieren', 'Finding your way')}</option>
+    </select>
+    <label for="experience-report">{t('Deine Situation oder die KI-Zusammenfassung', 'Your situation or AI summary')}</label>
+    <p id="experience-hint">{t('Was wolltest du tun? Was hat schon geholfen? Was war schwierig, und welche Hilfe fehlt dir? Du darfst Fragen auslassen. Höchstens 6.000 Zeichen.', 'What did you want to do? What already helped? What was difficult, and what support is missing? You may skip questions. Up to 6,000 characters.')}</p>
+    <textarea id="experience-report" rows="9" maxlength="6000" aria-describedby="experience-hint report-help experience-feedback" autocomplete="off" spellcheck="false"></textarea>
+    <button type="button" class="button" id="experience-preview">{t('Text prüfen', 'Review your text')}</button>
+  </div>
+  <div id="experience-review" hidden>
+    <h3 id="review-title" tabindex="-1">{t('Deine Vorschau. Noch nichts gesendet.', 'Your preview. Nothing sent yet.')}</h3>
+    <p id="review-category"></p><div class="template"><pre id="review-text"></pre></div>
+    <div class="actions">
+      <button type="button" class="button secondary" id="experience-edit-button">{t('Text ändern', 'Edit text')}</button>
+      <button type="button" class="button secondary" id="experience-download">{t('Entwurf als Textdatei speichern', 'Save draft as a text file')}</button>
+    </div>
+    <div id="experience-send-controls" hidden>
+      <p>{t(`Empfänger: ${operator.name}, Percepta. Wir verwenden den Text, um Anforderungen an Alltagshilfen zu verstehen. Der Bericht wird privat bei Cloudflare für 30 Tage gespeichert. Der tägliche Löschlauf kann bis zu einen weiteren Tag benötigen. Sicherungskopien können bis zu 30 weitere Tage bestehen.`, `Recipient: ${operator.name}, Percepta. We use the text to understand requirements for everyday assistance. The report is stored privately at Cloudflare for 30 days. Daily deletion may take up to one additional day. Backup copies may remain for up to 30 more days.`)}</p>
+      <p>{t('Du bekommst einen Löschcode. Damit kannst du deinen Bericht selbst zurückziehen. Niemand veröffentlicht deinen Text automatisch auf GitHub oder der Website.', 'You receive a deletion code to withdraw your report yourself. Nobody automatically publishes your text on GitHub or the website.')}</p>
+      <p><a href={pathFor(lang, 'privacy')}>{t('Datenschutz und deine Rechte lesen', 'Read about privacy and your rights')}</a></p>
+      <label class="check-label"><input type="checkbox" id="experience-consent" /> <span>{t('Ich willige ausdrücklich ein, dass Percepta diesen Bericht für die beschriebene Bedarfserhebung verarbeitet, auch soweit er Angaben zu meiner Sehbehinderung enthält. Ich kann diese Einwilligung jederzeit widerrufen. Dies ist keine Zustimmung zur Veröffentlichung.', 'I explicitly consent to Percepta processing this report for the requirements research described above, including information about my visual impairment where present. I can withdraw this consent at any time. This is not consent to publication.')}</span></label>
+      <button type="button" class="button" id="experience-send">{t('Diesen Text privat einreichen', 'Submit this text privately')}</button>
+    </div>
+  </div>
+  <div id="experience-receipt" hidden>
+    <h3 id="receipt-title" tabindex="-1">{t('Dein Bericht ist bei Percepta eingegangen.', 'Percepta has received your report.')}</h3>
+    <p id="receipt-reference"></p>
+    <p>{t('Er wurde nicht veröffentlicht. Wir prüfen Berichte auf gemeinsame Bedürfnisse. Es werden keine Kontaktdaten erhoben; du erhältst deshalb keine persönliche Rückmeldung.', 'It has not been published. We review reports for shared needs. We do not collect contact details, so you will not receive a personal reply.')}</p>
+    <label for="receipt-code">{t('Dein vertraulicher Löschcode', 'Your private deletion code')}</label>
+    <input id="receipt-code" readonly autocomplete="off" />
+    <p>{t('Bewahre den Code auf. Wer ihn kennt, kann den Bericht löschen. Ohne Code oder Kontaktdaten können wir deinen Bericht später möglicherweise nicht zuordnen.', 'Keep the code safe. Anyone with it can delete the report. Without the code or contact details, we may not be able to identify your report later.')}</p>
+    <button type="button" class="button secondary" id="receipt-download">{t('Empfang und Löschcode speichern', 'Save receipt and deletion code')}</button>
+  </div>
+  <p id="experience-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<section id="withdraw" aria-labelledby="withdraw-title" data-withdraw hidden>
+  <h2 id="withdraw-title">{t('Einen eingereichten Bericht zurückziehen', 'Withdraw a submitted report')}</h2>
+  <p>{t('Gib deinen Löschcode ein. Die Löschung betrifft die aktive Datenbank; Sicherungskopien können bis zu 30 Tage bestehen. Die Löschung kannst du hier nicht rückgängig machen.', 'Enter your deletion code. Deletion applies to the active database; backup copies may remain for up to 30 days. You cannot undo this deletion here.')}</p>
+  <label for="withdraw-code">{t('Löschcode', 'Deletion code')}</label>
+  <input id="withdraw-code" autocomplete="off" spellcheck="false" maxlength="64" />
+  <button type="button" class="button secondary" id="withdraw-button">{t('Bericht endgültig zurückziehen', 'Permanently withdraw report')}</button>
+  <p id="withdraw-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-experience]');
+  if (root) {
+    const de = root.dataset.lang === 'de';
+    const t = (a: string, b: string) => de ? a : b;
+    const el = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+    const report = el<HTMLTextAreaElement>('experience-report');
+    const category = el<HTMLSelectElement>('experience-category');
+    const consent = el<HTMLInputElement>('experience-consent');
+    const feedback = el('experience-feedback');
+    let token = '';
+    let consentVersion = '';
+    let receipt = '';
+    let approvedReport = '';
+    let approvedCategory = '';
+    window.addEventListener('beforeunload', event => {
+      if (report.value.trim() && el('experience-receipt').hidden) {
+        event.preventDefault();
+      }
+    });
+    const closed = t('Der private Empfang ist noch geschlossen. Du kannst deinen Text prüfen und als Datei speichern. Percepta erhält ihn dabei nicht.', 'Private submissions are still closed. You can review your text and save it as a file. Percepta does not receive it.');
+    function download(text: string, filename: string) {
+      const url = URL.createObjectURL(new Blob([text + '\n'], { type: 'text/plain;charset=utf-8' }));
+      const link = document.createElement('a');
+      link.href = url; link.download = filename; link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+    async function post(path: string, data: object) {
+      return fetch(path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), signal: AbortSignal.timeout(20000) });
+    }
+    el('experience-preview').addEventListener('click', () => {
+      if (!report.value.trim()) {
+        feedback.textContent = t('Bitte beschreibe eine Situation oder füge eine Zusammenfassung ein.', 'Please describe a situation or paste a summary.');
+        report.setAttribute('aria-invalid', 'true'); report.focus(); return;
+      }
+      report.removeAttribute('aria-invalid'); feedback.textContent = '';
+      approvedReport = report.value.trim(); approvedCategory = category.value;
+      el('review-text').textContent = approvedReport;
+      el('review-category').textContent = category.selectedOptions[0].textContent;
+      consent.checked = false;
+      el('experience-edit').hidden = true; el('experience-review').hidden = false;
+      el('review-title').focus();
+    });
+    el('experience-edit-button').addEventListener('click', () => {
+      el('experience-review').hidden = true; el('experience-edit').hidden = false;
+      consent.checked = false; feedback.textContent = ''; report.focus();
+    });
+    el('experience-download').addEventListener('click', () => download(approvedReport, 'percepta-draft.txt'));
+    el('receipt-download').addEventListener('click', () => download(receipt, 'percepta-receipt.txt'));
+    el('experience-send').addEventListener('click', async () => {
+      if (!consent.checked) {
+        feedback.textContent = t('Ohne deine ausdrückliche Zustimmung wird nichts gesendet. Du kannst den Entwurf stattdessen speichern.', 'Nothing will be sent without your explicit consent. You can save the draft instead.');
+        consent.focus(); return;
+      }
+      if (!token) token = Array.from(crypto.getRandomValues(new Uint8Array(32)), b => b.toString(16).padStart(2, '0')).join('');
+      el<HTMLInputElement>('withdraw-code').value = token;
+      const send = el<HTMLButtonElement>('experience-send');
+      const edit = el<HTMLButtonElement>('experience-edit-button');
+      send.disabled = true; edit.disabled = true;
+      feedback.textContent = t('Dein Bericht wird gesendet.', 'Sending your report.');
+      try {
+        const response = await post('/api/experiences', { lang: de ? 'de' : 'en', category: approvedCategory, report: approvedReport, consent: true, consentVersion, token });
+        const result = await response.json();
+        if (!response.ok || result.received !== true) throw new Error('not_confirmed');
+        const expiry = new Date(result.expiresAt).toLocaleDateString(de ? 'de-DE' : 'en-GB');
+        const reference = t(`Empfangsnummer: ${result.reference}. Aufbewahrung bis ${expiry}, danach täglicher Löschlauf.`, `Reference: ${result.reference}. Retained until ${expiry}, followed by daily cleanup.`);
+        el('receipt-reference').textContent = reference;
+        el<HTMLInputElement>('receipt-code').value = token;
+        el<HTMLInputElement>('withdraw-code').value = token;
+        receipt = `${reference}\n${t('Löschcode', 'Deletion code')}: ${token}\nhttps://percepta.moinsen.dev/${de ? 'de' : 'en'}/participate/#withdraw`;
+        feedback.textContent = ''; el('experience-review').hidden = true; el('experience-receipt').hidden = false;
+        el('receipt-title').focus();
+      } catch {
+        feedback.textContent = t('Der Empfang wurde nicht bestätigt; dein Bericht könnte trotzdem angekommen sein. Dein Text ist noch da. Versuche denselben Text erneut zu senden; dabei wird kein zweiter Bericht angelegt. Zum Ändern ziehe ihn zuerst im Abschnitt „Einen eingereichten Bericht zurückziehen“ zurück. Der Löschcode ist dort bereits eingetragen. Du kannst den Entwurf auch speichern.', 'Receipt was not confirmed; your report may still have arrived. Your text is still here. Retry the same text; this does not create a second report. To edit it, first withdraw it in “Withdraw a submitted report”. Its deletion code is already filled in there. You can also save the draft.');
+      } finally { send.disabled = false; }
+    });
+    el('withdraw-button').addEventListener('click', async () => {
+      const code = el<HTMLInputElement>('withdraw-code');
+      const status = el('withdraw-feedback');
+      if (!/^[a-f0-9]{64}$/.test(code.value.trim())) { status.textContent = t('Bitte gib den vollständigen Löschcode aus deiner Empfangsbestätigung ein.', 'Please enter the complete deletion code from your receipt.'); code.focus(); return; }
+      const button = el<HTMLButtonElement>('withdraw-button'); button.disabled = true;
+      try {
+        const response = await post('/api/experiences/delete', { token: code.value.trim() });
+        const result = await response.json();
+        if (!response.ok || result.deleted !== true) throw new Error('not_confirmed');
+        status.textContent = t('Zu diesem Code liegt kein Bericht mehr in der aktiven Datenbank. Sicherungskopien können noch bis zu 30 Tage bestehen.', 'No report for this code remains in the active database. Backup copies may remain for up to 30 days.');
+        if (code.value.trim() === token) {
+          token = ''; consent.checked = false;
+          el<HTMLButtonElement>('experience-edit-button').disabled = false;
+          feedback.textContent = '';
+        }
+        code.value = '';
+      } catch { status.textContent = t('Die Löschung wurde nicht bestätigt. Bitte versuche es erneut oder nutze den Datenschutzkontakt.', 'Deletion was not confirmed. Please retry or use the privacy contact.'); }
+      finally { button.disabled = false; }
+    });
+    root.hidden = false;
+    document.querySelector<HTMLElement>('[data-withdraw]')!.hidden = false;
+    void (async () => {
+      try {
+        const response = await fetch('/api/intake-status', { signal: AbortSignal.timeout(10000) });
+        const status = await response.json();
+        if (!response.ok || status.open !== true || status.consentVersion !== 'private-pilot-2026-10-21' || status.retentionDays !== 30) {
+          el('intake-message').textContent = closed; return;
+        }
+        consentVersion = status.consentVersion;
+        el('intake-message').textContent = t('Der private Empfang ist geöffnet. Erst nach Vorschau und ausdrücklicher Zustimmung kannst du deinen Bericht absenden.', 'Private submissions are open. You can submit your report after reviewing it and giving explicit consent.');
+        el('experience-send-controls').hidden = false;
+      } catch { el('intake-message').textContent = t('Der Empfang ist gerade nicht erreichbar. Du kannst deinen Entwurf trotzdem prüfen und speichern.', 'Submissions are currently unavailable. You can still review and save your draft.'); }
+    })();
+  }
+</script>

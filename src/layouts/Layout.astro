@@ -1,6 +1,7 @@
 ---
 import { labels, pathFor, repo, type Lang } from '../content/site';
 import '../styles/global.css';
+import Seo from '../components/Seo.astro';
 interface Props { lang: Lang; title: string; description: string; page?: string; }
 const { lang, title, description, page = '' } = Astro.props;
 const t = labels[lang];
@@ -12,14 +13,9 @@ const navigation = ['tools', 'participate', 'collaborate', 'research'] as const;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
     <meta name="theme-color" content="#173f38" />
-    <title>{title} — Percepta</title>
+    <Seo title={title} description={description} lang={lang} page={page} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-    <link rel="alternate" hreflang="de" href={new URL(pathFor('de', page), Astro.site)} />
-    <link rel="alternate" hreflang="en" href={new URL(pathFor('en', page), Astro.site)} />
-    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
   </head>
   <body>
     <a class="skip-link" href="#main">{t.skip}</a>

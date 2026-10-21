@@ -11,9 +11,10 @@ Bitte keine Namen, Kontaktangaben, Diagnosen, genauen Orte, Wege oder Angaben ü
 5. Welche Verbesserung wäre für mich am wichtigsten?
 
 Mein kurzer Entwurf:
-- Neutraler Titel:
+- Titel:
+- Bereich (Einkaufen, Fragen und Informationen, Interaktion, Orientierung oder Anderes):
 - Situation und Ziel:
-- Schwierigkeit:
+- Was noch schwierig ist:
 - Bisherige Hilfe (freiwillig):
 - Gewünschte Unterstützung und Zeitpunkt:
 - Wichtigste Verbesserung:
@@ -21,4 +22,4 @@ Mein kurzer Entwurf:
 
 Prüfe deinen Entwurf: Stimmt er? Fehlt etwas? Enthält er persönliche Einzelheiten oder Angaben über andere Menschen? Entferne oder verallgemeinere diese. Ein fehlender Name garantiert keine Anonymität.
 
-Bewahre den Text nur auf, wenn du möchtest. Perceptas privater Empfang ist noch nicht geöffnet. Lade ihn nicht in öffentliche GitHub-Issues hoch. Die Vorlage sendet und veröffentlicht nichts. Spätere Veröffentlichung braucht deine Zustimmung zum genauen Text und Ziel; eine Namensnennung wäre eine eigene freiwillige Entscheidung.
+Du kannst deinen Text unter https://percepta.moinsen.dev/de/participate/#report einfügen und prüfen. Bewahre den Text nur auf, wenn du möchtest. Perceptas privater Empfang ist noch nicht geöffnet. Lade ihn nicht in öffentliche GitHub-Issues hoch. Die Vorlage sendet und veröffentlicht nichts. Spätere Veröffentlichung braucht deine Zustimmung zum genauen Text und Ziel; eine Namensnennung wäre eine eigene freiwillige Entscheidung.

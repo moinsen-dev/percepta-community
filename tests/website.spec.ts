@@ -17,6 +17,15 @@ for (const route of routes) {
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.getByRole('main')).toHaveCount(1);
     await expect(page.locator('html')).toHaveAttribute('lang', route.startsWith('/en/') ? 'en' : 'de');
+    if (route !== '/404.html') {
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://percepta.moinsen.dev${route}`);
+      await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', `https://percepta.moinsen.dev${route}`);
+      const schema = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() ?? '{}');
+      expect(schema.url).toBe(`https://percepta.moinsen.dev${route}`);
+      expect(schema['@type']).toBe('WebPage');
+      const alternates = await page.locator('link[rel="alternate"][hreflang]').evaluateAll(elements => elements.map(el => el.getAttribute('href')));
+      for (const alternate of alternates) expect((await request.get(new URL(alternate!).pathname)).status()).toBe(200);
+    }
     const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
     expect(result.violations).toEqual([]);
     expect(thirdPartyRequests).toEqual([]);
@@ -93,4 +102,16 @@ test('security headers and real 404 response on the Cloudflare runtime', async (
   const missing = await request.get('/this-page-does-not-exist/');
   expect(missing.status()).toBe(404);
   expect(await missing.text()).toContain('Page not found.');
+});
+
+test('robots and sitemap expose every public page without private API or error routes', async ({ request }) => {
+  const robots = await request.get('/robots.txt');
+  expect(robots.status()).toBe(200);
+  expect(await robots.text()).toContain('Sitemap: https://percepta.moinsen.dev/sitemap.xml');
+  const sitemap = await request.get('/sitemap.xml');
+  expect(sitemap.status()).toBe(200);
+  const xml = await sitemap.text();
+  const locations = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
+  expect(locations.sort()).toEqual(routes.filter(route => route !== '/404.html').map(route => `https://percepta.moinsen.dev${route}`).sort());
+  expect(xml).not.toContain('/api/');
 });

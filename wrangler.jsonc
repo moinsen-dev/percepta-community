@@ -1,9 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "percepta-community",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-10-20",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
     "html_handling": "force-trailing-slash",
     "not_found_handling": "404-page"
   },
@@ -12,6 +15,15 @@
     { "pattern": "percepta.moinsen.dev", "custom_domain": true }
   ],
   "preview_urls": false,
+  "vars": { "INTAKE_OPEN": "false" },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "percepta-experiences",
+    "database_id": "35ba5176-606a-4184-857b-d92b07adf1e0",
+    "migrations_dir": "worker/migrations"
+  }],
+  "ratelimits": [{ "name": "INTAKE_LIMIT", "namespace_id": "2030618739", "simple": { "limit": 10, "period": 60 } }],
+  "triggers": { "crons": ["17 3 * * *"] },
   "observability": {
     "enabled": false
   },

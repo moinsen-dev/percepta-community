@@ -1,6 +1,6 @@
 # Percepta — Interview und Veröffentlichung
 
-Status: Teilnahme-Paket v0.1 für die statische Astro-Website, Stand 2026-10-20. Kurze DE/EN-Prompts und eine gleichwertige Vorlage ohne KI sind implementiert. Kein laufender Einreichungsdienst und keine Studie. D-14 begrenzt den ersten Schritt auf private Entwürfe; eine öffentliche persönliche Geschichte gehört nicht zum Pilot.
+Status: Folgeauftrag D-17, Stand 2026-10-21. DE/EN-Prompts und Vorlage ohne KI mit einheitlichen Überschriften und Rückverweis auf das Website-Eingabefeld. Privater Worker/D1-Empfang implementiert, produktiv geschlossen. Kein gestarteter Pilot; eine öffentliche persönliche Geschichte gehört nicht zum Pilot.
 
 ## Zweck
 
@@ -26,7 +26,7 @@ Funktionale Angaben zur Sehfähigkeit nur freiwillig und nur, wenn für das Prob
 
 ## Zusammenfassung als gemeinsame Schnittstelle
 
-Keine festgelegte API oder Datenbank in dieser Phase. Die beiden Entwurfswege nutzen dieselben minimalen Inhalte:
+Der [private Rückweg](private-intake.md) nimmt Kategorie, Sprache und den geprüften Zusammenfassungstext entgegen. Beide Entwurfswege nutzen dieselben minimalen Inhalte:
 
 - Neutraler Titel ohne Name oder genauen Ort.
 - Alltagssituation, Ziel und Schwierigkeit.
@@ -37,15 +37,15 @@ Keine festgelegte API oder Datenbank in dieser Phase. Die beiden Entwurfswege nu
 
 Die Person erhält den vollständigen Entwurf einschließlich Titel in ihrer Sprache. Vermutungen des Modells werden nicht als Aussagen der Person ausgegeben. Keine Rohtranskripte anhängen.
 
-## Aktueller Weg: nur vorbereiten
+## Aktueller Weg: Entwurf, Vorschau und vorbereiteter privater Empfang
 
-Die KI erstellt ausschließlich Text. Sie soll keine Tools, Konten oder GitHub-Anbindung verwenden und nichts versenden, auch bei einer späteren Bitte im selben Interview. Eine Prompt-Anweisung ist keine technische Zugriffssperre der fremden App; Verhalten muss separat erprobt werden. Keine Zugangsdaten erfragen.
+Die KI interviewt, erstellt eine strukturierte Zusammenfassung, lässt sie korrigieren und nennt die DE/EN-Teilnahmeseite als Rückweg. Sie erstellt weder Repository noch öffentliches Issue und verlangt keine Zugangsdaten. Ein Prompt kann keinen Kontozugang herstellen und den Anbieter nicht technisch einschränken; externe Chat-Proben bleiben nötig.
 
-Die manuelle Vorlage bietet dieselben Fragen und denselben Entwurf. Sie lässt sich auf Papier, im eigenen Dokument oder freiwillig mit einer vertrauten Person verwenden. Website und Downloads erfordern kein GitHub-Konto. Die Website enthält keine Antwortfelder, Speicherung oder Absendeaktion. Der Kopierknopf kopiert ausschließlich den angezeigten Vorlagentext; bei Fehlern stehen Markieren und Textdownload bereit.
+Die Person kann ohne KI selbst schreiben oder einen geprüften Text in das Website-Eingabefeld einfügen. Texte bleiben beim Schreiben im Browserfenster; keine Anwendungs-Autospeicherung und keine Übertragung in URL-Parametern. Eine Vorschau erlaubt Korrektur oder lokalen Download. Beim Verlassen kann der Entwurf verloren gehen. Ohne JavaScript bleiben die Textvorlagen verfügbar, aber kein vollständiger direkter Einreichungsweg.
 
-Ein Entwurf im eigenen Dokument oder KI-Chat erreicht Percepta nicht automatisch. Keine Veröffentlichungs- oder Namensfreigabe im aktuellen Interview einsammeln. Die Person kann jederzeit aufhören. Keine Löschung beim externen KI-Anbieter versprechen.
+Nur bei geöffnetem Empfang folgen ausdrückliche Zustimmung und private Übertragung. Der Dienst bestätigt ausschließlich nach erfolgreicher Datenbankoperation. Wiederholung derselben Einreichung ist idempotent; bei unbestätigtem Empfang wird kein Erfolg behauptet. Ein vertraulicher Löschcode ermöglicht Rücknahme ohne Konto. Daten, Aufbewahrungsvorschlag, Sicherungskopien und technische Grenzen: [private-intake.md](private-intake.md).
 
-Der private Pilot mit 3–5 Erwachsenen wird erst geöffnet, wenn die Voraussetzungen des [Pilot-Leitfadens](participation-pilot.md) erfüllt sind. Ein privates Projektpostfach ist ein zu prüfender Kandidat, noch keine gewählte oder aktive Lösung.
+Produktiv bleibt `INTAKE_OPEN` auf `false`. Betrieb und Einwilligungsbedingungen gemäß [Pilot-Leitfaden](participation-pilot.md) sind offen. Keine echte Einreichung oder Veröffentlichung im bisherigen Lauf. Die Rollen-/Fristfrage an den Projektverantwortlichen ist noch nicht beantwortet. Einwilligung zu Interview oder privater Verarbeitung erlaubt keine öffentliche Geschichte.
 
 ## Spätere Veröffentlichung: gesondert zu entscheiden
 
@@ -73,4 +73,4 @@ Der Begriff „anonyme Einreichung“ bezeichnet das Ziel, kein persönliches Ko
 
 Die [Prozessprobe](../agents/codex/participation-dry-run.md) verwendet ausschließlich erfundene Situationen und kennzeichnet redaktionelle Durchgänge. Sie ist kein Nachweis über eine externe KI-App oder eine echte Nutzerstudie. Die [Website-Validierung](../agents/codex/website-validation.md) dokumentiert Browserprüfungen und noch fehlende manuelle Tests.
 
-Vor dem Pilot: DE und EN, beide Entwurfswege, Überspringen, Pause, Abbruch, Korrektur, versehentliche Identifikatoren, unklare Frage an eine App oder einen Menschen, eine reine Einkaufs-/Gesprächssituation und eine Bitte um Veröffentlichung prüfen. Bei einer solchen Bitte muss die Entwurfshilfe bei Text bleiben. Kein Erfolg darf behauptet werden, solange keine Einreichungsstelle existiert.
+Vor dem Pilot: DE und EN, beide Entwurfswege, Überspringen, Pause, Abbruch, Korrektur, versehentliche Identifikatoren, unklare Frage an eine App oder einen Menschen, eine reine Einkaufs-/Gesprächssituation und eine Bitte um Veröffentlichung prüfen. Bei einer Bitte um öffentliche Veröffentlichung muss die Entwurfshilfe den getrennten Freigabeweg erklären und bei Text bleiben. Kein Erfolg darf behauptet werden, solange keine Einreichungsstelle existiert.

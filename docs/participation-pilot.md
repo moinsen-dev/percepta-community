@@ -1,6 +1,6 @@
 # Percepta — Vorbereitung des Beteiligungs-Pilots
 
-Stand: 2026-10-20. D-14 beauftragt die Vorbereitung. **Kein Pilot gestartet, keine Personen kontaktiert, kein Empfang aktiv.** Zielgruppe als Arbeitsannahme: 3–5 freiwillig teilnehmende Erwachsene, blind oder sehbehindert. Die kleine Gruppe liefert erste qualitative Hinweise, keine repräsentative Aussage.
+Stand: 2026-10-21. D-14 beauftragt die Vorbereitung, D-17 ergänzt den technischen Rückweg. **Kein Pilot gestartet, keine Personen kontaktiert, kein Empfang aktiv.** Zielgruppe als Arbeitsannahme: 3–5 freiwillig teilnehmende Erwachsene, blind oder sehbehindert. Die kleine Gruppe liefert erste qualitative Hinweise, keine repräsentative Aussage.
 
 ## 1. Teilnahme-Paket und fiktive Probe
 
@@ -17,14 +17,14 @@ Der Projektverantwortliche bestätigt die folgenden Angaben in einem **privaten*
 | Voraussetzung | Noch zu klären |
 | --- | --- |
 | Verantwortlichkeit | Betreiber und allgemeine geschäftliche Kontaktadresse über D-15 bestätigt; Moderation und Vertretung für den Pilot noch festlegen |
-| Privater Empfang | Postfach als einfacher Kandidat; Dienst, Zugriffsrechte, Spam-Umgang und erreichbare Alternative ohne KI/GitHub prüfen |
+| Privater Empfang | Worker/D1 vorbereitet, produktiv geschlossen; [Betrieb](private-intake.md). Rechte und betreute Alternative vor Öffnung prüfen |
 | Information und Zustimmung | Zweck, Datenarten, Empfänger, Rechte und passende Rechtsgrundlagen fachlich prüfen; Gesundheitsbezug berücksichtigen; Zustimmung zum Gespräch nicht mit Veröffentlichung vermischen |
-| Aufbewahrung und Löschung | Konkrete Fristen, Zugriff, Backups und Löschverantwortliche; nichts als „sofort gelöscht“ versprechen, bevor der Ablauf geprüft ist |
+| Aufbewahrung und Löschung | Vorschlag 30 Tage aktiv plus täglicher Lauf und bis zu 30 Tage Wiederherstellungskopien; Bestätigung und Verantwortlichkeit fehlen. Rücknahme/Ablauf lokal synthetisch geprüft |
 | Rückfragen und Rücknahme | Nutzbarer privater Kanal ohne öffentliches Konto; Kontaktangaben getrennt von inhaltlichen Entwürfen |
 | Bedingungen | Rekrutierung, Unterstützung, Dauer, Aufwandsentschädigung und Rückmeldung an Teilnehmende |
 | Zugänglichkeit | Reale Tastatur-/Screenreader-Probe und betreuter Alternativweg; bekannte Barrieren offen kommunizieren |
 
-Die statische Seite enthält keine erfundene E-Mail-Adresse oder Anmeldung. Ein späteres Postfach ist kein automatisches Issue-Gateway. Ein eigener Server ist für die Erklärungsseite nicht erforderlich.
+Die Seite verwendet die bestätigte Geschäftsadresse nur für allgemeine Anfragen. Der vorbereitete private Dienst ist kein automatisches Issue-Gateway und erfasst keine Kontaktadressen. Für Rückfragen, spätere Textfreigaben und persönliche Rückmeldungen braucht der Pilot daher einen getrennten, ausdrücklich vereinbarten Kontaktweg.
 
 ## 3. Ablauf eines späteren Pilotgesprächs
 

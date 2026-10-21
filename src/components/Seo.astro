@@ -1,0 +1,32 @@
+---
+import { pathFor, type Lang } from '../content/site';
+interface Props { title: string; description: string; lang?: Lang; page?: string; }
+const { title, description, lang, page = '' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const defaultUrl = new URL(page ? pathFor('de', page) : '/', Astro.site);
+const siteUrl = new URL('/', Astro.site);
+const data = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: canonical.href,
+  inLanguage: lang ?? ['de', 'en'],
+  isPartOf: { '@type': 'WebSite', name: 'Percepta', url: siteUrl.href, inLanguage: ['de', 'en'] },
+};
+---
+<title>{title} — Percepta</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="de" href={new URL(pathFor('de', page), Astro.site)} />
+<link rel="alternate" hreflang="en" href={new URL(pathFor('en', page), Astro.site)} />
+<link rel="alternate" hreflang="x-default" href={defaultUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Percepta" />
+<meta property="og:title" content={`${title} — Percepta`} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'de_DE'} />
+<meta property="og:locale:alternate" content={lang === 'en' ? 'de_DE' : 'en_GB'} />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />

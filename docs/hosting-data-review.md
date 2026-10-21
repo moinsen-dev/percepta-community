@@ -2,6 +2,12 @@
 
 Stand: 2026-10-21. Codex als Koordinator, Ausgangs-Commit `368670b928e476a4e7df6742a84735b74e7b0629`. Auftrag: direktes Hosting im bestehenden Cloudflare-Account voranbringen und die Datenverarbeitung so weit wie mit dem verfügbaren Zugang möglich prüfen. Dies ist eine technische und redaktionelle Bestandsaufnahme, keine juristische Freigabe.
 
+## Aktueller Nachtrag: privater Rückweg vorbereitet
+
+Am 2026-10-21 erweitert der Folgeauftrag D-17 die zuvor rein statische Architektur. Statische Seiten bleiben bei Astro; hinzu kommen ein Worker für `/api/*` und eine separate private D1-Datenbank mit EU-Jurisdiktion. Der Empfang bleibt produktiv geschlossen. Neue Datenwege, vorgeschlagene Aufbewahrung, Rücknahme und offene Betriebsprüfung stehen in [private-intake.md](private-intake.md). Die folgenden Abschnitte dokumentieren den früheren reinen Informationsbetrieb; Aussagen „kein Backend/keine Antwortfelder“ gelten für diesen damaligen Stand.
+
+Die neue Browseroberfläche überträgt keine Eingaben beim Schreiben. Nur Statusabfrage und nach Öffnung ausdrücklich bestätigte POST-Anfragen an denselben Ursprung; kein GitHub-Schreibzugriff, keine KI-API, keine neue E-Mail-Weiterleitung. Löschcodes werden nur gehasht gespeichert. Keine privaten Berichte exportiert. Die Änderung ist keine fachliche oder juristische Freigabe des Pilots.
+
 ## Hosting-Ziel und Zugriff
 
 Astro erzeugt ausschließlich statische Dateien für Cloudflare Workers Static Assets. Projektname `percepta-community`, Domain `percepta.moinsen.dev`. Kein SSR, keine Datenbank, keine Functions oder zusätzlichen kostenpflichtigen Dienste erforderlich. Die bisherige geschützte Sites-Vorschau liegt in einer getrennten Hosting-Instanz; sie ist kein Nachweis für ein Deployment im Account des Betreibers.

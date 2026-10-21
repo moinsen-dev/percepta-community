@@ -11,9 +11,10 @@ Please omit names, contact details, diagnoses, exact locations, routes and infor
 5. Which improvement matters most to me?
 
 My short draft:
-- Neutral title:
+- Title:
+- Area (Shopping, Questions and information, Interaction, Orientation or Other):
 - Situation and goal:
-- Difficulty:
+- What remains difficult:
 - Existing help (optional):
 - Desired support and timing:
 - Most important improvement:
@@ -21,4 +22,4 @@ My short draft:
 
 Check your draft: Is it accurate? Is anything missing? Does it contain personal details or information about others? Remove or generalise them. Omitting a name does not guarantee anonymity.
 
-Keep the text only if you wish. Percepta's private intake is not open yet. Do not upload it to public GitHub issues. This template sends and publishes nothing. Later publication needs your agreement to the exact text and destination; being named would be a separate optional choice.
+You can paste and review your text at https://percepta.moinsen.dev/en/participate/#report . Keep the text only if you wish. Percepta's private intake is not open yet. Do not upload it to public GitHub issues. This template sends and publishes nothing. Later publication needs your agreement to the exact text and destination; being named would be a separate optional choice.

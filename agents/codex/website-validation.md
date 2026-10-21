@@ -103,3 +103,18 @@ Native Computer-Use meldete keine verfügbare Browseroberfläche. Die Tastaturpr
 Quellcommit `27dd29361e0ab4c60bada6d8f3dae1bb6ad73488` gepusht. [GitHub Actions Run 39569007402](https://github.com/moinsen-dev/percepta-community/actions/runs/39569007402) erfolgreich: Typprüfung, Build, Browserprüfungen und Wrangler-Dry-run. Direkter interaktiver Cloudflare-Deploy erfolgreich; Deployment-Liste bestätigt Version `f8bbeba6-ec9c-43c3-9c0e-ea68ef6d9224` zu 100 % seit 2026-10-21, 08:24 UTC. Die neuen Seiten liegen unter [Deutsch](https://percepta.moinsen.dev/de/tools/) und [English](https://percepta.moinsen.dev/en/tools/).
 
 Automatisierte HTTPS-Abrufe beider Routen erhalten weiterhin HTTP 403 mit `cf-mitigated: challenge`. Daher ist der Upload bestätigt, die öffentliche Inhaltsauslieferung aus dieser Testumgebung nicht geprüft. Die lokale Inhalts-/Fokusprüfung bleibt davon getrennt. Keine Schutzregel geändert und kein Cloudflare-Handoff erneut eröffnet. README-Dateilinkcheck und `git diff --check` ohne Befund; Baseline und fremde Harness-Ordner unverändert. Lokalen Preview-Server beendet.
+
+
+## 2026-10-21 — Verständlichkeit, SEO und privater Rückweg
+
+Ausgangs-Commit `12b45daad08ccf805b4f632bcff16bd9532eb489`, Codex als Koordinator, GPT-6-Familie; genaue Build-ID unbekannt.
+
+- 18 HTML-Seiten und vier Textdownloads weiterhin vorhanden; zusätzlich robots.txt, sitemap.xml mit 17 indexierbaren Routen, Canonical/Sprachziele, Open Graph und WebPage/WebSite-JSON-LD. Verständlichere DE/EN-Einstiege und sichtbare häufige Fragen.
+- Teilnahme: Eingabe oder Übernahme einer KI-Zusammenfassung, Vorschau, Korrektur, lokaler Download und vorbereitete private Übertragung mit Einwilligung, Empfang und Löschcode. `INTAKE_OPEN` produktiv false. Kein echtes Interview empfangen oder veröffentlicht.
+- `npm run check`: Astro sowie generierte Worker-Typen/TypeScript ohne Fehler, Warnungen oder Hinweise. Build erfolgreich. `npm test`: **32/32 bestanden**. Wrangler-Dry-run erfolgreich.
+- Prüfungen: 18 Seiten auf axe-WCAG-Regeln, Struktur, Links, 320-Pixel-Reflow, keine Anwendungs-Cookies/Browser-Speicherung und keine Drittanfragen; Metadaten und Sprachziele; Text-/Download-Gleichheit ohne JavaScript. Tastaturpfad durch Vorschau, Datenschutzhinweis, Einwilligung und Absenden; Fokus auf Fehler, Vorschau und Empfang. Verlassen eines ungesendeten Entwurfs abbrechbar.
+- API-/Datenprüfung ausschließlich lokal: geschlossener Produktionsschalter, ungültiger Ursprung/Einwilligung/Version/Schema, Größenlimit, kein Lese-Endpunkt/CORS, Rate-Limit, idempotente Wiederholung nach verlorener Erfolgsantwort, Konflikt bei geändertem Text, Rücknahme und tägliche Bereinigung. Abgelaufener Testdatensatz gelöscht, noch gültiger erhalten. Nur ausdrücklich fiktive Testtexte.
+- Remote: separate D1-Datenbank mit `jurisdiction: eu`, Replikation aus, Migration 0001 angewendet. Kontrollabfrage ergibt **0 Berichte**. Nicht interaktives D1-Listing schlug zuerst fehl; derselbe Leseaufruf im interaktiven Terminal funktionierte. Keine Berechtigungen erweitert oder Konten neu authentifiziert.
+- Grenzen: kein visueller Screenshot-Audit (Computer-Use ohne Apps/Browser, Startfehler), keine manuellen VoiceOver-/NVDA-Tests, keine Nutzerstudie, keine externen KI-Chat-Proben, keine Rechtsfreigabe oder Suchmaschinen-Indexierung. Ohne JavaScript kein vollständiger Absendeweg. Betriebs- und Zugänglichkeitsprüfung vor Öffnung bleibt erforderlich.
+
+Quellen und konkrete Betriebsgrenzen: [SEO/Verständlichkeit](../../docs/website-discoverability.md), [privater Rückweg](../../docs/private-intake.md). Deployment und neue CI werden nach Veröffentlichung separat nachgetragen.
