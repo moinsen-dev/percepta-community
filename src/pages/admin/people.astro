@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout lang="de" title="Porträts freigeben" description="Interne Seite zum Prüfen und Freigeben eingereichter Porträts." noindex>
+  <article class="article wrap">
+    <header class="article-header"><p class="eyebrow">Intern</p><h1>Porträts freigeben.</h1><p class="lede">Vor der Freigabe kurz über die angegebene Kontaktmöglichkeit nachfragen, ob das Porträt wirklich von der Person stammt und nur sie auf dem Foto ist. Bei der Freigabe wird die Kontaktangabe gelöscht.</p></header>
+    <div class="prose" data-admin>
+      <label for="admin-token">Zugangsschlüssel</label>
+      <input id="admin-token" type="password" autocomplete="current-password" />
+      <button type="button" class="button" id="admin-load">Porträts laden</button>
+      <p id="admin-status" role="status" aria-live="polite"></p>
+      <div id="admin-list"></div>
+    </div>
+  </article>
+</Layout>
+
+<script>
+  type Person = { id: string; created_at: number; published_at: number | null; lang: string; name: string; about: string; story: string; photo_alt: string | null; has_photo: number; contact: string | null };
+  const tokenField = document.getElementById('admin-token') as HTMLInputElement;
+  const status = document.getElementById('admin-status')!;
+  const list = document.getElementById('admin-list')!;
+  try { tokenField.value = sessionStorage.getItem('percepta-admin') ?? ''; } catch { /* storage unavailable */ }
+  const auth = () => ({ Authorization: `Bearer ${tokenField.value.trim()}` });
+
+  function add(parent: HTMLElement, tag: string, text: string) {
+    const node = document.createElement(tag);
+    node.textContent = text;
+    parent.append(node);
+    return node;
+  }
+
+  async function act(id: string, action: 'approve' | 'delete') {
+    const response = await fetch(`/api/admin/people/${action}`, { method: 'POST', headers: { ...auth(), 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) });
+    if (response.ok) await load(action === 'approve' ? 'Freigegeben.' : 'Gelöscht.');
+    else status.textContent = 'Das hat nicht geklappt.';
+  }
+
+  async function load(done = '') {
+    const response = await fetch('/api/admin/people', { headers: auth() });
+    if (!response.ok) { status.textContent = response.status === 401 ? 'Zugangsschlüssel falsch.' : 'Laden hat nicht geklappt.'; return; }
+    try { sessionStorage.setItem('percepta-admin', tokenField.value.trim()); } catch { /* storage unavailable */ }
+    const { people } = await response.json() as { people: Person[] };
+    list.replaceChildren();
+    status.textContent = `${done ? `${done} ` : ''}${people.filter(person => !person.published_at).length} warten auf Freigabe, ${people.filter(person => person.published_at).length} veröffentlicht.`;
+    for (const person of people) {
+      const entry = document.createElement('section');
+      entry.className = 'admin-entry';
+      entry.setAttribute('aria-label', person.name);
+      add(entry, 'h2', `${person.name} · ${person.published_at ? 'veröffentlicht' : 'wartet'}`);
+      add(entry, 'p', `Eingereicht ${new Date(person.created_at).toLocaleString('de-DE')} · Sprache ${person.lang}${person.contact ? ` · Kontakt: ${person.contact}` : ''}`);
+      if (person.about) add(entry, 'p', person.about).className = 'person-about';
+      if (person.has_photo) {
+        const image = add(entry, 'img', '') as HTMLImageElement;
+        image.className = 'portrait-preview';
+        image.alt = person.photo_alt ?? '';
+        const photo = await fetch(`/api/admin/people/photo/${person.id}`, { headers: auth() });
+        if (photo.ok) image.src = URL.createObjectURL(await photo.blob());
+        add(entry, 'p', `Bildbeschreibung: ${person.photo_alt ?? ''}`);
+      }
+      for (const part of person.story.split(/\n{2,}/)) add(entry, 'p', part);
+      const actions = add(entry, 'div', '');
+      actions.className = 'actions';
+      if (!person.published_at) {
+        const approve = add(actions, 'button', `${person.name} freigeben`) as HTMLButtonElement;
+        approve.type = 'button'; approve.className = 'button';
+        approve.addEventListener('click', () => act(person.id, 'approve'));
+      }
+      const remove = add(actions, 'button', `${person.name} löschen`) as HTMLButtonElement;
+      remove.type = 'button'; remove.className = 'button secondary';
+      remove.addEventListener('click', () => {
+        if (remove.dataset.confirm) { act(person.id, 'delete'); return; }
+        remove.dataset.confirm = 'true';
+        remove.textContent = `Wirklich ${person.name} löschen?`;
+      });
+      list.append(entry);
+    }
+  }
+
+  document.getElementById('admin-load')!.addEventListener('click', () => { load().catch(() => { status.textContent = 'Keine Verbindung.'; }); });
+</script>

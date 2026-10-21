@@ -1,0 +1,178 @@
+---
+import { operator, pathFor, type Lang } from '../content/site';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = (de: string, en: string) => lang === 'de' ? de : en;
+---
+<section id="vorstellen" aria-labelledby="portrait-title" class="notice">
+  <h2 id="portrait-title" tabindex="-1">{t('Stell dich vor', 'Introduce yourself')}</h2>
+  <p>{t('Du bist blind oder sehbehindert und möchtest anderen zeigen, wie du deinen Alltag erlebst? Erzähl es hier mit deinem Namen, auf Wunsch mit Foto. Das hilft, dass mehr Menschen das Thema ernst nehmen und mitmachen.', 'Are you blind or have low vision and want to show others how you experience everyday life? Tell it here with your name, and a photo if you like. It helps more people take the topic seriously and get involved.')}</p>
+  <p id="portrait-status" role="status">{t('Wir prüfen, ob Porträts gerade angenommen werden.', 'Checking whether portraits are being accepted.')}</p>
+  <noscript><p>{t(`Für das Formular brauchst du JavaScript. Du kannst uns dein Porträt auch an ${operator.email} schicken.`, `The form needs JavaScript. You can also send your portrait to ${operator.email}.`)}</p></noscript>
+  <div data-portrait data-lang={lang} hidden>
+    <label for="portrait-name">{t('Dein Name, wie er erscheinen soll', 'Your name as it should appear')}</label>
+    <p id="portrait-name-hint">{t('Der Vorname genügt.', 'Your first name is enough.')}</p>
+    <input id="portrait-name" maxlength="80" autocomplete="name" aria-describedby="portrait-name-hint" />
+    <label for="portrait-about">{t('Ein Satz über dich (freiwillig)', 'One sentence about you (optional)')}</label>
+    <p id="portrait-about-hint">{t('Zum Beispiel: seit zehn Jahren blind, arbeitet in der Verwaltung.', 'For example: blind for ten years, works in administration.')}</p>
+    <input id="portrait-about" maxlength="200" autocomplete="off" aria-describedby="portrait-about-hint" />
+    <label for="portrait-story">{t('Wie erlebst du deinen Alltag?', 'How do you experience everyday life?')}</label>
+    <p id="portrait-story-hint">{t('Was hilft dir, was fehlt dir, was sollen andere wissen? Mindestens ein paar Sätze, höchstens 6.000 Zeichen. Keine Kontaktdaten, keine Links und keine Angaben über andere Menschen.', 'What helps you, what is missing, what should others know? At least a few sentences, up to 6,000 characters. No contact details, no links and nothing about other people.')}</p>
+    <textarea id="portrait-story" rows="10" maxlength="6000" aria-describedby="portrait-story-hint"></textarea>
+    <label for="portrait-photo">{t('Foto (freiwillig)', 'Photo (optional)')}</label>
+    <p id="portrait-photo-hint">{t('Nur du selbst, keine anderen Personen. Wir verkleinern das Foto und entfernen Standort- und Kameradaten.', 'Only you, no other people. We shrink the photo and remove location and camera data.')}</p>
+    <input id="portrait-photo" type="file" accept="image/*" aria-describedby="portrait-photo-hint" />
+    <div id="portrait-photo-details" hidden>
+      <img id="portrait-preview" class="portrait-preview" alt={t('Vorschau deines Fotos', 'Preview of your photo')} />
+      <label for="portrait-alt">{t('Bildbeschreibung', 'Image description')}</label>
+      <p id="portrait-alt-hint">{t('Beschreibe dein Foto in ein, zwei Sätzen. Das hören blinde Besucher statt des Bildes.', 'Describe your photo in one or two sentences. Blind visitors hear this instead of the image.')}</p>
+      <textarea id="portrait-alt" rows="3" maxlength="400" aria-describedby="portrait-alt-hint"></textarea>
+      <label class="check-label"><input type="checkbox" id="portrait-photo-consent" /> <span>{t('Auf dem Foto bin nur ich zu sehen, und ich möchte, dass es mit meinem Porträt öffentlich erscheint.', 'Only I can be seen in the photo, and I want it to appear publicly with my portrait.')}</span></label>
+      <button type="button" class="button secondary" id="portrait-photo-remove">{t('Foto entfernen', 'Remove photo')}</button>
+    </div>
+    <label for="portrait-contact">{t('Wie erreichen wir dich für eine kurze Rückfrage?', 'How can we reach you for a short check?')}</label>
+    <p id="portrait-contact-hint">{t('E-Mail-Adresse oder Telefonnummer. Sie wird nicht veröffentlicht. Wir fragen kurz nach, ob das Porträt wirklich von dir ist, und löschen die Angabe bei der Freigabe.', 'Email address or phone number. It is not published. We check briefly that the portrait really comes from you and delete it when we publish.')}</p>
+    <input id="portrait-contact" maxlength="200" autocomplete="email" aria-describedby="portrait-contact-hint" />
+    <p>{t(`Verantwortlich ist ${operator.name}. Gespeichert wird bei Cloudflare in der EU. Bis zur Freigabe ist nichts öffentlich; ohne Freigabe löschen wir das Porträt nach spätestens 60 Tagen.`, `${operator.name} is responsible. Data is stored at Cloudflare in the EU. Nothing is public before approval; without approval we delete the portrait after 60 days at the latest.`)} <a href={`${pathFor(lang, 'privacy')}#${t('portraets', 'portraits')}`}>{t('Datenschutz bei Porträts', 'Privacy for portraits')}</a></p>
+    <label class="check-label"><input type="checkbox" id="portrait-consent" /> <span>{t('Ich bin mindestens 18 Jahre alt. Ich möchte, dass mein Name und dieser Text nach der Freigabe öffentlich auf percepta.moinsen.dev erscheinen, auch soweit sie Angaben zu meiner Sehbehinderung enthalten. Mir ist klar, dass öffentliche Inhalte kopiert und gefunden werden können. Ich kann meine Einwilligung jederzeit widerrufen; dann löschen wir das Porträt.', 'I am at least 18 years old. I want my name and this text to appear publicly on percepta.moinsen.dev after approval, including any information about my visual impairment. I understand that public content can be copied and found. I can withdraw my consent at any time; we then delete the portrait.')}</span></label>
+    <button type="button" class="button" id="portrait-send">{t('Porträt einreichen', 'Submit portrait')}</button>
+    <p id="portrait-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+  </div>
+  <div id="portrait-receipt" hidden>
+    <h3 id="portrait-receipt-title" tabindex="-1">{t('Danke! Dein Porträt ist eingegangen.', 'Thank you! Your portrait has arrived.')}</h3>
+    <p>{t('Wir melden uns kurz bei dir. Erst danach erscheint dein Porträt auf dieser Seite.', 'We will get in touch briefly. Only then will your portrait appear on this page.')}</p>
+    <label for="portrait-code">{t('Dein Code zum Zurückziehen', 'Your withdrawal code')}</label>
+    <input id="portrait-code" readonly autocomplete="off" />
+    <p>{t('Bewahre den Code auf. Damit kannst du dein Porträt jederzeit selbst löschen, auch nach der Veröffentlichung. Ohne Code schreib uns einfach.', 'Keep the code. With it you can delete your portrait yourself at any time, even after publication. Without the code, just write to us.')}</p>
+  </div>
+</section>
+<section id="zurueckziehen" aria-labelledby="portrait-withdraw-title" data-portrait-withdraw hidden>
+  <h2 id="portrait-withdraw-title">{t('Porträt zurückziehen', 'Withdraw your portrait')}</h2>
+  <p>{t(`Gib den Code aus deiner Bestätigung ein. Das Porträt wird sofort gelöscht. Ohne Code schreib an ${operator.email}.`, `Enter the code from your confirmation. The portrait is deleted immediately. Without the code, write to ${operator.email}.`)}</p>
+  <div data-portrait>
+    <label for="portrait-withdraw-code">{t('Code zum Zurückziehen', 'Withdrawal code')}</label>
+    <input id="portrait-withdraw-code" autocomplete="off" />
+    <button type="button" class="button secondary" id="portrait-withdraw">{t('Porträt endgültig löschen', 'Delete portrait permanently')}</button>
+    <p id="portrait-withdraw-status" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-portrait][data-lang]');
+  if (root) {
+    const de = root.dataset.lang === 'de';
+    const t = (a: string, b: string) => de ? a : b;
+    const el = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+    const input = (id: string) => el<HTMLInputElement | HTMLTextAreaElement>(id);
+    const feedback = el('portrait-feedback');
+    const photoInput = el<HTMLInputElement>('portrait-photo');
+    let consentVersion = '';
+    let photo: string | null = null;
+
+    function fail(target: HTMLElement, message: string) {
+      target.setAttribute('aria-invalid', 'true');
+      feedback.textContent = message;
+      target.focus();
+    }
+
+    function code() {
+      const alphabet = 'abcdefghijkmnpqrstuvwxyz23456789';
+      const bytes = crypto.getRandomValues(new Uint8Array(20));
+      return Array.from(bytes, byte => alphabet[byte % 32]).join('').match(/.{5}/g)!.join('-');
+    }
+
+    // Re-encoding through a canvas shrinks the photo and drops its metadata.
+    async function shrink(file: File) {
+      const image = await createImageBitmap(file);
+      const scale = Math.min(1, 900 / Math.max(image.width, image.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(image.width * scale);
+      canvas.height = Math.round(image.height * scale);
+      canvas.getContext('2d')!.drawImage(image, 0, 0, canvas.width, canvas.height);
+      return canvas.toDataURL('image/jpeg', 0.85);
+    }
+
+    function clearPhoto() {
+      photo = null; photoInput.value = '';
+      el('portrait-photo-details').hidden = true;
+      el<HTMLInputElement>('portrait-photo-consent').checked = false;
+    }
+
+    photoInput.addEventListener('change', async () => {
+      const file = photoInput.files?.[0];
+      if (!file) { clearPhoto(); return; }
+      try {
+        const url = await shrink(file);
+        photo = url.split(',')[1];
+        el<HTMLImageElement>('portrait-preview').src = url;
+        el('portrait-photo-details').hidden = false;
+        feedback.textContent = t('Foto übernommen. Bitte beschreibe es kurz.', 'Photo added. Please describe it briefly.');
+      } catch {
+        clearPhoto();
+        fail(photoInput, t('Dieses Foto können wir nicht lesen. Versuch es mit einem anderen Bild.', 'We cannot read this photo. Please try another image.'));
+      }
+    });
+    el('portrait-photo-remove').addEventListener('click', () => { clearPhoto(); feedback.textContent = t('Foto entfernt.', 'Photo removed.'); photoInput.focus(); });
+    window.addEventListener('beforeunload', event => {
+      if (input('portrait-story').value.trim() && el('portrait-receipt').hidden) event.preventDefault();
+    });
+    root.addEventListener('input', event => (event.target as HTMLElement).removeAttribute('aria-invalid'));
+
+    const button = el<HTMLButtonElement>('portrait-send');
+    button.addEventListener('click', async () => {
+      const name = input('portrait-name'), story = input('portrait-story'), contact = input('portrait-contact'), alt = input('portrait-alt');
+      if (!name.value.trim()) return fail(name, t('Bitte gib den Namen an, der erscheinen soll.', 'Please enter the name that should appear.'));
+      if (story.value.trim().length < 50) return fail(story, t('Bitte erzähl in ein paar Sätzen von deinem Alltag.', 'Please describe your everyday life in a few sentences.'));
+      if (photo && !alt.value.trim()) return fail(alt, t('Bitte beschreibe dein Foto in ein, zwei Sätzen.', 'Please describe your photo in one or two sentences.'));
+      if (photo && !el<HTMLInputElement>('portrait-photo-consent').checked) return fail(el('portrait-photo-consent'), t('Bitte bestätige, dass nur du auf dem Foto bist, oder entferne das Foto.', 'Please confirm that only you are in the photo, or remove the photo.'));
+      if (!contact.value.trim()) return fail(contact, t('Bitte gib an, wie wir dich für die Rückfrage erreichen.', 'Please tell us how to reach you for the check.'));
+      if (!el<HTMLInputElement>('portrait-consent').checked) return fail(el('portrait-consent'), t('Ohne deine ausdrückliche Einwilligung können wir das Porträt nicht annehmen.', 'We cannot accept the portrait without your explicit consent.'));
+      const withdraw = code();
+      button.disabled = true;
+      feedback.textContent = t('Wird gesendet …', 'Sending …');
+      try {
+        const response = await fetch('/api/people', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(30000),
+          body: JSON.stringify({ lang: de ? 'de' : 'en', name: name.value, about: input('portrait-about').value, story: story.value, contact: contact.value, photo, photoAlt: photo ? alt.value : null, photoConsent: Boolean(photo), consent: true, consentVersion, code: withdraw }),
+        });
+        if (response.status === 422) return fail(story, t('Bitte entferne E-Mail-Adressen, Telefonnummern und Links aus Name und Text. Deine Kontaktangabe gehört nur in das Feld für die Rückfrage.', 'Please remove email addresses, phone numbers and links from your name and text. Your contact belongs only in the field for the check.'));
+        if (response.status === 429) { feedback.textContent = t('Gerade kommen zu viele Anfragen. Bitte versuch es in einer Minute noch einmal.', 'Too many requests right now. Please try again in a minute.'); return; }
+        if (!response.ok) { feedback.textContent = t('Das hat nicht geklappt. Dein Text ist noch da; bitte versuch es später noch einmal.', 'That did not work. Your text is still here; please try again later.'); return; }
+        feedback.textContent = '';
+        root.hidden = true;
+        el<HTMLInputElement>('portrait-code').value = withdraw;
+        el('portrait-receipt').hidden = false;
+        el('portrait-receipt-title').focus();
+      } catch {
+        feedback.textContent = t('Keine Verbindung. Dein Text ist noch da; bitte versuch es noch einmal.', 'No connection. Your text is still here; please try again.');
+      } finally { button.disabled = false; }
+    });
+
+    const withdrawStatus = el('portrait-withdraw-status');
+    el('portrait-withdraw').addEventListener('click', async () => {
+      const field = el<HTMLInputElement>('portrait-withdraw-code');
+      const value = field.value.trim().toLowerCase();
+      if (!/^[a-z2-9]{5}(?:-[a-z2-9]{5}){3}$/.test(value)) { withdrawStatus.textContent = t('Bitte gib den vollständigen Code mit Bindestrichen ein.', 'Please enter the complete code including hyphens.'); field.focus(); return; }
+      try {
+        const response = await fetch('/api/people/withdraw', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: value }), signal: AbortSignal.timeout(20000) });
+        withdrawStatus.textContent = response.ok ? t('Erledigt. Falls es zu diesem Code ein Porträt gab, ist es jetzt gelöscht.', 'Done. If there was a portrait for this code, it has now been deleted.') : t('Das hat nicht geklappt. Bitte versuch es später noch einmal.', 'That did not work. Please try again later.');
+        if (response.ok) field.value = '';
+      } catch { withdrawStatus.textContent = t('Keine Verbindung. Bitte versuch es noch einmal.', 'No connection. Please try again.'); }
+    });
+
+    const status = el('portrait-status');
+    fetch('/api/intake-status', { signal: AbortSignal.timeout(10000) })
+      .then(response => response.json() as Promise<{ peopleOpen?: boolean; portraitConsentVersion?: string }>)
+      .then(data => {
+        document.querySelector<HTMLElement>('[data-portrait-withdraw]')!.hidden = false;
+        if (data.peopleOpen && data.portraitConsentVersion === 'public-portrait-2026-10-21') {
+          consentVersion = data.portraitConsentVersion;
+          status.textContent = t('Alle Felder außer Foto und dem Satz über dich sind nötig.', 'All fields except the photo and the sentence about you are required.');
+          root.hidden = false;
+        } else {
+          status.textContent = t('Porträts nehmen wir noch nicht an. Bald kannst du dich hier vorstellen.', 'We are not accepting portraits yet. Soon you will be able to introduce yourself here.');
+        }
+      })
+      .catch(() => { status.textContent = t('Gerade können wir keine Porträts annehmen. Bitte versuch es später noch einmal.', 'We cannot accept portraits right now. Please try again later.'); });
+  }
+</script>

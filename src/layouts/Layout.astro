@@ -2,8 +2,8 @@
 import { labels, pathFor, repo, type Lang } from '../content/site';
 import '../styles/global.css';
 import Seo from '../components/Seo.astro';
-interface Props { lang: Lang; title: string; description: string; page?: string; }
-const { lang, title, description, page = '' } = Astro.props;
+interface Props { lang: Lang; title: string; description: string; page?: string; noindex?: boolean; }
+const { lang, title, description, page = '', noindex = false } = Astro.props;
 const t = labels[lang];
 const other = lang === 'de' ? 'en' : 'de';
 const navigation = ['tools', 'participate', 'stories', 'about'] as const;
@@ -14,6 +14,7 @@ const navigation = ['tools', 'participate', 'stories', 'about'] as const;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#173f38" />
+    {noindex && <meta name="robots" content="noindex" />}
     <Seo title={title} description={description} lang={lang} page={page} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>

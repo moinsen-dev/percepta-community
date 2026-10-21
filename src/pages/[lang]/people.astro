@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PortraitForm from '../../components/PortraitForm.astro';
+import { languages, labels, type Lang } from '../../content/site';
+export function getStaticPaths() { return languages.map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const t = lang === 'de' ? {
+  title: 'Die Menschen hinter Percepta.',
+  seo: 'Blinde und sehbehinderte Menschen erzählen von ihrem Alltag',
+  intro: 'Hier stellen sich blinde und sehbehinderte Menschen mit ihrem Namen vor und erzählen, wie sie ihren Alltag erleben. Jedes Porträt hat die Person selbst eingereicht; wir veröffentlichen es erst nach einer kurzen Rückfrage.',
+  fallback: 'Hier erscheinen bald die ersten Porträts.',
+} : {
+  title: 'The people behind Percepta.',
+  seo: 'Blind and low-vision people talk about their everyday lives',
+  intro: 'Blind and low-vision people introduce themselves here by name and describe how they experience everyday life. Each person submitted their own portrait; we publish it only after a short check with them.',
+  fallback: 'The first portraits will appear here soon.',
+};
+---
+<Layout lang={lang} page="people" title={t.seo} description={t.intro}>
+  <article class="article wrap">
+    <header class="article-header"><p class="eyebrow">{labels[lang].people}</p><h1>{t.title}</h1><p class="lede">{t.intro}</p></header>
+    <div class="prose">
+      <div class="people" data-people>
+        <p>{t.fallback}</p>
+      </div>
+      <PortraitForm lang={lang} />
+    </div>
+  </article>
+</Layout>

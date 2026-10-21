@@ -17,7 +17,7 @@ export default defineConfig({
     reuseExistingServer: false,
     timeout: 60_000,
   }, {
-    command: 'npx wrangler d1 migrations apply percepta-experiences --local --persist-to .wrangler/intake-test && npx wrangler dev --local --ip 127.0.0.1 --port 4322 --inspector-port 9232 --persist-to .wrangler/intake-test --var INTAKE_OPEN:true --var STORIES_OPEN:true --var GITHUB_API_URL:http://127.0.0.1:4323 --var GITHUB_TOKEN:test-token',
+    command: 'npx wrangler d1 migrations apply percepta-experiences --local --persist-to .wrangler/intake-test && npx wrangler dev --local --ip 127.0.0.1 --port 4322 --inspector-port 9232 --persist-to .wrangler/intake-test --var INTAKE_OPEN:true --var STORIES_OPEN:true --var GITHUB_API_URL:http://127.0.0.1:4323 --var GITHUB_TOKEN:test-token --var PEOPLE_OPEN:true --var ADMIN_TOKEN:test-admin',
     url: 'http://127.0.0.1:4322',
     reuseExistingServer: false,
     timeout: 60_000,

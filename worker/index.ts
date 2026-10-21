@@ -14,7 +14,7 @@ const categoryNames: Record<string, [string, string]> = {
   shopping: ['Einkaufen', 'Shopping'], questions: ['Fragen und Informationen', 'Questions and information'],
   interaction: ['Mit Menschen sprechen', 'Interacting with people'], orientation: ['Sich orientieren', 'Finding your way'], other: ['Anderes oder noch offen', 'Something else or not sure yet'],
 };
-type StoryEnv = Env & { GITHUB_TOKEN?: string };
+type StoryEnv = Env & { GITHUB_TOKEN?: string; ADMIN_TOKEN?: string };
 const storiesOpen = (env: StoryEnv) => env.STORIES_OPEN === 'true' && Boolean(env.GITHUB_TOKEN);
 const github = (env: StoryEnv, path: string, init: RequestInit = {}) => fetch(`${env.GITHUB_API_URL}${path}`, {
   ...init,
@@ -85,15 +85,142 @@ async function storiesHtml(env: StoryEnv, lang: 'de' | 'en') {
   return html;
 }
 
-async function storiesPage(request: Request, env: StoryEnv, lang: 'de' | 'en') {
-  const page = await env.ASSETS.fetch(request);
-  if (!page.ok || !storiesOpen(env)) return page;
-  const html = await storiesHtml(env, lang).catch(() => null);
-  if (html === null) return page;
-  return new HTMLRewriter().on('[data-stories]', { element: element => { element.setInnerContent(html, { html: true }); } }).transform(page);
+// Pages with live content: fetch the static page without the browser's validators, so a 304 never serves an outdated list.
+async function livePage(request: Request, env: StoryEnv, open: boolean, selector: string, html: () => Promise<string | null>) {
+  const page = await env.ASSETS.fetch(new Request(request.url));
+  if (!page.ok || !open) return page;
+  const content = await html().catch(() => null);
+  if (content === null) return page;
+  const response = new HTMLRewriter().on(selector, { element: element => { element.setInnerContent(content, { html: true }); } }).transform(page);
+  const headers = new Headers(response.headers);
+  headers.delete('ETag');
+  headers.set('Cache-Control', 'no-cache');
+  return new Response(response.body, { status: response.status, headers });
 }
 
-async function readBody(request: Request): Promise<Record<string, unknown> | null> {
+async function storiesPage(request: Request, env: StoryEnv, lang: 'de' | 'en') {
+  return livePage(request, env, storiesOpen(env), '[data-stories]', () => storiesHtml(env, lang));
+}
+
+// Named portraits (D-20): submitted with explicit consent, public only after the operator approves them.
+const portraitConsentVersion = 'public-portrait-2026-10-21';
+const peopleOpen = (env: StoryEnv) => env.PEOPLE_OPEN === 'true';
+const withdrawCode = /^[a-z2-9]{5}(?:-[a-z2-9]{5}){3}$/;
+const pendingDays = 60;
+type Person = { id: string; created_at: number; published_at: number | null; lang: string; name: string; about: string; story: string; photo_alt: string | null; has_photo: number; contact: string | null };
+
+// Keeps only the image data: drops APP1–APP15 (EXIF, XMP, GPS) and comment segments.
+function stripJpeg(bytes: Uint8Array) {
+  if (bytes.length < 4 || bytes[0] !== 0xff || bytes[1] !== 0xd8) return null;
+  const parts = [bytes.subarray(0, 2)];
+  let i = 2;
+  while (i + 4 <= bytes.length) {
+    if (bytes[i] !== 0xff) return null;
+    const marker = bytes[i + 1];
+    if (marker === 0xda) { parts.push(bytes.subarray(i)); break; }
+    const length = (bytes[i + 2] << 8) | bytes[i + 3];
+    if (length < 2 || i + 2 + length > bytes.length) return null;
+    if (!(marker >= 0xe1 && marker <= 0xef) && marker !== 0xfe) parts.push(bytes.subarray(i, i + 2 + length));
+    i += 2 + length;
+  }
+  const scan = parts[parts.length - 1];
+  if (parts.length < 2 || scan[0] !== 0xff || scan[1] !== 0xda) return null;
+  const out = new Uint8Array(parts.reduce((sum, part) => sum + part.length, 0));
+  let offset = 0;
+  for (const part of parts) { out.set(part, offset); offset += part.length; }
+  return out;
+}
+
+async function isAdmin(request: Request, env: StoryEnv) {
+  const given = request.headers.get('Authorization')?.match(/^Bearer (.+)$/)?.[1];
+  if (!env.ADMIN_TOKEN || !given) return false;
+  const encode = async (value: string) => new TextEncoder().encode(await hashToken(value));
+  return crypto.subtle.timingSafeEqual(await encode(given), await encode(env.ADMIN_TOKEN));
+}
+
+const field = (value: unknown, max: number) => typeof value === 'string' && value.trim().length <= max ? value.trim() : null;
+
+async function createPortrait(request: Request, env: StoryEnv) {
+  if (!peopleOpen(env)) return json({ error: 'people_closed' }, 503);
+  const body = await readBody(request, 1_500_000);
+  if (!body || body.consent !== true || body.consentVersion !== portraitConsentVersion) return json({ error: 'consent_required' }, 400);
+  const name = field(body.name, 80), about = field(body.about ?? '', 200), story = field(body.story, 6000), contact = field(body.contact, 200);
+  if (typeof body.lang !== 'string' || !['de', 'en'].includes(body.lang) || typeof body.code !== 'string' || !withdrawCode.test(body.code) ||
+    !name || about === null || !story || story.length < 50 || !contact) return json({ error: 'invalid_portrait' }, 400);
+  if (identifierPatterns.some(pattern => pattern.test(name) || pattern.test(about) || pattern.test(story))) return json({ error: 'identifying_details' }, 422);
+  let photo: Uint8Array | null = null;
+  const photoAlt = field(body.photoAlt ?? '', 400);
+  if (body.photo != null) {
+    if (body.photoConsent !== true || !photoAlt || typeof body.photo !== 'string') return json({ error: 'photo_consent_required' }, 400);
+    try { photo = Uint8Array.from(atob(body.photo), char => char.charCodeAt(0)); } catch { return json({ error: 'invalid_photo' }, 400); }
+    photo = photo.length <= 1_000_000 ? stripJpeg(photo) : null;
+    if (!photo) return json({ error: 'invalid_photo' }, 400);
+  }
+  const now = Date.now();
+  await env.DB.batch([
+    env.DB.prepare('DELETE FROM people WHERE published_at IS NULL AND created_at <= ?').bind(now - pendingDays * 86400000),
+    env.DB.prepare('INSERT INTO people (id, created_at, lang, name, about, story, photo, photo_alt, contact, consent_version) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO NOTHING')
+      .bind(await hashToken(body.code), now, body.lang, name, about, story, photo ? photo.slice().buffer : null, photo ? photoAlt : null, contact, portraitConsentVersion),
+  ]);
+  return json({ received: true }, 201);
+}
+
+async function photoResponse(env: StoryEnv, id: string, publishedOnly: boolean) {
+  const row = await env.DB.prepare(`SELECT photo FROM people WHERE id = ? AND photo IS NOT NULL${publishedOnly ? ' AND published_at IS NOT NULL' : ''}`).bind(id).first<{ photo: number[] | ArrayBuffer }>();
+  if (!row) return json({ error: 'not_found' }, 404);
+  return new Response(new Uint8Array(row.photo), { headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': publishedOnly ? 'public, max-age=3600' : 'no-store', 'X-Content-Type-Options': 'nosniff' } });
+}
+
+async function peopleApi(request: Request, env: StoryEnv, url: URL) {
+  const photoId = url.pathname.match(/^\/api\/(admin\/)?people\/photo\/([a-f0-9]{64})$/);
+  if (photoId && request.method === 'GET') {
+    if (photoId[1]) return await isAdmin(request, env) ? photoResponse(env, photoId[2], false) : json({ error: 'unauthorized' }, 401);
+    return peopleOpen(env) ? photoResponse(env, photoId[2], true) : json({ error: 'not_found' }, 404);
+  }
+  if (url.pathname === '/api/admin/people' && request.method === 'GET') {
+    if (!await isAdmin(request, env)) return json({ error: 'unauthorized' }, 401);
+    const { results } = await env.DB.prepare('SELECT id, created_at, published_at, lang, name, about, story, photo_alt, photo IS NOT NULL AS has_photo, contact FROM people ORDER BY published_at IS NOT NULL, created_at DESC').all<Person>();
+    return json({ people: results });
+  }
+  if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);
+  if (request.headers.get('Origin') !== url.origin) return json({ error: 'origin_not_allowed' }, 403);
+  if (request.headers.get('Content-Type')?.split(';')[0] !== 'application/json') return json({ error: 'json_required' }, 415);
+  if (url.pathname === '/api/admin/people/approve' || url.pathname === '/api/admin/people/delete') {
+    if (!await isAdmin(request, env)) return json({ error: 'unauthorized' }, 401);
+    const body = await readBody(request);
+    if (!body || typeof body.id !== 'string' || !/^[a-f0-9]{64}$/.test(body.id)) return json({ error: 'invalid_request' }, 400);
+    // Approval publishes the portrait and removes the private contact, which was only needed for the check.
+    if (url.pathname.endsWith('/approve')) await env.DB.prepare('UPDATE people SET published_at = ?, contact = NULL WHERE id = ? AND published_at IS NULL').bind(Date.now(), body.id).run();
+    else await env.DB.prepare('DELETE FROM people WHERE id = ?').bind(body.id).run();
+    return json({ done: true });
+  }
+  const limited = await env.INTAKE_LIMIT.limit({ key: request.headers.get('CF-Connecting-IP') ?? 'local' });
+  if (!limited.success) return json({ error: 'try_later' }, 429);
+  if (url.pathname === '/api/people') return createPortrait(request, env);
+  if (url.pathname === '/api/people/withdraw') {
+    const body = await readBody(request);
+    if (!body || typeof body.code !== 'string' || !withdrawCode.test(body.code)) return json({ error: 'invalid_request' }, 400);
+    await env.DB.prepare('DELETE FROM people WHERE id = ?').bind(await hashToken(body.code)).run();
+    return json({ deleted: true });
+  }
+  return json({ error: 'not_found' }, 404);
+}
+
+async function peopleHtml(env: StoryEnv, lang: 'de' | 'en') {
+  const { results } = await env.DB.prepare('SELECT id, lang, name, about, story, photo_alt, photo IS NOT NULL AS has_photo FROM people WHERE published_at IS NOT NULL ORDER BY published_at DESC LIMIT 100').all<Person>();
+  const items = results.map(person => {
+    const paragraphs = person.story.split(/\n{2,}/).map(part => `<p>${escapeHtml(part).replace(/\n/g, '<br>')}</p>`).join('');
+    const photo = person.has_photo ? `<img class="person-photo" src="/api/people/photo/${person.id}" alt="${escapeHtml(person.photo_alt ?? '')}" loading="lazy">` : '';
+    return `<article class="person"${person.lang === lang ? '' : ` lang="${person.lang}"`} aria-labelledby="person-${person.id.slice(0, 12)}">${photo}<div><h2 id="person-${person.id.slice(0, 12)}">${escapeHtml(person.name)}</h2>${person.about ? `<p class="person-about">${escapeHtml(person.about)}</p>` : ''}${paragraphs}</div></article>`;
+  });
+  return items.length ? items.join('') : null;
+}
+
+async function peoplePage(request: Request, env: StoryEnv, lang: 'de' | 'en') {
+  return livePage(request, env, peopleOpen(env), '[data-people]', () => peopleHtml(env, lang));
+}
+
+async function readBody(request: Request, limit = 32768): Promise<Record<string, unknown> | null> {
   const reader = request.body?.getReader();
   if (!reader) return null;
   let size = 0;
@@ -102,7 +229,7 @@ async function readBody(request: Request): Promise<Record<string, unknown> | nul
     const { value, done } = await reader.read();
     if (done) break;
     size += value.byteLength;
-    if (size > 32768) { await reader.cancel(); return null; }
+    if (size > limit) { await reader.cancel(); return null; }
     chunks.push(value);
   }
   const bytes = new Uint8Array(size);
@@ -124,9 +251,15 @@ export default {
     const url = new URL(request.url);
     const storiesLang = url.pathname.match(/^\/(de|en)\/stories\/$/)?.[1] as 'de' | 'en' | undefined;
     if (storiesLang && request.method === 'GET') return storiesPage(request, env, storiesLang);
+    const peopleLang = url.pathname.match(/^\/(de|en)\/people\/$/)?.[1] as 'de' | 'en' | undefined;
+    if (peopleLang && request.method === 'GET') return peoplePage(request, env, peopleLang);
+    if (url.pathname.startsWith('/api/people') || url.pathname.startsWith('/api/admin/')) {
+      // Never log request bodies, contacts or photos.
+      try { return await peopleApi(request, env, url); } catch { return json({ error: 'temporarily_unavailable' }, 503); }
+    }
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(request);
     if (url.pathname === '/api/intake-status' && request.method === 'GET') {
-      return json({ open: env.INTAKE_OPEN === 'true', consentVersion, retentionDays, storiesOpen: storiesOpen(env), storyConsentVersion });
+      return json({ open: env.INTAKE_OPEN === 'true', consentVersion, retentionDays, storiesOpen: storiesOpen(env), storyConsentVersion, peopleOpen: peopleOpen(env), portraitConsentVersion });
     }
     if (url.pathname === '/api/stories') {
       if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);
@@ -170,5 +303,6 @@ export default {
   },
   async scheduled(_event, env) {
     await env.DB.prepare('DELETE FROM experiences WHERE expires_at <= ?').bind(Date.now()).run();
+    await env.DB.prepare('DELETE FROM people WHERE published_at IS NULL AND created_at <= ?').bind(Date.now() - pendingDays * 86400000).run();
   },
 } satisfies ExportedHandler<Env>;
