@@ -48,7 +48,7 @@ Eintrag zur Kontaktaufnahme oder zu einer Interessentenliste ist getrennt von ei
 
 Astro erzeugt statisches HTML; für diese erste Seite sind weder Laufzeit-Adapter noch Datenbank nötig. Systemschriften, keine externen Einbettungen und nur ein kleines Script zum Kopieren. Textdownloads und sichtbare Vorlagen stammen aus denselben versionierten Dateien. Cloudflare und `percepta.moinsen.dev` sind vom Projektverantwortlichen festgelegt; eine geschützte technische Vorschau ersetzt nicht die öffentliche Freischaltung der Zieldomain.
 
-Vor öffentlichem Start: bestätigte Betreiber-/Kontaktangaben und Hosting-Datenverarbeitung ergänzen. Vor Aktivierung privater Teilnahme zusätzlich Empfang, Moderation, Aufbewahrung/Löschung, Rechtsprüfung, Rücknahmekanal und Missbrauchsschutz klären. Lizenzentscheidung und reale Accessibility-Tests bleiben offen. Keine Platzhalter-Adresse und kein nicht vorhandenes Postfach als aktiven Kontakt veröffentlichen.
+Betreiber-/Kontaktangaben sind mit D-15 bestätigt und als DE/EN-Impressum umgesetzt; [Quellen](legal-sources.md). Vor öffentlichem Start die konkrete Hosting-Datenverarbeitung abschließend prüfen. Vor Aktivierung privater Teilnahme zusätzlich Empfang, Moderation, Aufbewahrung/Löschung, Rechtsprüfung, Rücknahmekanal und Missbrauchsschutz klären. Lizenzentscheidung und reale Accessibility-Tests bleiben offen. Keine Platzhalter-Adresse und kein nicht vorhandenes Postfach als aktiven Kontakt veröffentlichen.
 
 Keine Analytics, Newsletter, Spendenabwicklung oder App-Anmeldung allein wegen ihrer üblichen Verwendung hinzufügen.
 

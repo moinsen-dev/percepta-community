@@ -6,9 +6,9 @@
 
 ## Aktueller Stand / Current status
 
-Die erste Astro-Website in Deutsch und Englisch ist implementiert: Vorhaben, Teilnahmevorbereitung, Mitarbeit, Forschung, Barrierefreiheit und Datenschutz-/Kontaktstatus. Ein kurzer Interview-Prompt und eine gleichwertige Textvorlage ohne KI sind lesbar, kopierbar und als Textdownload verfügbar. 19 Browserprüfungen bestehen lokal und in GitHub Actions. Cloudflare und `percepta.moinsen.dev` sind festgelegt; die öffentliche Freischaltung wartet auf bestätigte Betreiber-/Kontaktangaben. Es gibt noch keine Assistenz-App oder aktive Interview-Einreichung.
+Die erste Astro-Website in Deutsch und Englisch ist implementiert: Vorhaben, Teilnahmevorbereitung, Mitarbeit, Forschung, Barrierefreiheit und Datenschutz-/Kontaktstatus. Ein kurzer Interview-Prompt und eine gleichwertige Textvorlage ohne KI sind lesbar, kopierbar und als Textdownload verfügbar. Mit dem DE/EN-Impressum bestehen alle 21 Browserprüfungen lokal; CI und Veröffentlichung werden im Prüfbericht dokumentiert. Cloudflare und `percepta.moinsen.dev` sind festgelegt; Betreiber-/Kontaktangaben wurden auf ausdrücklichen Auftrag aus den öffentlichen moinsen-Angaben übernommen. Für die öffentliche Freischaltung bleiben DNS/TLS und die abschließende Hosting-Datenschutzprüfung offen. Es gibt noch keine Assistenz-App oder aktive Interview-Einreichung.
 
-The first German/English Astro website is implemented, with project information, a short interview prompt and an equivalent template without AI. All 19 browser checks pass locally and in GitHub Actions. Cloudflare and `percepta.moinsen.dev` are the selected hosting target; public launch awaits confirmed operator and contact details. There is no assistance app or active interview submission service. Please do not post personal stories or contact details in public issues.
+The first German/English Astro website is implemented, with project information, a short interview prompt and an equivalent template without AI. All 21 browser checks pass locally, including the new DE/EN legal notice; CI and deployment results are recorded in the validation report. Cloudflare and `percepta.moinsen.dev` are the selected hosting target; operator and contact details have been added from the public moinsen information as requested. DNS/TLS and the final hosting privacy review remain open before public launch. There is no assistance app or active interview submission service. Please do not post personal stories or contact details in public issues.
 
 Alle vier Zweitanalysen sind gemergt. Die [Synthese](agents/codex/synthesis.md) und die bestätigten Folgeentscheidungen D-13/D-14 stehen in [state.md](state.md). Der [Prüfbericht](agents/codex/website-validation.md) trennt technische Checks von noch ausstehenden Screenreader- und Nutzertests.
 
@@ -21,6 +21,7 @@ Geschützte Vorschau für den Projekteigentümer: [Percepta auf Deutsch](https:/
 - [Vision und Alltagssituationen](docs/vision.md)
 - [Recherche und Evidenzstatus](docs/research.md)
 - [Umfang der Astro-Website](docs/website-brief.md)
+- [Betreiberangaben und Quellen der Rechtstexte](docs/legal-sources.md)
 - [Interview- und Veröffentlichungsablauf](docs/interview-spec.md)
 - [Deutscher Interview-Prompt](docs/interview-prompt.de.md) und [English interview prompt](docs/interview-prompt.en.md) — nur Entwurfshilfe, keine automatische Veröffentlichung
 - [Textvorlage ohne KI: Deutsch](docs/experience-template.de.md) und [English](docs/experience-template.en.md)

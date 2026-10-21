@@ -1,6 +1,6 @@
 # Percepta — Projektstand
 
-Stand: 2026-10-20. Verantwortlicher Harness für die erste Lieferung: Codex.
+Stand: 2026-10-21. Verantwortlicher Harness für die erste Lieferung: Codex.
 
 ## Aktuelle Phase
 
@@ -10,9 +10,9 @@ Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt au
 
 Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
-Website v0.1 ist mit Astro in DE/EN implementiert und lokal geprüft: 14 HTML-Seiten, 4 Textdownloads, kurzer Interview-Prompt und gleichwertige Vorlage ohne KI. Hostingziel ist Cloudflare unter `percepta.moinsen.dev`. Die öffentliche Freischaltung wartet auf bestätigte Betreiber-/Kontaktangaben und ergänzte Hosting-Datenschutzhinweise. Die [geschützte Sites-Vorschau](https://percepta-community.leafy-leaf-9434.chatgpt.site/de/) ist veröffentlicht; Zugriff nur für den Eigentümer, ohne Anmeldung HTTP 401. Die Zieldomain ist beim Provider registriert, aber noch im Status `pending`; DNS-/TLS-Verifizierung steht aus.
+Website v0.1 ist mit Astro in DE/EN implementiert und lokal geprüft: 16 HTML-Seiten einschließlich DE/EN-Impressum, 4 Textdownloads, kurzer Interview-Prompt und gleichwertige Vorlage ohne KI. Hostingziel ist Cloudflare unter `percepta.moinsen.dev`. Betreiber, Anschrift, geschäftlicher Kontakt und USt-IdNr. sind gemäß D-15 übernommen. Die öffentliche Freischaltung wartet auf DNS/TLS und die abschließende Prüfung der konkreten Hosting-Datenschutzhinweise. Die [geschützte Sites-Vorschau](https://percepta-community.leafy-leaf-9434.chatgpt.site/de/) ist veröffentlicht; Zugriff nur für den Eigentümer, ohne Anmeldung HTTP 401. Die Zieldomain ist beim Provider registriert, aber noch im Status `pending`; DNS-/TLS-Verifizierung steht aus.
 
-Veröffentlichter Website-Quellstand: `cdc203f5ac72a635e2190a86f87a98c0f322aa15`. [GitHub Actions](https://github.com/moinsen-dev/percepta-community/actions/runs/39464211108) erfolgreich einschließlich aller 19 Browserprüfungen unter Linux. Sites-Version 2, Deployment `appgdep_6ad7a1ac89a481919c967deae69b444c`, Status `succeeded`. Nachfolgende reine Statusdokumentation ändert diesen geprüften Website-Build nicht.
+Bisher veröffentlichter Website-Quellstand (vor dem Impressums-Nachtrag): `cdc203f5ac72a635e2190a86f87a98c0f322aa15`. [GitHub Actions](https://github.com/moinsen-dev/percepta-community/actions/runs/39464211108) erfolgreich einschließlich aller 19 Browserprüfungen unter Linux. Sites-Version 2, Deployment `appgdep_6ad7a1ac89a481919c967deae69b444c`, Status `succeeded`. Der Impressums-Nachtrag wird nach den aktuellen Prüfungen als neue Version veröffentlicht; der Deploy-Nachweis folgt im Protokoll.
 
 Kein App-Code, Backend, Kontaktregister oder Interview-Empfang implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt. [Website-Prüfbericht](agents/codex/website-validation.md), [fiktive redaktionelle Probe](agents/codex/participation-dry-run.md) und [Pilot-Leitfaden](docs/participation-pilot.md) liegen vor. Der Pilot ist vorbereitet, nicht gestartet.
 
@@ -54,6 +54,7 @@ Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branc
 | D-12 | Nach Abschluss von OMP zusätzlich DeepSeek als unabhängigen Analyselauf aufnehmen; gleiche fachliche Baseline, eigener Ordner und Worktree, anschließend gemeinsame Synthese | Ausdrücklicher Folgeauftrag des Projektverantwortlichen, 2026-10-20 |
 | D-13 | Website mit Astro, Hosting bei Cloudflare, Zieldomain `percepta.moinsen.dev` | Ausdrücklicher Umsetzungsauftrag, 2026-10-20 |
 | D-14 | Website und vier empfohlene Schritte beginnen: kurze DE/EN-Entwurfshilfen mit gleichwertiger Alternative ohne KI; fiktive Prozessprobe; privaten Betrieb klären und Pilot mit 3–5 Erwachsenen vorbereiten; daraus später wenige Abläufe für Technikvergleiche auswählen. Im ersten Schritt ausschließlich eigene Entwürfe, keine automatischen Issues oder öffentliche persönliche Geschichten | Auftrag „Webpage inklusive der vier Empfehlungen“, 2026-10-20; vor Umsetzung so konkretisiert. Keine Freigabe persönlicher Inhalte oder ungefragter Kontaktaufnahme |
+| D-15 | Öffentliche Betreiber-/Rechtsangaben von www.moinsen.dev für Percepta übernehmen; keine Übernahme fremder Dienstfunktionen oder veralteter Verweise | Ausdrücklicher Folgeauftrag, 2026-10-21; [Quellen und Abgrenzung](docs/legal-sources.md) |
 
 ## Annahmen, keine bestätigten Nutzermerkmale
 
@@ -78,7 +79,7 @@ Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branc
 | Koordinator-Synthese | Vergleich abgeschlossen; Folgeauftrag D-13/D-14 in Spezifikationen übernommen | [Entscheidungsvorlage](agents/codex/synthesis.md) |
 | Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
 | Vergleichsbaseline | Veröffentlicht, von `origin` abgerufen und remote gelesen | `research-baseline-v0.1` → `fe68acae4142baca25408124f85e353fb9786674` |
-| Astro-Website | Implementiert; 19/19 Browserprüfungen lokal und in CI bestanden; geschützte Vorschau live, öffentliche Domain noch nicht freigeschaltet | [Brief](docs/website-brief.md), [Prüfbericht](agents/codex/website-validation.md) |
+| Astro-Website | Implementiert; Impressums-Nachtrag lokal mit 21/21 Browserprüfungen bestanden, CI-/Deploy-Nachweis folgt; geschützte Vorschau live, öffentliche Domain noch nicht freigeschaltet | [Brief](docs/website-brief.md), [Prüfbericht](agents/codex/website-validation.md) |
 | Interview-Einreichung | DE/EN-Entwurfshilfen verfügbar; privater Empfang inaktiv | [Spezifikation](docs/interview-spec.md), [Pilot-Vorbereitung](docs/participation-pilot.md) |
 | Fiktive Prozessprobe | Redaktioneller Durchgang dokumentiert; unabhängige KI-Chat-Proben ausstehend | [Probe](agents/codex/participation-dry-run.md) |
 | Beteiligungs-Pilot / Technikvergleiche | Ablauf und Auswahlkriterien vorbereitet; keine Teilnehmenden oder Messergebnisse | [Leitfaden](docs/participation-pilot.md) |
@@ -109,7 +110,7 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Vor öffentlichem Start und Pilot zu klären
 
-1. Bestätigte Betreiberangaben, Anschrift, Kontaktadresse und Hosting-Datenverarbeitung für die öffentliche Website. Im laufenden Auftrag angefragt; nicht aus fremden Seiten oder persönlichen Angaben abgeleitet.
+1. Betreiberangaben, Anschrift und geschäftliche Kontaktadresse sind gemäß D-15 bestätigt und umgesetzt. Offen bleibt die abschließende Prüfung der konkreten Hosting-Datenverarbeitung; siehe [Quellen und Abgrenzung](docs/legal-sources.md).
 2. Privater Empfang, Moderation, Zugriff, konkrete Aufbewahrung/Löschung, Rücknahme und rechtliche Prüfung vor Einsendungen. Postfach ist ein Kandidat, kein bereits eingerichteter Dienst.
 3. Domainanbindung und öffentliche Freischaltung nach diesen Angaben. Die in dieser Sitzung vorgegebene Sites-Instanz ist getrennt vom bestehenden Cloudflare-Account; die lokale Wrangler-Konfiguration bereitet das ausdrücklich gewünschte Cloudflare-Ziel vor. Keine Änderung bestehender DNS-Einträge und kein direkter Wrangler-Deploy erfolgt.
 4. Lizenz für Code/Dokumentation und Bedingungen späterer freiwilliger öffentlicher Beiträge.
@@ -117,6 +118,6 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Nächste Schritte
 
-Betreiber-/Kontaktangaben ergänzen und anschließend DNS/TLS sowie öffentliche Freischaltung der bestätigten Zieldomain abschließen. Danach den privaten Teilnahmeweg mit erfundenen Daten erproben. Erst bei geklärtem Betrieb und zugänglichem Ablauf den Pilot starten. Keine Personenansprache erfolgt. Technische Aufgaben und Modellanbieter werden aus den Pilot-Ergebnissen abgeleitet, nicht vorweggenommen.
+Die Hosting-Datenschutzhinweise abschließend prüfen und DNS/TLS sowie öffentliche Freischaltung der bestätigten Zieldomain abschließen. Danach den privaten Teilnahmeweg mit erfundenen Daten erproben. Erst bei geklärtem Betrieb und zugänglichem Ablauf den Pilot starten. Keine Personenansprache erfolgt. Technische Aufgaben und Modellanbieter werden aus den Pilot-Ergebnissen abgeleitet, nicht vorweggenommen.
 
 Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.

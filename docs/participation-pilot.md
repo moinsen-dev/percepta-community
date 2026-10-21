@@ -16,7 +16,7 @@ Der Projektverantwortliche bestätigt die folgenden Angaben in einem **privaten*
 
 | Voraussetzung | Noch zu klären |
 | --- | --- |
-| Verantwortlichkeit | Betreiber, Moderation, Vertretung und tatsächliche Kontaktadresse |
+| Verantwortlichkeit | Betreiber und allgemeine geschäftliche Kontaktadresse über D-15 bestätigt; Moderation und Vertretung für den Pilot noch festlegen |
 | Privater Empfang | Postfach als einfacher Kandidat; Dienst, Zugriffsrechte, Spam-Umgang und erreichbare Alternative ohne KI/GitHub prüfen |
 | Information und Zustimmung | Zweck, Datenarten, Empfänger, Rechte und passende Rechtsgrundlagen fachlich prüfen; Gesundheitsbezug berücksichtigen; Zustimmung zum Gespräch nicht mit Veröffentlichung vermischen |
 | Aufbewahrung und Löschung | Konkrete Fristen, Zugriff, Backups und Löschverantwortliche; nichts als „sofort gelöscht“ versprechen, bevor der Ablauf geprüft ist |

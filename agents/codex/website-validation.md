@@ -57,3 +57,17 @@ Offizielle Quellen, abgerufen 2026-10-20:
 Die geschützte Vorschau ist unter `https://percepta-community.leafy-leaf-9434.chatgpt.site` veröffentlicht. Version 2 verwendet exakt den gepushten und in CI geprüften Quellstand `cdc203f5ac72a635e2190a86f87a98c0f322aa15`; Build/Archiv wurden daraus mit dem Sites-Helper erstellt. Deployment `appgdep_6ad7a1ac89a481919c967deae69b444c`: `succeeded` am 2026-10-20. Zugriff bleibt auf den Eigentümer beschränkt. Unangemeldeter Abruf der ersten Veröffentlichung ergab HTTP 401; keine öffentliche Zugriffsfreigabe vorgenommen.
 
 `percepta.moinsen.dev` ist als Custom Domain registriert, DNS-/TLS-Verifizierung jedoch ausstehend. Kein DNS-Eintrag wurde verändert. Die vorhandene Wrangler-Anmeldung weist keinen DNS-Schreibscope aus; eine ergänzende Plugin-Suche lieferte keine passende Cloudflare-DNS-Anbindung. Die öffentliche Domain wird nicht als live ausgewiesen. Statusnachträge in Markdown verändern den veröffentlichten statischen Build nicht.
+
+
+## Nachtrag 2026-10-21 — Impressum und Betreiberkontakt
+
+Ausgangs-Commit: `404dd7be14459d5ab623b8b12aa6af60df0f0609`. Auf ausdrücklichen Auftrag wurden die öffentlichen Geschäftsangaben von moinsen.dev übernommen (D-15). Der bisherige Befund fehlender Betreiberangaben ist damit erledigt. Quellen, E-Mail-Gegenprüfung und nicht übernommene Vorlagenpassagen stehen in [legal-sources.md](../../docs/legal-sources.md).
+
+DE/EN-Impressum ergänzt, von allen Seiten erreichbar; Datenschutz, Barriere-Meldung und Mitarbeit verweisen auf den geschäftlichen Kontakt. Die Angaben zum Hosting beschreiben die geschützte Vorschau. Kein privater Interview-Empfang eingerichtet, keine Änderung von DNS oder Zugriffsrechten.
+
+- `npm run check`: 0 Fehler, Warnungen oder Hinweise.
+- `npm run build`: 16 HTML-Seiten und 4 Textdownloads erfolgreich erzeugt.
+- `npm test`: 21/21 bestanden, einschließlich beider Impressumsseiten, axe, Sprache/Links/Anker und 320-Pixel-Reflow; bestehende Tastatur-, Clipboard-, Download-, Ohne-JavaScript- und Header-Prüfungen bestehen ebenfalls.
+- Keine neuen manuellen Screenreader-/Nutzertests und keine juristische Freigabe. Die abschließende Prüfung der konkreten Hosting-Datenverarbeitung bleibt offen.
+
+CI und Veröffentlichung des Nachtrags werden nach erfolgreichem Abschluss ergänzt.
