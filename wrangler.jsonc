@@ -10,5 +10,10 @@
   "workers_dev": false,
   "routes": [
     { "pattern": "percepta.moinsen.dev", "custom_domain": true }
-  ]
+  ],
+  "preview_urls": false,
+  "observability": {
+    "enabled": false
+  },
+  "logpush": false
 }

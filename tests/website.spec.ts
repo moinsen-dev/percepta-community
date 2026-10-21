@@ -8,13 +8,20 @@ const routes = ['/', '/404.html', ...languages.flatMap(lang =>
 )];
 
 for (const route of routes) {
-  test(`accessible structure and links: ${route}`, async ({ page, request }) => {
+  test(`accessible structure and links: ${route}`, async ({ page, request, context }) => {
+    const thirdPartyRequests: string[] = [];
+    page.on('request', req => {
+      if (new URL(req.url()).origin !== 'http://127.0.0.1:4321') thirdPartyRequests.push(req.url());
+    });
     await page.goto(route);
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.getByRole('main')).toHaveCount(1);
     await expect(page.locator('html')).toHaveAttribute('lang', route.startsWith('/en/') ? 'en' : 'de');
     const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
     expect(result.violations).toEqual([]);
+    expect(thirdPartyRequests).toEqual([]);
+    expect(await context.cookies()).toEqual([]);
+    expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0]);
     const links = await page.locator('a[href]').evaluateAll(elements => elements.map(a => (a as HTMLAnchorElement).href));
     for (const href of new Set(links)) {
       const url = new URL(href);
