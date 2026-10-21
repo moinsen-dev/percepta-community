@@ -354,3 +354,12 @@ Die Dateien in den drei anderen Harness-Ordnern wurden in diesem Schritt von Cod
 - **Prüfungen:** Astro-/Worker-Typprüfung und Build erfolgreich; 32 lokale Browser-/API-Prüfungen erfolgreich; Wrangler-Dry-run erfolgreich, Linkprüfung und Diff-Whitespace ohne Befund. Echte Cloudflare-D1-Information und leere Datenbank geprüft. Keine persönlichen Testdaten; geschlossene und geöffnete API getrennt lokal geprüft.
 - **Grenzen:** visueller Product-Design-Audit mangels Computer-Use-Browser nicht abgeschlossen. Keine manuelle Screenreader-/Nutzerabnahme, externe Prompt-Probe, Search-Console-Prüfung oder fachliche Rechtsprüfung. Kein aktiver Pilot. Der neue Empfang ist implementiert, seine reale Nutzung ist nicht freigegeben oder nachgewiesen.
 - **Nächster Schritt:** Quellstand pushen, CI und direktes Cloudflare-Deployment nachweisen; dabei Empfang geschlossen lassen. Danach Moderation/Frist, Einwilligungs-/Betriebsbedingungen und reale Accessibility-Abnahme abschließen. Öffentliche technische Anforderungen später aus privat geprüften Bedürfnissen ableiten; persönliche Beispiele nur nach konkreter Zustimmung.
+
+
+## 2026-10-21 — SEO-/Teilnahme-Stand veröffentlicht, Empfang bleibt geschlossen
+
+- **Harness / Ausgangspunkt:** Codex, GPT-6-Familie, genaue Build-ID unbekannt; Quellcommit `27ba139a8e97d2fe1b6cce90846df15bc2e025c6` auf main und origin/main.
+- **Ergebnis:** [CI Run 39580302540](https://github.com/moinsen-dev/percepta-community/actions/runs/39580302540) erfolgreich, 32 lokale/CI-Prüfungen. Cloudflare-Version `4788d7d5-8327-4f70-9c47-a70293fb865c` zu 100 % aktiv, bestehende Domain und zusätzlicher täglicher Cron bestätigt. Empfangsschalter false. Kein neuer Harness, keine Nachricht, keine persönlichen Berichte oder öffentliche Issues.
+- **Live-Prüfung:** robots.txt erreichbar (200) mit korrektem Sitemap-Verweis. Fünf weitere Inhalts-/Sitemap-/API-Abrufe durch Cloudflare-Challenge begrenzt (403). Keine vollständige Live-Bedienungs- oder Crawler-Abnahme behauptet; keine Sicherheitsregeln verändert.
+- **Statusdateien:** README, state, eigener Website-Prüfbericht, SEO-Prüfdokument und dieser ausschließlich angehängte Protokolleintrag. Reine Dokumentation; Website- und Worker-Quellstand unverändert.
+- **Nächster Schritt / offene Punkte:** Moderation und verbindliche Frist beantworten, Einwilligungs-/Betriebsprüfung und reale Screenreader-/Live-Abnahme abschließen. Erst danach privaten Empfang aktivieren. Search Console und externe KI-Chat-Proben bleiben offen. Baseline bleibt unverändert, fremde Analyseordner unberührt.

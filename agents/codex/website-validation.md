@@ -118,3 +118,10 @@ Ausgangs-Commit `12b45daad08ccf805b4f632bcff16bd9532eb489`, Codex als Koordinato
 - Grenzen: kein visueller Screenshot-Audit (Computer-Use ohne Apps/Browser, Startfehler), keine manuellen VoiceOver-/NVDA-Tests, keine Nutzerstudie, keine externen KI-Chat-Proben, keine Rechtsfreigabe oder Suchmaschinen-Indexierung. Ohne JavaScript kein vollständiger Absendeweg. Betriebs- und Zugänglichkeitsprüfung vor Öffnung bleibt erforderlich.
 
 Quellen und konkrete Betriebsgrenzen: [SEO/Verständlichkeit](../../docs/website-discoverability.md), [privater Rückweg](../../docs/private-intake.md). Deployment und neue CI werden nach Veröffentlichung separat nachgetragen.
+
+
+### Veröffentlichung des Folgeauftrags
+
+Quellcommit `27ba139a8e97d2fe1b6cce90846df15bc2e025c6` auf main und origin/main. [GitHub Actions 39580302540](https://github.com/moinsen-dev/percepta-community/actions/runs/39580302540) vollständig erfolgreich. Direkter Cloudflare-Deploy erfolgreich, Version `4788d7d5-8327-4f70-9c47-a70293fb865c`, Deployment-Liste bestätigt 100 %. Variable `INTAKE_OPEN` beim Deploy false; Cron `17 3 * * *` eingerichtet. Namespace der Zugriffsbremse vor Veröffentlichung vom Dokumentationsbeispiel auf einen eigenen Projektwert geändert; erneuter Dry-run und CI bestanden.
+
+Live robots.txt: HTTP 200, erwarteter Inhalt mit Sitemap-Verweis. Live `/de/`, DE/EN-Teilnahme, `/sitemap.xml` und `/api/intake-status`: HTTP 403 / `cf-mitigated: challenge`. Deshalb kein erfolgreicher Live-Formulartest und keine nachgewiesene Crawler-Erreichbarkeit. Keine Challenge umgangen, keine Zonen-/DNS-Schutzregel verändert. Native Browseroberfläche weiterhin nicht verfügbar. Datenbankkontrolle vor Veröffentlichung: 0 Berichte, Jurisdiktion eu, Replikation disabled. Keine echten Daten übertragen.
