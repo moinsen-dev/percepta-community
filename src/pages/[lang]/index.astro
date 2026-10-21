@@ -1,49 +1,34 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { languages, labels, home, pathFor, type Lang } from '../../content/site';
+import { languages, home, pathFor, type Lang } from '../../content/site';
 export function getStaticPaths() { return languages.map(lang => ({ params: { lang } })); }
 const lang = Astro.params.lang as Lang;
 const t = home[lang];
-const questions = lang === 'de' ? [
-  ['Was ist Percepta?', 'Percepta ist ein Forschungsprojekt von moinsen. Wir entwickeln Alltagshilfen gemeinsam mit blinden und sehbehinderten Menschen. Eine eigene Assistenz-App ist noch nicht verfügbar.'],
-  ['Welche Apps kann ich schon heute ausprobieren?', 'Auf unserer Seite „Hilfreiche Apps“ findest du Google Lookout, Microsoft Seeing AI, Guided Vision in Gemini Live und Apples Bedienungshilfen. Zu jedem Angebot nennen wir Voraussetzungen, Grenzen und offizielle Anleitungen.'],
-  ['Muss ich mich mit KI oder GitHub auskennen?', 'Nein. Du kannst eine Alltagssituation ohne KI beschreiben. Wenn du möchtest, hilft dir ein Interview-Prompt: ein Text, den du in deine KI-Chat-App kopierst. Für die Vorbereitung brauchst du kein GitHub-Konto.'],
-  ['Ist Percepta eine Navigationshilfe?', 'Wir untersuchen auch Orientierung. Percepta gibt aber noch keine Weganweisungen. Im Alltag geht es ebenso um Einkaufen, verständliche Informationen und Gespräche mit anderen Menschen.'],
-] : [
-  ['What is Percepta?', 'Percepta is a research project by moinsen. We develop everyday assistance together with blind and low-vision people. Our own assistance app is not available yet.'],
-  ['Which apps can I try today?', 'Our “Useful apps” page introduces Google Lookout, Microsoft Seeing AI, Guided Vision in Gemini Live and Apple accessibility features. Each entry explains requirements and limitations and links to official guides.'],
-  ['Do I need to know about AI or GitHub?', 'No. You can describe an everyday situation without AI. If you prefer, an interview prompt can help: it is a text you copy into your AI chat app. Preparing an experience needs no GitHub account.'],
-  ['Is Percepta a navigation aid?', 'We also explore orientation, but Percepta does not provide directions yet. Everyday assistance also includes shopping, understandable information and conversations with other people.'],
-];
 ---
 <Layout lang={lang} title={t.title.replace(/\.$/, '')} description={t.description}>
   <section class="hero wrap" aria-labelledby="hero-title">
-    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>{labels[lang].phase}</p>
     <h1 id="hero-title">{t.title}</h1>
     <p class="hero-intro">{t.intro}</p>
     <div class="actions">
-      <a class="button" href={pathFor(lang, 'tools')}>{labels[lang].tools}<span aria-hidden="true"> →</span></a>
-      <a class="button secondary" href={pathFor(lang, 'participate')}>{labels[lang].participate}<span aria-hidden="true"> →</span></a>
-      <a class="text-link" href="#everyday">{t.secondary}<span aria-hidden="true"> ↓</span></a>
+      <a class="button" href={pathFor(lang, 'tools')}>{t.findHelp}<span aria-hidden="true"> →</span></a>
+      <a class="button secondary" href={pathFor(lang, 'participate')}>{t.share}<span aria-hidden="true"> →</span></a>
     </div>
   </section>
-  <section class="everyday wrap section" id="everyday" aria-labelledby="everyday-title">
-    <div class="section-intro"><p class="eyebrow">{t.eyebrow}</p><h2 id="everyday-title">{t.heading}</h2><p class="lede">{t.lead}</p></div>
-    <ol class="areas">
-      {t.areas.map(([title, text], index) => <li><span class="area-number" aria-hidden="true">0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}
-    </ol>
+  <section class="section wrap" aria-labelledby="tasks-title">
+    <h2 id="tasks-title">{t.tasksTitle}</h2>
+    <ul class="task-links">
+      {t.tasks.map(([text, id]) => <li><a href={`${pathFor(lang, 'tools')}#${id}`}>{text}<span aria-hidden="true"> →</span></a></li>)}
+    </ul>
   </section>
-  <section class="example-band" aria-labelledby="example-title">
-    <div class="wrap example-content"><p class="eyebrow" id="example-title">{t.exampleLabel}</p><p class="example-quote">{t.example}</p><p class="example-note">{t.exampleNote}</p></div>
-  </section>
-  <section class="section wrap" aria-labelledby="process-title">
-    <h2 id="process-title">{t.processTitle}</h2>
+  <section class="section wrap" aria-labelledby="project-title">
+    <h2 id="project-title">{t.projectTitle}</h2>
+    <p class="lede">{t.project}</p>
     <ol class="steps">{t.steps.map(([title, text]) => <li><h3>{title}</h3><p>{text}</p></li>)}</ol>
-    <div class="research-note"><h3>{t.limitsTitle}</h3><p>{t.limits}</p><a href={pathFor(lang, 'research')}>{labels[lang].research}<span aria-hidden="true"> →</span></a></div>
+    <a href={pathFor(lang, 'about')}>{t.aboutLink}<span aria-hidden="true"> →</span></a>
   </section>
   <section class="section wrap" aria-labelledby="questions-title">
     <h2 id="questions-title">{lang === 'de' ? 'Häufige Fragen' : 'Common questions'}</h2>
-    <div class="prose">{questions.map(([question, answer]) => <section><h3>{question}</h3><p>{answer}</p></section>)}</div>
+    <div class="prose">{t.questions.map(([question, answer]) => <section><h3>{question}</h3><p>{answer}</p></section>)}</div>
   </section>
-  <section class="invitation wrap" aria-labelledby="invitation-title"><div><h2 id="invitation-title">{t.readyTitle}</h2><p>{t.ready}</p></div><a class="button" href={pathFor(lang, 'participate')}>{labels[lang].participate}<span aria-hidden="true"> →</span></a></section>
+  <section class="invitation wrap" aria-labelledby="invitation-title"><div><h2 id="invitation-title">{t.readyTitle}</h2><p>{t.ready}</p></div><a class="button" href={pathFor(lang, 'participate')}>{t.share}<span aria-hidden="true"> →</span></a></section>
 </Layout>

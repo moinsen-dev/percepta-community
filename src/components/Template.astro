@@ -3,9 +3,11 @@ import type { Lang } from '../content/site';
 interface Props { id: 'prompt' | 'manual'; text: string; lang: Lang; }
 const { id, text, lang } = Astro.props;
 const de = lang === 'de';
-const copy = id === 'prompt' ? (de ? 'Interview-Prompt kopieren' : 'Copy the interview prompt') : (de ? 'Textvorlage kopieren' : 'Copy the text template');
+const copy = id === 'prompt' ? (de ? 'Gesprächsanleitung kopieren' : 'Copy the conversation guide') : (de ? 'Textvorlage kopieren' : 'Copy the text template');
 ---
-<div class="template"><pre id={`${id}-text`}>{text}</pre></div>
+{id === 'prompt'
+  ? <details class="template"><summary>{de ? 'Gesprächsanleitung lesen' : 'Read the conversation guide'}</summary><pre id={`${id}-text`}>{text}</pre></details>
+  : <div class="template"><pre id={`${id}-text`}>{text}</pre></div>}
 <div class="template-tools">
   <button
     type="button"

@@ -1,6 +1,6 @@
 # Percepta — Interview und Veröffentlichung
 
-Status: Folgeauftrag D-17, Stand 2026-10-21. DE/EN-Prompts und Vorlage ohne KI mit einheitlichen Überschriften und Rückverweis auf das Website-Eingabefeld. Privater Worker/D1-Empfang implementiert, produktiv geschlossen. Kein gestarteter Pilot; eine öffentliche persönliche Geschichte gehört nicht zum Pilot.
+Status: Folgeaufträge D-17 und D-18, Stand 2026-10-21. Prompt v2 (D-18): Gesprächsführung vor Vollständigkeit, sprachmodusfreundlich, Verweis auf den Wegweiser; mit simulierten Personas geprüft ([Bericht](../agents/claude-code/prompt-simulation.md)). DE/EN-Prompts und Vorlage ohne KI mit einheitlichen Überschriften und Rückverweis auf das Website-Eingabefeld. Privater Worker/D1-Empfang implementiert, produktiv geschlossen. Kein gestarteter Pilot; eine öffentliche persönliche Geschichte gehört nicht zum Pilot.
 
 ## Zweck
 

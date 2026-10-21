@@ -81,6 +81,7 @@ for (const lang of languages) {
     await expect(page.locator('[data-copy]')).toHaveCount(2);
     await expect(page.locator('[data-copy="prompt"]')).toBeHidden();
     await expect(page.locator('#manual-text')).toBeVisible();
+    await page.locator('details.template summary').click();
     await expect(page.locator('#prompt-text')).toBeVisible();
     for (const kind of ['manual', 'prompt']) {
       const response = await context.request.get(`http://127.0.0.1:4321/templates/${lang}-${kind}.txt`);
@@ -102,6 +103,14 @@ test('security headers and real 404 response on the Cloudflare runtime', async (
   const missing = await request.get('/this-page-does-not-exist/');
   expect(missing.status()).toBe(404);
   expect(await missing.text()).toContain('Page not found.');
+});
+
+test('former research and collaborate pages redirect to the about page', async ({ request }) => {
+  for (const [from, to] of [['/de/research/', '/de/about/'], ['/de/collaborate/', '/de/about/#mitwirken'], ['/en/research/', '/en/about/'], ['/en/collaborate/', '/en/about/#get-involved']]) {
+    const response = await request.get(from, { maxRedirects: 0 });
+    expect(response.status(), from).toBe(301);
+    expect(response.headers().location, from).toBe(to);
+  }
 });
 
 test('robots and sitemap expose every public page without private API or error routes', async ({ request }) => {

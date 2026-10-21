@@ -7,58 +7,56 @@ import { languages, labels, pathFor, type Lang } from '../../content/site';
 export function getStaticPaths() { return languages.map(lang => ({ params: { lang } })); }
 const lang = Astro.params.lang as Lang;
 const t = lang === 'de' ? {
-  title: 'Was würde deinen Alltag leichter machen?',
-  intro: 'Du musst keine technische Lösung kennen. Beschreibe einfach eine Situation und was du darin erreichen möchtest.',
-  status: 'Du bestimmst, was du teilst.',
-  statusText: 'Prüfe deinen Text zuerst. Ob Einreichen schon möglich ist, steht direkt am Eingabefeld. Persönliche Berichte gehören nicht in öffentliche GitHub-Issues. Die Teilnahme ist für Erwachsene vorgesehen.',
-  choices: 'Wähle den Weg, der für dich passt',
-  choicesText: 'Schreibe auf dieser Seite, nutze die Textvorlage oder lass dich von einer KI durch ein kurzes Gespräch führen. Ein GitHub-Konto brauchst du nicht. Eine Situation reicht; du darfst jede Frage auslassen, pausieren oder aufhören.',
-  manualTitle: 'Ohne KI: die Textvorlage',
-  manualIntro: 'Kopiere die Vorlage in dein eigenes Dokument, schreibe auf Papier oder bitte eine vertraute Person um Hilfe. Deinen fertigen Text kannst du oben in das Eingabefeld einfügen und prüfen.',
-  promptTitle: 'Mit KI: ein kurzes Interview',
-  promptIntro: 'Ein Prompt ist eine Anweisung für eine KI. Kopiere den folgenden Text in deine KI-Chat-App. Sie stellt jeweils eine Frage und erstellt eine kurze Zusammenfassung. Prüfe sie und füge sie anschließend oben in das Eingabefeld ein.',
-  provider: 'Dein KI-Anbieter verarbeitet deine Eingaben. Bitte keine Namen, Kontaktdaten, Diagnosen oder genauen Orte eingeben. Der Prompt kann das Verhalten einer fremden KI nicht garantieren.',
-  manualLink: 'Zur Textvorlage ohne KI', promptLink: 'Zum Interview-Prompt',
-  afterTitle: 'Was passiert mit meinem Entwurf?',
-  after: 'Ein KI-Chat schickt uns nichts automatisch. Auch Text im Eingabefeld wird beim Schreiben nicht übertragen. Erst ein geöffneter Empfang, deine Vorschau, deine ausdrückliche Zustimmung und der Knopf „Diesen Text privat einreichen“ ermöglichen eine Übertragung. Nur eine Empfangsbestätigung zeigt, dass der Bericht angekommen ist.',
-  later: 'Eine spätere öffentliche Geschichte braucht deine Zustimmung zum genauen Text und Veröffentlichungsort. Eine Namensnennung ist eine zusätzliche, freiwillige Entscheidung. Für die Vorbereitung hier wird keine Veröffentlichungsfreigabe verlangt.',
-  help: 'Wenn Kopieren nicht funktioniert: Markiere den Text oder nutze die Textdatei. Beide Wege funktionieren ohne Kopierknopf.',
+  title: 'Erzähl uns von deinem Alltag.',
+  intro: 'Eine Situation genügt: Was wolltest du tun, was hat geholfen, was war schwierig? Du brauchst keine technische Idee und kein Konto. Du kannst jede Frage auslassen und jederzeit aufhören.',
+  choices: 'Wähle deinen Weg',
+  promptLink: 'Im Gespräch mit einer KI', promptLinkText: 'Eine KI-App wie ChatGPT oder Gemini fragt nach und schreibt am Ende mit dir einen kurzen Text. Das geht auch per Sprache.',
+  reportLink: 'Selbst aufschreiben', reportLinkText: 'Schreib direkt hier auf der Seite, auf Papier oder mit einer vertrauten Person.',
+  promptTitle: 'Mit KI: Gesprächsanleitung zum Kopieren',
+  promptIntro: 'Kopiere den folgenden Text und füge ihn als erste Nachricht in deine KI-App ein. Danach antwortest du einfach auf die Fragen. Am Ende bekommst du einen kurzen Text und einen Link zurück auf diese Seite.',
+  provider: 'Deine KI-App verarbeitet das Gespräch nach den Regeln ihres Anbieters. Percepta sieht dieses Gespräch nicht.',
+  manualTitle: 'Ohne KI: Fragen zum Aufschreiben',
+  manualIntro: 'Diese Fragen helfen beim Aufschreiben, auch auf Papier. Deinen fertigen Text kannst du ins Eingabefeld einfügen und prüfen.',
+  afterTitle: 'Was mit deinem Text passiert',
+  after: 'Nichts wird automatisch gesendet, weder aus deiner KI-App noch beim Schreiben hier. Du prüfst deinen Text zuerst in der Vorschau. Senden kannst du ihn erst, wenn der private Empfang geöffnet ist; das steht direkt am Eingabefeld. Bis dahin kannst du ihn als Datei speichern.',
+  later: 'Veröffentlicht wird nichts ohne deine eigene Zustimmung zum genauen Text. Persönliche Berichte gehören nicht in öffentliche GitHub-Issues. Mitmachen können Erwachsene.',
 } : {
-  title: 'What would make your everyday life easier?',
-  intro: 'You do not need a technical solution. Just describe one situation and what you want to achieve.',
-  status: 'You decide what to share.',
-  statusText: 'Check your text first. The input area tells you whether submissions are open. Personal reports do not belong in public GitHub issues. Participation is intended for adults.',
-  choices: 'Choose the way that suits you',
-  choicesText: 'Write on this page, use the text template or let an AI guide you through a short conversation. You do not need a GitHub account. One situation is enough; skip any question, pause or stop.',
-  manualTitle: 'Without AI: the text template',
-  manualIntro: 'Copy the template into your own document, write on paper or ask someone you trust for help. You can paste your finished text into the input area above and review it.',
-  promptTitle: 'With AI: a short interview',
-  promptIntro: 'A prompt is an instruction for an AI. Copy the text below into your AI chat app. It asks one question at a time and creates a short summary. Check it, then paste it into the input area above.',
-  provider: 'Your AI provider processes your input. Please omit names, contact details, diagnoses and exact locations. The prompt cannot guarantee another AI’s behaviour.',
-  manualLink: 'Go to the template without AI', promptLink: 'Go to the interview prompt',
-  afterTitle: 'What happens to my draft?',
-  after: 'An AI chat sends us nothing automatically. Text in the input area is not transmitted while you type either. Transmission requires open submissions, your review, your explicit consent and the “Submit this text privately” button. Only a receipt confirms that your report has arrived.',
-  later: 'Any later public story needs your agreement to the exact text and destination. Being named is an additional optional choice. Preparing a draft here does not ask for publication consent.',
-  help: 'If copying fails, select the text or use the text file. Both options work without the copy button.',
+  title: 'Tell us about your everyday life.',
+  intro: 'One situation is enough: what did you want to do, what helped, what was difficult? You need no technical idea and no account. Skip any question and stop whenever you like.',
+  choices: 'Choose your way',
+  promptLink: 'In a conversation with an AI', promptLinkText: 'An AI app such as ChatGPT or Gemini asks follow-up questions and writes a short text with you at the end. This also works by voice.',
+  reportLink: 'Write it yourself', reportLinkText: 'Write directly on this page, on paper or with someone you trust.',
+  promptTitle: 'With AI: conversation guide to copy',
+  promptIntro: 'Copy the text below and paste it as the first message into your AI app. Then simply answer the questions. At the end you get a short text and a link back to this page.',
+  provider: 'Your AI app processes the conversation under its provider’s rules. Percepta does not see this conversation.',
+  manualTitle: 'Without AI: questions to write about',
+  manualIntro: 'These questions help you write, on paper too. You can paste your finished text into the input area and review it.',
+  afterTitle: 'What happens to your text',
+  after: 'Nothing is sent automatically, neither from your AI app nor while you write here. You review your text in a preview first. You can only send it once private submissions are open; the input area tells you. Until then you can save it as a file.',
+  later: 'Nothing is published without your own consent to the exact text. Personal reports do not belong in public GitHub issues. Taking part is for adults.',
 };
 ---
 <Layout lang={lang} page="participate" title={lang === 'de' ? 'Alltagserfahrungen beschreiben und mitgestalten' : 'Describe everyday experiences and help shape Percepta'} description={t.intro}>
   <article class="article wrap">
     <header class="article-header"><p class="eyebrow">{labels[lang].participate}</p><h1>{t.title}</h1><p class="lede">{t.intro}</p></header>
     <div class="prose">
-      <aside class="notice" aria-labelledby="intake-status"><h2 id="intake-status">{t.status}</h2><p>{t.statusText}</p></aside>
-      <section aria-labelledby="choices-title"><h2 id="choices-title">{t.choices}</h2><p>{t.choicesText}</p>
-        <ul class="jump-links"><li><a href="#manual">{t.manualLink}</a></li><li><a href="#prompt">{t.promptLink}</a></li></ul>
-      </section>
-      <ExperienceForm lang={lang} />
-      <noscript><p class="notice">{lang === 'de' ? 'Die Eingabefelder, Vorschau und private Übertragung benötigen JavaScript. Die folgenden Textvorlagen kannst du auch ohne JavaScript lesen und herunterladen. Dadurch wird noch nichts eingereicht.' : 'The input fields, preview and private submission need JavaScript. You can read and download the templates below without JavaScript. This does not submit anything.'}</p></noscript>
-      <section id="manual" aria-labelledby="manual-title"><h2 id="manual-title">{t.manualTitle}</h2><p>{t.manualIntro}</p>
-        <Template id="manual" text={templates[lang].manual} lang={lang} />
+      <section aria-labelledby="choices-title"><h2 id="choices-title">{t.choices}</h2>
+        <ul class="choice-list">
+          <li><a href="#prompt">{t.promptLink}</a><p>{t.promptLinkText}</p></li>
+          <li><a href="#write">{t.reportLink}</a><p>{t.reportLinkText}</p></li>
+        </ul>
       </section>
       <section id="prompt" aria-labelledby="prompt-title"><h2 id="prompt-title">{t.promptTitle}</h2><p>{t.promptIntro}</p><p class="notice">{t.provider}</p>
         <Template id="prompt" text={templates[lang].prompt} lang={lang} />
       </section>
-      <section><h2>{t.afterTitle}</h2><p>{t.after}</p><p>{t.later}</p><p>{t.help}</p><a href={pathFor(lang, 'privacy')}>{labels[lang].privacy}</a></section>
+      <div id="write">
+      <ExperienceForm lang={lang} />
+      <noscript><p class="notice">{lang === 'de' ? 'Eingabefeld, Vorschau und Senden benötigen JavaScript. Die Fragen unten kannst du auch ohne JavaScript lesen und herunterladen. Dadurch wird nichts gesendet.' : 'The input area, preview and sending need JavaScript. You can read and download the questions below without JavaScript. This does not send anything.'}</p></noscript>
+      <section id="manual" aria-labelledby="manual-title"><h2 id="manual-title">{t.manualTitle}</h2><p>{t.manualIntro}</p>
+        <Template id="manual" text={templates[lang].manual} lang={lang} />
+      </section>
+      </div>
+      <section><h2>{t.afterTitle}</h2><p>{t.after}</p><p>{t.later}</p><a href={pathFor(lang, 'privacy')}>{labels[lang].privacy}</a></section>
     </div>
   </article>
 </Layout>
