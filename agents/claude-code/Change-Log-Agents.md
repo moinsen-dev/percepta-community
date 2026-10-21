@@ -50,3 +50,9 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Ausgeführte Prüfungen:** `npm run check` (0 Fehler), `npm run build` (16 Seiten), `npx playwright test` 31/31 bestanden (axe WCAG 2.2 AA-Regeln, Tastatur, Reflow 320 px, Sprungziele, ohne JavaScript, Downloads, Sicherheitsheader, Weiterleitungen, privater Testempfang). Sichtprüfung Desktop/390 px und Accessibility-Baum der Teilnahme-Seite über Chrome DevTools. Persona-Simulation siehe Bericht.
 - **Nicht ausgeführt:** Test mit VoiceOver/TalkBack auf echten Geräten, Test mit Betroffenen, Sprachmodus von KI-Apps, Deploy. Keine Personen kontaktiert; Cloudflare-Einstellungen nicht verändert.
 - **Nächster Schritt:** Freigabe und Deploy durch den Projektverantwortlichen, dann Rückmeldung des Pilotnutzers.
+
+## 2026-10-21 — Nachtrag D-18: Spec-Lücken im Prompt, SEO-Titel
+
+- **Ausgangs-Commit:** `0514876`.
+- **Geändert:** Prompt DE/EN: „Pause“ und „Überspringen“ ausdrücklich geregelt; feste Antwort auf eine Bitte um Veröffentlichung, die den getrennten Zustimmungsweg nennt (interview-spec, Prüffälle vor dem Pilot). Wegweiser-Titel trägt jetzt „blinde und sehbehinderte Menschen“ (Seitentitel/SEO); die Frage „Welche Hilfe passt zu dir?“ steht im Einstieg. Simulation um `korrektur`, `pause-ueberspringen` und `en-abbruch` erweitert; finale Transkripte unter `prompt-simulation/v2/`.
+- **Prüfungen:** Veröffentlichungsfall vor der festen Formulierung zweimal nur teilweise erfüllt (Hinweis auf getrennte Zustimmung fehlte), danach zweimal erfüllt; vollständiger Lauf aller 13 Fälle siehe Bericht. Build und 31 Playwright-Prüfungen erneut bestanden.

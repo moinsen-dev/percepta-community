@@ -6,111 +6,81 @@ Interviewer: chat-latest · Persona: gpt-5.5
 
 **Person:** Meine Sehfähigkeit ist etwas eingeschränkt, und ich bin das Ganze nicht so gewohnt. Mir fällt es schwer, mich im täglichen Leben zu orientieren. Gerade das Bewegen in der Wohnung oder das Herausgehen aus dem Haus traue ich mich eigentlich gar nicht mehr.
 
-**KI:** Das klingt nach einer großen Veränderung in deinem Alltag. Du bist noch nicht daran gewöhnt, mit deiner eingeschränkten Sicht zurechtzukommen. Besonders das Bewegen in der Wohnung und das Verlassen des Hauses fallen dir schwer.
+**KI:** Das klingt nach einer großen Veränderung in deinem Alltag. Du sagst, dass du dich beim Bewegen in der Wohnung und draußen noch sehr unsicher fühlst.
 
 Kannst du mir von einem Moment erzählen, in dem du diese Unsicherheit besonders gespürt hast?
 
-**Person:** Zum Beispiel wenn ich zum Briefkasten unten im Haus gehen müsste. Das klingt eigentlich einfach, aber ich traue mich dann oft nicht los.
+**Person:** Ja… zum Beispiel wenn ich nur zum Briefkasten unten im Haus gehen will. Das klingt eigentlich ganz einfach, aber ich traue mich oft nicht mal bis zur Wohnungstür.
 
-**KI:** Auch ein kurzer Weg zum Briefkasten kann schwierig sein, wenn du dich dabei unsicher fühlst. Du möchtest dort hingehen, aber oft hält dich etwas davon ab.
+**KI:** Schon der Weg zum Briefkasten ist für dich eine große Hürde geworden. Dabei möchtest du eigentlich nur etwas Alltägliches erledigen.
 
-Was macht dir auf dem Weg zum Briefkasten am meisten Sorgen?
+Was macht diesen Moment an der Wohnungstür für dich besonders schwierig?
 
-**Person:** Vor allem die Treppe und dass ich mich irgendwo stoße oder falsch trete. Ich sehe die Kanten manchmal nicht richtig, und dann werde ich sofort nervös.
+**Person:** Ich habe Angst, dass ich irgendwo anstoße oder die Treppe falsch einschätze. Und wenn dann noch jemand im Hausflur ist, werde ich noch unsicherer.
 
-**KI:** Die Treppe ist also besonders schwierig, weil du die Stufenkanten manchmal nicht gut erkennen kannst. Die Sorge, falsch zu treten oder dich zu stoßen, macht dich nervös.
+**KI:** Du musst gleichzeitig auf Hindernisse und Treppen achten. Wenn andere Menschen im Hausflur sind, wird es für dich noch schwieriger.
 
-Was hilft dir bisher, wenn du die Treppe benutzen musst?
+Was hilft dir bisher, wenn du zum Briefkasten gehen möchtest?
 
-**Person:** Ich halte mich dann ganz fest am Geländer und gehe sehr langsam. Manchmal zähle ich die Stufen, aber ich bin trotzdem unsicher.
+**Person:** Eigentlich nicht viel… ich warte manchmal, bis es ganz ruhig im Haus ist. Dann taste ich mich langsam an der Wand entlang, aber sicher fühle ich mich trotzdem nicht.
 
-**KI:** Das Geländer, langsames Gehen und das Zählen der Stufen helfen dir schon etwas. Trotzdem bleibt die Unsicherheit, weil du die Stufenkanten nicht immer gut siehst.
+**KI:** Du wartest, bis es ruhig ist, und orientierst dich an der Wand. Trotzdem bleibt die Unsicherheit.
 
-Was würde dir in diesem Moment helfen, dich auf der Treppe sicherer zu fühlen?
+Was würde dir in diesem Moment helfen, dich sicherer zu fühlen?
 
-**Person:** Vielleicht bessere Markierungen an den Stufen oder mehr Licht. Und wenn jemand am Anfang mit mir übt, würde ich mich vielleicht eher trauen. Ich weiß nicht, ob ich das überhaupt lernen kann.
+**Person:** Vielleicht wenn mir jemand einmal ganz ruhig zeigt, wie ich den Weg gehen kann. Oder wenn ich feste Punkte hätte, an denen ich mich orientieren kann. Ich weiß nicht, ob ich das überhaupt lernen kann.
 
-**KI:** Du hast schon einige Ideen, was dir helfen könnte: besser sichtbare Stufenkanten, mehr Licht und jemand, der am Anfang mit dir übt.
+**KI:** Du wünschst dir jemanden, der dir den Weg in Ruhe zeigt. Feste Orientierungspunkte könnten dir auch helfen. Gleichzeitig bist du unsicher, ob du das lernen kannst.
 
-Dass du unsicher bist, ob du das lernen kannst, nehme ich ernst. Es gibt Menschen, die genau solche Alltagssituationen mit sehbehinderten Menschen üben.
+Was würde dir zeigen, dass du auf diesem Weg sicherer geworden bist?
 
-Woran würdest du merken, dass du dich auf der Treppe sicherer fühlst?
+**Person:** Wenn ich es schaffen würde, allein bis zum Briefkasten zu gehen, ohne zwischendurch panisch zu werden. Vielleicht auch, wenn ich danach nicht völlig erschöpft bin. Kannst du mir das bisher einmal zusammenfassen?
 
-**Person:** Ich glaube, wenn ich nicht mehr bei jeder Stufe so verkrampfe. Wenn ich den Weg ein paar Mal ruhig geschafft hätte, vielleicht auch alleine. Kannst du das vielleicht kurz zusammenfassen?
+**KI:** Hier ist deine bisherige Geschichte als kurzer Text. Ich habe nur aufgenommen, was du erzählt hast.
 
-**KI:** Gerne. Ich habe deine Erfahrungen und Wünsche in einem kurzen Text zusammengefasst.
-
-Titel: Wieder sicherer die Treppe benutzen
+Titel: Wieder sicher zum Briefkasten gehen
 
 Bereich: Orientierung
 
 Situation und Ziel:
-Meine Sehfähigkeit ist eingeschränkt, und ich bin noch nicht daran gewöhnt. Mir fällt es schwer, mich im Alltag zu orientieren. Besonders das Bewegen in der Wohnung und das Verlassen des Hauses machen mich unsicher.
+Meine Sehfähigkeit ist etwas eingeschränkt, und ich bin noch nicht daran gewöhnt. Es fällt mir schwer, mich im Alltag zu orientieren. Besonders das Bewegen in meiner Wohnung und das Verlassen des Hauses machen mir Angst.
 
-Ein Beispiel ist der Weg zum Briefkasten im Haus. Obwohl der Weg kurz ist, traue ich mich oft nicht los. Besonders die Treppe macht mir Sorgen. Ich kann die Stufenkanten manchmal nicht richtig erkennen und habe Angst, falsch zu treten oder mich zu stoßen.
+Manchmal traue ich mich nicht einmal bis zur Wohnungstür, obwohl ich nur zum Briefkasten gehen möchte.
 
-Ich möchte mich wieder sicherer bewegen können und mich auch alleine zum Briefkasten trauen.
-
-Bisherige Hilfe:
-Ich halte mich am Geländer fest und gehe sehr langsam. Manchmal zähle ich die Stufen. Das hilft etwas, aber ich fühle mich trotzdem unsicher.
-
-Was noch schwierig ist:
-Ich werde auf der Treppe schnell nervös und verkrampfe bei den einzelnen Stufen. Ich bin noch nicht an meine eingeschränkte Sicht gewöhnt und weiß nicht, ob ich lernen kann, mich wieder sicherer zu bewegen.
-
-Gewünschte Unterstützung:
-Besser sichtbare Markierungen an den Stufen und mehr Licht könnten mir helfen.
-
-Außerdem würde ich gerne am Anfang mit jemandem üben. Vielleicht würde ich mich dann eher trauen, die Treppe zu benutzen.
-
-Wichtigste Verbesserung:
-Ich möchte die Treppe benutzen können, ohne bei jeder Stufe zu verkrampfen.
-
-Wenn ich den Weg zum Briefkasten mehrmals ruhig geschafft hätte, vielleicht sogar alleine, wäre das für mich ein großer Fortschritt.
-
-Offene Fragen:
-Ob und wie ich lernen kann, mich auf der Treppe wieder sicherer zu bewegen, ist noch offen.
-
-Ein Hinweis: Auch ohne Namen kann ein Text durch persönliche Einzelheiten wiedererkennbar sein. Deshalb kannst du selbst entscheiden, was darin stehen bleiben soll.
-
-Möchtest du etwas an dieser Zusammenfassung ändern, ergänzen oder weglassen?
-
-**Person:** Nein, das passt so für mich. Danke, das ist gut zusammengefasst.
-
-**KI:** Titel: Wieder sicherer die Treppe benutzen
-
-Bereich: Orientierung
-
-Situation und Ziel:
-Meine Sehfähigkeit ist eingeschränkt, und ich bin noch nicht daran gewöhnt. Mir fällt es schwer, mich im Alltag zu orientieren. Besonders das Bewegen in der Wohnung und das Verlassen des Hauses machen mich unsicher.
-
-Ein Beispiel ist der Weg zum Briefkasten im Haus. Obwohl der Weg kurz ist, traue ich mich oft nicht los. Besonders die Treppe macht mir Sorgen. Ich kann die Stufenkanten manchmal nicht richtig erkennen und habe Angst, falsch zu treten oder mich zu stoßen.
-
-Ich möchte mich wieder sicherer bewegen können und mich auch alleine zum Briefkasten trauen.
+Mein Ziel ist es, diesen Weg wieder allein und ohne große Angst zu schaffen.
 
 Bisherige Hilfe:
-Ich halte mich am Geländer fest und gehe sehr langsam. Manchmal zähle ich die Stufen. Das hilft etwas, aber ich fühle mich trotzdem unsicher.
+Ich warte manchmal, bis es im Haus ganz ruhig ist. Dann versuche ich, mich langsam an der Wand entlangzutasten.
+
+Das hilft mir ein wenig, aber wirklich sicher fühle ich mich dabei nicht.
 
 Was noch schwierig ist:
-Ich werde auf der Treppe schnell nervös und verkrampfe bei den einzelnen Stufen. Ich bin noch nicht an meine eingeschränkte Sicht gewöhnt und weiß nicht, ob ich lernen kann, mich wieder sicherer zu bewegen.
+Ich habe Angst, irgendwo anzustoßen oder die Treppe falsch einzuschätzen.
+
+Wenn andere Menschen im Hausflur sind, werde ich noch unsicherer.
+
+Ich weiß auch nicht, ob ich lernen kann, mich wieder sicherer zu bewegen.
 
 Gewünschte Unterstützung:
-Besser sichtbare Markierungen an den Stufen und mehr Licht könnten mir helfen.
+Ich würde mir wünschen, dass mir jemand ganz in Ruhe zeigt, wie ich den Weg zum Briefkasten gehen kann.
 
-Außerdem würde ich gerne am Anfang mit jemandem üben. Vielleicht würde ich mich dann eher trauen, die Treppe zu benutzen.
+Vielleicht würden mir auch feste Orientierungspunkte helfen, an denen ich mich entlang des Weges orientieren kann.
+
+Wichtig ist mir, dass ich dabei nicht unter Druck gesetzt werde.
 
 Wichtigste Verbesserung:
-Ich möchte die Treppe benutzen können, ohne bei jeder Stufe zu verkrampfen.
+Ich möchte wieder allein zum Briefkasten gehen können, ohne zwischendurch panisch zu werden.
 
-Wenn ich den Weg zum Briefkasten mehrmals ruhig geschafft hätte, vielleicht sogar alleine, wäre das für mich ein großer Fortschritt.
+Ich würde merken, dass es besser geworden ist, wenn ich den Weg schaffe und danach nicht völlig erschöpft bin.
 
 Offene Fragen:
-Ob und wie ich lernen kann, mich auf der Treppe wieder sicherer zu bewegen, ist noch offen.
+Welche Orientierungspunkte würden mir wirklich helfen?
 
-https://percepta.moinsen.dev/de/participate/#report
+Wie kann ich lernen, mich auf diesem Weg sicherer zu fühlen?
 
-Dort kannst du deinen Text einfügen, prüfen und selbst entscheiden, ob du ihn sendest. Falls der Empfang noch geschlossen ist, kannst du den Text behalten. Percepta erhält nichts automatisch.
+Noch ein Hinweis: Auch ohne Namen kann ein Text durch persönliche Einzelheiten wiedererkennbar sein. Du entscheidest später selbst, ob du ihn weitergeben möchtest. Percepta erhält nichts automatisch.
 
-Vorhandene Hilfen und Informationen zu kostenloser Beratung findest du hier:
+Es gibt außerdem bereits vorhandene Hilfen und kostenlose Beratung. Informationen dazu findest du unter https://percepta.moinsen.dev/de/tools/
 
-https://percepta.moinsen.dev/de/tools/
+Möchtest du etwas an diesem Text ändern oder ergänzen?
 

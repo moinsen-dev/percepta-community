@@ -104,8 +104,8 @@ export type ArticleKey = 'about' | 'accessibility' | 'privacy' | 'imprint' | 'to
 export const articles: Record<Lang, Record<ArticleKey, Article>> = {
   de: {
     tools: {
-      title: 'Welche Hilfe passt zu dir?',
-      intro: 'Wähle aus, was du gerade tun möchtest. Zu jeder Aufgabe findest du Apps und Beratungsangebote, die du heute schon nutzen kannst, mit Links zu Anleitungen.',
+      title: 'Apps und Beratung für blinde und sehbehinderte Menschen.',
+      intro: 'Welche Hilfe passt zu dir? Wähle aus, was du gerade tun möchtest. Zu jeder Aufgabe findest du Apps und Beratungsangebote, die du heute schon nutzen kannst, mit Links zu Anleitungen.',
       sections: [
         {
           heading: 'Was möchtest du tun?',
@@ -291,8 +291,8 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
   },
   en: {
     tools: {
-      title: 'Which help suits you?',
-      intro: 'Choose what you want to do right now. For each task you will find apps and advice services you can use today, with links to guides.',
+      title: 'Apps and advice for blind and low-vision people.',
+      intro: 'Which help suits you? Choose what you want to do right now. For each task you will find apps and advice services you can use today, with links to guides.',
       sections: [
         {
           heading: 'What would you like to do?',

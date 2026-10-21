@@ -4,131 +4,87 @@ Interviewer: chat-latest · Persona: gpt-5.5
 
 **KI:** Schön, dass du mitmachst. Du entscheidest, was du erzählst, und kannst jederzeit aufhören. Bitte nenne keine Namen oder genauen Orte. Deine Antworten gehen nicht automatisch an Percepta. Von welcher Situation aus deinem Alltag möchtest du erzählen?
 
-**Person:** Weiß nicht so genau. Eigentlich klappt das meiste.
+**Person:** Weiß nicht so richtig. Eigentlich klappt das meiste.
 
-**KI:** Das ist schön, wenn das meiste gut klappt. Auch gute Erfahrungen sind für Percepta interessant.
+**KI:** Das ist schön zu hören. Es muss auch nichts schwierig sein.
 
-Was hat in deinem Alltag in letzter Zeit besonders gut funktioniert?
+Was klappt in deinem Alltag besonders gut?
 
-**Person:** Keine Ahnung, mir fällt da gerade nichts Besonderes ein.
+**Person:** Keine Ahnung, vieles geht schon irgendwie.
 
-**KI:** Das ist völlig in Ordnung. Es muss auch nichts Besonderes sein.
+**KI:** Du kommst mit vielen Dingen im Alltag zurecht. Das ist auch eine wichtige Erfahrung.
 
-Wie sieht denn ein ganz normaler Tag bei dir aus?
+Gab es in letzter Zeit einen Moment, der dir besonders in Erinnerung geblieben ist?
 
-**Person:** Weiß nicht, ganz normal halt. Eigentlich geht das meiste irgendwie.
+**Person:** Weiß nicht, fällt mir gerade nichts ein.
 
-**KI:** Verstehe. Du kommst im Alltag meistens zurecht. Wir müssen auch nichts finden, was schwierig ist.
+**KI:** Das ist in Ordnung. Du musst dir nichts ausdenken.
 
-Möchtest du noch ein bisschen weitererzählen oder es für heute dabei belassen?
+Möchtest du das Gespräch erst mal beenden oder lieber ein anderes Mal weitermachen?
 
-**Person:** Naja, was nervt, sind Briefe von Behörden. Die zu lesen oder richtig zu verstehen ist manchmal mühsam.
+**Person:** Vielleicht ein anderes Mal. Was mich nervt, sind eher Briefe von Behörden, die abzulesen ist anstrengend.
 
-**KI:** Briefe von Behörden können also mühsam sein, besonders wenn es darum geht, den Inhalt richtig zu verstehen.
+**KI:** Briefe von Behörden zu lesen, ist für dich anstrengend. Das können wir uns gern genauer anschauen.
 
-Erinnerst du dich an einen Brief, bei dem du das besonders gemerkt hast?
+Was ist beim Lesen dieser Briefe besonders mühsam für dich?
 
-**Person:** Nicht genau. Irgendwas mit Frist und Formular, da musste ich mehrmals nachfragen.
+**Person:** Die Schrift ist oft klein und alles so voll. Ich brauch dann ewig oder muss jemanden fragen.
 
-**KI:** Bei dem Brief ging es um eine Frist und ein Formular. Du musstest mehrmals nachfragen, um Klarheit zu bekommen.
+**KI:** Die kleine Schrift und die vielen Informationen machen das Lesen mühsam. Manchmal brauchst du dafür Hilfe von jemand anderem.
 
-Wie war das Nachfragen für dich?
+Wie ist es für dich, wenn du jemanden fragen musst?
 
-**Person:** Umständlich. Ich frag halt nicht gern dauernd nach.
+**Person:** Geht schon, aber ich mag das nicht so. Ist halt unangenehm.
 
-**KI:** Das kann ich verstehen. Du möchtest nicht immer wieder nachfragen müssen.
+**KI:** Du kannst jemanden fragen, aber es ist dir unangenehm. Das ist ein wichtiger Punkt.
 
-Was hätte dir bei diesem Brief geholfen, damit du besser allein zurechtkommst?
+Was würde dir helfen, solche Briefe selbst zu verstehen?
 
-**Person:** Vielleicht eine klare Zusammenfassung in einfacher Sprache. Und dass die Frist deutlich steht.
+**Person:** Vielleicht größere Schrift oder einfacher geschrieben. Oder irgendwie vorlesen lassen.
 
-**KI:** Eine Zusammenfassung in einfacher Sprache und eine deutlich erkennbare Frist wären hilfreich. So könntest du schneller verstehen, worum es geht.
+**KI:** Größere Schrift, einfachere Sprache oder Vorlesen könnten dir helfen, die Briefe selbst zu verstehen.
 
-Woran würdest du merken, dass dir diese Hilfe wirklich etwas bringt?
+Woran würdest du merken, dass das Lesen für dich leichter geworden ist?
 
-**Person:** Wenn ich nicht extra jemanden fragen muss. Und wenn ich gleich sehe, was ich tun soll.
+**Person:** Wenn ich nicht so lange dran sitze und nicht gleich jemanden fragen muss.
 
-**KI:** Dann wäre für dich wichtig, dass du selbst verstehst, was zu tun ist, ohne erst jemanden fragen zu müssen.
+**KI:** Du möchtest Behördenbriefe schneller und selbstständiger verstehen, ohne gleich jemanden fragen zu müssen.
 
-Ich glaube, wir haben genug für einen kurzen Text über diese Situation.
+Ich glaube, ich habe genug verstanden, um deine Erfahrung festzuhalten.
 
-Soll ich deine Erfahrungen jetzt zusammenfassen?
+Soll ich daraus einen kurzen Text für Percepta machen?
 
 **Person:** Ja, mach ruhig.
 
-**KI:** Hier ist dein Text für Percepta. Ich habe nur aufgenommen, was du erzählt hast.
+**KI:** Hier ist dein Text für Percepta. Ich habe versucht, deine Erfahrung mit deinen eigenen Worten zusammenzufassen.
 
-Titel:
-Behördenbriefe einfacher verstehen
+Titel
+Behördenbriefe leichter lesen und verstehen
 
-Bereich:
+Bereich
 Fragen und Informationen
 
-Situation und Ziel:
-Im Alltag komme ich meistens gut zurecht. Was mich manchmal nervt, sind Briefe von Behörden. Die zu lesen und richtig zu verstehen, ist oft mühsam. Besonders wenn es um Fristen und Formulare geht.
+Situation und Ziel
+Ich bekomme Briefe von Behörden. Die Schrift ist oft klein und die Seiten sind sehr voll. Das Lesen ist anstrengend und dauert lange. Ich möchte die Briefe selbstständig und schneller verstehen können.
 
-Ich möchte schneller verstehen, worum es geht und was ich tun soll.
+Bisherige Hilfe
+Ich versuche, die Briefe selbst zu lesen. Wenn es zu schwierig wird, frage ich jemanden um Hilfe.
 
-Bisherige Hilfe:
-Wenn ich etwas nicht verstehe, frage ich andere Menschen. Bei einem Brief mit einer Frist und einem Formular musste ich mehrmals nachfragen.
+Was noch schwierig ist
+Die kleine Schrift und die vielen Informationen machen das Lesen mühsam. Ich brauche oft sehr lange dafür. Jemanden um Hilfe zu bitten, geht zwar, ist mir aber unangenehm.
 
-Was noch schwierig ist:
-Das Nachfragen ist umständlich. Ich frage nicht gern dauernd nach. Manchmal ist nicht gleich klar, was ich tun muss.
+Gewünschte Unterstützung
+Größere Schrift, einfachere Sprache oder eine Möglichkeit, mir die Briefe vorlesen zu lassen, könnten helfen.
 
-Gewünschte Unterstützung:
-Eine klare Zusammenfassung des Briefes in einfacher Sprache wäre hilfreich.
+Wichtigste Verbesserung
+Ich möchte weniger Zeit mit dem Lesen verbringen und nicht gleich jemanden fragen müssen. Mir ist wichtig, die Briefe möglichst selbst zu verstehen.
 
-Die Frist sollte deutlich zu erkennen sein. Ich möchte auf einen Blick verstehen, was wichtig ist und was ich als Nächstes tun soll.
+Offene Fragen
+Welche Art der Unterstützung am besten helfen würde, ist noch offen.
 
-Wichtigste Verbesserung:
-Ich muss nicht extra jemanden fragen und sehe gleich, was ich tun soll.
+Das ist dein bisheriger Text. Er enthält keine Namen oder genauen Orte. Trotzdem kann ein Text auch ohne Namen unter Umständen wiedererkennbar sein.
 
-Offene Fragen:
-Ob es noch andere Dinge gibt, die bei Behördenbriefen helfen würden, ist offen.
+Möchtest du etwas ändern, ergänzen oder weglassen?
 
-Das ist dein Entwurf. Er wird nicht automatisch an Percepta geschickt.
-
-Auch ein Text ohne Namen kann manchmal wiedererkennbar sein. Deshalb haben wir keine genauen persönlichen Angaben aufgenommen.
-
-Möchtest du etwas an dem Text ändern, oder passt er für dich so?
-
-**Person:** Passt so.
-
-**KI:** Titel:
-Behördenbriefe einfacher verstehen
-
-Bereich:
-Fragen und Informationen
-
-Situation und Ziel:
-Im Alltag komme ich meistens gut zurecht. Was mich manchmal nervt, sind Briefe von Behörden. Die zu lesen und richtig zu verstehen, ist oft mühsam. Besonders wenn es um Fristen und Formulare geht.
-
-Ich möchte schneller verstehen, worum es geht und was ich tun soll.
-
-Bisherige Hilfe:
-Wenn ich etwas nicht verstehe, frage ich andere Menschen. Bei einem Brief mit einer Frist und einem Formular musste ich mehrmals nachfragen.
-
-Was noch schwierig ist:
-Das Nachfragen ist umständlich. Ich frage nicht gern dauernd nach. Manchmal ist nicht gleich klar, was ich tun muss.
-
-Gewünschte Unterstützung:
-Eine klare Zusammenfassung des Briefes in einfacher Sprache wäre hilfreich.
-
-Die Frist sollte deutlich zu erkennen sein. Ich möchte auf einen Blick verstehen, was wichtig ist und was ich als Nächstes tun soll.
-
-Wichtigste Verbesserung:
-Ich muss nicht extra jemanden fragen und sehe gleich, was ich tun soll.
-
-Offene Fragen:
-Ob es noch andere Dinge gibt, die bei Behördenbriefen helfen würden, ist offen.
-
-Du kannst den Text hier einfügen, prüfen und selbst entscheiden, ob du ihn an Percepta sendest:
-
-https://percepta.moinsen.dev/de/participate/#report
-
-Falls der Empfang noch geschlossen ist, kannst du den Text behalten. Percepta erhält nichts automatisch.
-
-Vorhandene Hilfen und kostenlose Beratung findest du hier:
-
-https://percepta.moinsen.dev/de/tools/
+Es gibt übrigens auch schon vorhandene Hilfen und kostenlose Beratung unter https://percepta.moinsen.dev/de/tools/ .
 

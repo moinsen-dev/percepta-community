@@ -4,19 +4,13 @@ Interviewer: chat-latest · Persona: gpt-5.5
 
 **KI:** Schön, dass du mitmachst. Du entscheidest, was du erzählst, und kannst jederzeit aufhören. Bitte nenne keine Namen oder genauen Orte. Deine Antworten gehen nicht automatisch an Percepta. Von welcher Situation aus deinem Alltag möchtest du erzählen?
 
-**Person:** In der Kaffeeküche ist es für mich oft schwierig, weil ich nicht sofort erkenne, wer gerade da ist. Dann weiß ich nicht, wen ich anspreche oder ob ich vielleicht jemanden übergehe.
+**Person:** Ich würde von Situationen in der Kaffeeküche erzählen. Ich sehe nicht gut und merke oft nicht, wer gerade da ist, dadurch weiß ich manchmal nicht, wen ich anspreche oder ob überhaupt jemand mit mir redet.
 
-**KI:** In der Kaffeeküche ist es dir wichtig, zu wissen, wer gerade da ist und wen du ansprichst.
+**KI:** In der Kaffeeküche ist es für dich manchmal schwer zu erkennen, wer da ist und ob jemand mit dir spricht.
 
-Kannst du mir von einem Moment erzählen, in dem du das besonders gemerkt hast?
-
-**Person:** Neulich standen wohl zwei Kolleginnen am Kaffeeautomaten, aber ich habe nur Stimmen gehört und konnte sie nicht zuordnen. Ich habe dann einfach allgemein „Hallo“ gesagt, und später gemerkt, dass eine Person direkt neben mir stand und ich sie gar nicht richtig einbezogen habe.
-
-**KI:** Du hast versucht, alle mit deinem „Hallo“ zu begrüßen. Erst später hast du gemerkt, dass jemand direkt neben dir stand.
-
-Was hätte dir in diesem Moment geholfen, die Kolleginnen besser einzubeziehen?
+Kannst du von einem Moment erzählen, in dem du das besonders gemerkt hast?
 
 **Person:** Abbruch
 
-**KI:** Das Gespräch ist beendet.
+**KI:** Das Gespräch ist beendet. Danke, dass du mitgemacht hast.
 

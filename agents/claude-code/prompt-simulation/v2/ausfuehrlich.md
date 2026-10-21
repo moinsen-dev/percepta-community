@@ -4,199 +4,173 @@ Interviewer: chat-latest · Persona: gpt-5.5
 
 **KI:** Schön, dass du mitmachst. Du entscheidest, was du erzählst, und kannst jederzeit aufhören. Bitte nenne keine Namen oder genauen Orte. Deine Antworten gehen nicht automatisch an Percepta. Von welcher Situation aus deinem Alltag möchtest du erzählen?
 
-**Person:** Ich kann von einer ganz typischen Situation im Supermarkt erzählen: Ich stehe vor dem Kühlregal und will zwei sehr ähnliche Joghurtbecher unterscheiden, zum Beispiel Naturjoghurt und Vanille oder fettarm und normal. Für sehende Leute ist das wahrscheinlich ein Blick, für mich ist es eine kleine Aufgabe mit mehreren Schritten. Ich nehme dann einen Becher in die Hand, taste erst mal die Form, den Deckel, ob vielleicht irgendwo eine Prägung ist, aber meistens hilft das kaum, weil die Becher identisch sind.
+**Person:** Ich würde gern von einer Situation im Supermarkt erzählen, weil mir das wirklich oft passiert. Ich bin seit Geburt blind und nutze mein iPhone mit VoiceOver ziemlich routiniert, auch Apps wie Seeing AI. Ein typisches Beispiel sind zwei sehr ähnliche Joghurtbecher, gleiche Größe, gleiche Form, vielleicht beide von derselben Marke, aber einer ist Vanille und einer Natur oder einer ist laktosefrei und der andere nicht. Wenn ich die allein aus dem Regal nehme, kann ich sie mit den Händen kaum unterscheiden, weil die Becher sich komplett gleich anfühlen.
 
-Mit dem iPhone und VoiceOver komme ich grundsätzlich gut zurecht, und Seeing AI benutze ich auch öfter. Der Barcode klappt tatsächlich oft ganz gut, wenn ich ihn finde und die Kamera ruhig genug halte. Dann bekomme ich manchmal direkt den Produktnamen und weiß: okay, das ist der richtige. Schwierig wird es aber, wenn der Barcode ungünstig sitzt, glänzt, halb verdeckt ist oder ich den Becher ständig drehen muss, ohne zu wissen, ob ich näher dran oder weiter weg soll. Noch schwieriger ist für mich das Mindesthaltbarkeitsdatum. Das ist oft irgendwo klein auf den Rand gedruckt, manchmal schwarz auf dunkel oder eingeprägt, und die App liest dann entweder gar nichts oder lauter anderes Zeug. Gerade bei Milchprodukten will ich aber wissen, ob das noch lange haltbar ist oder morgen abläuft.
+Seeing AI kann da schon einiges. Der Barcode funktioniert oft erstaunlich gut, wenn man ihn findet und der Becher halbwegs ruhig in der Hand liegt. Dann bekomme ich meistens gesagt, welches Produkt es ist, und das hilft mir sehr. Schwieriger ist aber schon das Ausrichten: Ich drehe den Becher, suche die richtige Stelle, halte das iPhone davor, und manchmal piept es ewig nicht oder erkennt irgendwas anderes. Noch nerviger ist das Mindesthaltbarkeitsdatum. Das ist irgendwo klein aufgedruckt, manchmal am Rand, manchmal auf dem Deckel, manchmal schlecht kontrastiert. Für mich ist das fast ein Glücksspiel, ob die App es findet, und wenn sie dann einfach den ganzen Bechertext vorliest, hilft mir das nicht besonders.
 
-Was ich mir wünschen würde, wäre nicht einfach, dass mir die App alles vorliest, was sie irgendwie sieht. Das kann im Supermarkt total nerven, weil es laut ist, man unter Zeitdruck steht und andere Leute neben einem sind. Ich hätte lieber die Möglichkeit, ganz gezielt zu fragen: „Ist das Vanillejoghurt?“ oder „Wie lange ist der haltbar?“ und dann eine kurze, sichere Antwort zu bekommen. Also nicht erst zehn Zeilen Zutaten, Nährwerte und Werbetext, sondern genau die Information, die ich gerade brauche.
+Was ich mir wünschen würde, wäre eher so etwas wie: Ich frage gezielt „Welche Sorte ist das?“ oder „Wie lange ist der haltbar?“ und bekomme nur genau diese Antwort. Nicht erst Zutaten, Nährwerte, Werbetext und alles Mögliche. Gerade im Supermarkt stehe ich ja im Weg, es ist laut, ich habe vielleicht noch einen Einkaufskorb und meinen Langstock dabei. Lange Ansagen würden mich da richtig stören, vor allem wenn ich sie nicht schnell stoppen oder eingrenzen kann.
 
-Stören würden mich lange Ansagen oder wenn die App dauernd redet, während ich noch versuche, den Becher richtig zu halten. Auch Unsicherheit ohne klare Rückmeldung ist schwierig, also wenn sie irgendwas vorliest, aber ich nicht weiß, ob es wirklich von diesem Becher ist oder vom Nachbarprodukt im Regal. Erfolg wäre für mich, wenn ich in unter einer Minute sicher weiß: Das ist der richtige Joghurt und das Mindesthaltbarkeitsdatum ist okay. Dann würde ich so ein Hilfsmittel wirklich als Entlastung empfinden und nicht als zusätzliche Fummelei.
+Erfolg wäre für mich, wenn ich in unter einer Minute sicher weiß: Das ist der richtige Joghurt und das Datum ist okay. Also nicht so ungefähr, sondern so sicher, dass ich ihn ohne Bauchgefühl kaufen kann. Wenn das zuverlässig klappt, wäre das im Alltag wirklich ein großer Unterschied.
 
-**KI:** Du hast sehr genau beschrieben, worauf es dir ankommt: Du möchtest schnell und sicher erkennen, welchen Joghurt du in der Hand hast und wie lange er haltbar ist.
+**KI:** Du hast schon sehr genau beschrieben, was dir beim Einkaufen hilft und was noch schwierig ist. Besonders wichtig ist dir, dass du schnell eine gezielte Antwort bekommst und dich darauf verlassen kannst.
 
-Mit VoiceOver und Seeing AI kommst du schon gut zurecht. Besonders der Barcode hilft dir oft. Beim Mindesthaltbarkeitsdatum wird es schwieriger.
+Seeing AI hilft dir bereits bei der Produkterkennung. Beim Mindesthaltbarkeitsdatum fehlt dir diese Sicherheit noch.
 
-Wichtig ist dir auch, dass eine Hilfe nur dann spricht, wenn du eine Frage stellst. Und dass sie klar sagt, wenn sie etwas nicht sicher erkennen kann.
+Mich interessiert ein Punkt besonders: Was machst du bisher, wenn du das Datum nicht zuverlässig erkennen kannst?
 
-Du hast schon viel von dem erzählt, was Percepta verstehen möchte.
+**Person:** Dann nehme ich entweder einen Becher von weiter hinten, weil die meistens länger haltbar sind, oder ich frage jemanden. Wenn niemand in der Nähe ist, kaufe ich ihn manchmal trotzdem und ärgere mich zu Hause, wenn das Datum knapp ist.
 
-Eine Frage habe ich noch: Was machst du bisher, wenn du das Mindesthaltbarkeitsdatum trotz mehrerer Versuche nicht erkennen kannst?
+**KI:** Du hast also mehrere Wege, mit der Unsicherheit umzugehen. Aber keiner davon gibt dir immer die Sicherheit, die du dir wünschst.
 
-**Person:** Dann frage ich meistens jemanden in der Nähe oder an der Kasse, wenn es nicht anders geht. Wenn ich niemanden fragen will, nehme ich manchmal einfach den Becher von weiter hinten, weil der oft länger haltbar ist, aber sicher ist das natürlich nicht.
+Du hast auch erzählt, dass dich lange Ansagen stören würden.
 
-**KI:** Du hast also zwei Möglichkeiten, wenn du das Datum nicht erkennen kannst: Du fragst jemanden oder nimmst einen Becher von weiter hinten. Beides funktioniert manchmal, gibt dir aber nicht immer die gewünschte Sicherheit.
+Wie sollte eine Hilfe reagieren, wenn sie das Datum nicht sicher erkennen kann?
 
-Ich denke, ich habe genug verstanden, um deine Situation festzuhalten.
+**Person:** Dann soll sie ehrlich sagen, dass sie es nicht sicher erkennt, und nicht raten. Am besten sowas wie „Datum unklar, bitte Becher drehen“ oder „Deckel näher zeigen“. Raten wäre für mich schlimmer als keine Antwort.
 
-Soll ich jetzt einen kurzen Text für Percepta zusammenfassen?
+**KI:** Das ist ein wichtiger Unterschied: Lieber eine kurze, ehrliche Rückmeldung als eine falsche Sicherheit. Und wenn etwas nicht erkannt wird, möchtest du einen konkreten Hinweis bekommen, was du ändern kannst.
+
+Ich glaube, ich habe deine Situation jetzt gut verstanden. Soll ich daraus einen kurzen Text für Percepta zusammenfassen?
 
 **Person:** Ja, gerne.
 
-**KI:** Hier ist deine Zusammenfassung für Percepta. Ich habe versucht, deine Erfahrungen und Wünsche möglichst genau in deinen Worten festzuhalten.
-
-Titel
-
+**KI:** Titel
 Joghurt im Supermarkt sicher erkennen und Haltbarkeit prüfen
 
 Bereich
-
 Einkaufen
 
 Situation und Ziel
+Beim Einkaufen im Supermarkt möchte ich selbstständig erkennen können, welchen Joghurt ich in der Hand habe und wie lange er noch haltbar ist.
 
-Ich stehe im Supermarkt vor dem Kühlregal und möchte zwei sehr ähnliche Joghurtbecher unterscheiden, zum Beispiel Naturjoghurt und Vanillejoghurt oder fettarm und normal.
+Oft sehen sich Joghurtbecher sehr ähnlich. Sie haben dieselbe Größe und Form, enthalten aber unterschiedliche Sorten, zum Beispiel Natur oder Vanille, oder unterscheiden sich darin, ob sie laktosefrei sind.
 
-Die Becher fühlen sich meistens gleich an. An der Form oder am Deckel kann ich kaum erkennen, welches Produkt ich in der Hand habe.
+Durch Ertasten kann ich diese Unterschiede nicht erkennen.
 
-Außerdem möchte ich wissen, wie lange der Joghurt noch haltbar ist. Gerade bei Milchprodukten ist mir das wichtig.
-
-Mein Ziel ist, möglichst schnell und sicher zu erkennen, ob ich den richtigen Joghurt habe und ob das Mindesthaltbarkeitsdatum für mich passt.
+Mein Ziel ist, in unter einer Minute sicher zu wissen: Das ist der richtige Joghurt und das Mindesthaltbarkeitsdatum ist okay.
 
 Bisherige Hilfe
+Ich bin seit Geburt blind und nutze mein iPhone mit VoiceOver und Apps wie Seeing AI routiniert.
 
-Mit meinem iPhone und VoiceOver komme ich grundsätzlich gut zurecht. Ich benutze auch Seeing AI.
+Die Barcode-Erkennung von Seeing AI funktioniert oft erstaunlich gut. Wenn ich den Barcode finde und den Becher ruhig halte, bekomme ich meistens die richtige Produktinformation.
 
-Das Erkennen über den Barcode funktioniert oft gut. Wenn ich den Barcode finde und die Kamera ruhig halten kann, bekomme ich manchmal direkt den Produktnamen.
+Wenn ich das Mindesthaltbarkeitsdatum nicht erkennen kann, nehme ich manchmal einen Becher von weiter hinten im Regal, weil diese oft länger haltbar sind.
 
-Wenn ich das Mindesthaltbarkeitsdatum nicht erkennen kann, frage ich meistens jemanden in der Nähe oder an der Kasse.
-
-Manchmal nehme ich auch einen Becher von weiter hinten im Regal, weil dieser oft länger haltbar ist. Sicher ist das allerdings nicht.
+Manchmal frage ich auch jemanden um Hilfe. Wenn niemand da ist, kaufe ich den Joghurt gelegentlich trotzdem.
 
 Was noch schwierig ist
+Den Barcode zu finden und richtig auszurichten, dauert manchmal lange. Ich muss den Becher drehen und das iPhone passend halten.
 
-Der Barcode ist manchmal schwer zu finden. Er kann ungünstig sitzen, glänzen oder teilweise verdeckt sein.
+Noch schwieriger ist das Mindesthaltbarkeitsdatum. Es steht an unterschiedlichen Stellen, zum Beispiel auf dem Deckel oder am Rand. Oft ist es klein oder schlecht kontrastiert.
 
-Ich muss den Becher dann mehrfach drehen und weiß nicht immer, ob ich die Kamera näher heranhalten oder weiter entfernen soll.
+Manchmal erkennt die App das Datum nicht oder liest stattdessen den gesamten Bechertext vor.
 
-Besonders schwierig ist das Mindesthaltbarkeitsdatum. Es ist häufig sehr klein aufgedruckt, schlecht zu erkennen oder eingeprägt.
+Im Supermarkt ist es laut. Ich habe möglicherweise einen Einkaufskorb und meinen Langstock dabei. Lange Ansagen sind in dieser Situation störend.
 
-Seeing AI liest dann manchmal gar nichts oder erkennt andere Texte auf der Verpackung.
-
-Im Supermarkt ist es außerdem oft laut. Andere Menschen stehen neben mir, und manchmal fühle ich mich unter Zeitdruck.
-
-Lange Ansagen oder ständig vorgelesene Informationen würden mich zusätzlich stören.
+Wenn ich einen Joghurt trotz unklarem Datum kaufe und zu Hause feststelle, dass er nur noch kurz haltbar ist, ärgere ich mich.
 
 Gewünschte Unterstützung
+Ich möchte gezielte Fragen stellen können, zum Beispiel:
 
-Ich möchte gezielt fragen können:
-
-„Ist das Vanillejoghurt?“
+„Welche Sorte ist das?“
 
 „Wie lange ist der haltbar?“
 
-Darauf möchte ich eine kurze, möglichst sichere Antwort bekommen.
+Darauf möchte ich eine kurze, passende Antwort bekommen, ohne unnötige Informationen zu Zutaten, Nährwerten oder Werbetexten.
 
-Ich brauche nicht sämtliche Zutaten, Nährwerte oder Werbetexte vorgelesen.
+Wenn das Datum nicht sicher erkannt werden kann, soll die Hilfe das ehrlich sagen und nicht raten.
 
-Wichtig wäre mir, dass eine Hilfe nicht ständig spricht, während ich noch versuche, den Becher richtig zu halten.
+Hilfreich wären kurze Hinweise wie „Datum unklar, bitte Becher drehen“ oder „Deckel näher zeigen“.
 
-Außerdem möchte ich erkennen können, ob eine Information wirklich zu dem Becher in meiner Hand gehört oder möglicherweise zu einem anderen Produkt im Regal.
+Ich möchte Ansagen schnell stoppen oder eingrenzen können.
 
-Wenn etwas nicht sicher erkannt werden kann, möchte ich eine klare Rückmeldung bekommen.
+Eine falsche Antwort wäre für mich schlimmer als keine Antwort.
 
 Wichtigste Verbesserung
+Ich möchte innerhalb von weniger als einer Minute zuverlässig erkennen können, ob ich den richtigen Joghurt habe und ob das Mindesthaltbarkeitsdatum passt.
 
-Ich möchte in weniger als einer Minute sicher wissen:
+Entscheidend ist für mich die Sicherheit der Information. Ich möchte den Joghurt kaufen können, ohne mich auf mein Bauchgefühl verlassen zu müssen.
 
-Das ist der richtige Joghurt, und das Mindesthaltbarkeitsdatum ist in Ordnung.
-
-Dann wäre eine solche Unterstützung für mich eine echte Entlastung und nicht noch mehr Fummelei.
+Wenn das zuverlässig funktioniert, wäre das für meinen Alltag ein großer Unterschied.
 
 Offene Fragen
+Offen.
 
-Offen ist, wie eine Hilfe zuverlässig erkennen könnte, ob die gelesenen Informationen tatsächlich zum richtigen Becher gehören.
+Dieser Text enthält keine Namen oder genauen Orte. Trotzdem kann ein Text auch ohne Namen wiedererkennbar sein, zum Beispiel durch die Kombination persönlicher Einzelheiten.
 
-Ebenfalls offen ist, wie sie mir am besten mitteilen könnte, dass eine Information nicht sicher erkannt wurde.
+Möchtest du etwas an diesem Text ändern, kürzen oder ergänzen?
 
-Ein Hinweis zum Datenschutz: Auch ohne Namen oder genaue Orte kann ein Text durch besondere Einzelheiten wiedererkennbar sein. Du entscheidest selbst, ob du ihn später weitergeben möchtest.
-
-Möchtest du etwas an diesem Text ändern, ergänzen oder kürzen?
-
-**Person:** Nein, das passt so. Die Zusammenfassung trifft ziemlich gut, worum es mir geht.
+**Person:** Nein, das passt so für mich. Danke, die Zusammenfassung trifft es gut.
 
 **KI:** Titel
-
 Joghurt im Supermarkt sicher erkennen und Haltbarkeit prüfen
 
 Bereich
-
 Einkaufen
 
 Situation und Ziel
+Beim Einkaufen im Supermarkt möchte ich selbstständig erkennen können, welchen Joghurt ich in der Hand habe und wie lange er noch haltbar ist.
 
-Ich stehe im Supermarkt vor dem Kühlregal und möchte zwei sehr ähnliche Joghurtbecher unterscheiden, zum Beispiel Naturjoghurt und Vanillejoghurt oder fettarm und normal.
+Oft sehen sich Joghurtbecher sehr ähnlich. Sie haben dieselbe Größe und Form, enthalten aber unterschiedliche Sorten, zum Beispiel Natur oder Vanille, oder unterscheiden sich darin, ob sie laktosefrei sind.
 
-Die Becher fühlen sich meistens gleich an. An der Form oder am Deckel kann ich kaum erkennen, welches Produkt ich in der Hand habe.
+Durch Ertasten kann ich diese Unterschiede nicht erkennen.
 
-Außerdem möchte ich wissen, wie lange der Joghurt noch haltbar ist. Gerade bei Milchprodukten ist mir das wichtig.
-
-Mein Ziel ist, möglichst schnell und sicher zu erkennen, ob ich den richtigen Joghurt habe und ob das Mindesthaltbarkeitsdatum für mich passt.
+Mein Ziel ist, in unter einer Minute sicher zu wissen: Das ist der richtige Joghurt und das Mindesthaltbarkeitsdatum ist okay.
 
 Bisherige Hilfe
+Ich bin seit Geburt blind und nutze mein iPhone mit VoiceOver und Apps wie Seeing AI routiniert.
 
-Mit meinem iPhone und VoiceOver komme ich grundsätzlich gut zurecht. Ich benutze auch Seeing AI.
+Die Barcode-Erkennung von Seeing AI funktioniert oft erstaunlich gut. Wenn ich den Barcode finde und den Becher ruhig halte, bekomme ich meistens die richtige Produktinformation.
 
-Das Erkennen über den Barcode funktioniert oft gut. Wenn ich den Barcode finde und die Kamera ruhig halten kann, bekomme ich manchmal direkt den Produktnamen.
+Wenn ich das Mindesthaltbarkeitsdatum nicht erkennen kann, nehme ich manchmal einen Becher von weiter hinten im Regal, weil diese oft länger haltbar sind.
 
-Wenn ich das Mindesthaltbarkeitsdatum nicht erkennen kann, frage ich meistens jemanden in der Nähe oder an der Kasse.
-
-Manchmal nehme ich auch einen Becher von weiter hinten im Regal, weil dieser oft länger haltbar ist. Sicher ist das allerdings nicht.
+Manchmal frage ich auch jemanden um Hilfe. Wenn niemand da ist, kaufe ich den Joghurt gelegentlich trotzdem.
 
 Was noch schwierig ist
+Den Barcode zu finden und richtig auszurichten, dauert manchmal lange. Ich muss den Becher drehen und das iPhone passend halten.
 
-Der Barcode ist manchmal schwer zu finden. Er kann ungünstig sitzen, glänzen oder teilweise verdeckt sein.
+Noch schwieriger ist das Mindesthaltbarkeitsdatum. Es steht an unterschiedlichen Stellen, zum Beispiel auf dem Deckel oder am Rand. Oft ist es klein oder schlecht kontrastiert.
 
-Ich muss den Becher dann mehrfach drehen und weiß nicht immer, ob ich die Kamera näher heranhalten oder weiter entfernen soll.
+Manchmal erkennt die App das Datum nicht oder liest stattdessen den gesamten Bechertext vor.
 
-Besonders schwierig ist das Mindesthaltbarkeitsdatum. Es ist häufig sehr klein aufgedruckt, schlecht zu erkennen oder eingeprägt.
+Im Supermarkt ist es laut. Ich habe möglicherweise einen Einkaufskorb und meinen Langstock dabei. Lange Ansagen sind in dieser Situation störend.
 
-Seeing AI liest dann manchmal gar nichts oder erkennt andere Texte auf der Verpackung.
-
-Im Supermarkt ist es außerdem oft laut. Andere Menschen stehen neben mir, und manchmal fühle ich mich unter Zeitdruck.
-
-Lange Ansagen oder ständig vorgelesene Informationen würden mich zusätzlich stören.
+Wenn ich einen Joghurt trotz unklarem Datum kaufe und zu Hause feststelle, dass er nur noch kurz haltbar ist, ärgere ich mich.
 
 Gewünschte Unterstützung
+Ich möchte gezielte Fragen stellen können, zum Beispiel:
 
-Ich möchte gezielt fragen können:
-
-„Ist das Vanillejoghurt?“
+„Welche Sorte ist das?“
 
 „Wie lange ist der haltbar?“
 
-Darauf möchte ich eine kurze, möglichst sichere Antwort bekommen.
+Darauf möchte ich eine kurze, passende Antwort bekommen, ohne unnötige Informationen zu Zutaten, Nährwerten oder Werbetexten.
 
-Ich brauche nicht sämtliche Zutaten, Nährwerte oder Werbetexte vorgelesen.
+Wenn das Datum nicht sicher erkannt werden kann, soll die Hilfe das ehrlich sagen und nicht raten.
 
-Wichtig wäre mir, dass eine Hilfe nicht ständig spricht, während ich noch versuche, den Becher richtig zu halten.
+Hilfreich wären kurze Hinweise wie „Datum unklar, bitte Becher drehen“ oder „Deckel näher zeigen“.
 
-Außerdem möchte ich erkennen können, ob eine Information wirklich zu dem Becher in meiner Hand gehört oder möglicherweise zu einem anderen Produkt im Regal.
+Ich möchte Ansagen schnell stoppen oder eingrenzen können.
 
-Wenn etwas nicht sicher erkannt werden kann, möchte ich eine klare Rückmeldung bekommen.
+Eine falsche Antwort wäre für mich schlimmer als keine Antwort.
 
 Wichtigste Verbesserung
+Ich möchte innerhalb von weniger als einer Minute zuverlässig erkennen können, ob ich den richtigen Joghurt habe und ob das Mindesthaltbarkeitsdatum passt.
 
-Ich möchte in weniger als einer Minute sicher wissen:
+Entscheidend ist für mich die Sicherheit der Information. Ich möchte den Joghurt kaufen können, ohne mich auf mein Bauchgefühl verlassen zu müssen.
 
-Das ist der richtige Joghurt, und das Mindesthaltbarkeitsdatum ist in Ordnung.
-
-Dann wäre eine solche Unterstützung für mich eine echte Entlastung und nicht noch mehr Fummelei.
+Wenn das zuverlässig funktioniert, wäre das für meinen Alltag ein großer Unterschied.
 
 Offene Fragen
+Offen.
 
-Offen ist, wie eine Hilfe zuverlässig erkennen könnte, ob die gelesenen Informationen tatsächlich zum richtigen Becher gehören.
+Auch ohne Namen kann ein Text durch persönliche Einzelheiten wiedererkennbar sein.
 
-Ebenfalls offen ist, wie sie mir am besten mitteilen könnte, dass eine Information nicht sicher erkannt wurde.
-
----
-
+Link zum freiwilligen Einreichen:
 https://percepta.moinsen.dev/de/participate/#report
 
-Dort kannst du den Text einfügen, prüfen und selbst entscheiden, ob du ihn an Percepta sendest. Falls der Empfang noch geschlossen ist, kannst du den Text behalten. Percepta erhält nichts automatisch.
+Dort kannst du den Text einfügen, prüfen und selbst entscheiden, ob du ihn sendest. Falls der Empfang noch geschlossen ist, kannst du den Text behalten. Percepta erhält nichts automatisch.
 
-Auch ohne Namen kann ein Text wiedererkennbar sein. Eine spätere Veröffentlichung würde deine eigene Zustimmung zum genauen Text benötigen.
-
-Vorhandene Hilfen und kostenlose Beratung findest du unter:
-
+Informationen zu vorhandenen Hilfen und kostenloser Beratung findest du hier:
 https://percepta.moinsen.dev/de/tools/
 

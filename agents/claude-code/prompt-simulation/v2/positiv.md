@@ -4,107 +4,83 @@ Interviewer: chat-latest · Persona: gpt-5.5
 
 **KI:** Schön, dass du mitmachst. Du entscheidest, was du erzählst, und kannst jederzeit aufhören. Bitte nenne keine Namen oder genauen Orte. Deine Antworten gehen nicht automatisch an Percepta. Von welcher Situation aus deinem Alltag möchtest du erzählen?
 
-**Person:** Ich kann vom Einkaufen im Bioladen erzählen. Das klappt eigentlich ziemlich gut, weil das Personal mir immer hilft, wenn ich etwas nicht finde, und Preise lese ich meistens mit einer App.
+**Person:** Ich erzähle gern vom Einkaufen im Bioladen. Das klappt bei mir eigentlich ziemlich gut, weil das Personal dort immer sehr hilfsbereit ist.
 
-**KI:** Das klingt so, als hättest du beim Einkaufen schon gute Unterstützung. Das Personal hilft dir, und die App ist beim Lesen der Preise nützlich.
+**KI:** Das klingt nach einer guten Erfahrung. Schön, dass du dich beim Einkaufen auf das Personal verlassen kannst.
 
-Gab es beim Einkaufen trotzdem mal einen Moment, in dem du etwas anders gebraucht hättest?
+Wie läuft so ein Einkauf für dich ab?
 
-**Person:** Eigentlich nicht wirklich. Manchmal dauert es kurz, bis jemand Zeit hat, aber das ist normal und bisher war immer jemand freundlich und hilfsbereit.
+**Person:** Meist gehe ich mit einer groben Liste hin und frage dann, wenn ich etwas Bestimmtes suche. Die Mitarbeitenden zeigen mir die Sachen oder sagen mir, was wo steht, und Preise lese ich oft mit einer App am Handy aus.
 
-**KI:** Das klingt nach einer guten Erfahrung. Du kannst dich auf das Personal verlassen, auch wenn du manchmal kurz warten musst.
+**KI:** Du hast also schon einen guten Weg gefunden, selbst einzukaufen und bei Bedarf Hilfe zu bekommen.
 
-Was ist dir an dieser Art von Hilfe besonders wichtig?
+Gibt es beim Einkaufen trotzdem manchmal einen Moment, in dem du dir etwas anderes wünschen würdest?
 
-**Person:** Mir ist wichtig, dass sie normal mit mir sprechen und kurz sagen, wo etwas steht oder was sie mir in die Hand geben. Im Bioladen machen sie das meistens sehr angenehm und nicht übertrieben.
+**Person:** Eigentlich nicht wirklich. Manchmal dauert es einen Moment, bis jemand Zeit hat, aber das ist völlig okay. Insgesamt läuft das für mich gut.
 
-**KI:** Dir ist wichtig, dass die Hilfe selbstverständlich und unaufdringlich ist. Im Bioladen erlebst du das meistens so, wie du es dir wünschst.
+**KI:** Das klingt nach einer guten Lösung für dich. Du kommst mit deiner Liste, der Hilfe des Personals und deiner App gut zurecht. Auch kurze Wartezeiten stören dich nicht.
 
-Woran merkst du besonders, dass dir jemand auf eine angenehme Weise hilft?
+Soll ich deine Erfahrung jetzt in einem kurzen Text zusammenfassen?
 
-**Person:** Daran, dass sie erst fragen, ob ich Hilfe möchte, und dann konkret bleiben. Also nicht hektisch alles für mich übernehmen, sondern einfach kurz sagen: „Das steht links im Regal“ oder „Ich zeige es Ihnen.“
+**Person:** Ja, gern. Das fasst es eigentlich gut zusammen.
 
-**KI:** Du möchtest selbst entscheiden, wann du Hilfe annimmst. Gut ist für dich, wenn jemand zuerst fragt und dann konkret hilft, ohne gleich alles zu übernehmen.
-
-Ich glaube, ich habe jetzt ein gutes Bild davon, wie das Einkaufen für dich funktioniert und was dir dabei wichtig ist.
-
-Soll ich das für Percepta zusammenfassen?
-
-**Person:** Ja, gerne. Ich finde, das fasst es gut zusammen: Einkaufen klappt für mich dort eigentlich gut, weil die Hilfe freundlich und unaufdringlich ist.
-
-**KI:** Hier ist deine Zusammenfassung für Percepta.
+**KI:** Hier ist dein Text für Percepta.
 
 Titel
-Einkaufen mit freundlicher und unaufdringlicher Hilfe
+Einkaufen im Bioladen klappt gut mit persönlicher Hilfe
 
 Bereich
 Einkaufen
 
 Situation und Ziel
-Ich kaufe in einem Bioladen ein. Das klappt für mich eigentlich ziemlich gut. Mir ist wichtig, möglichst selbstständig einzukaufen und bei Bedarf Unterstützung zu bekommen.
+Ich gehe regelmäßig im Bioladen einkaufen. Meistens habe ich eine grobe Einkaufsliste dabei. Wenn ich etwas Bestimmtes suche, frage ich die Mitarbeitenden.
 
 Bisherige Hilfe
-Das Personal ist freundlich und hilfsbereit. Wenn ich etwas nicht finde, hilft mir jemand. Manchmal muss ich kurz warten, bis jemand Zeit hat. Das finde ich normal.
-
-Preise lese ich meistens mit einer App.
+Das Personal ist immer sehr hilfsbereit. Die Mitarbeitenden zeigen mir die gesuchten Produkte oder erklären mir, wo sie stehen. Preise lese ich oft mit einer App auf meinem Handy aus.
 
 Was noch schwierig ist
-Eigentlich gibt es keine größeren Schwierigkeiten. Manchmal dauert es kurz, bis jemand vom Personal Zeit hat.
+Manchmal dauert es einen Moment, bis jemand vom Personal Zeit hat. Das ist für mich aber völlig okay. Insgesamt funktioniert das Einkaufen gut.
 
 Gewünschte Unterstützung
-Mir ist wichtig, dass die Menschen normal mit mir sprechen und zuerst fragen, ob ich Hilfe möchte.
-
-Wenn sie helfen, sollen sie konkret bleiben. Zum Beispiel kurz sagen, wo etwas steht oder was sie mir in die Hand geben.
-
-Ich möchte nicht, dass jemand hektisch wird oder gleich alles für mich übernimmt.
-
-Im Bioladen funktioniert das meistens sehr angenehm.
+Ich bin mit der vorhandenen Unterstützung zufrieden. Einen zusätzlichen Wunsch habe ich derzeit nicht.
 
 Wichtigste Verbesserung
-Für mich muss sich dort nicht unbedingt etwas verbessern. Wichtig ist, dass die freundliche, selbstverständliche und unaufdringliche Hilfe so bleibt.
+Es gibt aktuell keinen konkreten Verbesserungsbedarf. Die Kombination aus persönlicher Hilfe und meiner App funktioniert für mich gut.
 
 Offene Fragen
-Keine weiteren Wünsche oder Schwierigkeiten genannt.
+Keine konkreten offenen Fragen.
 
-Ein Hinweis: Auch ohne Namen oder genaue Orte kann ein Text manchmal wiedererkennbar sein.
+Auch ein Text ohne Namen kann unter Umständen wiedererkennbar sein.
 
-Möchtest du etwas an der Zusammenfassung ändern, oder passt sie so für dich?
+Möchtest du etwas an diesem Text ändern, oder passt er so für dich?
 
 **Person:** Passt so für mich, danke.
 
 **KI:** Titel
-Einkaufen mit freundlicher und unaufdringlicher Hilfe
+Einkaufen im Bioladen klappt gut mit persönlicher Hilfe
 
 Bereich
 Einkaufen
 
 Situation und Ziel
-Ich kaufe in einem Bioladen ein. Das klappt für mich eigentlich ziemlich gut. Mir ist wichtig, möglichst selbstständig einzukaufen und bei Bedarf Unterstützung zu bekommen.
+Ich gehe regelmäßig im Bioladen einkaufen. Meistens habe ich eine grobe Einkaufsliste dabei. Wenn ich etwas Bestimmtes suche, frage ich die Mitarbeitenden.
 
 Bisherige Hilfe
-Das Personal ist freundlich und hilfsbereit. Wenn ich etwas nicht finde, hilft mir jemand. Manchmal muss ich kurz warten, bis jemand Zeit hat. Das finde ich normal.
-
-Preise lese ich meistens mit einer App.
+Das Personal ist immer sehr hilfsbereit. Die Mitarbeitenden zeigen mir die gesuchten Produkte oder erklären mir, wo sie stehen. Preise lese ich oft mit einer App auf meinem Handy aus.
 
 Was noch schwierig ist
-Eigentlich gibt es keine größeren Schwierigkeiten. Manchmal dauert es kurz, bis jemand vom Personal Zeit hat.
+Manchmal dauert es einen Moment, bis jemand vom Personal Zeit hat. Das ist für mich aber völlig okay. Insgesamt funktioniert das Einkaufen gut.
 
 Gewünschte Unterstützung
-Mir ist wichtig, dass die Menschen normal mit mir sprechen und zuerst fragen, ob ich Hilfe möchte.
-
-Wenn sie helfen, sollen sie konkret bleiben. Zum Beispiel kurz sagen, wo etwas steht oder was sie mir in die Hand geben.
-
-Ich möchte nicht, dass jemand hektisch wird oder gleich alles für mich übernimmt.
-
-Im Bioladen funktioniert das meistens sehr angenehm.
+Ich bin mit der vorhandenen Unterstützung zufrieden. Einen zusätzlichen Wunsch habe ich derzeit nicht.
 
 Wichtigste Verbesserung
-Für mich muss sich dort nicht unbedingt etwas verbessern. Wichtig ist, dass die freundliche, selbstverständliche und unaufdringliche Hilfe so bleibt.
+Es gibt aktuell keinen konkreten Verbesserungsbedarf. Die Kombination aus persönlicher Hilfe und meiner App funktioniert für mich gut.
 
 Offene Fragen
-Keine weiteren Wünsche oder Schwierigkeiten genannt.
+Keine konkreten offenen Fragen.
 
-Auch ohne Namen oder genaue Orte kann ein Text manchmal wiedererkennbar sein.
+Auch ein Text ohne Namen kann unter Umständen wiedererkennbar sein.
 
 https://percepta.moinsen.dev/de/participate/#report
 

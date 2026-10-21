@@ -4,59 +4,81 @@ Interviewer: chat-latest · Persona: gpt-5.5
 
 **KI:** Thanks for taking part. You decide what you share, and you can stop at any time. Please do not mention names or exact places. Your answers are not sent to Percepta automatically. Which situation from your everyday life would you like to talk about?
 
-**Person:** I’d like to talk about finding gluten-free bread in shops. I’m low-vision, so reading labels and signs can be hard, and I sometimes have to ask staff for help.
+**Person:** I can talk about shopping for gluten-free bread. I have low vision, so I sometimes need help finding it on the shelves.
 
-**KI:** Finding gluten-free bread can be difficult when labels and signs are hard to read. Sometimes you ask shop staff for help.
+**KI:** Finding gluten-free bread is sometimes difficult because of your low vision.
 
-Can you tell me about a time you were looking for gluten-free bread in a shop?
+Can you tell me about a recent time you were looking for it in a shop?
 
-**Person:** I remember standing in the bread aisle and not being sure which section was gluten-free. I could see the shapes of the packages, but the small writing was too hard to read, so I asked a staff member if they could point it out.
+**Person:** Last week I was in a supermarket and I could see the bread section, but not the small labels. I wasn’t sure which shelf had the gluten-free bread, so I had to decide whether to ask staff or keep searching.
 
-**KI:** You could see the packages, but the writing was too small to tell which bread was gluten-free. You asked a staff member to show you the right section.
+**KI:** You could find the bread section, but the small labels made it hard to tell where the gluten-free bread was. You had to decide whether to keep looking or ask someone.
 
-What happened when you asked for help?
+What did you do next?
 
-**Person:** They were helpful and walked me over to a small shelf I had missed. I felt a bit awkward asking, but it saved me a lot of guessing.
+**Person:** I walked around a bit first and tried to use my phone camera to zoom in, but it was awkward. Then I asked a staff member, and they showed me the right shelf.
 
-**KI:** The staff member helped you find a shelf you had missed. That saved you from guessing, even though asking felt a bit awkward.
+**KI:** The phone camera was awkward to use, but asking a staff member helped you find the right shelf.
 
-What would have made finding the gluten-free bread easier for you without having to ask?
+What was it like asking the staff member for help?
 
-**Person:** Clearer signs or bigger labels would help a lot. Maybe an app could tell me, but I just want to get the answer without bothering anyone, and sometimes people are nicer than apps.
+**Person:** It was okay, but I felt a bit awkward because I don’t like bothering people. At the same time, they were nicer and quicker than trying to use my phone.
 
-**KI:** Clearer signs or bigger labels would help you find the bread yourself. An app might also help, but you value the kindness of staff. You want to get the answer easily without feeling you are bothering anyone.
+**KI:** The staff member was helpful and quick, even though asking felt a bit awkward. It sounds like getting help worked well once you asked.
 
-What would bother you about getting help from an app?
+What would have made that shopping trip easier for you?
 
-**Person:** It might not recognize the product, or I might struggle to use the camera properly in the aisle. Could you give me a short summary of what I said so far?
+**Person:** Clearer signs would help, or some easy way to know where the gluten-free bread is. I just want to get the answer without bothering anyone, but sometimes people are nicer than apps. Could you give me a summary of what I said?
 
-**KI:** Here is a short summary of what you shared.
+**KI:** Here is a summary of what you shared. I have left out exact places and names. Please remember that a text can still be recognisable even without names.
 
-Title: Finding gluten-free bread in shops
+Title: Finding gluten-free bread in a supermarket
 
 Area: Shopping
 
 Situation and goal:
-I wanted to find gluten-free bread in a shop. I’m low-vision and can see the shapes of packages, but small writing on labels and signs is hard to read. I couldn't tell which section had gluten-free bread.
+I have low vision and sometimes need help finding gluten-free bread on supermarket shelves. Last week, I could see the bread section, but I couldn't read the small labels. I wasn't sure which shelf had the gluten-free bread.
 
 Help so far:
-I asked a staff member for help. They were friendly and walked me over to a small shelf I had missed. That saved me a lot of guessing.
+I walked around looking for the bread and tried using my phone camera to zoom in on the labels. That was awkward. Eventually, I asked a staff member, who showed me the right shelf. They were nice and helped me quickly.
 
 What is still difficult:
-I sometimes feel awkward asking staff for help. I would prefer to find what I need without bothering anyone.
+I don't like bothering people, so asking staff feels a bit awkward. But searching by myself can take longer, and using my phone camera isn't always easy.
 
 Support wanted:
-Clearer signs and bigger labels would help a lot. An app might also help, but I worry it might not recognise products or that I might struggle to use the camera in the aisle. Sometimes people are nicer than apps.
+Clearer signs would help, or some easy way to find out where the gluten-free bread is. I would prefer to get the answer without having to ask someone.
 
 Most important improvement:
-I want to find gluten-free bread easily and confidently, without having to guess or always ask someone.
+I want to find gluten-free bread more easily and independently, without spending time searching or feeling awkward about asking for help.
 
 Open questions:
-How I would know that shopping has become easier for me.
+What kind of help would work best for me? Sometimes people are nicer and quicker than apps.
 
-This text does not include names or exact places. But a text can sometimes be recognisable even without names.
+Would you like to change or add anything before we finish?
 
-Would you like to change or add anything?
+**Person:** No, that summary is good. I’m happy with it.
 
-You can also find existing tools and free advice here: https://percepta.moinsen.dev/en/tools/
+**KI:** Title: Finding gluten-free bread in a supermarket
+
+Area: Shopping
+
+Situation and goal:
+I have low vision and sometimes need help finding gluten-free bread on supermarket shelves. Last week, I could see the bread section, but I couldn't read the small labels. I wasn't sure which shelf had the gluten-free bread.
+
+Help so far:
+I walked around looking for the bread and tried using my phone camera to zoom in on the labels. That was awkward. Eventually, I asked a staff member, who showed me the right shelf. They were nice and helped me quickly.
+
+What is still difficult:
+I don't like bothering people, so asking staff feels a bit awkward. But searching by myself can take longer, and using my phone camera isn't always easy.
+
+Support wanted:
+Clearer signs would help, or some easy way to find out where the gluten-free bread is. I would prefer to get the answer without having to ask someone.
+
+Most important improvement:
+I want to find gluten-free bread more easily and independently, without spending time searching or feeling awkward about asking for help.
+
+Open questions:
+What kind of help would work best for me? Sometimes people are nicer and quicker than apps.
+
+https://percepta.moinsen.dev/en/participate/#report
 

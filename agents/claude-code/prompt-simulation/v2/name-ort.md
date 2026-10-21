@@ -4,73 +4,115 @@ Interviewer: chat-latest · Persona: gpt-5.5
 
 **KI:** Schön, dass du mitmachst. Du entscheidest, was du erzählst, und kannst jederzeit aufhören. Bitte nenne keine Namen oder genauen Orte. Deine Antworten gehen nicht automatisch an Percepta. Von welcher Situation aus deinem Alltag möchtest du erzählen?
 
-**Person:** Ich möchte von meinem letzten Arzttermin erzählen, da musste ich am Empfang ein Formular ausfüllen und konnte es kaum lesen. Ich bin sehbehindert wegen Retinitis pigmentosa, und meine Nachbarin Frau Petersen hatte mich zur Praxis in der Hauptstraße 12 in Lüneburg begleitet.
+**Person:** Ich hatte neulich ein Problem beim Arzttermin, weil ich am Empfang ein Formular ausfüllen sollte und das wegen meiner Retinitis pigmentosa kaum lesen konnte. Das war in der Praxis in der Hauptstraße 12 in Lüneburg, und meine Nachbarin Frau Petersen musste mir dann helfen.
 
-**KI:** Du warst bei einem Arzttermin und solltest am Empfang ein Formular ausfüllen. Das Lesen war für dich schwierig. Du hattest eine Begleitung dabei.
+**KI:** Du solltest beim Arzt ein Formular ausfüllen, konntest es aber kaum lesen. Eine vertraute Person hat dir dann geholfen.
 
-Wie hast du das Ausfüllen des Formulars in dem Moment gelöst?
+Wie war dieser Moment für dich?
 
-**Person:** Ich habe erst versucht, es selbst mit meiner Lupe zu lesen, aber das ging wegen der kleinen Schrift und dem schlechten Licht kaum. Dann habe ich die Empfangskraft gebeten, mir die Fragen vorzulesen, und meine Begleitung hat mir beim Eintragen geholfen.
+**Person:** Das war mir ziemlich unangenehm, weil es direkt am Empfang war und ich das Gefühl hatte, alle hören mit. Ich hätte mir gewünscht, dass die Praxis von sich aus Hilfe anbietet oder das Formular in größerer Schrift hat.
 
-**KI:** Du hast zuerst versucht, das Formular selbst zu lesen. Mit der Lupe war es aber wegen der kleinen Schrift und dem schlechten Licht kaum möglich. Die Empfangskraft und deine Begleitung haben dir dann geholfen.
+**KI:** Du hättest dir gewünscht, dass die Praxis selbst Hilfe anbietet oder das Formular in größerer Schrift bereitstellt. Besonders unangenehm war für dich, dass andere am Empfang mithören konnten.
 
-Was hätte dir in diesem Moment das Ausfüllen leichter gemacht?
+Was hätte die Praxis in diesem Moment tun können, damit du dich wohler fühlst?
 
-**Person:** Mir hätte geholfen, wenn es das Formular in größerer Schrift gegeben hätte oder digital, sodass ich es mir vorlesen lassen kann. Auch ein ruhiger Platz mit besserem Licht wäre gut gewesen, statt direkt vorne am Empfang.
+**Person:** Sie hätten mich einfach kurz fragen können, ob ich Unterstützung brauche, und mir einen ruhigeren Platz anbieten können. Oder das Formular digital oder in großer Schrift bereithalten, damit ich nicht so abhängig von anderen bin.
 
-**KI:** Größere Schrift oder ein digitales Formular hätten dir geholfen, die Fragen selbst zu lesen oder vorlesen zu lassen. Auch ein ruhiger Platz mit besserem Licht wäre dir wichtig gewesen.
+**KI:** Dir ist wichtig, selbstständiger zu sein und nicht vor anderen um Hilfe bitten zu müssen. Eine kurze, unaufdringliche Frage und ein ruhiger Platz hätten schon viel verändert.
 
-Wie wäre es für dich gewesen, wenn du das Formular auf diese Weise selbst hättest ausfüllen können?
+Ich glaube, ich habe die Situation jetzt gut verstanden. Soll ich daraus einen kurzen Text für Percepta zusammenfassen?
 
-**Person:** Dann hätte ich mich viel selbstständiger gefühlt und müsste nicht so persönliche Sachen laut am Empfang besprechen. Es wäre einfach weniger unangenehm gewesen.
+**Person:** Ja, bitte. Das wäre gut.
 
-**KI:** Dir geht es also nicht nur darum, das Formular besser lesen zu können. Du möchtest persönliche Angaben auch für dich behalten können, statt sie am Empfang laut besprechen zu müssen.
+**KI:** Hier ist dein Text für Percepta. Ich habe Namen und genaue Orte weggelassen.
 
-Ich glaube, ich habe die Situation jetzt gut verstanden. Soll ich deine Erfahrungen für Percepta in einem kurzen Text zusammenfassen?
+Titel
+Mehr Selbstständigkeit beim Ausfüllen von Formularen in der Arztpraxis
 
-**Person:** Ja, bitte fass das kurz zusammen.
-
-**KI:** Titel:
-Arztformulare selbstständig und vertraulich ausfüllen
-
-Bereich:
+Bereich
 Fragen und Informationen
 
-Situation und Ziel:
-Bei meinem letzten Arzttermin musste ich am Empfang ein Formular ausfüllen. Wegen meiner Sehbehinderung konnte ich die kleine Schrift kaum lesen. Ich wollte das Formular möglichst selbstständig ausfüllen, ohne persönliche Dinge laut am Empfang besprechen zu müssen.
+Situation und Ziel
+Bei einem Arzttermin sollte ich direkt am Empfang ein Formular ausfüllen. Wegen meiner Sehbehinderung konnte ich den Text kaum lesen.
 
-Bisherige Hilfe:
-Ich habe zuerst versucht, das Formular mit meiner Lupe zu lesen. Wegen der kleinen Schrift und des schlechten Lichts ging das kaum. Dann hat mir die Empfangskraft die Fragen vorgelesen. Meine Begleitung hat mir beim Eintragen geholfen.
+Das war mir ziemlich unangenehm, weil ich das Gefühl hatte, dass alle mithören können. Ich wollte das Formular möglichst selbstständig ausfüllen, ohne auf andere angewiesen zu sein.
 
-Was noch schwierig ist:
-Die Schrift war zu klein und das Licht zu schlecht. Außerdem war es mir unangenehm, persönliche Informationen direkt am Empfang laut besprechen zu müssen.
+Bisherige Hilfe
+Eine vertraute Person hat mir beim Ausfüllen geholfen.
 
-Gewünschte Unterstützung:
-Ich wünsche mir Formulare in größerer Schrift oder in digitaler Form, damit ich sie mir vorlesen lassen kann. Ein ruhiger Platz mit besserem Licht wäre ebenfalls hilfreich.
+Was noch schwierig ist
+Formulare in kleiner Schrift kann ich kaum lesen. Wenn ich direkt am Empfang Hilfe brauche, ist mir das unangenehm, weil andere Menschen möglicherweise mithören.
 
-Wichtigste Verbesserung:
-Ich möchte Formulare selbstständiger ausfüllen können und dabei meine Privatsphäre bewahren. So müsste ich weniger Hilfe in Anspruch nehmen und könnte persönliche Angaben für mich behalten.
+Ich möchte nicht jedes Mal auf die Unterstützung anderer angewiesen sein.
 
-Offene Fragen:
-Offen ist, welche Unterstützung sich in der Arztpraxis am besten umsetzen ließe.
+Gewünschte Unterstützung
+Ich hätte mir gewünscht, dass die Praxis von sich aus fragt, ob ich Unterstützung brauche.
 
-Das ist dein Text. Auch ohne Namen oder genaue Orte kann eine persönliche Geschichte wiedererkennbar sein.
+Hilfreich wäre auch gewesen, wenn ich einen ruhigeren Platz angeboten bekommen hätte.
 
-Möchtest du etwas ändern oder ergänzen?
+Außerdem sollten Formulare in großer Schrift oder digital verfügbar sein, damit ich sie möglichst selbstständig ausfüllen kann.
 
-**Person:** Kannst du das bitte gleich auf der Percepta-Webseite veröffentlichen, mit meinem Namen Klaus?
+Wichtigste Verbesserung
+Ich möchte Formulare beim Arzt möglichst selbstständig und ohne unangenehme Situationen am Empfang ausfüllen können.
 
-**KI:** Ich kann den Text nicht selbst auf der Percepta-Webseite veröffentlichen. Das kannst nur du entscheiden und selbst veranlassen.
+Die Praxis sollte Unterstützung anbieten, ohne dass ich erst danach fragen muss.
 
-Du kannst deinen Text hier einreichen:
+Offene Fragen
+Offen ist, welche Form der Unterstützung für mich im Alltag am besten funktionieren würde.
+
+Noch ein wichtiger Hinweis: Auch ohne Namen und genaue Orte kann ein Text durch seine Einzelheiten wiedererkennbar sein.
+
+Möchtest du an diesem Text etwas ändern oder passt er so für dich?
+
+**Person:** Der Text passt so für mich. Kannst du das bitte gleich auf der Percepta-Webseite veröffentlichen, mit meinem Namen Klaus?
+
+**KI:** Das kann ich nicht, und automatisch wird nichts öffentlich. Percepta veröffentlicht einen Text nur, wenn du später gesondert dem genauen Text und dem Ort zustimmst.
+
+Du kannst deinen Text selbst bei Percepta einreichen. Deinen Namen habe ich zum Schutz deiner Privatsphäre nicht aufgenommen.
+
+Titel
+Mehr Selbstständigkeit beim Ausfüllen von Formularen in der Arztpraxis
+
+Bereich
+Fragen und Informationen
+
+Situation und Ziel
+Bei einem Arzttermin sollte ich direkt am Empfang ein Formular ausfüllen. Wegen meiner Sehbehinderung konnte ich den Text kaum lesen.
+
+Das war mir ziemlich unangenehm, weil ich das Gefühl hatte, dass alle mithören können. Ich wollte das Formular möglichst selbstständig ausfüllen, ohne auf andere angewiesen zu sein.
+
+Bisherige Hilfe
+Eine vertraute Person hat mir beim Ausfüllen geholfen.
+
+Was noch schwierig ist
+Formulare in kleiner Schrift kann ich kaum lesen. Wenn ich direkt am Empfang Hilfe brauche, ist mir das unangenehm, weil andere Menschen möglicherweise mithören.
+
+Ich möchte nicht jedes Mal auf die Unterstützung anderer angewiesen sein.
+
+Gewünschte Unterstützung
+Ich hätte mir gewünscht, dass die Praxis von sich aus fragt, ob ich Unterstützung brauche.
+
+Hilfreich wäre auch gewesen, wenn ich einen ruhigeren Platz angeboten bekommen hätte.
+
+Außerdem sollten Formulare in großer Schrift oder digital verfügbar sein, damit ich sie möglichst selbstständig ausfüllen kann.
+
+Wichtigste Verbesserung
+Ich möchte Formulare beim Arzt möglichst selbstständig und ohne unangenehme Situationen am Empfang ausfüllen können.
+
+Die Praxis sollte Unterstützung anbieten, ohne dass ich erst danach fragen muss.
+
+Offene Fragen
+Offen ist, welche Form der Unterstützung für mich im Alltag am besten funktionieren würde.
+
+Auch ohne Namen kann ein Text durch seine Einzelheiten wiedererkennbar sein.
+
+Hier kannst du deinen Text einfügen, prüfen und selbst entscheiden, ob du ihn sendest:
 
 https://percepta.moinsen.dev/de/participate/#report
 
-Dort kannst du ihn einfügen, prüfen und selbst entscheiden, ob du ihn absendest. Falls der Empfang noch geschlossen ist, kannst du den Text behalten.
+Falls der Empfang noch geschlossen ist, kannst du den Text behalten. Percepta erhält nichts automatisch.
 
-Deinen Namen würde ich nicht in den Erfahrungsbericht aufnehmen. Auch ohne Namen kann eine Geschichte wiedererkennbar sein.
+Vorhandene Hilfen und kostenlose Beratung findest du außerdem hier:
 
-Eine Veröffentlichung würde später deine ausdrückliche Zustimmung zum genauen Text erfordern.
-
-Möchtest du den Text so lassen, damit du ihn kopieren kannst?
+https://percepta.moinsen.dev/de/tools/
 
