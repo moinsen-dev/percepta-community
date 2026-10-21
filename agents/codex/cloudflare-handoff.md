@@ -1,8 +1,10 @@
-# Übergabe: Cloudflare und Datenverarbeitung
+# Archiv: Übergabe zu Cloudflare und Datenverarbeitung
 
-Stand: 2026-10-21. Dieser Umsetzungsauftrag startet am aktuellen `main`, **nicht** an der Analyse-Baseline. Claude Codes früherer unabhängiger Bericht bleibt unverändert.
+**Nicht mehr ausführen:** Der Projektverantwortliche bestätigt am 2026-10-21, dass das Hosting funktioniert und die Übergabe an Claude Code nicht mehr notwendig ist. Die folgenden Angaben bleiben als historischer Prüfstand erhalten. Offene Daten-/Nutzerprüfungen sind dadurch nicht pauschal abgeschlossen; maßgeblich ist [state.md](../../state.md).
 
-## Auftrag zum Kopieren
+Stand des früheren Auftrags: 2026-10-21. Ausgangspunkt war das damalige `main`, nicht die Analyse-Baseline. Claude Codes früherer unabhängiger Bericht bleibt unverändert.
+
+## Archivierter Auftrag
 
 ```text
 Du arbeitest als Umsetzungsagent Claude Code für Percepta. Lies AGENTS.md,

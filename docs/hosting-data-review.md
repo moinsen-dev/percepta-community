@@ -39,12 +39,12 @@ Ein deaktiviertes Tracking-Script beweist nicht, dass keine Endeinrichtungsspeic
 
 ## Was noch konkret zu prüfen ist
 
-1. **Schutzregeln und Erreichbarkeit:** Für exakt `percepta.moinsen.dev` Ursache der Challenge ermitteln. Erforderliche Schutzfunktion und Barrierefreiheit abwägen, keine pauschale Deaktivierung für die gesamte Domain. Anschließend normale Browser, Tastatur, Screenreader und JavaScript-deaktivierten Abruf prüfen.
+1. **Erreichbarkeit und Bedienbarkeit:** Hosting vom Projektverantwortlichen als funktionierend bestätigt; kein weiterer Handoff zur Challenge-Behebung. Die frühere Challenge bleibt ein historischer Befund unserer Abrufe. Manuelle Tastatur-/Screenreader-Prüfung und Nutzung ohne JavaScript sind damit nicht als durchgeführt dokumentiert.
 2. **Cloudflare-Konfiguration:** DNS-/Custom-Domain-Zuordnung, TLS, Workers-Settings, Web Analytics/Zaraz, NEL, Bot-/Challenge-Regeln sowie zonenweite Logpush-Ziele und Aufbewahrung lesen. Nur tatsächlich aktive Funktionen in der Datenschutzerklärung nennen. Falls Änderungen nötig sind, auf Percepta begrenzen.
 3. **Verträge und Mail:** Passenden Cloudflare-Vertragsstand privat sichern; tatsächlichen Maildienst, Auftragnehmer, Weiterleitungen, Zugriff und Lösch-/Backupfristen bestätigen. Die MX-Abfrage allein reicht nicht. Datenschutztext danach konkretisieren.
 4. **Betrieb:** Lösch-/Auskunftsanfrage mit erfundenen Daten intern durchspielen; keine Mail an Dritte in diesem Auftrag. Reale Interviewdaten erst nach dem separaten [Pilot-Leitfaden](participation-pilot.md).
 
-Die Übergabe an Claude Code enthält ausführbare Prüf- und Abschlusskriterien: [Cloudflare-Übergabe](../agents/codex/cloudflare-handoff.md).
+Nachtrag 2026-10-21: Der Projektverantwortliche bestätigt funktionierendes Hosting und erklärt die [Cloudflare-Übergabe](../agents/codex/cloudflare-handoff.md) für nicht mehr notwendig; sie ist archiviert. Die übrigen Daten-/Betriebsfragen bleiben getrennt offen. Die folgenden technischen Befunde stammen aus dem früheren Deploy-Lauf, nicht aus einer neuen Live-Prüfung.
 
 ## Quellen, abgerufen 2026-10-21
 
@@ -66,4 +66,4 @@ Direkter interaktiver `wrangler deploy` erfolgreich: Cloudflare-Version `3591fb2
 
 Die unverifizierte Sites-Custom-Domain wurde nach erfolgreicher direkter Zuordnung entfernt; Provider-Liste danach leer. Die Eigentümervorschau selbst bleibt unverändert. Kein bestehender DNS-Konflikt wurde von Wrangler gemeldet oder überschrieben; Cloudflare hat die Custom-Domain-Zuordnung eingerichtet.
 
-**Verbleibende Grenze:** Der Live-Abruf liefert weiterhin HTTP 403 und den Titel „Just a moment…“, keinen Percepta-Inhalt. Das belegt eine Challenge für unsere Abrufe, nicht automatisch eine Sperre sämtlicher Besucher. Im gemessenen Response wurde kein `Set-Cookie` gesendet; eine vollständig durchlaufene Challenge und spätere Cookies konnten nicht geprüft werden. Produktive CSP, Clipboard, Seiten/Downloads und 404 sind deshalb noch nicht live abgenommen. Die lokale Prüfung und der erfolgreiche Upload ersetzen diese Prüfung nicht.
+**Grenze des damaligen Prüflaufs:** Der Live-Abruf lieferte HTTP 403 und den Titel „Just a moment…“, keinen Percepta-Inhalt. Das belegt eine Challenge für unsere Abrufe, nicht automatisch eine Sperre sämtlicher Besucher. Im gemessenen Response wurde kein `Set-Cookie` gesendet; eine vollständig durchlaufene Challenge und spätere Cookies konnten nicht geprüft werden. Produktive CSP, Clipboard, Seiten/Downloads und 404 sind deshalb noch nicht live abgenommen. Die lokale Prüfung und der erfolgreiche Upload ersetzen diese Prüfung nicht.
