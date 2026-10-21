@@ -1,12 +1,12 @@
 # Percepta — Projektstand
 
-Stand: 2026-10-21. Verantwortlicher Harness für die erste Lieferung: Codex.
+Stand: 2026-10-21. Koordination: Codex. Dokumentation am Repository-Stand `d7dcc7d56ac178e7782d07f79ab54aede63a91dd` mit Code, Git-Historie und CI-Nachweis abgeglichen; der folgende Dokumentationsnachtrag ändert den Website-Build nicht.
 
 ## Aktuelle Phase
 
 Die Dokumentationsgrundlage ist unter [moinsen-dev/percepta-community](https://github.com/moinsen-dev/percepta-community) öffentlich veröffentlicht. Der Projektverantwortliche hat das Repository angelegt; Codex hat den ersten Commit `ee24e5623502f911807ea1ba257f938ef78362b4` auf `main` gepusht und über den GitHub-Connector bestätigt. `main` ist der Default-Branch. Die Vergleichsversion für weitere Analysen wird durch den unveränderlichen Tag `research-baseline-v0.1` bestimmt.
 
-Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Alle vier Zweitanalysen sind abgeschlossen und mit PR #1 bis PR #4 gemergt. Die [Koordinator-Synthese](agents/codex/synthesis.md) liegt vor. Der Folgeauftrag zur Website und den vier empfohlenen Arbeitsschritten ist erteilt (D-13/D-14); nicht sämtliche Einzelvorschläge der Berichte sind damit angenommen. Kein weiterer Harness-Lauf ist vorgesehen. Der Tag enthält die geprüften 25 Dokumentationsdateien; spätere Nachträge auf `main` verändern ihn nicht.
+Die Baseline ist veröffentlicht und geprüft: `research-baseline-v0.1` zeigt auf `fe68acae4142baca25408124f85e353fb9786674`. Alle vier Zweitanalysen sind abgeschlossen und mit PR #1 bis PR #4 gemergt. Die [Koordinator-Synthese](agents/codex/synthesis.md) liegt vor. Der Folgeauftrag zur Website und den vier empfohlenen Arbeitsschritten ist erteilt (D-13/D-14); nicht sämtliche Einzelvorschläge der Berichte sind damit angenommen. Kein weiterer Harness-Lauf ist vorgesehen. Der Tag enthält 24 Markdown-Dateien und `.gitignore` (25 Dateien insgesamt); spätere Nachträge auf `main` verändern ihn nicht.
 
 Die vom Projektverantwortlichen bereitgestellte alte Percepta-Kopie ist statisch analysiert. Untersucht wurde der jüngste lokal enthaltene Branch `codex/reboot-0.2-week1` am Commit `d05d5c2a5c7fd3107e84e7462cc9da2d6ce04cd5`. Diese private Referenzkopie gehört nicht zum veröffentlichten Repository.
 
@@ -18,25 +18,27 @@ Die [ältere geschützte Sites-Vorschau](https://percepta-community.leafy-leaf-9
 
 Kein App-Code, Backend, Kontaktregister oder Interview-Empfang implementiert. Keine Nutzerstudie oder Modellmessung durchgeführt. [Website-Prüfbericht](agents/codex/website-validation.md), [fiktive redaktionelle Probe](agents/codex/participation-dry-run.md) und [Pilot-Leitfaden](docs/participation-pilot.md) liegen vor. Der Pilot ist vorbereitet, nicht gestartet.
 
-## Übergabestatus: unabhängige Analysen
+## Abgeschlossene unabhängige Analysen
 
 **Codex' erster Dokumentations- und Analysedurchlauf ist inhaltlich abgeschlossen.** Vorliegen: gemeinsame Arbeitsregeln, Vision und Recherche, Website-/Interview-Spezifikation, DE/EN-Interview-Prompts, Codex-Erstanalyse, Altprojekt-Bestandsaufnahme, Validierung und Protokoll. Die angenommene Vorgehensempfehlung ist als D-11 festgehalten.
 
-**Übergabereferenz:** `research-baseline-v0.1`. Jeder weitere Harness prüft vor seiner Analyse, dass der Tag aus `origin` verfügbar ist, arbeitet in einem eigenen Checkout/Worktree davon und hält den mit `git rev-parse HEAD` ermittelten Commit fest. Ein fehlender oder abweichender Tag ist keine Freigabe, ersatzweise den neuesten Stand von `main` zu verwenden.
+**Historische Vergleichsreferenz:** `research-baseline-v0.1`. Diese Ausgangsversion galt für den abgeschlossenen Analysedurchlauf. Der Tag bleibt unverändert und auf `origin` verfügbar; die tatsächlichen Ausgangs-Commits stehen in den Berichten.
 
-**Claude Codes Analyse ist abgeschlossen:** [PR #1](https://github.com/moinsen-dev/percepta-community/pull/1) wurde mit Merge-Commit `e8b2080c99ce90503a1770223d13615920d2ee37` übernommen. Die [Analyse](agents/claude-code/analysis.md) liegt auf `main` und ist in der Synthese berücksichtigt; die Annahme ihrer Vorschläge bleibt offen.
+**Folgeaufträge:** Website- und Dokumentationsarbeit beginnt auf aktuellem `main`, bei paralleler Bearbeitung in getrennten Worktrees/Branches mit eindeutigem Dateiumfang. Die alten Analyse-Startprompts und die archivierte Cloudflare-Übergabe lösen keine neue Arbeit aus. Es ist derzeit kein weiterer Harness-Start beauftragt.
 
-**JCodes Analyse ist abgeschlossen:** [PR #2](https://github.com/moinsen-dev/percepta-community/pull/2) wurde mit Merge-Commit `0ad41a5c965f81b05a9246f6ad918bbbeb9eeffa` übernommen. Die [Analyse](agents/jcode/analysis.md) behandelt alle sechs Auftragsthemen; dokumentiert sind JCode `v0.99.0` (Commit `774613c90`) und eine unbekannte exakte Modell-ID. In der Synthese berücksichtigt; Annahme der Empfehlungen offen.
+**Claude Codes Analyse ist abgeschlossen:** [PR #1](https://github.com/moinsen-dev/percepta-community/pull/1) wurde mit Merge-Commit `e8b2080c99ce90503a1770223d13615920d2ee37` übernommen. Die [Analyse](agents/claude-code/analysis.md) liegt auf `main` und ist in der Synthese berücksichtigt.
 
-**OMPs Analyse ist abgeschlossen:** Der Projektverantwortliche hat den Abschluss am 2026-10-20 bestätigt. [PR #3](https://github.com/moinsen-dev/percepta-community/pull/3) wurde mit Merge-Commit `7c7ea95df5903b69f01885ca7c9ababab84b9625` übernommen. Die [Analyse](agents/omp/analysis.md) behandelt alle sechs Auftragsthemen und dokumentiert OMP (Oh My Pi) mit dem Modell `deepseek/deepseek-v4-pro` laut Laufzeitumgebung; eine genaue Build-/Versionsnummer ist unbekannt. OMP und DSH sind getrennte Läufe. In der Synthese berücksichtigt, einschließlich des WCAG-Reviewvorbehalts; Annahme der Empfehlungen offen.
+**JCodes Analyse ist abgeschlossen:** [PR #2](https://github.com/moinsen-dev/percepta-community/pull/2) wurde mit Merge-Commit `0ad41a5c965f81b05a9246f6ad918bbbeb9eeffa` übernommen. Die [Analyse](agents/jcode/analysis.md) behandelt alle sechs Auftragsthemen; dokumentiert sind JCode `v0.99.0` (Commit `774613c90`) und eine unbekannte exakte Modell-ID. In der Synthese berücksichtigt.
 
-**DeepSeeks Analyse ist abgeschlossen:** [PR #4](https://github.com/moinsen-dev/percepta-community/pull/4) wurde mit Merge-Commit `1cd561ecedb76566d8df42b70e64b737133cf6fa` übernommen. Die [Analyse](agents/deepseek/analysis.md) behandelt alle sechs Auftragsthemen. Dokumentiert sind DeepSeek Harness (DSH) 0.2.1-rc.2 als Web-Sitzung und `deepseek-flash` laut Laufzeitumgebung; Provider DeepSeek abgeleitet, exakte Modell-/Build-ID unbekannt. Kein separater CLI-Prozess. Der Bericht legt Kenntnis von Stichworten aus neuerem `main/state.md` offen; seine Unabhängigkeit ist entsprechend eingeschränkt. In der Synthese berücksichtigt; Annahme der Empfehlungen offen.
+**OMPs Analyse ist abgeschlossen:** Der Projektverantwortliche hat den Abschluss am 2026-10-20 bestätigt. [PR #3](https://github.com/moinsen-dev/percepta-community/pull/3) wurde mit Merge-Commit `7c7ea95df5903b69f01885ca7c9ababab84b9625` übernommen. Die [Analyse](agents/omp/analysis.md) behandelt alle sechs Auftragsthemen und dokumentiert OMP (Oh My Pi) mit dem Modell `deepseek/deepseek-v4-pro` laut Laufzeitumgebung; eine genaue Build-/Versionsnummer ist unbekannt. OMP und DSH sind getrennte Läufe. In der Synthese berücksichtigt, einschließlich des WCAG-Reviewvorbehalts.
+
+**DeepSeeks Analyse ist abgeschlossen:** [PR #4](https://github.com/moinsen-dev/percepta-community/pull/4) wurde mit Merge-Commit `1cd561ecedb76566d8df42b70e64b737133cf6fa` übernommen. Die [Analyse](agents/deepseek/analysis.md) behandelt alle sechs Auftragsthemen. Dokumentiert sind DeepSeek Harness (DSH) 0.2.1-rc.2 als Web-Sitzung und `deepseek-flash` laut Laufzeitumgebung; Provider DeepSeek abgeleitet, exakte Modell-/Build-ID unbekannt. Kein separater CLI-Prozess. Der Bericht legt Kenntnis von Stichworten aus neuerem `main/state.md` offen; seine Unabhängigkeit ist entsprechend eingeschränkt. In der Synthese berücksichtigt.
 
 DeepSeeks Analyse-Commit `d423758feb34dea7a9dcfee860f4736ad2178fc3` baut direkt auf dem Vorbereitungs-Commit `b506a180412a2e7c38bd0fce357aa247a716ad4c` auf. Dessen einziger Eltern-Commit ist die fachliche Baseline `fe68acae4142baca25408124f85e353fb9786674`; er ergänzt ausschließlich Auftrag und zwei Vorlagen in `agents/deepseek/`. Der Analyse-Diff betrifft nur Bericht und eigenes Protokoll. Keine anderen vollständigen Zweitanalysen wurden laut DSH vorab gelesen.
 
-Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branches und wurden bei der Integration nicht verändert. DeepSeeks Worktree `.worktrees/deepseek` steht sauber am Analyse-Commit. Die Analyse-Branches bleiben erhalten; die Startprompts dokumentieren den abgeschlossenen ersten Durchlauf.
+Die Arbeitsbereiche aller vier Harnesses wurden bei der Integration nicht verändert. DeepSeeks Worktree `.worktrees/deepseek` war beim Integrationsabschluss sauber am Analyse-Commit. Diese historische Angabe ist keine erneute Prüfung aller Worktrees. Die Analyse-Branches bleiben als Nachweise erhalten; die Startprompts dokumentieren den abgeschlossenen ersten Durchlauf.
 
-**Übergang zur Umsetzung:** Der Projektverantwortliche hat Website und vier nächste Arbeitsschritte beauftragt. D-13/D-14 halten Umfang und Hosting fest. Die erste Implementierung macht die Entwurfshilfen nutzbar; privater Empfang, echte Chat-Proben und Pilot folgen nach Klärung ihrer Voraussetzungen. Die ursprünglichen Analyseberichte bleiben unverändert.
+**Umsetzung nach der Synthese:** D-13/D-14 bestätigen Website und vier nächste Arbeitsschritte; D-15/D-16 ergänzen Betreiberangaben und Empfehlungen. Website und Entwurfshilfen sind veröffentlicht. Privater Empfang, externe KI-Chat-Proben und Pilot stehen weiterhin aus. Diese bestätigten Entscheidungen übernehmen nicht pauschal alle Einzelvorschläge der Analysen; die ursprünglichen Berichte bleiben unverändert.
 
 ## Bestätigte Entscheidungen
 
@@ -74,7 +76,7 @@ Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branc
 | Paket | Status | Nachweis / nächster Schritt |
 | --- | --- | --- |
 | Gemeinsame Dokumentation | Geprüft und auf `main` veröffentlicht | [README](README.md), [AGENTS](AGENTS.md) |
-| Codex-Erstanalyse | Abgeschlossen und zur Übergabe bereit | [Analyse](agents/codex/analysis.md), [Validierung](agents/codex/validation.md) |
+| Codex-Erstanalyse | Abgeschlossen; Grundlage des ebenfalls abgeschlossenen Analysevergleichs | [Analyse](agents/codex/analysis.md), [Validierung](agents/codex/validation.md) |
 | Claude Code | Analyse abgeschlossen, PR #1 gemergt; in Synthese bewertet | [Analyse](agents/claude-code/analysis.md) |
 | JCode | Analyse abgeschlossen, PR #2 gemergt; in Synthese bewertet | [Analyse](agents/jcode/analysis.md) |
 | OMP | Analyse abgeschlossen, PR #3 gemergt; in Synthese bewertet | [Analyse](agents/omp/analysis.md) |
@@ -83,6 +85,7 @@ Die Arbeitsbereiche aller vier Harnesses bleiben auf ihren eigenen Analyse-Branc
 | Repository-Veröffentlichung | Öffentlich; erster Commit erfolgreich gepusht und remote bestätigt | `moinsen-dev/percepta-community`, Default-Branch `main`, Remote `origin` |
 | Vergleichsbaseline | Veröffentlicht, von `origin` abgerufen und remote gelesen | `research-baseline-v0.1` → `fe68acae4142baca25408124f85e353fb9786674` |
 | Astro-Website | DE/EN-Empfehlungen ergänzt und direkt bei Cloudflare deployt; 23/23 lokale/CI-Browserprüfungen bestanden; automatisierter Live-Abruf durch Challenge begrenzt, manuelle Accessibility-Abnahme offen | [Brief](docs/website-brief.md), [Prüfbericht](agents/codex/website-validation.md) |
+| Empfehlungen für vorhandene Hilfen | DE/EN-Seiten veröffentlicht; Herstellerrecherche, keine eigenen App-Leistungstests | [Deutsch](https://percepta.moinsen.dev/de/tools/), [English](https://percepta.moinsen.dev/en/tools/), [Quellenvergleich](docs/existing-assistive-tools.md) |
 | Interview-Einreichung | DE/EN-Entwurfshilfen verfügbar; privater Empfang inaktiv | [Spezifikation](docs/interview-spec.md), [Pilot-Vorbereitung](docs/participation-pilot.md) |
 | Fiktive Prozessprobe | Redaktioneller Durchgang dokumentiert; unabhängige KI-Chat-Proben ausstehend | [Probe](agents/codex/participation-dry-run.md) |
 | Beteiligungs-Pilot / Technikvergleiche | Ablauf und Auswahlkriterien vorbereitet; keine Teilnehmenden oder Messergebnisse | [Leitfaden](docs/participation-pilot.md) |
@@ -111,18 +114,17 @@ Nach Aktivierung von Full Access am 2026-10-20 funktionieren auch `git fetch ori
 
 Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit Betroffenen priorisiert; die Beispiele aus der Analyse sind noch keine ausgewählte Funktionsliste. Plattform und Anbieter bleiben offen. Quellen und Grenzen stehen in der [Bestandsaufnahme](agents/codex/legacy-review.md).
 
-## Vor öffentlichem Start und Pilot zu klären
+## Offene Betriebsfragen und Voraussetzungen für den Pilot
 
 1. Betreiberangaben sind umgesetzt. Datenwege, fehlende Anwendungstracker, technische Cloudflare-Verarbeitung und Rechtstexte sind geprüft/ergänzt; konkrete Zonen-Schutz-/Logeinstellungen, Vertragsstand und Mail-Löschregeln bleiben offen. Siehe [Datenprüfung](docs/hosting-data-review.md).
 2. Privater Empfang, Moderation, Zugriff, konkrete Aufbewahrung/Löschung, Rücknahme und rechtliche Prüfung vor Einsendungen. Postfach ist ein Kandidat, kein bereits eingerichteter Dienst.
-3. Domainanbindung und direkter Wrangler-Deploy sind erfolgt; Hosting funktioniert laut Projektverantwortlichem, kein weiterer Cloudflare-Handoff. Die bisherigen technischen Prüfgrenzen und fehlende manuelle Abnahme bleiben im Prüfbericht nachvollziehbar. Konkrete Zonen-/Logdaten sind durch die Rückmeldung nicht zusätzlich geprüft.
-4. Lizenz für Code/Dokumentation und Bedingungen späterer freiwilliger öffentlicher Beiträge.
-5. Reale Screenreader-/Tastaturabnahme, externe KI-Chat-Probe mit fiktiven Daten und anschließend Rekrutierung, Betreuung und Aufwandsentschädigung des Pilots.
+3. Lizenz für Code/Dokumentation und Bedingungen späterer freiwilliger öffentlicher Beiträge.
+4. Reale Screenreader-/Tastaturabnahme, externe KI-Chat-Probe mit fiktiven Daten und anschließend Rekrutierung, Betreuung und Aufwandsentschädigung des Pilots. Domainanbindung und Hosting-Übergabe sind keine offenen Umsetzungspakete; die dokumentierte Grenze automatisierter Live-Abrufe bleibt bestehen.
 
 ## Nächste Schritte
 
-Die vier neuen Produkthinweise sind im [Vergleich vorhandener Hilfen](docs/existing-assistive-tools.md) ausgewertet. Empfehlung zur weiteren Planung: mit Betroffenen vorhandene Hilfen und verbleibende Schwierigkeiten in wenigen vollständigen Alltagsaufgaben vergleichen, bevor ein eigener App-Umfang festgelegt wird. Keine neue Anbieter- oder Architekturentscheidung.
+Die vier Produkthinweise sind im [Vergleich vorhandener Hilfen](docs/existing-assistive-tools.md) ausgewertet und als DE/EN-Empfehlungsseite veröffentlicht. Nächste offene Arbeit ist die manuelle Accessibility-Abnahme sowie die Vorbereitung des privaten Teilnahmebetriebs. Empfehlung zur weiteren Planung: mit Betroffenen vorhandene Hilfen und verbleibende Schwierigkeiten in wenigen vollständigen Alltagsaufgaben vergleichen, bevor ein eigener App-Umfang festgelegt wird. Keine neue Anbieter- oder Architekturentscheidung.
 
 Die Cloudflare-Übergabe entfällt auf Rückmeldung des Projektverantwortlichen; kein weiterer Harness wurde gestartet. Offene Betriebs- und Accessibility-Prüfungen für den privaten Teilnahmeweg bleiben bestehen. Diesen zunächst mit erfundenen Daten erproben und erst bei geklärtem Betrieb und zugänglichem Ablauf den Pilot starten. Keine Personenansprache erfolgt.
 
-Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. Eine App-Plattform oder ein KI-Anbieter wird in dieser Lieferung nicht ausgewählt. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.
+Der Baseline-Tag wird nicht verschoben. Spätere Prüfprotokolle oder Statusänderungen auf `main` ändern die Ausgangsversion der Analysen nicht. App-Plattform und KI-Anbieter für eine eigene Assistenz-App sind weiterhin offen. `private/`, Umgebungsdateien und die alte Git-Historie bleiben ausgeschlossen.
