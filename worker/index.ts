@@ -10,6 +10,10 @@ const storyLabel = 'geschichte';
 const storiesPerDay = 30;
 const storyStart = '<!-- percepta-story -->';
 const storyEnd = '<!-- /percepta-story -->';
+const categoryNames: Record<string, [string, string]> = {
+  shopping: ['Einkaufen', 'Shopping'], questions: ['Fragen und Informationen', 'Questions and information'],
+  interaction: ['Mit Menschen sprechen', 'Interacting with people'], orientation: ['Sich orientieren', 'Finding your way'], other: ['Anderes oder noch offen', 'Something else or not sure yet'],
+};
 type StoryEnv = Env & { GITHUB_TOKEN?: string };
 const storiesOpen = (env: StoryEnv) => env.STORIES_OPEN === 'true' && Boolean(env.GITHUB_TOKEN);
 const github = (env: StoryEnv, path: string, init: RequestInit = {}) => fetch(`${env.GITHUB_API_URL}${path}`, {
@@ -30,8 +34,8 @@ function storyBody(story: string, lang: string, category: string) {
   // A zero-width space after @ prevents accidental GitHub mentions.
   const text = story.replace(/@/g, '@\u200b');
   const footer = lang === 'de'
-    ? `Bereich laut Formular: ${category}. Ohne Namen über percepta.moinsen.dev eingereicht; die Person hat der Veröffentlichung dieses Textes ausdrücklich zugestimmt (${storyConsentVersion}). Entfernen auf Anfrage an business@moinsen.dev.`
-    : `Area from the form: ${category}. Submitted without a name via percepta.moinsen.dev; the person explicitly agreed to publishing this text (${storyConsentVersion}). Removal on request to business@moinsen.dev.`;
+    ? `Bereich laut Formular: ${categoryNames[category][0]}. Ohne Namen über percepta.moinsen.dev eingereicht; die Person hat der Veröffentlichung dieses Textes ausdrücklich zugestimmt (${storyConsentVersion}). Entfernen auf Anfrage an business@moinsen.dev.`
+    : `Area from the form: ${categoryNames[category][1]}. Submitted without a name via percepta.moinsen.dev; the person explicitly agreed to publishing this text (${storyConsentVersion}). Removal on request to business@moinsen.dev.`;
   return `${storyStart}\n${text}\n${storyEnd}\n\n---\n${footer}\n`;
 }
 

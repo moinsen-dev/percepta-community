@@ -54,6 +54,7 @@ test('publishing from the participation page creates a labelled issue and shows 
   expect(issues[0].labels).toEqual(['geschichte', 'de']);
   expect(issues[0].body).toContain('<!-- percepta-story -->');
   expect(issues[0].body).toContain('@​jemand');
+  expect(issues[0].body).toContain('Bereich laut Formular: Anderes oder noch offen.');
 
   await page.goto(`${origin}/de/stories/`);
   const stories = page.locator('[data-stories]');

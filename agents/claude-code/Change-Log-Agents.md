@@ -71,3 +71,10 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Außerhalb des Repos:** Labels `geschichte`, `de`, `en` im GitHub-Repository angelegt.
 - **Prüfungen:** Check, Build, 37/37 Playwright (u. a. Einwilligungspflicht, Ablehnung von Kontaktdaten/Links/fremder Herkunft, Issue mit Labels und Markern, Escaping auf der Geschichten-Seite, axe, Tageslimit ohne GitHub-Aufruf, geschlossene Produktivkonfiguration ohne Token). Simulation des Veröffentlichungsfalls mit neuem Prompt-Schluss: feste Antwort korrekt, keine Personendaten wiederholt.
 - **Offen:** Token als Secret durch den Projektverantwortlichen; erste echte Probe auf GitHub; Rechtsprüfung der Einwilligungstexte nicht durchgeführt.
+
+## 2026-10-21 — Live-Probe öffentliche Geschichten
+
+- **Ausgangs-Commit:** `6c32e9f`. Secret `GITHUB_TOKEN` vom Projektverantwortlichen gesetzt; `/api/intake-status` meldet `storiesOpen: true`.
+- **Live-Probe:** Fiktiver Text über das Formular auf `percepta.moinsen.dev/de/participate/` veröffentlicht. Ergebnis: Issue #5 mit Labels `geschichte` und `de`, Markern und Einwilligungsfuß; Empfangsbestätigung mit Nummer und Fokus auf der Überschrift; Geschichte erschien auf `/de/stories/`. Danach als „not planned“ mit Hinweis geschlossen. Die geschlossene Geschichte kann wegen des 5-Minuten-Caches kurz weiter sichtbar sein.
+- **Geändert:** Issue-Fuß nennt den Bereich in Klartext statt des internen Schlüssels (`worker/index.ts`), Test ergänzt.
+- **Prüfungen:** Check, Build, 37/37 Playwright.

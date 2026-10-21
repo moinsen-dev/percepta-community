@@ -131,7 +131,7 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Nächste Schritte
 
-Nach D-19: Der Projektverantwortliche legt ein Fine-grained-Token (nur dieses Repository, Issues: Lesen und Schreiben) an und setzt es als Worker-Secret `GITHUB_TOKEN`; erst dann ist das Veröffentlichen aktiv (`STORIES_OPEN` ist `true`). Danach eine fiktive Probe-Geschichte veröffentlichen, prüfen und wieder schließen. Cloudflare-KI-Richtlinien (Agent/Search erlauben, Training für percepta ausnehmen) stellt der Betreiber im Dashboard um.
+Nach D-19: Worker-Secret `GITHUB_TOKEN` ist gesetzt (2026-10-21), das Veröffentlichen ist live aktiv. Eine fiktive Probe-Geschichte lief über das Formular auf percepta.moinsen.dev durch (Issue #5 mit Labels `geschichte`/`de`, erschien auf `/de/stories/`) und ist wieder geschlossen. Die Issues erscheinen unter dem Konto des Token-Inhabers. Cloudflare-KI-Richtlinien (Agent/Search erlauben, Training für percepta ausnehmen) stellt der Betreiber im Dashboard um.
 
 Nach D-18: Freigabe und Deploy durch den Projektverantwortlichen; danach prüft der blinde Pilotnutzer Website, Wegweiser und Prompt v2 (Text- und Sprachmodus) und gibt Rückmeldung. Für seine Rückmeldung braucht es keinen geöffneten Empfang; der Projektverantwortliche hält den Kontakt direkt.
 
