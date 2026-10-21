@@ -56,3 +56,10 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Ausgangs-Commit:** `0514876`.
 - **Geändert:** Prompt DE/EN: „Pause“ und „Überspringen“ ausdrücklich geregelt; feste Antwort auf eine Bitte um Veröffentlichung, die den getrennten Zustimmungsweg nennt (interview-spec, Prüffälle vor dem Pilot). Wegweiser-Titel trägt jetzt „blinde und sehbehinderte Menschen“ (Seitentitel/SEO); die Frage „Welche Hilfe passt zu dir?“ steht im Einstieg. Simulation um `korrektur`, `pause-ueberspringen` und `en-abbruch` erweitert; finale Transkripte unter `prompt-simulation/v2/`.
 - **Prüfungen:** Veröffentlichungsfall vor der festen Formulierung zweimal nur teilweise erfüllt (Hinweis auf getrennte Zustimmung fehlte), danach zweimal erfüllt; vollständiger Lauf aller 13 Fälle siehe Bericht. Build und 31 Playwright-Prüfungen erneut bestanden.
+
+## 2026-10-21 — Deploy, persönliche Motivation, Bedarfe des Testers
+
+- **Ausgangs-Commit:** `6d50a52`. Deploy auf ausdrückliche Freigabe: Version `ec1672a3-5bc6-433d-b183-fd09f9e4e30c`, Domain unverändert.
+- **Geändert:** Startseite und „Über Percepta“ um „Warum ich Percepta mache“ ergänzt (Text nach Angaben des Projektverantwortlichen, ohne Namen Dritter; Aussage „nicht kommerziell, Open Source geplant“ aus seinem LinkedIn-Post). Neu: `docs/first-exchange-needs.md` (verallgemeinerte Bedarfe und technische Einordnung). Mail-PDF und Notizen mit Einzelheiten nur in `private/contacts/` (per `.gitignore` ausgeschlossen).
+- **Live-Befund KI-Crawler:** robots.txt erlaubt alles; GPTBot und ClaudeBot erhalten 403 ohne Challenge (Cloudflare-Richtlinie „Training“ auf Zonenebene). ChatGPT-User, OAI-SearchBot, Claude-User, PerplexityBot erhalten von unserer Adresse eine Challenge; daraus folgt keine Aussage über echte, verifizierte Bots. Keine Zonenänderung vorgenommen.
+- **Prüfungen:** Check, Build, 31/31 Playwright, Sichtprüfung des neuen Abschnitts.

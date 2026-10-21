@@ -31,6 +31,7 @@ Direktes Cloudflare-Ziel: [percepta.moinsen.dev](https://percepta.moinsen.dev/de
 - [Verständlichkeit, SEO und KI-Suche](docs/website-discoverability.md)
 - [Deutscher Interview-Prompt](docs/interview-prompt.de.md) und [English interview prompt](docs/interview-prompt.en.md) — nur Entwurfshilfe, keine automatische Veröffentlichung
 - [Textvorlage ohne KI: Deutsch](docs/experience-template.de.md) und [English](docs/experience-template.en.md)
+- [Bedarfe aus einem ersten Austausch mit einem blinden Tester (verallgemeinert)](docs/first-exchange-needs.md)
 - [Pilot-Leitfaden](docs/participation-pilot.md) und [fiktive Prozessprobe](agents/codex/participation-dry-run.md)
 - [Gemeinsame Agentenregeln](AGENTS.md)
 - [Agenten-Protokolle und Startanleitung](Change-Log-Agents.md)

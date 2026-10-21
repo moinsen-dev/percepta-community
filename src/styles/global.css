@@ -47,6 +47,11 @@ button { font: inherit; cursor: pointer; }
 .steps li::marker { color: var(--green); font-weight: 650; }
 .steps h3 { display: inline; }
 .steps p { margin-top: 1rem; color: var(--muted); font-size: 1.05rem; }
+.story-band { background: var(--green); color: var(--paper); margin-top: 4.5rem; }
+.story-content { padding-block: 4rem; }
+.story-content p { font: 1.3rem/1.6 Georgia, serif; max-width: 60ch; }
+.story-content .story-signature { font: 600 1.05rem/1.5 system-ui, -apple-system, sans-serif; color: #d2dfd5; margin-bottom: 0; }
+.story-band + .section { border-top: 0; }
 .task-links { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 1rem; }
 .task-links li { margin: 0; padding: 0; }
 .task-links a { display: block; height: 100%; padding: 1.25rem 1.5rem; border: 2px solid var(--green); border-radius: .3rem; font-weight: 600; font-size: 1.15rem; text-decoration: none; }

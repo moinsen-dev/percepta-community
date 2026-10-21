@@ -20,6 +20,13 @@ const t = home[lang];
       {t.tasks.map(([text, id]) => <li><a href={`${pathFor(lang, 'tools')}#${id}`}>{text}<span aria-hidden="true"> →</span></a></li>)}
     </ul>
   </section>
+  <section class="story-band" aria-labelledby="why-title">
+    <div class="wrap story-content">
+      <h2 id="why-title">{t.whyTitle}</h2>
+      {t.why.map(text => <p>{text}</p>)}
+      <p class="story-signature">{t.whySignature}</p>
+    </div>
+  </section>
   <section class="section wrap" aria-labelledby="project-title">
     <h2 id="project-title">{t.projectTitle}</h2>
     <p class="lede">{t.project}</p>
