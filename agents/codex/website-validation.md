@@ -84,3 +84,16 @@ Astro-/Typprüfung und Build erfolgreich, 16 Seiten/4 Downloads. 21/21 Browserpr
 Direkter interaktiver Wrangler-Deploy im bestehenden Account erfolgreich. Aktive Cloudflare-Version `3591fb2e-2a6a-476f-8a3b-a4539096f005` (100 %), Custom Domain `percepta.moinsen.dev` aktiv, HTTPS-Verbindung mit Zertifikatsprüfung erfolgreich. Remote zusätzliche Preview-Adressen aus, Logpush aus, keine Bindings oder aktivierter Observability-Block. Der separate Sites-Domain-Eintrag ist entfernt; ältere Eigentümervorschau unverändert.
 
 **Live-Grenze:** Unsere Abrufe erhalten HTTP 403 mit `cf-mitigated: challenge`. Es wurde kein Percepta-HTML ausgeliefert, deshalb keine produktive Header-/Clipboard-/Download-/404-Abnahme behauptet. Lokale Tests belegen nicht die Zugänglichkeit vorgeschalteter Cloudflare-Regeln. Kein nativer Browser/Dashboard-Zugang verfügbar; keine manuellen Hilfsmitteltests. Die damalige [Übergabe](cloudflare-handoff.md) ist inzwischen archiviert: Der Projektverantwortliche bestätigt am 2026-10-21 funktionierendes Hosting und erklärt sie für nicht mehr nötig. Kein erneuter technischer Live-Test in diesem Nachtrag; Datenbefunde und Quellen im [Prüfbericht](../../docs/hosting-data-review.md).
+
+## Nachtrag 2026-10-21 — Empfehlungsseite DE/EN
+
+Auftrag: Die vier recherchierten Alltagshilfen auf der Website empfehlen. Neue Routen `/de/tools/` und `/en/tools/`, Eintrag in der Hauptnavigation, Auswahlhilfe nach Gerät und Aufgabe sowie vier direkt anspringbare Überschriften. Inhalte nutzen den vorhandenen Artikel-Renderer; keine neuen Pakete oder clientseitigen Funktionen. Empfehlungen als Herstellerrecherche gekennzeichnet, mit Standdatum und passenden Nutzungsgrenzen.
+
+- Astro-/Typprüfung: 0 Fehler, Warnungen oder Hinweise; Build: 18 HTML-Seiten und 4 Textdownloads.
+- Bestehende Browserprüfung erfasst die neuen Routen automatisch: 23/23 bestanden, einschließlich axe, Links/Ankern, 320-Pixel-Reflow, Drittanfragen, Cookies und Browserspeicher. Nach Ergänzung des Android-Downloadlinks erneut erfolgreich.
+- Zusätzlicher einmaliger Playwright-Durchlauf ohne JavaScript: beide Seiten aus der Hauptnavigation erreichbar, aktiver Navigationslink korrekt, alle vier Sprunglinks per Tastatur übertragen den Fokus auf die Überschrift, nächste Tab-Taste erreicht den zugehörigen Anbieterlink; Sprachwechsel führt zur entsprechenden Seite.
+- Desktop- und Mobilansichten als Screenshots gesichtet; keine neue CSS-Regel erforderlich.
+- Wrangler-Dry-run: erfolgreich. Markdown-Dateilinks und `git diff --check` für den Abschluss prüfen.
+- Herstellerziele einschließlich DE/EN-Anleitungen und Seeing AI für Android gelesen. Microsofts offizieller Kurzlink leitet auf `https://play.google.com/store/apps/details?id=com.microsoft.seeingai` weiter; Ziel mit HTTP 200 und Anbieter Microsoft verifiziert. Links öffnen im selben Tab, keine eingebetteten Anbieterinhalte.
+
+Native Computer-Use meldete keine verfügbare Browseroberfläche. Die Tastaturprüfung war skriptgesteuert mit Chromium, keine manuelle VoiceOver-/NVDA-Abnahme. Keine Installation oder Leistungsprüfung der empfohlenen Apps. Veröffentlichung und CI-Ergebnis folgen als eigener Nachtrag.

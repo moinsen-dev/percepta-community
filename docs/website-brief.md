@@ -14,6 +14,7 @@ Erfolg wird an verständlichem Projektstand und erfolgreich abgeschlossenen Teil
 
 - Gleichwertige deutsche und englische Seiten unter `/de/` und `/en/`; `/` bietet eine zugängliche Sprachauswahl.
 - Startseite: Problem, Projektphase, mögliche Hilfe und aktuelle Grenzen.
+- „Empfehlungen“ unter `/de/tools/` und `/en/tools/`: Lookout, Seeing AI, Guided Vision und Apples Bedienungshilfen, mit Auswahlhilfe, Sprunglinks, Geräte-/Sprachgrenzen und direkten Herstellerlinks. Vom Projektverantwortlichen am 2026-10-21 beauftragt. Herstellerbasierte Empfehlungen zum Ausprobieren; keine behaupteten eigenen App-Tests oder Rangliste. In der Hauptnavigation erreichbar, ohne JavaScript nutzbar.
 - „Erfahrungen beitragen“: Ablauf, kurzer Interview-Prompt, gleichwertige Textvorlage ohne KI und Korrektur des eigenen Entwurfs. Noch keine Übermittlung oder Veröffentlichungsfreigabe auf der Website.
 - „Mitwirken“: technische Beiträge, Forschung, Organisationen und spätere Pilotpartner; keine erfundenen Partnerlogos.
 - „Stand und Forschung“: belegte Quellen, offene Fragen und GitHub-Verweis.

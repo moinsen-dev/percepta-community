@@ -13,7 +13,7 @@ const t = articles[lang][page];
     <header class="article-header"><p class="eyebrow">{labels[lang][page]}</p><h1>{t.title}</h1><p class="lede">{t.intro}</p></header>
     <div class="prose">
       {t.sections.map(section => <section>
-        <h2>{section.heading}</h2>
+        <h2 id={section.id} tabindex={section.id ? -1 : undefined}>{section.heading}</h2>
         {section.paragraphs?.map(text => <p>{text}</p>)}
         {section.items && <ul>{section.items.map(text => <li>{text}</li>)}</ul>}
         {section.links && <ul class="resource-links">{section.links.map(link => <li><a href={link.href}>{link.text}<span aria-hidden="true"> →</span></a></li>)}</ul>}

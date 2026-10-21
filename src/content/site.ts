@@ -15,7 +15,7 @@ export const pathFor = (lang: Lang, page = '') => `/${lang}/${page ? `${page}/` 
 export const labels = {
   de: {
     skip: 'Zum Inhalt', home: 'Startseite', nav: 'Hauptnavigation', footer: 'Weitere Informationen',
-    participate: 'Erfahrungen vorbereiten', collaborate: 'Mitwirken', research: 'Forschungsstand',
+    participate: 'Erfahrungen vorbereiten', collaborate: 'Mitwirken', research: 'Forschungsstand', tools: 'Empfehlungen',
     accessibility: 'Barrierefreiheit', privacy: 'Datenschutz & Kontakt', imprint: 'Impressum',
     language: 'Read this page in English', languageShort: 'English',
     phase: 'Gemeinsam am Anfang', tagline: 'Alltag verstehen. Gemeinsam entwickeln.',
@@ -24,7 +24,7 @@ export const labels = {
   },
   en: {
     skip: 'Skip to content', home: 'Home', nav: 'Main navigation', footer: 'More information',
-    participate: 'Prepare an experience', collaborate: 'Get involved', research: 'Research status',
+    participate: 'Prepare an experience', collaborate: 'Get involved', research: 'Research status', tools: 'Recommendations',
     accessibility: 'Accessibility', privacy: 'Privacy & contact', imprint: 'Legal notice',
     language: 'Diese Seite auf Deutsch lesen', languageShort: 'Deutsch',
     phase: 'Starting together', tagline: 'Understand everyday life. Build together.',
@@ -90,11 +90,69 @@ export const home = {
   },
 };
 
-type Section = { heading: string; paragraphs?: string[]; items?: string[]; links?: { text: string; href: string }[] };
+type Section = { id?: string; heading: string; paragraphs?: string[]; items?: string[]; links?: { text: string; href: string }[] };
 type Article = { title: string; intro: string; sections: Section[] };
-export type ArticleKey = 'collaborate' | 'research' | 'accessibility' | 'privacy' | 'imprint';
+export type ArticleKey = 'collaborate' | 'research' | 'accessibility' | 'privacy' | 'imprint' | 'tools';
 export const articles: Record<Lang, Record<ArticleKey, Article>> = {
   de: {
+    tools: {
+      title: 'Hilfreiche Apps für deinen Alltag.',
+      intro: 'Texte lesen, Produkte erkennen oder Fragen zu einem Bild stellen: Diese vier Angebote können blinde und sehbehinderte Menschen unterstützen. Hier findest du Empfehlungen zum Ausprobieren.',
+      sections: [
+        {
+          heading: 'Welche Hilfe passt zu dir?',
+          paragraphs: ['Stand: 21. Oktober 2026. Unsere Auswahl beruht auf Herstellerinformationen. Wir haben die Apps noch nicht selbst mit Betroffenen getestet. Die Reihenfolge ist keine Rangliste.', 'Diese Hilfen können sich irren. Verlasse dich bei Straßenverkehr, Treppen und Hindernissen auf deine bewährten Mobilitätshilfen. Eine Objektbeschreibung bestätigt keinen freien Weg.'],
+          links: [
+            { text: 'Android: Lesen und Einkaufen mit Google Lookout', href: '#lookout' },
+            { text: 'iPhone oder Android: Alltagshilfe mit Seeing AI', href: '#seeing-ai' },
+            { text: 'Android: Kamerafragen mit Guided Vision in Gemini Live', href: '#gemini' },
+            { text: 'iPhone: Vorhandene Bedienungshilfen von Apple nutzen', href: '#apple' },
+          ],
+        },
+        {
+          id: 'lookout', heading: 'Google Lookout',
+          paragraphs: ['Ein möglicher Einstieg, wenn du auf Android Texte vorlesen lassen oder Lebensmittel erkennen möchtest. Lookout kann auch nach bestimmten Gegenständen suchen.'],
+          items: ['Gerät und Sprache: Android, unter anderem auf Deutsch. Bildbeschreibungen mit KI-Rückfragen laut Store nur auf Englisch.', 'Grenzen: Suchfunktionen und Entfernungsangaben hängen vom Gerät ab. Der Modus „Erkunden“ ist eine Beta-Version.'],
+          links: [
+            { text: 'Google Lookout im Google Play Store', href: 'https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.reveal' },
+            { text: 'Lookout-Anleitung von Google', href: 'https://support.google.com/accessibility/android/answer/9031274?hl=de' },
+          ],
+        },
+        {
+          id: 'seeing-ai', heading: 'Microsoft Seeing AI',
+          paragraphs: ['Zum Lesen, für Produktinformationen und für Fragen zu Fotos oder Dokumenten. Auf dem iPhone kann „Meine Dinge suchen“ beim Wiederfinden persönlicher Gegenstände helfen.'],
+          items: ['Geräte: iPhone und Android. Laut Microsoft kostenlos; die iPhone-Version unterstützt Deutsch.', 'Grenzen: Funktionen unterscheiden sich je nach Plattform. Der räumliche iPhone-Modus „Welt“ braucht LiDAR, einen Sensor in bestimmten Geräten.'],
+          links: [
+            { text: 'Seeing AI: offizielle Website von Microsoft (Englisch)', href: 'https://www.seeingai.com/' },
+            { text: 'Seeing AI im Apple App Store', href: 'https://apps.apple.com/de/app/seeing-ai/id999062298' },
+            { text: 'Seeing AI im Google Play Store', href: 'https://play.google.com/store/apps/details?id=com.microsoft.seeingai' },
+          ],
+        },
+        {
+          id: 'gemini', heading: 'Guided Vision in Gemini Live',
+          paragraphs: ['Für Fragen zu dem, was deine Kamera gerade zeigt. Gemini gibt auch Hinweise zum Ausrichten der Kamera. In der deutschen Hilfe heißt die Funktion „Interaktive Orientierungshilfe“.'],
+          items: ['Gerät und Zugang: Gemini auf Android. Die Funktion wird schrittweise freigeschaltet. Die Anleitung erklärt die Aktivierung und den Schnellzugriff.', 'Grenzen: Trotz des Namens ist die Funktion laut Google nicht für Navigation, sichere Gehführung oder Hinderniserkennung gedacht.'],
+          links: [
+            { text: 'Guided Vision einrichten: deutsche Google-Anleitung', href: 'https://support.google.com/accessibility/android/answer/18365638?hl=de' },
+            { text: 'Google stellt Guided Vision vor (Englisch)', href: 'https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/' },
+          ],
+        },
+        {
+          id: 'apple', heading: 'Apple VoiceOver und Lupe',
+          paragraphs: ['Wenn du ein iPhone nutzt, lohnt sich ein Blick auf die eingebauten Bedienungshilfen. Sie bieten Umgebungsbeschreibungen; mit unterstützten Funktionen kannst du auch Fragen stellen.'],
+          items: ['Voraussetzungen: Je nach Funktion sind eine bestimmte iOS-Version, Apple Intelligence oder besondere Sensoren nötig. Sprache und Region können die Verfügbarkeit einschränken.', 'Grenzen: Die Erkennung von Türen, Personen und Möbeln funktioniert nur auf unterstützten Geräten. Apple warnt vor Verlass auf die Erkennung bei Navigation.'],
+          links: [
+            { text: 'Apple-Anleitung: Umgebung mit VoiceOver erkennen', href: 'https://support.apple.com/de-de/guide/iphone/iph37e6b3844/ios' },
+            { text: 'Apple stellt die neuen Bedienungshilfen vor', href: 'https://www.apple.com/de/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/' },
+          ],
+        },
+        {
+          heading: 'In Ruhe ausprobieren',
+          paragraphs: ['Beginne mit einer vertrauten Aufgabe, zum Beispiel dem Lesen einer bekannten Verpackung. So kannst du einschätzen, ob dir Bedienung und Ansagen helfen.', 'Die Links führen zu anderen Anbietern und öffnen im selben Tab. Mit „Zurück“ kommst du wieder hierher. Prüfe dort die aktuellen Geräteanforderungen, mögliche Kosten und den Umgang mit Kamerabildern.'],
+          links: [{ text: 'Quellen und ausführlicher Vergleich im Projekt', href: `${repo}/blob/main/docs/existing-assistive-tools.md` }],
+        },
+      ],
+    },
     imprint: {
       title: 'Impressum',
       intro: 'Anbieterangaben für das Projekt Percepta.',
@@ -153,6 +211,64 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
     },
   },
   en: {
+    tools: {
+      title: 'Useful apps for everyday life.',
+      intro: 'Read text, identify products or ask questions about an image. These four tools may support blind and low-vision people. Here are our recommendations to explore.',
+      sections: [
+        {
+          heading: 'Which tool might suit you?',
+          paragraphs: ['Updated: 21 October 2026. Our selection is based on information from the providers. We have not yet tested the apps with blind or low-vision people. Their order is not a ranking.', 'These tools can make mistakes. Use your established mobility aids around traffic, stairs and obstacles. An object description does not confirm that a path is clear.'],
+          links: [
+            { text: 'Android: reading and shopping with Google Lookout', href: '#lookout' },
+            { text: 'iPhone or Android: everyday tasks with Seeing AI', href: '#seeing-ai' },
+            { text: 'Android: camera questions with Guided Vision in Gemini Live', href: '#gemini' },
+            { text: 'iPhone: use Apple’s built-in accessibility features', href: '#apple' },
+          ],
+        },
+        {
+          id: 'lookout', heading: 'Google Lookout',
+          paragraphs: ['A possible starting point for reading text aloud or identifying food on Android. Lookout can also search for particular objects.'],
+          items: ['Device and language: Android, with English and other languages supported. AI image descriptions and follow-up questions are English-only according to the store.', 'Limits: Search features and distance information depend on the device. Explore mode is a beta feature.'],
+          links: [
+            { text: 'Google Lookout on Google Play', href: 'https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.reveal' },
+            { text: 'Google’s guide to using Lookout', href: 'https://support.google.com/accessibility/android/answer/9031274?hl=en' },
+          ],
+        },
+        {
+          id: 'seeing-ai', heading: 'Microsoft Seeing AI',
+          paragraphs: ['For reading, product information and questions about photos or documents. On iPhone, Find My Things can help you find personal objects again.'],
+          items: ['Devices: iPhone and Android. Microsoft describes the app as free; the iPhone version supports English and other languages.', 'Limits: Features differ between platforms. The spatial World mode on iPhone requires LiDAR, a sensor available on certain devices.'],
+          links: [
+            { text: 'Seeing AI: Microsoft’s official website', href: 'https://www.seeingai.com/' },
+            { text: 'Seeing AI on the Apple App Store', href: 'https://apps.apple.com/us/app/seeing-ai/id999062298' },
+            { text: 'Seeing AI on Google Play', href: 'https://play.google.com/store/apps/details?id=com.microsoft.seeingai' },
+          ],
+        },
+        {
+          id: 'gemini', heading: 'Guided Vision in Gemini Live',
+          paragraphs: ['For questions about what your camera is showing. Gemini also gives spoken guidance to help you aim the camera.'],
+          items: ['Device and access: Gemini on Android. The feature is rolling out gradually. Google’s guide explains how to enable it and set up shortcuts.', 'Limits: Google explicitly says it is not intended for navigation, safe-travel guidance or obstacle detection.'],
+          links: [
+            { text: 'Set up Guided Vision: Google’s instructions', href: 'https://support.google.com/accessibility/android/answer/18365638?hl=en' },
+            { text: 'Google introduces Guided Vision', href: 'https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/' },
+          ],
+        },
+        {
+          id: 'apple', heading: 'Apple VoiceOver and Magnifier',
+          paragraphs: ['If you use an iPhone, explore its built-in accessibility features. They offer descriptions of your surroundings; supported features also let you ask questions.'],
+          items: ['Requirements: Some features need a particular iOS version, Apple Intelligence or specific sensors. Language and region can affect availability.', 'Limits: Door, people and furniture detection require supported devices. Apple warns against relying on recognition for navigation.'],
+          links: [
+            { text: 'Apple’s guide: recognise your surroundings with VoiceOver', href: 'https://support.apple.com/en-ie/guide/iphone/iph37e6b3844/ios' },
+            { text: 'Apple introduces its new accessibility features', href: 'https://www.apple.com/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/' },
+          ],
+        },
+        {
+          heading: 'Try a familiar task first',
+          paragraphs: ['Start with a familiar task, such as reading a package you already know. This can help you decide whether the controls and spoken information work for you.', 'The links take you to other providers in the same tab. Use Back to return here. Check their current device requirements, any costs and how they handle camera images.'],
+          links: [{ text: 'Sources and detailed comparison in the project (German)', href: `${repo}/blob/main/docs/existing-assistive-tools.md` }],
+        },
+      ],
+    },
     imprint: {
       title: 'Legal notice',
       intro: 'Provider information for the Percepta project.',
