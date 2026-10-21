@@ -25,8 +25,11 @@ const identifierPatterns = [/[^\s@]+@[^\s@]+\.[a-z]{2,}/i, /(?:\+|\b0)\d[\d\s/()
 const escapeHtml = (text: string) => text.replace(/[&<>"']/g, char => `&#${char.charCodeAt(0)};`);
 
 function storyTitle(story: string, lang: string) {
-  const line = story.match(/^\s*(?:Titel|Title)\s*:?\s*(.+)$/im)?.[1] ?? story.split('\n').find(part => part.trim()) ?? '';
-  const title = line.replace(/[#*_`]/g, '').trim().slice(0, 80);
+  const given = story.match(/^\s*(?:Titel|Title)\s*:?\s*(.+)$/im)?.[1];
+  // Without a title line, use the first sentence of at least 20 characters and cut long text at a word boundary.
+  const text = (given ?? story.split('\n').find(part => part.trim()) ?? '').replace(/[#*_`]/g, '').trim();
+  const line = given ? text : text.match(/^.{20,}?[.!?](?=\s|$)/)?.[0] ?? text;
+  const title = line.length <= 80 ? line : `${line.slice(0, 80).replace(/\s+\S*$/, '')} …`;
   return `${lang === 'de' ? 'Geschichte' : 'Story'}: ${title || (lang === 'de' ? 'Ohne Titel' : 'Untitled')}`;
 }
 

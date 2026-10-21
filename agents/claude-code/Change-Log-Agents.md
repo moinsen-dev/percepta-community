@@ -85,3 +85,10 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Geändert:** `docs/interview-prompt.de.md`/`.en.md` (gezielte Änderungen an v2, siehe Bericht), `docs/experience-template.de.md`/`.en.md` (letzter Absatz auf den Veröffentlichungsweg statt „Empfang geschlossen“), `docs/interview-spec.md`, `state.md`, `prompt-simulation/simulate.py` (Fälle `meta-entwickler`, `widerspruch`), Transkripte `prompt-simulation/v3/`, Bericht.
 - **Bewusst nicht übernommen:** fette Überschriften (würden wörtlich in veröffentlichten Geschichten stehen), Hinweis auf private Einreichung (Empfang geschlossen), freie statt fester Antwort auf Veröffentlichungswünsche. Die Empfehlung einer Prüfung vor Veröffentlichung widerspricht D-19 und ist dem Projektverantwortlichen genannt, nicht umgesetzt.
 - **Prüfungen:** 15 simulierte Gespräche (`chat-latest`/`gpt-5.5`); Check, Build, Playwright.
+
+## 2026-10-21 — Erste echte Geschichten, Titel aus dem ersten Satz
+
+- **Ausgangs-Commit:** `106f88e`. Zwei erste echte Geschichten über das Formular veröffentlicht (Issues #6 und #7, beide ohne Titelzeile, Bereich „Anderes“). Inhalt unverändert gelassen; Moderationsentscheidung liegt beim Projektverantwortlichen.
+- **Befund:** Ohne Titelzeile schnitt der Worker nach 80 Zeichen mitten im Wort ab (#7).
+- **Geändert:** `worker/index.ts`: ohne Titelzeile wird der erste Satz (mindestens 20 Zeichen) zum Titel, längerer Text wird an einer Wortgrenze mit „…“ gekürzt; eine vorhandene Titelzeile bleibt unverändert. Test in `tests/stories.spec.ts`.
+- **Prüfungen:** Build, 38/38 Playwright.

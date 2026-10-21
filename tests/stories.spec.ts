@@ -66,6 +66,14 @@ test('publishing from the participation page creates a labelled issue and shows 
   await expect(page.locator('[data-stories]')).not.toContainText(title);
 });
 
+test('stories without a title line get a title from the first sentence, cut at a word boundary', async ({ request }) => {
+  const issuesNow = async () => (await (await request.get('http://127.0.0.1:4323/__issues', { headers: { Authorization: 'Bearer test-token' } })).json());
+  expect((await request.post(`${origin}/api/stories`, { headers: headers(), data: story('Mir hilft z. B. eine fiktive Ansage im Laden. Danach kommt mehr Text.') })).status()).toBe(201);
+  expect((await issuesNow())[0].title).toBe('Geschichte: Mir hilft z. B. eine fiktive Ansage im Laden.');
+  expect((await request.post(`${origin}/api/stories`, { headers: headers(), data: story('Mir hilft eine fiktive Ansage beim Einkaufen, geradeaus kommst du zur Rolltreppe, links zu den Kassen und rechts zum Ausgang') })).status()).toBe(201);
+  expect((await issuesNow())[0].title).toBe('Geschichte: Mir hilft eine fiktive Ansage beim Einkaufen, geradeaus kommst du zur …');
+});
+
 test('daily limit stops further stories without calling GitHub', async ({ request }) => {
   sql(`INSERT INTO story_days (day, count) VALUES ('${new Date().toISOString().slice(0, 10)}', 30) ON CONFLICT(day) DO UPDATE SET count = 30`);
   const before = (await (await request.get('http://127.0.0.1:4323/__issues', { headers: { Authorization: 'Bearer test-token' } })).json()).length;
