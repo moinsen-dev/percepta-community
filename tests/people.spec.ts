@@ -19,6 +19,8 @@ const image = (page: Page, type: string) => page.evaluate(type => {
   return canvas.toDataURL(type).split(',')[1];
 }, type);
 
+const emails = async (request: import('@playwright/test').APIRequestContext) => (await (await request.get('http://127.0.0.1:4323/__emails', { headers: { Authorization: 'Bearer test-resend' } })).json()) as { from: string; to: string[]; subject: string; text: string }[];
+
 test.describe.configure({ mode: 'serial' });
 test.beforeAll(() => { sql('DELETE FROM people'); });
 
@@ -75,10 +77,18 @@ test('a portrait goes from the form through approval to the people page and can 
   await expect(page.locator('#portrait-alt')).toBeFocused();
   await page.locator('#portrait-alt').fill('Ein grünes Rechteck als fiktives Porträt.');
   await page.locator('#portrait-photo-consent').check();
+  const noticesBefore = (await emails(request)).filter(mail => mail.subject === 'Neues Porträt wartet auf Freigabe').length;
   await page.locator('#portrait-send').click();
   await expect(page.locator('#portrait-receipt-title')).toBeFocused();
   const withdraw = await page.locator('#portrait-code').inputValue();
   expect(withdraw).toMatch(/^[a-z2-9]{5}(?:-[a-z2-9]{5}){3}$/);
+  const notices = async () => (await emails(request)).filter(mail => mail.subject === 'Neues Porträt wartet auf Freigabe');
+  await expect.poll(async () => (await notices()).length).toBe(noticesBefore + 1);
+  for (const notice of await notices()) {
+    expect(notice.text).toContain('/admin/people/');
+    expect(notice.text).not.toContain(name);
+    expect(notice.text).not.toContain('fiktiv@example.org');
+  }
   await page.goto(`${origin}/de/people/`);
   await expect(page.locator('[data-people]')).not.toContainText(name);
 

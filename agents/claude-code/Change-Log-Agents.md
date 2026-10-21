@@ -114,3 +114,11 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Ausgangs-Commit:** `HEAD` nach Öffnung der Porträts. Lighthouse (mobil, live `/de/`): SEO 100, Barrierefreiheit 100 mit einem Befund (Logo-Link: sichtbarer Text nicht im zugänglichen Namen), Best Practices 92 (CSP blockiert ein von Cloudflare eingefügtes Web-Analytics-Skript und ein Inline-Skript). Websuche findet die Seite noch nicht.
 - **Geändert:** Vorschaubilder `public/og-de.png`/`og-en.png` mit `og:image`, Alternativtext und `summary_large_image`; Logo-Link ohne `aria-label`, Zusatz „– Startseite“ nur für Screenreader.
 - **Prüfungen:** Check, Build, 44/44 Playwright.
+
+## 2026-10-21 — Benachrichtigung bei neuen Beiträgen
+
+- **Ausgangs-Commit:** `e73a60b`, deployt als `950cfe81-d391-48dc-8da0-1ff2af56ce07` (Vorschaubilder, Logo-Link). Auftrag: Benachrichtigung bauen.
+- **Entscheidung:** Versand über Resend mit Absender `business@moinsen.dev` (bestehende Konvention des Projektverantwortlichen); Cloudflare Email Sending ist im Account nicht eingerichtet und bräuchte DNS-Änderungen an moinsen.dev.
+- **Geändert:** `worker/index.ts` (`notify` per `ctx.waitUntil`, ohne Secret `RESEND_API_KEY` stumm): bei Geschichten Titel und Issue-Link, bei Porträts nur Hinweis und Link zur Freigabeseite, keine Angaben zur Person. `wrangler.jsonc` (`RESEND_API_URL`), Mock in `tests/github-mock.mjs`, Tests, Datenschutzsatz DE/EN.
+- **Prüfungen:** Check, Build, 44/44 Playwright zweimal (u. a. Mail ohne Name und Kontakt).
+- **Offen:** Secret `RESEND_API_KEY` durch den Projektverantwortlichen.

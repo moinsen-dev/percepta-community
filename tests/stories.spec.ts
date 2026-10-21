@@ -8,6 +8,8 @@ const headers = () => ({ Origin: origin, 'CF-Connecting-IP': `test-${randomBytes
 const story = (text: string) => ({ lang: 'de', category: 'shopping', story: text, consent: true, consentVersion: 'public-story-2026-10-21' });
 const sql = (command: string) => execFileSync(process.execPath, ['node_modules/wrangler/bin/wrangler.js', 'd1', 'execute', 'percepta-experiences', '--local', '--persist-to', '.wrangler/intake-test', '--command', command, '--json'], { encoding: 'utf8' });
 
+const emails = async (request: import('@playwright/test').APIRequestContext) => (await (await request.get('http://127.0.0.1:4323/__emails', { headers: { Authorization: 'Bearer test-resend' } })).json()) as { from: string; to: string[]; subject: string; text: string }[];
+
 test.describe.configure({ mode: 'serial' });
 test.beforeAll(() => { sql('DELETE FROM story_days'); });
 
@@ -55,6 +57,9 @@ test('publishing from the participation page creates a labelled issue and shows 
   expect(issues[0].body).toContain('<!-- percepta-story -->');
   expect(issues[0].body).toContain('@​jemand');
   expect(issues[0].body).toContain('Bereich laut Formular: Anderes oder noch offen.');
+  const subject = `Neue Geschichte Nr. ${issues[0].number}`;
+  await expect.poll(async () => (await emails(request)).some(mail => mail.subject === subject)).toBe(true);
+  expect((await emails(request)).find(mail => mail.subject === subject)).toMatchObject({ from: 'Percepta <business@moinsen.dev>', to: ['business@moinsen.dev'] });
 
   await page.goto(`${origin}/de/stories/`);
   const stories = page.locator('[data-stories]');

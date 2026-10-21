@@ -14,7 +14,16 @@ const categoryNames: Record<string, [string, string]> = {
   shopping: ['Einkaufen', 'Shopping'], questions: ['Fragen und Informationen', 'Questions and information'],
   interaction: ['Mit Menschen sprechen', 'Interacting with people'], orientation: ['Sich orientieren', 'Finding your way'], other: ['Anderes oder noch offen', 'Something else or not sure yet'],
 };
-type StoryEnv = Env & { GITHUB_TOKEN?: string; ADMIN_TOKEN?: string };
+type StoryEnv = Env & { GITHUB_TOKEN?: string; ADMIN_TOKEN?: string; RESEND_API_KEY?: string };
+
+// Tells the operator about new public stories and waiting portraits. Portrait mails carry no personal data.
+async function notify(env: StoryEnv, subject: string, text: string) {
+  if (!env.RESEND_API_KEY) return;
+  await fetch(`${env.RESEND_API_URL}/emails`, {
+    method: 'POST', headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ from: 'Percepta <business@moinsen.dev>', to: ['business@moinsen.dev'], subject, text }),
+  }).catch(() => undefined);
+}
 const storiesOpen = (env: StoryEnv) => env.STORIES_OPEN === 'true' && Boolean(env.GITHUB_TOKEN);
 const github = (env: StoryEnv, path: string, init: RequestInit = {}) => fetch(`${env.GITHUB_API_URL}${path}`, {
   ...init,
@@ -42,7 +51,7 @@ function storyBody(story: string, lang: string, category: string) {
   return `${storyStart}\n${text}\n${storyEnd}\n\n---\n${footer}\n`;
 }
 
-async function createStory(request: Request, env: StoryEnv) {
+async function createStory(request: Request, env: StoryEnv, ctx: ExecutionContext) {
   if (!storiesOpen(env)) return json({ error: 'stories_closed' }, 503);
   const limited = await env.INTAKE_LIMIT.limit({ key: request.headers.get('CF-Connecting-IP') ?? 'local' });
   if (!limited.success) return json({ error: 'try_later' }, 429);
@@ -62,6 +71,7 @@ async function createStory(request: Request, env: StoryEnv) {
   if (!response.ok) return json({ error: 'temporarily_unavailable' }, 503);
   const issue = await response.json<{ number: number; html_url: string }>();
   await caches.default.delete(storiesCacheKey(body.lang));
+  ctx.waitUntil(notify(env, `Neue Geschichte Nr. ${issue.number}`, `Eine neue Geschichte ist veröffentlicht: ${storyTitle(story, body.lang)}\n\n${issue.html_url}\n\nBitte lesen und erkennbare Angaben entfernen.`));
   return json({ published: true, number: issue.number, url: issue.html_url }, 201);
 }
 
@@ -146,7 +156,7 @@ async function denied(request: Request, env: StoryEnv) {
 
 const field = (value: unknown, max: number) => typeof value === 'string' && value.trim().length <= max ? value.trim() : null;
 
-async function createPortrait(request: Request, env: StoryEnv) {
+async function createPortrait(request: Request, env: StoryEnv, ctx: ExecutionContext) {
   if (!peopleOpen(env)) return json({ error: 'people_closed' }, 503);
   const body = await readBody(request, 1_500_000);
   if (!body || body.consent !== true || body.consentVersion !== portraitConsentVersion) return json({ error: 'consent_required' }, 400);
@@ -168,6 +178,7 @@ async function createPortrait(request: Request, env: StoryEnv) {
     env.DB.prepare('INSERT INTO people (id, created_at, lang, name, about, story, photo, photo_alt, contact, consent_version) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO NOTHING')
       .bind(await hashToken(body.code), now, body.lang, name, about, story, photo ? photo.slice().buffer : null, photo ? photoAlt : null, contact, portraitConsentVersion),
   ]);
+  ctx.waitUntil(notify(env, 'Neues Porträt wartet auf Freigabe', 'Ein neues Porträt wartet auf Freigabe. Bitte vor der Freigabe kurz bei der Person nachfragen.\n\nhttps://percepta.moinsen.dev/admin/people/'));
   return json({ received: true }, 201);
 }
 
@@ -177,7 +188,7 @@ async function photoResponse(env: StoryEnv, id: string, publishedOnly: boolean) 
   return new Response(new Uint8Array(row.photo), { headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': publishedOnly ? 'public, max-age=3600' : 'no-store', 'X-Content-Type-Options': 'nosniff' } });
 }
 
-async function peopleApi(request: Request, env: StoryEnv, url: URL) {
+async function peopleApi(request: Request, env: StoryEnv, url: URL, ctx: ExecutionContext) {
   const photoId = url.pathname.match(/^\/api\/(admin\/)?people\/photo\/([a-f0-9]{64})$/);
   if (photoId && request.method === 'GET') {
     if (photoId[1]) return await isAdmin(request, env) ? photoResponse(env, photoId[2], false) : denied(request, env);
@@ -202,7 +213,7 @@ async function peopleApi(request: Request, env: StoryEnv, url: URL) {
   }
   const limited = await env.INTAKE_LIMIT.limit({ key: request.headers.get('CF-Connecting-IP') ?? 'local' });
   if (!limited.success) return json({ error: 'try_later' }, 429);
-  if (url.pathname === '/api/people') return createPortrait(request, env);
+  if (url.pathname === '/api/people') return createPortrait(request, env, ctx);
   if (url.pathname === '/api/people/withdraw') {
     const body = await readBody(request);
     if (!body || typeof body.code !== 'string' || !withdrawCode.test(body.code)) return json({ error: 'invalid_request' }, 400);
@@ -253,7 +264,7 @@ async function hashToken(token: string) {
 }
 
 export default {
-  async fetch(request, env: StoryEnv) {
+  async fetch(request, env: StoryEnv, ctx) {
     const url = new URL(request.url);
     const storiesLang = url.pathname.match(/^\/(de|en)\/stories\/$/)?.[1] as 'de' | 'en' | undefined;
     if (storiesLang && request.method === 'GET') return storiesPage(request, env, storiesLang);
@@ -261,7 +272,7 @@ export default {
     if (peopleLang && request.method === 'GET') return peoplePage(request, env, peopleLang);
     if (url.pathname.startsWith('/api/people') || url.pathname.startsWith('/api/admin/')) {
       // Never log request bodies, contacts or photos.
-      try { return await peopleApi(request, env, url); } catch { return json({ error: 'temporarily_unavailable' }, 503); }
+      try { return await peopleApi(request, env, url, ctx); } catch { return json({ error: 'temporarily_unavailable' }, 503); }
     }
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(request);
     if (url.pathname === '/api/intake-status' && request.method === 'GET') {
@@ -271,7 +282,7 @@ export default {
       if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);
       if (request.headers.get('Origin') !== url.origin) return json({ error: 'origin_not_allowed' }, 403);
       if (request.headers.get('Content-Type')?.split(';')[0] !== 'application/json') return json({ error: 'json_required' }, 415);
-      try { return await createStory(request, env); } catch { return json({ error: 'temporarily_unavailable' }, 503); }
+      try { return await createStory(request, env, ctx); } catch { return json({ error: 'temporarily_unavailable' }, 503); }
     }
     const remove = url.pathname === '/api/experiences/delete';
     if (url.pathname !== '/api/experiences' && !remove) return json({ error: 'not_found' }, 404);
