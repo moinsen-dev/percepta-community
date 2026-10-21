@@ -22,6 +22,8 @@ const image = (page: Page, type: string) => page.evaluate(type => {
 const emails = async (request: import('@playwright/test').APIRequestContext) => (await (await request.get('http://127.0.0.1:4323/__emails', { headers: { Authorization: 'Bearer test-resend' } })).json()) as { from: string; to: string[]; subject: string; text: string }[];
 
 test.describe.configure({ mode: 'serial' });
+// Each test gets its own client address, so the shared rate limit does not leak between tests.
+test.beforeEach(({ page }) => page.setExtraHTTPHeaders({ 'CF-Connecting-IP': `test-${randomBytes(8).toString('hex')}` }));
 test.beforeAll(() => { sql('DELETE FROM people'); });
 
 test('closed configuration accepts no portraits and keeps the admin API locked', async ({ request, page }) => {

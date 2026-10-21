@@ -11,6 +11,8 @@ const sql = (command: string) => execFileSync(process.execPath, ['node_modules/w
 const emails = async (request: import('@playwright/test').APIRequestContext) => (await (await request.get('http://127.0.0.1:4323/__emails', { headers: { Authorization: 'Bearer test-resend' } })).json()) as { from: string; to: string[]; subject: string; text: string }[];
 
 test.describe.configure({ mode: 'serial' });
+// Each test gets its own client address, so the shared rate limit does not leak between tests.
+test.beforeEach(({ page }) => page.setExtraHTTPHeaders({ 'CF-Connecting-IP': `test-${randomBytes(8).toString('hex')}` }));
 test.beforeAll(() => { sql('DELETE FROM story_days'); });
 
 test('closed production configuration offers no publishing and keeps the static stories page', async ({ request, page }) => {

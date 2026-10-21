@@ -122,3 +122,4 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Geändert:** `worker/index.ts` (`notify` per `ctx.waitUntil`, ohne Secret `RESEND_API_KEY` stumm): bei Geschichten Titel und Issue-Link, bei Porträts nur Hinweis und Link zur Freigabeseite, keine Angaben zur Person. `wrangler.jsonc` (`RESEND_API_URL`), Mock in `tests/github-mock.mjs`, Tests, Datenschutzsatz DE/EN.
 - **Prüfungen:** Check, Build, 44/44 Playwright zweimal (u. a. Mail ohne Name und Kontakt).
 - **Offen:** Secret `RESEND_API_KEY` durch den Projektverantwortlichen.
+- **Nachtrag:** Deploy `e01139b9-c090-4b92-9c7a-375dd8cea042` erfolgte nach einem Lauf mit 43/44 (ein Test fehlgeschlagen, zu spät bemerkt). Ursache nur in der Testumgebung: Browser-Anfragen ohne `CF-Connecting-IP` teilten sich ein Ratenlimit von 10 pro Minute. Browser-Tests erhalten jetzt eine eigene Kennung; danach fünf Läufe hintereinander 44/44. Live-Verhalten unverändert (Limit pro Besucheradresse).
