@@ -12,7 +12,7 @@ export default defineConfig({
     reuseExistingServer: false,
     timeout: 10_000,
   }, {
-    command: 'npx wrangler dev --local --ip 127.0.0.1 --port 4321 --inspector-port 9231',
+    command: 'npx wrangler dev --local --ip 127.0.0.1 --port 4321 --inspector-port 9231 --var PEOPLE_OPEN:false',
     url: 'http://127.0.0.1:4321',
     reuseExistingServer: false,
     timeout: 60_000,

@@ -102,3 +102,9 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Offen:** Rechtsprüfung der Einwilligungstexte; Secret `ADMIN_TOKEN`; Remote-Migration; Öffnen erst nach Freigabe.
 
 **Korrektur zum vorigen Eintrag:** Der 304-Fehler der Geschichten-Seite ist nur lokal (`wrangler dev`) reproduziert. Live liefert die umgeschriebene Seite kein ETag; eine bedingte Anfrage ergab 200. Die Änderung ist vorsorglich. Nachgetragen: Fehlversuche an der Admin-API zählen gegen das Ratenlimit; der Datenschutzabschnitt zu Porträts sagt, dass sie noch nicht angenommen werden. D1 liegt im EU-Rechtsraum (`jurisdiction: eu`, per `wrangler d1 info` geprüft).
+
+## 2026-10-21 — Porträts geöffnet
+
+- **Ausgangs-Commit:** `16cc78e`. Auf Freigabe des Projektverantwortlichen: Remote-Migration `0003_people.sql` angewendet; `ADMIN_TOKEN` von ihm gesetzt (Name per `wrangler secret list` geprüft, Wert nicht gesehen); laut seiner Rückmeldung „done“ sind die Texte geprüft.
+- **Geändert:** `PEOPLE_OPEN` `true`, „Menschen“ in Navigation, Sitemap und Testrouten, dritter Weg auf „Mitmachen“, Datenschutz-Hinweis „noch nicht geöffnet“ entfernt. Teststart 4321 erzwingt `PEOPLE_OPEN:false` für die Prüfung der geschlossenen Konfiguration.
+- **Prüfungen:** Check, Build, 44/44 Playwright, Sichtprüfung Kopfzeile 390 px.

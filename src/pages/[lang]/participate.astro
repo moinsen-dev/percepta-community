@@ -12,6 +12,7 @@ const t = lang === 'de' ? {
   choices: 'Wähle deinen Weg',
   promptLink: 'Im Gespräch mit einer KI', promptLinkText: 'Eine KI-App wie ChatGPT oder Gemini fragt nach und schreibt am Ende mit dir einen kurzen Text. Das geht auch per Sprache.',
   reportLink: 'Selbst aufschreiben', reportLinkText: 'Schreib direkt hier auf der Seite, auf Papier oder mit einer vertrauten Person.',
+  peopleLink: 'Mit Namen und Foto vorstellen', peopleLinkText: 'Erzähl auf der Seite „Menschen“, wer du bist und wie du deinen Alltag erlebst. Wir melden uns kurz, bevor es erscheint.',
   promptTitle: 'Mit KI: Gesprächsanleitung zum Kopieren',
   promptIntro: 'Kopiere den folgenden Text und füge ihn als erste Nachricht in deine KI-App ein. Danach antwortest du einfach auf die Fragen. Am Ende bekommst du einen kurzen Text und einen Link zurück auf diese Seite.',
   provider: 'Deine KI-App verarbeitet das Gespräch nach den Regeln ihres Anbieters. Percepta sieht dieses Gespräch nicht.',
@@ -26,6 +27,7 @@ const t = lang === 'de' ? {
   choices: 'Choose your way',
   promptLink: 'In a conversation with an AI', promptLinkText: 'An AI app such as ChatGPT or Gemini asks follow-up questions and writes a short text with you at the end. This also works by voice.',
   reportLink: 'Write it yourself', reportLinkText: 'Write directly on this page, on paper or with someone you trust.',
+  peopleLink: 'Introduce yourself with name and photo', peopleLinkText: 'Tell who you are and how you experience everyday life on the “People” page. We get in touch briefly before it appears.',
   promptTitle: 'With AI: conversation guide to copy',
   promptIntro: 'Copy the text below and paste it as the first message into your AI app. Then simply answer the questions. At the end you get a short text and a link back to this page.',
   provider: 'Your AI app processes the conversation under its provider’s rules. Percepta does not see this conversation.',
@@ -44,6 +46,7 @@ const t = lang === 'de' ? {
         <ul class="choice-list">
           <li><a href="#prompt">{t.promptLink}</a><p>{t.promptLinkText}</p></li>
           <li><a href="#write">{t.reportLink}</a><p>{t.reportLinkText}</p></li>
+          <li><a href={`${pathFor(lang, 'people')}#vorstellen`}>{t.peopleLink}</a><p>{t.peopleLinkText}</p></li>
         </ul>
       </section>
       <section id="prompt" aria-labelledby="prompt-title"><h2 id="prompt-title">{t.promptTitle}</h2><p>{t.promptIntro}</p><p class="notice">{t.provider}</p>

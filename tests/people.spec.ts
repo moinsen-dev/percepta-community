@@ -22,7 +22,7 @@ const image = (page: Page, type: string) => page.evaluate(type => {
 test.describe.configure({ mode: 'serial' });
 test.beforeAll(() => { sql('DELETE FROM people'); });
 
-test('closed production configuration accepts no portraits and keeps the admin API locked', async ({ request, page }) => {
+test('closed configuration accepts no portraits and keeps the admin API locked', async ({ request, page }) => {
   expect((await (await request.get('/api/intake-status')).json()).peopleOpen).toBe(false);
   expect((await request.post('/api/people', { headers: { Origin: 'http://127.0.0.1:4321' }, data: portrait() })).status()).toBe(503);
   expect((await request.get('/api/admin/people', { headers: admin })).status()).toBe(401);

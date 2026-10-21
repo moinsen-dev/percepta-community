@@ -15,7 +15,7 @@
     { "pattern": "percepta.moinsen.dev", "custom_domain": true }
   ],
   "preview_urls": false,
-  "vars": { "INTAKE_OPEN": "false", "STORIES_OPEN": "true", "PEOPLE_OPEN": "false", "GITHUB_API_URL": "https://api.github.com" },
+  "vars": { "INTAKE_OPEN": "false", "STORIES_OPEN": "true", "PEOPLE_OPEN": "true", "GITHUB_API_URL": "https://api.github.com" },
   "d1_databases": [{
     "binding": "DB",
     "database_name": "percepta-experiences",
