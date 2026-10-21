@@ -97,3 +97,9 @@ Auftrag: Die vier recherchierten Alltagshilfen auf der Website empfehlen. Neue R
 - Herstellerziele einschließlich DE/EN-Anleitungen und Seeing AI für Android gelesen. Microsofts offizieller Kurzlink leitet auf `https://play.google.com/store/apps/details?id=com.microsoft.seeingai` weiter; Ziel mit HTTP 200 und Anbieter Microsoft verifiziert. Links öffnen im selben Tab, keine eingebetteten Anbieterinhalte.
 
 Native Computer-Use meldete keine verfügbare Browseroberfläche. Die Tastaturprüfung war skriptgesteuert mit Chromium, keine manuelle VoiceOver-/NVDA-Abnahme. Keine Installation oder Leistungsprüfung der empfohlenen Apps. Veröffentlichung und CI-Ergebnis folgen als eigener Nachtrag.
+
+### Veröffentlichung der Empfehlungen
+
+Quellcommit `27dd29361e0ab4c60bada6d8f3dae1bb6ad73488` gepusht. [GitHub Actions Run 39569007402](https://github.com/moinsen-dev/percepta-community/actions/runs/39569007402) erfolgreich: Typprüfung, Build, Browserprüfungen und Wrangler-Dry-run. Direkter interaktiver Cloudflare-Deploy erfolgreich; Deployment-Liste bestätigt Version `f8bbeba6-ec9c-43c3-9c0e-ea68ef6d9224` zu 100 % seit 2026-10-21, 08:24 UTC. Die neuen Seiten liegen unter [Deutsch](https://percepta.moinsen.dev/de/tools/) und [English](https://percepta.moinsen.dev/en/tools/).
+
+Automatisierte HTTPS-Abrufe beider Routen erhalten weiterhin HTTP 403 mit `cf-mitigated: challenge`. Daher ist der Upload bestätigt, die öffentliche Inhaltsauslieferung aus dieser Testumgebung nicht geprüft. Die lokale Inhalts-/Fokusprüfung bleibt davon getrennt. Keine Schutzregel geändert und kein Cloudflare-Handoff erneut eröffnet. README-Dateilinkcheck und `git diff --check` ohne Befund; Baseline und fremde Harness-Ordner unverändert. Lokalen Preview-Server beendet.
