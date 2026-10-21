@@ -22,4 +22,4 @@ My short draft:
 
 Check your draft: Is it accurate? Is anything missing? Does it contain personal details or information about others? Remove or generalise them. Omitting a name does not guarantee anonymity.
 
-You can paste and review your text at https://percepta.moinsen.dev/en/participate/#report . Keep the text only if you wish. Percepta's private intake is not open yet. Do not upload it to public GitHub issues. This template sends and publishes nothing. Later publication needs your agreement to the exact text and destination; being named would be a separate optional choice.
+You can paste and review your text at https://percepta.moinsen.dev/en/participate/#report . There you decide yourself whether to publish it as a story without your name; that needs your explicit agreement to exactly this text. You can also simply keep it. This template sends and publishes nothing. Please do not open your own GitHub issue; your account would be visible there.

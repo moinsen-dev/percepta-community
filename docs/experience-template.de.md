@@ -22,4 +22,4 @@ Mein kurzer Entwurf:
 
 Prüfe deinen Entwurf: Stimmt er? Fehlt etwas? Enthält er persönliche Einzelheiten oder Angaben über andere Menschen? Entferne oder verallgemeinere diese. Ein fehlender Name garantiert keine Anonymität.
 
-Du kannst deinen Text unter https://percepta.moinsen.dev/de/participate/#report einfügen und prüfen. Bewahre den Text nur auf, wenn du möchtest. Perceptas privater Empfang ist noch nicht geöffnet. Lade ihn nicht in öffentliche GitHub-Issues hoch. Die Vorlage sendet und veröffentlicht nichts. Spätere Veröffentlichung braucht deine Zustimmung zum genauen Text und Ziel; eine Namensnennung wäre eine eigene freiwillige Entscheidung.
+Du kannst deinen Text unter https://percepta.moinsen.dev/de/participate/#report einfügen und prüfen. Dort entscheidest du selbst, ob du ihn ohne deinen Namen als Geschichte veröffentlichst; das braucht deine ausdrückliche Zustimmung zu genau diesem Text. Du kannst ihn auch einfach behalten. Die Vorlage sendet und veröffentlicht nichts. Lege bitte kein eigenes GitHub-Issue an; dort wärst du mit deinem Konto sichtbar.

@@ -78,3 +78,10 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Live-Probe:** Fiktiver Text über das Formular auf `percepta.moinsen.dev/de/participate/` veröffentlicht. Ergebnis: Issue #5 mit Labels `geschichte` und `de`, Markern und Einwilligungsfuß; Empfangsbestätigung mit Nummer und Fokus auf der Überschrift; Geschichte erschien auf `/de/stories/`. Danach als „not planned“ mit Hinweis geschlossen. Die geschlossene Geschichte kann wegen des 5-Minuten-Caches kurz weiter sichtbar sein.
 - **Geändert:** Issue-Fuß nennt den Bereich in Klartext statt des internen Schlüssels (`worker/index.ts`), Test ergänzt.
 - **Prüfungen:** Check, Build, 37/37 Playwright.
+
+## 2026-10-21 — Prompt v3 nach zweiter ChatGPT-Analyse
+
+- **Ausgangs-Commit:** `7a5efcd`. Auftrag: Feedback des Projektverantwortlichen (ChatGPT-Analyse von v2 mit Vorschlag „V3“) einarbeiten.
+- **Geändert:** `docs/interview-prompt.de.md`/`.en.md` (gezielte Änderungen an v2, siehe Bericht), `docs/experience-template.de.md`/`.en.md` (letzter Absatz auf den Veröffentlichungsweg statt „Empfang geschlossen“), `docs/interview-spec.md`, `state.md`, `prompt-simulation/simulate.py` (Fälle `meta-entwickler`, `widerspruch`), Transkripte `prompt-simulation/v3/`, Bericht.
+- **Bewusst nicht übernommen:** fette Überschriften (würden wörtlich in veröffentlichten Geschichten stehen), Hinweis auf private Einreichung (Empfang geschlossen), freie statt fester Antwort auf Veröffentlichungswünsche. Die Empfehlung einer Prüfung vor Veröffentlichung widerspricht D-19 und ist dem Projektverantwortlichen genannt, nicht umgesetzt.
+- **Prüfungen:** 15 simulierte Gespräche (`chat-latest`/`gpt-5.5`); Check, Build, Playwright.

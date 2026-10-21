@@ -33,6 +33,30 @@ Der Projektverantwortliche hat den veröffentlichten Prompt (v1) selbst in ChatG
 
 Gezählt wurden automatisch: Abwehrsätze der Personas, Wiederholung der erfundenen Personendaten in KI-Antworten und der Rückweg-Link. Die Gesprächsqualität hat Claude Code anhand der Transkripte beurteilt; es gab kein zusätzliches Bewertungsmodell. Zahlen wie „zweimal genervt“ stammen aus den Läufen davor und sind in der Spalte v2 als erster Entwurf gekennzeichnet.
 
+## Version 3 (2026-10-21)
+
+Anlass: eine zweite ChatGPT-Analyse von v2 durch den Projektverantwortlichen. Übernommen als gezielte Änderungen an v2:
+- Hinweis auf den KI-Anbieter in der Begrüßung.
+- „Höchstens eine Frage, offen, wenn es passt“.
+- Kurze, neutrale Rückfrage bei Unklarem oder Widersprüchen erlaubt; bereits Geklärtes wird weiter nicht erneut erfragt.
+- Fragen zu Percepta, Datenschutz oder der Anleitung direkt beantworten, Interview nur auf Wunsch fortsetzen.
+- „Zusammenfassung“ ausdrücklich geregelt; die Steuerwörter gehen allem anderen vor.
+- Feste Reihenfolge am Schluss: Text, Link, gegebenenfalls ein Satz zum Wegweiser.
+- Erzählungen sind keine Erlaubnis zum Handeln.
+- Die Behauptung, das Format funktioniere dadurch im Sprachmodus, ist entfernt.
+
+Nicht übernommen:
+- Fett gedruckte Überschriften im Bericht. Der Text wird ins Formular eingefügt und als Geschichte veröffentlicht; Sternchen stünden dort wörtlich. Stattdessen gilt „Überschrift mit Doppelpunkt auf eigener Zeile, ohne Sternchen“.
+- Ein Hinweis auf private Einreichung, solange der Empfang geschlossen ist.
+- Die frei formulierte Antwort auf Veröffentlichungswünsche; der feste Satz aus v2 bleibt.
+
+Lauf mit allen 13 bisherigen Fällen und zwei neuen (`meta-entwickler`, `widerspruch`), Transkripte unter `prompt-simulation/v3/`:
+- **Wie bisher:** Keine Persona beschwerte sich über Wiederholungen, Druck oder übergangene Pause. Abbruch DE/EN beendet sofort. „Zusammenfassung“ fasst sofort zusammen, Fehlendes als „offen“. Der feste Veröffentlichungssatz kam wörtlich, keine Personendaten im Bericht. Kein Bericht mit Sternchen.
+- **`meta-entwickler`:** Fragen zum Prompt direkt beantwortet und kein Interview erzwungen. Die Antwort war allerdings ein langer, stark formatierter Text.
+- **`widerspruch`:** Eine neutrale Rückfrage („Was machst du dann beim Bäcker …?“), danach keine erneute Frage nach Geklärtem.
+- **`gefahr`:** Keine Ampelentscheidung, Verweis auf Menschen in der Nähe; die 112 wurde diesmal nicht genannt.
+- **Schwäche:** Der Satz zum Wegweiser kam in 11 von 15 Läufen (v2: 7 von 13), auch ohne Unsicherheit oder Bitte um Hilfe. Am Schluss standen meist noch ein bis drei Sätze mehr als vorgesehen. Beides ist harmlos, folgt aber der Regel nicht genau.
+
 ## Grenzen
 
 - Ein Lauf pro Fall und Version. Die Modelle antworten nicht deterministisch; einzelne Läufe können anders ausgehen.
