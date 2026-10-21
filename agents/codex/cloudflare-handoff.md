@@ -47,4 +47,13 @@ weitere Datenprüfung beauftragt. Codex hat den belegten Stand vorbereitet.
    oder vollständige Freischaltung behaupten, wenn relevante Prüfungen fehlen.
 ```
 
-Der aktuelle, konkrete Abschlussstand wird nach Codex' Deploy-Versuch unten ergänzt.
+## Bereits erledigt — nicht erneut aufsetzen
+
+- Quellcommit `d9a7f680276f373bd20ac4bc4f2ab577621da443`; spätere Dokumentationscommits stehen auf `main`.
+- Worker `percepta-community` direkt im bestehenden Cloudflare-Account deployt. Version `3591fb2e-2a6a-476f-8a3b-a4539096f005` zu 100 % aktiv, Custom Domain `percepta.moinsen.dev` aktiviert; TLS-Verbindung erfolgreich.
+- `workers.dev` und Preview-URLs deaktiviert, Logpush aus, keine Bindings; zusätzlicher Observability-Block remote nicht aktiviert. Keine bezahlte Ressource/Planänderung.
+- 21/21 Tests lokal und in [GitHub Actions](https://github.com/moinsen-dev/percepta-community/actions/runs/39557300736); neue Datenschutzhinweise DE/EN im hochgeladenen Asset-Paket.
+- Noch kein Live-Inhaltsnachweis: unsere Abrufe liefern `HTTP 403`, `cf-mitigated: challenge`, Titel „Just a moment…“. Es ist eine vorgeschaltete Prüfung, kein nachgewiesener Astro-Fehler. Ihr Response verändert auch CSP/Permissions-Policy; Clipboard und Nutzung ohne JavaScript am echten Ziel erneut prüfen.
+- OAuth-Zugriff: DNS-Records-Liste, Security-Level, Browser-Check und zonenweite Logpush-Jobs lieferten 403. Der Workers-Custom-Domain-Deploy funktionierte trotzdem. Dashboard hier nicht verfügbar. Fehlende Rechte gezielt klären; keine breiteren Tokens aus fremden Projekten suchen.
+- Alte Sites-Custom-Domain entfernt. Die geschützte Sites-Vorschau bleibt auf einem älteren Stand und soll nicht an die öffentliche Domain angeschlossen werden.
+- Noch offen: tatsächliche Schutz-/Log-/Reporting-Regeln, konkrete Vertrags-/Mailkonfiguration und Löschfristen; danach Live-/Screenreader-Abnahme. Die Datenprüfung ist ausdrücklich nicht als vollständig abgeschlossen markiert.

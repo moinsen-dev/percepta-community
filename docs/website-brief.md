@@ -46,7 +46,7 @@ Eintrag zur Kontaktaufnahme oder zu einer Interessentenliste ist getrennt von ei
 
 ## Umsetzung und verbleibende Freigaben
 
-Astro erzeugt statisches HTML; für diese erste Seite sind weder Laufzeit-Adapter noch Datenbank nötig. Systemschriften, keine externen Einbettungen und nur ein kleines Script zum Kopieren. Textdownloads und sichtbare Vorlagen stammen aus denselben versionierten Dateien. Cloudflare und `percepta.moinsen.dev` sind vom Projektverantwortlichen festgelegt; eine geschützte technische Vorschau ersetzt nicht die öffentliche Freischaltung der Zieldomain.
+Astro erzeugt statisches HTML; für diese erste Seite sind weder Laufzeit-Adapter noch Datenbank nötig. Systemschriften, keine externen Einbettungen und nur ein kleines Script zum Kopieren. Textdownloads und sichtbare Vorlagen stammen aus denselben versionierten Dateien. Cloudflare und `percepta.moinsen.dev` sind vom Projektverantwortlichen festgelegt; der direkte Worker-Deploy und die Domainzuordnung sind inzwischen bestätigt. Die Live-Inhaltsprüfung wartet auf Klärung der vorgeschalteten Sicherheitsprüfung; siehe [Hosting- und Datenprüfung](hosting-data-review.md).
 
 Betreiber-/Kontaktangaben sind mit D-15 bestätigt und als DE/EN-Impressum umgesetzt; [Quellen](legal-sources.md). Vor öffentlichem Start die konkrete Hosting-Datenverarbeitung abschließend prüfen. Vor Aktivierung privater Teilnahme zusätzlich Empfang, Moderation, Aufbewahrung/Löschung, Rechtsprüfung, Rücknahmekanal und Missbrauchsschutz klären. Lizenzentscheidung und reale Accessibility-Tests bleiben offen. Keine Platzhalter-Adresse und kein nicht vorhandenes Postfach als aktiven Kontakt veröffentlichen.
 

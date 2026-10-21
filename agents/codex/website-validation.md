@@ -73,3 +73,14 @@ DE/EN-Impressum ergänzt, von allen Seiten erreichbar; Datenschutz, Barriere-Mel
 [GitHub Actions Run 39554260898](https://github.com/moinsen-dev/percepta-community/actions/runs/39554260898) besteht am Quellstand `1356e6bc172bb966ee2f7a7a4fe0df9fb308a6b5` vollständig, einschließlich Browserprüfungen und Wrangler-Dry-run. README-Dateilinkprüfung und `git diff --check` ebenfalls ohne Befund.
 
 Dieser exakte Quellstand wurde mit dem Sites-Helper gebaut, gepusht und archiviert. Sites-Version 3, Deployment `appgdep_6ad8588564d08191ab47bf4309688e1b`, Status `succeeded` am 2026-10-21. [Geschütztes deutsches Impressum](https://percepta-community.leafy-leaf-9434.chatgpt.site/de/imprint/) und [English legal notice](https://percepta-community.leafy-leaf-9434.chatgpt.site/en/imprint/) sind damit bereitgestellt. Die nachfolgende Provider-Abfrage bestätigt Version 3, dieselbe URL und unverändert einen berechtigten Eigentümer, keine freigegebenen Gruppen. Keine DNS-/Zugriffsänderung; reine Statusnachträge ändern den statischen Build nicht.
+
+
+## Nachtrag 2026-10-21 — Direktes Cloudflare-Deployment
+
+Quellstand `d9a7f680276f373bd20ac4bc4f2ab577621da443`. DE/EN-Datenschutzhinweise für den direkten Betrieb erweitert; zusätzliche Worker-Protokolle und alternative Preview-Adressen deaktiviert. Keine zusätzlichen Laufzeitpakete oder Datenspeicher.
+
+Astro-/Typprüfung und Build erfolgreich, 16 Seiten/4 Downloads. 21/21 Browserprüfungen lokal; alle 16 Seiten werden zusätzlich auf Drittanfragen, Cookies und Local-/Session-Storage geprüft. [GitHub Actions Run 39557300736](https://github.com/moinsen-dev/percepta-community/actions/runs/39557300736) vollständig erfolgreich, einschließlich Wrangler-Dry-run. Typgenerierung nach Konfigurationsänderung erfolgreich; temporäres Ergebnis außerhalb des Repos.
+
+Direkter interaktiver Wrangler-Deploy im bestehenden Account erfolgreich. Aktive Cloudflare-Version `3591fb2e-2a6a-476f-8a3b-a4539096f005` (100 %), Custom Domain `percepta.moinsen.dev` aktiv, HTTPS-Verbindung mit Zertifikatsprüfung erfolgreich. Remote zusätzliche Preview-Adressen aus, Logpush aus, keine Bindings oder aktivierter Observability-Block. Der separate Sites-Domain-Eintrag ist entfernt; ältere Eigentümervorschau unverändert.
+
+**Live-Grenze:** Unsere Abrufe erhalten HTTP 403 mit `cf-mitigated: challenge`. Es wurde kein Percepta-HTML ausgeliefert, deshalb keine produktive Header-/Clipboard-/Download-/404-Abnahme behauptet. Lokale Tests belegen nicht die Zugänglichkeit vorgeschalteter Cloudflare-Regeln. Kein nativer Browser/Dashboard-Zugang verfügbar; keine manuellen Hilfsmitteltests. Konkrete Weiterarbeit in [cloudflare-handoff.md](cloudflare-handoff.md), Datenbefunde und Quellen im [Prüfbericht](../../docs/hosting-data-review.md).
