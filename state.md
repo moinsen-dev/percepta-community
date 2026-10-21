@@ -132,7 +132,7 @@ Das Vorgehen aus D-11 ist bestätigt. Die konkreten ersten Abläufe werden mit B
 
 ## Nächste Schritte
 
-Nach D-20: Einwilligungs- und Datenschutztexte für Porträts prüfen (am besten mit Rechtsfachwissen). Zum Öffnen: Migration `0003_people.sql` remote anwenden, Secret `ADMIN_TOKEN` setzen, `PEOPLE_OPEN` auf `true`, „Menschen“ in Navigation, Sitemap und Testrouten aufnehmen, deployen. Freigabe unter `/admin/people/`.
+Nach D-20: Einwilligungs- und Datenschutztexte für Porträts prüfen (am besten mit Rechtsfachwissen). Die Migration `0003_people.sql` wird mit dem nächsten Deploy remote angewendet (der nächtliche Löschlauf braucht die Tabelle). Zum Öffnen: Secret `ADMIN_TOKEN` setzen (zum Beispiel `openssl rand -hex 32`, im Passwortmanager aufbewahren), `PEOPLE_OPEN` auf `true`, „Menschen“ in Navigation, Sitemap und Testrouten aufnehmen, deployen. Freigabe unter `/admin/people/`.
 
 Nach D-19: Worker-Secret `GITHUB_TOKEN` ist gesetzt (2026-10-21), das Veröffentlichen ist live aktiv. Eine fiktive Probe-Geschichte lief über das Formular auf percepta.moinsen.dev durch (Issue #5 mit Labels `geschichte`/`de`, erschien auf `/de/stories/`) und ist wieder geschlossen. Die Issues erscheinen unter dem Konto des Token-Inhabers. Cloudflare-KI-Richtlinien (Agent/Search erlauben, Training für percepta ausnehmen) stellt der Betreiber im Dashboard um.
 

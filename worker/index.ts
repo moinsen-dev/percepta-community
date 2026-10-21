@@ -138,6 +138,12 @@ async function isAdmin(request: Request, env: StoryEnv) {
   return crypto.subtle.timingSafeEqual(await encode(given), await encode(env.ADMIN_TOKEN));
 }
 
+// Failed admin attempts count against the rate limit, so the secret cannot be guessed at speed.
+async function denied(request: Request, env: StoryEnv) {
+  const limited = await env.INTAKE_LIMIT.limit({ key: request.headers.get('CF-Connecting-IP') ?? 'local' });
+  return limited.success ? json({ error: 'unauthorized' }, 401) : json({ error: 'try_later' }, 429);
+}
+
 const field = (value: unknown, max: number) => typeof value === 'string' && value.trim().length <= max ? value.trim() : null;
 
 async function createPortrait(request: Request, env: StoryEnv) {
@@ -174,11 +180,11 @@ async function photoResponse(env: StoryEnv, id: string, publishedOnly: boolean) 
 async function peopleApi(request: Request, env: StoryEnv, url: URL) {
   const photoId = url.pathname.match(/^\/api\/(admin\/)?people\/photo\/([a-f0-9]{64})$/);
   if (photoId && request.method === 'GET') {
-    if (photoId[1]) return await isAdmin(request, env) ? photoResponse(env, photoId[2], false) : json({ error: 'unauthorized' }, 401);
+    if (photoId[1]) return await isAdmin(request, env) ? photoResponse(env, photoId[2], false) : denied(request, env);
     return peopleOpen(env) ? photoResponse(env, photoId[2], true) : json({ error: 'not_found' }, 404);
   }
   if (url.pathname === '/api/admin/people' && request.method === 'GET') {
-    if (!await isAdmin(request, env)) return json({ error: 'unauthorized' }, 401);
+    if (!await isAdmin(request, env)) return denied(request, env);
     const { results } = await env.DB.prepare('SELECT id, created_at, published_at, lang, name, about, story, photo_alt, photo IS NOT NULL AS has_photo, contact FROM people ORDER BY published_at IS NOT NULL, created_at DESC').all<Person>();
     return json({ people: results });
   }
@@ -186,7 +192,7 @@ async function peopleApi(request: Request, env: StoryEnv, url: URL) {
   if (request.headers.get('Origin') !== url.origin) return json({ error: 'origin_not_allowed' }, 403);
   if (request.headers.get('Content-Type')?.split(';')[0] !== 'application/json') return json({ error: 'json_required' }, 415);
   if (url.pathname === '/api/admin/people/approve' || url.pathname === '/api/admin/people/delete') {
-    if (!await isAdmin(request, env)) return json({ error: 'unauthorized' }, 401);
+    if (!await isAdmin(request, env)) return denied(request, env);
     const body = await readBody(request);
     if (!body || typeof body.id !== 'string' || !/^[a-f0-9]{64}$/.test(body.id)) return json({ error: 'invalid_request' }, 400);
     // Approval publishes the portrait and removes the private contact, which was only needed for the check.
