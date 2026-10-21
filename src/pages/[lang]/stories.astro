@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { languages, labels, pathFor, repo, type Lang } from '../../content/site';
+export function getStaticPaths() { return languages.map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const t = lang === 'de' ? {
+  title: 'Geschichten aus dem Alltag.',
+  seo: 'Geschichten blinder und sehbehinderter Menschen aus ihrem Alltag',
+  intro: 'Blinde und sehbehinderte Menschen erzählen hier, ohne ihren Namen, was ihnen im Alltag hilft und was noch fehlt. Jede Geschichte hat die Person selbst zur Veröffentlichung freigegeben.',
+  fallback: 'Hier erscheinen die Geschichten, sobald die ersten veröffentlicht sind. Du findest sie auch direkt auf GitHub.',
+  github: 'Alle Geschichten auf GitHub',
+  ownTitle: 'Deine Geschichte',
+  own: 'Was hilft dir, was fehlt dir? Eine Situation genügt. Du entscheidest vor der Veröffentlichung über den genauen Text.',
+  ownLink: 'Geschichte erzählen',
+  moderation: 'Wir lesen jede Geschichte nach der Veröffentlichung und entfernen erkennbare Angaben oder Beiträge, die nicht hierher gehören. Möchtest du deine Geschichte entfernen lassen? Schreib uns mit der Nummer deiner Geschichte.',
+} : {
+  title: 'Everyday stories.',
+  seo: 'Everyday stories from blind and low-vision people',
+  intro: 'Blind and low-vision people share here, without their names, what helps them in everyday life and what is still missing. Each person approved their own story for publication.',
+  fallback: 'Stories appear here as soon as the first ones are published. You can also find them directly on GitHub.',
+  github: 'All stories on GitHub',
+  ownTitle: 'Your story',
+  own: 'What helps you, what is missing? One situation is enough. You decide on the exact text before it is published.',
+  ownLink: 'Tell your story',
+  moderation: 'We read every story after publication and remove recognisable details or posts that do not belong here. Want your story removed? Write to us with your story’s number.',
+};
+---
+<Layout lang={lang} page="stories" title={t.seo} description={t.intro}>
+  <article class="article wrap">
+    <header class="article-header"><p class="eyebrow">{labels[lang].stories}</p><h1>{t.title}</h1><p class="lede">{t.intro}</p></header>
+    <div class="prose">
+      <div class="stories" data-stories>
+        <p>{t.fallback}</p>
+      </div>
+      <p><a href={`${repo}/issues?q=label%3Ageschichte+label%3A${lang}+is%3Aopen`}>{t.github}</a></p>
+      <section aria-labelledby="own-title" class="notice"><h2 id="own-title">{t.ownTitle}</h2><p>{t.own}</p><a class="button" href={pathFor(lang, 'participate')}>{t.ownLink}<span aria-hidden="true"> →</span></a></section>
+      <p>{t.moderation} <a href={pathFor(lang, 'imprint')}>{labels[lang].imprint}</a></p>
+    </div>
+  </article>
+</Layout>

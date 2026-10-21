@@ -37,6 +37,19 @@ const t = (de: string, en: string) => lang === 'de' ? de : en;
       <label class="check-label"><input type="checkbox" id="experience-consent" /> <span>{t('Ich willige ausdrücklich ein, dass Percepta diesen Bericht für die beschriebene Bedarfserhebung verarbeitet, auch soweit er Angaben zu meiner Sehbehinderung enthält. Ich kann diese Einwilligung jederzeit widerrufen. Dies ist keine Zustimmung zur Veröffentlichung.', 'I explicitly consent to Percepta processing this report for the requirements research described above, including information about my visual impairment where present. I can withdraw this consent at any time. This is not consent to publication.')}</span></label>
       <button type="button" class="button" id="experience-send">{t('Diesen Text privat einreichen', 'Submit this text privately')}</button>
     </div>
+    <div id="experience-publish-controls" hidden>
+      <h4>{t('Als Geschichte veröffentlichen', 'Publish as a story')}</h4>
+      <p>{t('Dein Text erscheint dann sofort öffentlich auf der Seite „Geschichten“ und als Beitrag (Issue) im GitHub-Projekt moinsen-dev/percepta-community. Angelegt wird er vom Projektkonto; dein Name und deine IP-Adresse erscheinen dort nicht. GitHub (USA) verarbeitet den Text.', 'Your text then appears publicly right away on the “Stories” page and as a post (issue) in the GitHub project moinsen-dev/percepta-community. It is created by the project account; your name and IP address do not appear there. GitHub (USA) processes the text.')}</p>
+      <p>{t('Prüfe vorher: keine Namen, Orte, Kontaktdaten oder Angaben über andere Menschen. Texte mit E-Mail-Adresse, Telefonnummer oder Link nehmen wir nicht an. Wir lesen jede Geschichte nach der Veröffentlichung und entfernen sie auf Anfrage.', 'Check first: no names, places, contact details or information about other people. We do not accept texts with an email address, phone number or link. We read every story after publication and remove it on request.')}</p>
+      <label class="check-label"><input type="checkbox" id="publish-consent" /> <span>{t('Ich bin mindestens 18 Jahre alt und möchte, dass genau dieser Text ohne meinen Namen öffentlich auf percepta.moinsen.dev und GitHub erscheint, auch soweit er Angaben zu meiner Sehbehinderung enthält. Mir ist klar, dass öffentliche Texte kopiert werden können. Ich kann die Entfernung jederzeit verlangen.', 'I am at least 18 years old and want exactly this text to appear publicly on percepta.moinsen.dev and GitHub without my name, including any information about my visual impairment. I understand that public texts can be copied. I can ask for removal at any time.')}</span></label>
+      <button type="button" class="button" id="experience-publish">{t('Als Geschichte veröffentlichen', 'Publish as a story')}</button>
+    </div>
+  </div>
+  <div id="publish-receipt" hidden>
+    <h3 id="publish-title" tabindex="-1">{t('Deine Geschichte ist veröffentlicht. Danke!', 'Your story has been published. Thank you!')}</h3>
+    <p id="publish-reference"></p>
+    <p><a href={pathFor(lang, 'stories')}>{t('Zu den Geschichten', 'Go to the stories')}</a></p>
+    <p>{t(`Möchtest du sie entfernen lassen? Schreib an ${operator.email} und nenne die Nummer.`, `Want it removed? Email ${operator.email} and include the number.`)}</p>
   </div>
   <div id="experience-receipt" hidden>
     <h3 id="receipt-title" tabindex="-1">{t('Dein Bericht ist bei Percepta eingegangen.', 'Percepta has received your report.')}</h3>
@@ -66,6 +79,8 @@ const t = (de: string, en: string) => lang === 'de' ? de : en;
     const report = el<HTMLTextAreaElement>('experience-report');
     const category = el<HTMLSelectElement>('experience-category');
     const consent = el<HTMLInputElement>('experience-consent');
+    const publishConsent = el<HTMLInputElement>('publish-consent');
+    let storyConsentVersion = '';
     const feedback = el('experience-feedback');
     let token = '';
     let consentVersion = '';
@@ -73,7 +88,7 @@ const t = (de: string, en: string) => lang === 'de' ? de : en;
     let approvedReport = '';
     let approvedCategory = '';
     window.addEventListener('beforeunload', event => {
-      if (report.value.trim() && el('experience-receipt').hidden) {
+      if (report.value.trim() && el('experience-receipt').hidden && el('publish-receipt').hidden) {
         event.preventDefault();
       }
     });
@@ -96,13 +111,13 @@ const t = (de: string, en: string) => lang === 'de' ? de : en;
       approvedReport = report.value.trim(); approvedCategory = category.value;
       el('review-text').textContent = approvedReport;
       el('review-category').textContent = category.selectedOptions[0].textContent;
-      consent.checked = false;
+      consent.checked = false; publishConsent.checked = false;
       el('experience-edit').hidden = true; el('experience-review').hidden = false;
       el('review-title').focus();
     });
     el('experience-edit-button').addEventListener('click', () => {
       el('experience-review').hidden = true; el('experience-edit').hidden = false;
-      consent.checked = false; feedback.textContent = ''; report.focus();
+      consent.checked = false; publishConsent.checked = false; feedback.textContent = ''; report.focus();
     });
     el('experience-download').addEventListener('click', () => download(approvedReport, 'percepta-draft.txt'));
     el('receipt-download').addEventListener('click', () => download(receipt, 'percepta-receipt.txt'));
@@ -133,6 +148,33 @@ const t = (de: string, en: string) => lang === 'de' ? de : en;
         feedback.textContent = t('Der Empfang wurde nicht bestätigt; dein Bericht könnte trotzdem angekommen sein. Dein Text ist noch da. Versuche denselben Text erneut zu senden; dabei wird kein zweiter Bericht angelegt. Zum Ändern ziehe ihn zuerst im Abschnitt „Einen eingereichten Bericht zurückziehen“ zurück. Der Löschcode ist dort bereits eingetragen. Du kannst den Entwurf auch speichern.', 'Receipt was not confirmed; your report may still have arrived. Your text is still here. Retry the same text; this does not create a second report. To edit it, first withdraw it in “Withdraw a submitted report”. Its deletion code is already filled in there. You can also save the draft.');
       } finally { send.disabled = false; }
     });
+    el('experience-publish').addEventListener('click', async () => {
+      if (!publishConsent.checked) {
+        feedback.textContent = t('Ohne deine ausdrückliche Zustimmung wird nichts veröffentlicht.', 'Nothing will be published without your explicit consent.');
+        publishConsent.focus(); return;
+      }
+      const publish = el<HTMLButtonElement>('experience-publish');
+      const edit = el<HTMLButtonElement>('experience-edit-button');
+      publish.disabled = true; edit.disabled = true;
+      feedback.textContent = t('Deine Geschichte wird veröffentlicht.', 'Publishing your story.');
+      try {
+        const response = await post('/api/stories', { lang: de ? 'de' : 'en', category: approvedCategory, story: approvedReport, consent: true, consentVersion: storyConsentVersion });
+        const result = await response.json();
+        if (response.status === 422) {
+          feedback.textContent = t('Dein Text enthält eine E-Mail-Adresse, Telefonnummer oder einen Link. Bitte entferne sie über „Text ändern“ und versuche es erneut.', 'Your text contains an email address, phone number or link. Please remove it with “Edit text” and try again.');
+          edit.disabled = false; publish.disabled = false; return;
+        }
+        if (!response.ok || result.published !== true) throw new Error(result.error ?? 'not_published');
+        el('publish-reference').textContent = t(`Nummer deiner Geschichte: ${result.number}.`, `Your story number: ${result.number}.`);
+        feedback.textContent = ''; el('experience-review').hidden = true; el('publish-receipt').hidden = false;
+        el('publish-title').focus();
+      } catch (error) {
+        edit.disabled = false; publish.disabled = false;
+        feedback.textContent = (error as Error).message === 'daily_limit' || (error as Error).message === 'try_later'
+          ? t('Heute sind schon viele Geschichten eingegangen. Bitte versuche es später noch einmal. Dein Text ist noch da, du kannst ihn auch speichern.', 'Many stories have arrived today. Please try again later. Your text is still here, and you can save it.')
+          : t('Die Veröffentlichung hat nicht geklappt. Dein Text ist noch da. Bitte versuche es später noch einmal oder speichere ihn.', 'Publishing did not work. Your text is still here. Please try again later or save it.');
+      }
+    });
     el('withdraw-button').addEventListener('click', async () => {
       const code = el<HTMLInputElement>('withdraw-code');
       const status = el('withdraw-feedback');
@@ -158,11 +200,20 @@ const t = (de: string, en: string) => lang === 'de' ? de : en;
       try {
         const response = await fetch('/api/intake-status', { signal: AbortSignal.timeout(10000) });
         const status = await response.json();
+        const storiesOpen = response.ok && status.storiesOpen === true && status.storyConsentVersion === 'public-story-2026-10-21';
+        if (storiesOpen) {
+          storyConsentVersion = status.storyConsentVersion;
+          el('experience-publish-controls').hidden = false;
+        }
         if (!response.ok || status.open !== true || status.consentVersion !== 'private-pilot-2026-10-21' || status.retentionDays !== 30) {
-          el('intake-message').textContent = closed; return;
+          el('intake-message').textContent = storiesOpen
+            ? t('Du kannst deinen Text nach der Vorschau ohne deinen Namen als Geschichte veröffentlichen. Vorher entscheidest du über den genauen Text.', 'After the preview, you can publish your text as a story without your name. You decide on the exact text first.')
+            : closed;
+          return;
         }
         consentVersion = status.consentVersion;
-        el('intake-message').textContent = t('Der private Empfang ist geöffnet. Erst nach Vorschau und ausdrücklicher Zustimmung kannst du deinen Bericht absenden.', 'Private submissions are open. You can submit your report after reviewing it and giving explicit consent.');
+        el('intake-message').textContent = t('Der private Empfang ist geöffnet. Erst nach Vorschau und ausdrücklicher Zustimmung kannst du deinen Bericht absenden.', 'Private submissions are open. You can submit your report after reviewing it and giving explicit consent.')
+          + (storiesOpen ? t(' Du kannst ihn stattdessen auch ohne deinen Namen als Geschichte veröffentlichen.', ' You can also publish it as a story without your name instead.') : '');
         el('experience-send-controls').hidden = false;
       } catch { el('intake-message').textContent = t('Der Empfang ist gerade nicht erreichbar. Du kannst deinen Entwurf trotzdem prüfen und speichern.', 'Submissions are currently unavailable. You can still review and save your draft.'); }
     })();

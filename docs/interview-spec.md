@@ -49,7 +49,7 @@ Produktiv bleibt `INTAKE_OPEN` auf `false`. Betrieb und Einwilligungsbedingungen
 
 ## Spätere Veröffentlichung: gesondert zu entscheiden
 
-Die ursprüngliche Idee einer unterstützten Issue-Erstellung bleibt dokumentiert, wird in v0.1 aber nicht angeboten. Vor Aktivierung müssen Ziel, Betrieb und konkrete Freigaben neu festgelegt werden.
+Seit D-19 umgesetzt: Nach Vorschau und ausdrücklicher Einwilligung zur Veröffentlichung des genauen Textes legt der Worker sofort ein öffentliches Issue mit dem Label `geschichte` im Projekt-Repository an (Zugang des Projekts, kein Konto der Person) und zeigt offene Issues mit diesem Label auf der Seite „Geschichten“. Der Projektverantwortliche moderiert nach der Veröffentlichung; Schließen nimmt eine Geschichte von der Website, Löschen auf Anfrage. Texte mit E-Mail-Adresse, Telefonnummer oder Link werden abgelehnt; höchstens 30 Geschichten pro Tag. Aktiv nur mit `STORIES_OPEN=true` und gesetztem Secret `GITHUB_TOKEN`. Die folgenden Grundsätze gelten weiter:
 
 - Öffentliche Issues können kopiert werden. Entfernte Inhalte können in fremden Kopien fortbestehen. Ohne Namen ist ein Text nicht automatisch anonym; ein eigenes GitHub-Konto bleibt als Autor sichtbar.
 - Eine zukünftige Freigabe muss den vollständigen konkreten Text und das Ziel benennen. Private Teilnahme oder Zustimmung zum Entwurf genügt nicht.

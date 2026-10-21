@@ -18,8 +18,8 @@ const t = lang === 'de' ? {
   manualTitle: 'Ohne KI: Fragen zum Aufschreiben',
   manualIntro: 'Diese Fragen helfen beim Aufschreiben, auch auf Papier. Deinen fertigen Text kannst du ins Eingabefeld einfügen und prüfen.',
   afterTitle: 'Was mit deinem Text passiert',
-  after: 'Nichts wird automatisch gesendet, weder aus deiner KI-App noch beim Schreiben hier. Du prüfst deinen Text zuerst in der Vorschau. Senden kannst du ihn erst, wenn der private Empfang geöffnet ist; das steht direkt am Eingabefeld. Bis dahin kannst du ihn als Datei speichern.',
-  later: 'Veröffentlicht wird nichts ohne deine eigene Zustimmung zum genauen Text. Persönliche Berichte gehören nicht in öffentliche GitHub-Issues. Mitmachen können Erwachsene.',
+  after: 'Nichts wird automatisch gesendet, weder aus deiner KI-App noch beim Schreiben hier. Du prüfst deinen Text zuerst in der Vorschau. Danach kannst du ihn ohne deinen Namen als Geschichte veröffentlichen oder als Datei speichern. Was gerade möglich ist, steht direkt am Eingabefeld.',
+  later: 'Veröffentlicht wird nur, was du in der Vorschau ausdrücklich freigibst. Bitte lege keine eigenen GitHub-Issues mit persönlichen Geschichten an; dort wärst du mit deinem Konto sichtbar. Mitmachen können Erwachsene.',
 } : {
   title: 'Tell us about your everyday life.',
   intro: 'One situation is enough: what did you want to do, what helped, what was difficult? You need no technical idea and no account. Skip any question and stop whenever you like.',
@@ -32,8 +32,8 @@ const t = lang === 'de' ? {
   manualTitle: 'Without AI: questions to write about',
   manualIntro: 'These questions help you write, on paper too. You can paste your finished text into the input area and review it.',
   afterTitle: 'What happens to your text',
-  after: 'Nothing is sent automatically, neither from your AI app nor while you write here. You review your text in a preview first. You can only send it once private submissions are open; the input area tells you. Until then you can save it as a file.',
-  later: 'Nothing is published without your own consent to the exact text. Personal reports do not belong in public GitHub issues. Taking part is for adults.',
+  after: 'Nothing is sent automatically, neither from your AI app nor while you write here. You review your text in a preview first. Then you can publish it as a story without your name or save it as a file. The input area tells you what is currently possible.',
+  later: 'Only what you explicitly approve in the preview is published. Please do not open your own GitHub issues with personal stories; your account would be visible there. Taking part is for adults.',
 };
 ---
 <Layout lang={lang} page="participate" title={lang === 'de' ? 'Alltagserfahrungen beschreiben und mitgestalten' : 'Describe everyday experiences and help shape Percepta'} description={t.intro}>

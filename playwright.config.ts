@@ -7,12 +7,17 @@ export default defineConfig({
   reporter: 'list',
   use: { baseURL: 'http://127.0.0.1:4321', trace: 'retain-on-failure' },
   webServer: [{
+    command: 'node tests/github-mock.mjs',
+    url: 'http://127.0.0.1:4323/health',
+    reuseExistingServer: false,
+    timeout: 10_000,
+  }, {
     command: 'npx wrangler dev --local --ip 127.0.0.1 --port 4321 --inspector-port 9231',
     url: 'http://127.0.0.1:4321',
     reuseExistingServer: false,
     timeout: 60_000,
   }, {
-    command: 'npx wrangler d1 migrations apply percepta-experiences --local --persist-to .wrangler/intake-test && npx wrangler dev --local --ip 127.0.0.1 --port 4322 --inspector-port 9232 --persist-to .wrangler/intake-test --var INTAKE_OPEN:true',
+    command: 'npx wrangler d1 migrations apply percepta-experiences --local --persist-to .wrangler/intake-test && npx wrangler dev --local --ip 127.0.0.1 --port 4322 --inspector-port 9232 --persist-to .wrangler/intake-test --var INTAKE_OPEN:true --var STORIES_OPEN:true --var GITHUB_API_URL:http://127.0.0.1:4323 --var GITHUB_TOKEN:test-token',
     url: 'http://127.0.0.1:4322',
     reuseExistingServer: false,
     timeout: 60_000,

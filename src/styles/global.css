@@ -52,6 +52,10 @@ button { font: inherit; cursor: pointer; }
 .story-content p { font: 1.3rem/1.6 Georgia, serif; max-width: 60ch; }
 .story-content .story-signature { font: 600 1.05rem/1.5 system-ui, -apple-system, sans-serif; color: #d2dfd5; margin-bottom: 0; }
 .story-band + .section { border-top: 0; }
+.story { border-top: 2px solid var(--green); padding-top: 1.5rem; margin-top: 2.5rem; }
+.story:first-child { margin-top: 0; }
+.prose .story h2 { margin-bottom: .5rem; }
+.story-meta { color: var(--muted); font-size: 1rem; }
 .task-links { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 1rem; }
 .task-links li { margin: 0; padding: 0; }
 .task-links a { display: block; height: 100%; padding: 1.25rem 1.5rem; border: 2px solid var(--green); border-radius: .3rem; font-weight: 600; font-size: 1.15rem; text-decoration: none; }
