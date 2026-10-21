@@ -261,3 +261,12 @@ Die Dateien in den drei anderen Harness-Ordnern wurden in diesem Schritt von Cod
 - **Einordnung:** Veraltete TMG-/RStV-/OS-Verweise und Plausible-Angaben nicht übernommen; keine Datenverarbeitung, Vertragsrollen oder Speicherfristen erfunden. Die Hauptwebsite wurde nicht verändert. Betreiberangaben sind erledigt, abschließende Hosting-Datenschutzprüfung und Pilotbetrieb bleiben offen.
 - **Ausgeführte Prüfungen:** Typ-/Astro-Prüfung ohne Fehler, Warnungen oder Hinweise; Build mit 16 HTML-Seiten und 4 Textdownloads; 21/21 Browserprüfungen erfolgreich. Keine manuelle Screenreader-Abnahme oder juristische Prüfung behauptet.
 - **Nächster Schritt:** Geprüften Stand in der bestehenden geschützten Vorschau bereitstellen und GitHub-CI bestätigen; danach Hosting-Angaben und Domainanbindung abschließen. Keine DNS-/Zugriffsänderung und kein Pilotstart in diesem Auftrag.
+
+
+## 2026-10-21 — Veröffentlichung des Impressums-Nachtrags bestätigt
+
+- **Harness / Ausgangspunkt:** Codex, GPT-6-Familie laut Sitzung, Build-ID unbekannt; geprüfter Quellstand `1356e6bc172bb966ee2f7a7a4fe0df9fb308a6b5`.
+- **Veröffentlichung:** Sites-Helper hat diesen exakten Stand gebaut, gespeichert, gepusht und archiviert. Zusätzlich auf `origin/main` veröffentlicht. Sites-Version 3, Deployment `appgdep_6ad8588564d08191ab47bf4309688e1b`: `succeeded`. Provider bestätigt unveränderten Zugriff ausschließlich für den Eigentümer und dieselbe Vorschau-URL.
+- **Prüfungen:** [GitHub Actions Run 39554260898](https://github.com/moinsen-dev/percepta-community/actions/runs/39554260898) erfolgreich: Installation, Astro-/Typprüfung, Build, 21 Browserprüfungen und Wrangler-Dry-run. README-Dateilinkprüfung und `git diff --check` ohne Befund. Baseline lokal und remote weiterhin `fe68acae4142baca25408124f85e353fb9786674`; fremde Analyseordner unverändert.
+- **Statusnachtrag:** Nur `README.md`, `state.md`, eigener `website-validation.md` und dieses Protokoll aktualisiert; keine weitere Änderung am Website-Build. Status-Commit überspringt CI, da der bereits geprüfte Code unverändert bleibt.
+- **Grenzen / nächster Schritt:** Konkrete Hosting-Datenschutzhinweise abschließend prüfen und Domain/DNS/TLS fertigstellen. Manuelle Accessibility-Abnahme und privater Pilotbetrieb weiterhin offen; keine dieser Leistungen als erbracht ausgewiesen.

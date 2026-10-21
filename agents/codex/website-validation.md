@@ -70,4 +70,6 @@ DE/EN-Impressum ergänzt, von allen Seiten erreichbar; Datenschutz, Barriere-Mel
 - `npm test`: 21/21 bestanden, einschließlich beider Impressumsseiten, axe, Sprache/Links/Anker und 320-Pixel-Reflow; bestehende Tastatur-, Clipboard-, Download-, Ohne-JavaScript- und Header-Prüfungen bestehen ebenfalls.
 - Keine neuen manuellen Screenreader-/Nutzertests und keine juristische Freigabe. Die abschließende Prüfung der konkreten Hosting-Datenverarbeitung bleibt offen.
 
-CI und Veröffentlichung des Nachtrags werden nach erfolgreichem Abschluss ergänzt.
+[GitHub Actions Run 39554260898](https://github.com/moinsen-dev/percepta-community/actions/runs/39554260898) besteht am Quellstand `1356e6bc172bb966ee2f7a7a4fe0df9fb308a6b5` vollständig, einschließlich Browserprüfungen und Wrangler-Dry-run. README-Dateilinkprüfung und `git diff --check` ebenfalls ohne Befund.
+
+Dieser exakte Quellstand wurde mit dem Sites-Helper gebaut, gepusht und archiviert. Sites-Version 3, Deployment `appgdep_6ad8588564d08191ab47bf4309688e1b`, Status `succeeded` am 2026-10-21. [Geschütztes deutsches Impressum](https://percepta-community.leafy-leaf-9434.chatgpt.site/de/imprint/) und [English legal notice](https://percepta-community.leafy-leaf-9434.chatgpt.site/en/imprint/) sind damit bereitgestellt. Die nachfolgende Provider-Abfrage bestätigt Version 3, dieselbe URL und unverändert einen berechtigten Eigentümer, keine freigegebenen Gruppen. Keine DNS-/Zugriffsänderung; reine Statusnachträge ändern den statischen Build nicht.
