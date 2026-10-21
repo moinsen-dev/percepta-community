@@ -108,3 +108,9 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Ausgangs-Commit:** `16cc78e`. Auf Freigabe des Projektverantwortlichen: Remote-Migration `0003_people.sql` angewendet; `ADMIN_TOKEN` von ihm gesetzt (Name per `wrangler secret list` geprüft, Wert nicht gesehen); laut seiner Rückmeldung „done“ sind die Texte geprüft.
 - **Geändert:** `PEOPLE_OPEN` `true`, „Menschen“ in Navigation, Sitemap und Testrouten, dritter Weg auf „Mitmachen“, Datenschutz-Hinweis „noch nicht geöffnet“ entfernt. Teststart 4321 erzwingt `PEOPLE_OPEN:false` für die Prüfung der geschlossenen Konfiguration.
 - **Prüfungen:** Check, Build, 44/44 Playwright, Sichtprüfung Kopfzeile 390 px.
+
+## 2026-10-21 — SEO-Prüfung, Vorschaubild, Logo-Link
+
+- **Ausgangs-Commit:** `HEAD` nach Öffnung der Porträts. Lighthouse (mobil, live `/de/`): SEO 100, Barrierefreiheit 100 mit einem Befund (Logo-Link: sichtbarer Text nicht im zugänglichen Namen), Best Practices 92 (CSP blockiert ein von Cloudflare eingefügtes Web-Analytics-Skript und ein Inline-Skript). Websuche findet die Seite noch nicht.
+- **Geändert:** Vorschaubilder `public/og-de.png`/`og-en.png` mit `og:image`, Alternativtext und `summary_large_image`; Logo-Link ohne `aria-label`, Zusatz „– Startseite“ nur für Screenreader.
+- **Prüfungen:** Check, Build, 44/44 Playwright.

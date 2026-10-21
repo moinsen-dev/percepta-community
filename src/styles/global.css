@@ -55,6 +55,7 @@ button { font: inherit; cursor: pointer; }
 .story { border-top: 2px solid var(--green); padding-top: 1.5rem; margin-top: 2.5rem; }
 .story:first-child { margin-top: 0; }
 .prose .story h2 { margin-bottom: .5rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .story-meta { color: var(--muted); font-size: 1rem; }
 .person { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 1.5rem 2rem; align-items: start; border-top: 2px solid var(--green); padding-top: 1.5rem; margin-top: 2.5rem; }
 .person:first-child { margin-top: 0; }

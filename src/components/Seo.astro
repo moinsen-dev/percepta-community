@@ -28,5 +28,9 @@ const data = {
 <meta property="og:url" content={canonical} />
 <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'de_DE'} />
 <meta property="og:locale:alternate" content={lang === 'en' ? 'de_DE' : 'en_GB'} />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image" content={new URL(`/og-${lang ?? 'de'}.png`, Astro.site)} />
+<meta property="og:image:width" content="2400" />
+<meta property="og:image:height" content="1260" />
+<meta property="og:image:alt" content={lang === 'en' ? 'Percepta: Everyday help for blind and low-vision people' : 'Percepta: Alltagshilfen für blinde und sehbehinderte Menschen'} />
+<meta name="twitter:card" content="summary_large_image" />
 <script type="application/ld+json" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
