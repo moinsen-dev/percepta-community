@@ -1,4 +1,4 @@
-# Percepta — App-Angebot, Navigation und Marktpotenzial
+# Percepta — Vorhandene Apps, Navigation und offene Bedürfnisse
 
 Stand: 2026-10-22. Ausführliche Dokumentenrecherche aus dem aktuellen Projektauftrag; keine App-Installation oder eigenen Leistungsdaten. Die Marktannahmen sind keine beschlossene Produktstrategie.
 

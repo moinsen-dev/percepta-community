@@ -112,7 +112,7 @@ export const navigation = {
         id: 'quellen', heading: 'Was wir wissen und noch prüfen müssen',
         paragraphs: ['Diese Übersicht beschreibt vorhandene Angebote. Sie ist keine Zusage für ein bestimmtes Gerät oder einen konkreten Weg. Forschungsprototypen und Vorführungen sind nicht automatisch verfügbare Alltagshilfen.', 'Gemeinsam mit Betroffenen wollen wir prüfen, welche vollständigen Aufgaben mit vorhandenen Hilfen gelingen und was dabei fehlt. Eine eigene Percepta-Assistenz-App gibt es noch nicht.'],
         links: [
-          { text: 'Ausführliche Recherche mit Quellen und Marktannahmen auf GitHub', href: 'https://github.com/moinsen-dev/percepta-community/blob/main/docs/assistive-app-landscape-2026-10.md' },
+          { text: 'Ausführliche Recherche mit Quellen auf GitHub', href: 'https://github.com/moinsen-dev/percepta-community/blob/main/docs/assistive-app-landscape-2026-10.md' },
           { text: 'Zurück zum Wegweiser für alle Alltagsaufgaben', href: '/de/tools/' },
           { text: 'Eine Alltagserfahrung beschreiben', href: '/de/participate/' },
         ],
@@ -231,7 +231,7 @@ export const navigation = {
         id: 'sources', heading: 'What we know and still need to check',
         paragraphs: ['This overview describes existing services. It is not an assurance for a particular device or route. Research prototypes and demonstrations are not automatically available everyday tools.', 'Together with blind and low-vision people, we want to find out which complete tasks existing tools support and what is missing. There is no Percepta assistance app yet.'],
         links: [
-          { text: 'Detailed research, sources and market assumptions on GitHub (German)', href: 'https://github.com/moinsen-dev/percepta-community/blob/main/docs/assistive-app-landscape-2026-10.md' },
+          { text: 'Detailed research with sources on GitHub (German)', href: 'https://github.com/moinsen-dev/percepta-community/blob/main/docs/assistive-app-landscape-2026-10.md' },
           { text: 'Back to the guide for all everyday tasks', href: '/en/tools/' },
           { text: 'Describe an everyday experience', href: '/en/participate/' },
         ],

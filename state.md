@@ -1,6 +1,6 @@
 # Percepta — Projektstand
 
-Stand: 2026-10-22. Aktueller Folgeauftrag: Recherche zu vorhandenen Alltagshilfen, Navigation und Marktpotenzial in Website und Dokumentation einarbeiten und als Pull Request vorschlagen. Codex arbeitet dafür auf Ausgangs-Commit `f460f348d42c2c2c211531770b5ebea24780abe6`. Die unten datierten Veröffentlichungs- und Betriebsnachweise bleiben historische Angaben; dieser Auftrag umfasst kein Deployment.
+Stand: 2026-10-22. Koordination: Codex. Zuletzt ergänzt: Recherche zu vorhandenen Alltagshilfen und Navigation mit DE/EN-Navigationsseite (D-21, PR #9, Ausgangs-Commit `f460f348d42c2c2c211531770b5ebea24780abe6`). Die unten datierten Veröffentlichungs- und Betriebsnachweise bleiben historische Angaben.
 
 ## Aktuelle Phase
 
