@@ -1,3 +1,5 @@
+import { navigation } from './navigation';
+
 export type Lang = 'de' | 'en';
 export const languages: Lang[] = ['de', 'en'];
 export const repo = 'https://github.com/moinsen-dev/percepta-community';
@@ -15,7 +17,7 @@ export const pathFor = (lang: Lang, page = '') => `/${lang}/${page ? `${page}/` 
 export const labels = {
   de: {
     skip: 'Zum Inhalt', home: 'Startseite', nav: 'Hauptnavigation', footer: 'Weitere Informationen',
-    participate: 'Mitmachen', stories: 'Geschichten', people: 'Menschen', about: 'Über Percepta', tools: 'Hilfe finden',
+    participate: 'Mitmachen', stories: 'Geschichten', people: 'Menschen', about: 'Über Percepta', tools: 'Hilfe finden', navigation: 'Orientierung und Navigation',
     accessibility: 'Barrierefreiheit', privacy: 'Datenschutz & Kontakt', imprint: 'Impressum',
     language: 'Read this page in English', languageShort: 'English',
     tagline: 'Alltag verstehen. Gemeinsam entwickeln.',
@@ -24,7 +26,7 @@ export const labels = {
   },
   en: {
     skip: 'Skip to content', home: 'Home', nav: 'Main navigation', footer: 'More information',
-    participate: 'Take part', stories: 'Stories', people: 'People', about: 'About', tools: 'Find help',
+    participate: 'Take part', stories: 'Stories', people: 'People', about: 'About', tools: 'Find help', navigation: 'Orientation and navigation',
     accessibility: 'Accessibility', privacy: 'Privacy & contact', imprint: 'Legal notice',
     language: 'Diese Seite auf Deutsch lesen', languageShort: 'Deutsch',
     tagline: 'Understand everyday life. Build together.',
@@ -114,9 +116,10 @@ export const home = {
 
 type Section = { id?: string; heading: string; paragraphs?: string[]; items?: string[]; links?: { text: string; href: string }[] };
 type Article = { title: string; intro: string; sections: Section[] };
-export type ArticleKey = 'about' | 'accessibility' | 'privacy' | 'imprint' | 'tools';
+export type ArticleKey = 'about' | 'accessibility' | 'privacy' | 'imprint' | 'tools' | 'navigation';
 export const articles: Record<Lang, Record<ArticleKey, Article>> = {
   de: {
+    navigation: navigation.de,
     tools: {
       title: 'Apps und Beratung für blinde und sehbehinderte Menschen.',
       intro: 'Welche Hilfe passt zu dir? Wähle aus, was du gerade tun möchtest. Zu jeder Aufgabe findest du Apps und Beratungsangebote, die du heute schon nutzen kannst, mit Links zu Anleitungen.',
@@ -130,9 +133,9 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
             { text: 'Mit einem sehenden Menschen per Video schauen', href: '#mensch' },
             { text: 'Eigene Gegenstände wiederfinden', href: '#wiederfinden' },
             { text: 'Neu mit Sehverlust: Beratung und Training', href: '#beratung' },
-            { text: 'Unterwegs: Was Apps nicht leisten', href: '#unterwegs' },
+            { text: 'Unterwegs: Orientierung, Navigation und persönliche Hilfe', href: '#unterwegs' },
           ],
-          paragraphs: ['Stand: 21. Oktober 2026. Die Angaben stammen von den Anbietern. Wir haben die Apps noch nicht selbst mit Betroffenen getestet; die Reihenfolge ist keine Rangliste.'],
+          paragraphs: ['Quellenstand: 21. und 22. Oktober 2026. Die Angaben stammen von den Anbietern und Beratungsorganisationen. Wir haben die Apps noch nicht selbst mit Betroffenen getestet; die Reihenfolge ist keine Rangliste.'],
         },
         {
           id: 'lesen', heading: 'Texte und Briefe lesen',
@@ -164,8 +167,11 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
         },
         {
           id: 'mensch', heading: 'Mit einem sehenden Menschen per Video schauen',
-          paragraphs: ['Manchmal ist ein Mensch die bessere Hilfe als eine KI. Be My Eyes verbindet dich per Videoanruf mit Freiwilligen. Sie schauen durch deine Kamera und sagen dir, was sie sehen.'],
-          links: [{ text: 'Mehr zu Be My Eyes', href: '#be-my-eyes' }],
+          paragraphs: ['Be My Eyes verbindet dich per Videoanruf mit Freiwilligen. Sie schauen durch deine Kamera und sagen dir, was sie sehen. Daneben gibt es professionelle Fernassistenz, zum Beispiel TOWER auf Deutsch. Kosten, Sprache und Servicezeiten unterscheiden sich.'],
+          links: [
+            { text: 'Mehr zu Be My Eyes', href: '#be-my-eyes' },
+            { text: 'Professionelle Fernassistenz: Angebote und Grenzen', href: '/de/navigation/#fernassistenz' },
+          ],
         },
         {
           id: 'wiederfinden', heading: 'Eigene Gegenstände wiederfinden',
@@ -177,7 +183,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
         },
         {
           id: 'beratung', heading: 'Neu mit Sehverlust: Beratung und Training',
-          paragraphs: ['Wenn das Sehen nachlässt, fühlen sich Wege und Handgriffe oft plötzlich unsicher an. Dafür gibt es Beratung von Menschen, die das selbst kennen, und Training für Wege und Alltag. Apps sind dabei nur ein Teil.'],
+          paragraphs: ['Wenn dein Sehvermögen nachlässt, kannst du passende Hilfen Schritt für Schritt kennenlernen. Was du brauchst, hängt von deinem Alltag und deiner Erfahrung ab. Du musst nicht mehrere Apps auf einmal lernen. Beratung und Training können dich dabei begleiten.'],
           items: [
             'Blickpunkt Auge: kostenlose, unabhängige Beratung rund ums Sehen, meist von selbst betroffenen Menschen. Auch Angehörige sind willkommen. Telefon 030 28 53 87-183; dort vermittelt man dir Beratung in deiner Nähe oder berät dich am Telefon.',
             'Orientierungs- und Mobilitätstraining: Eine Rehabilitationslehrerin oder ein Rehabilitationslehrer übt mit dir den Langstock und deine Wege, meist an deinem Wohnort. Die gesetzliche Krankenkasse kann die Kosten übernehmen. Dafür braucht es eine ärztliche Verordnung für den Langstock und die Schulung.',
@@ -196,8 +202,9 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
           ],
         },
         {
-          id: 'unterwegs', heading: 'Unterwegs: Was Apps nicht leisten',
-          paragraphs: ['Alle Apps auf dieser Seite können sich irren. Für Straßenverkehr, Treppen und Hindernisse bleiben Langstock, Führhund und Mobilitätstraining die bewährten Hilfen. Mehrere Anbieter schreiben ausdrücklich, dass ihre Apps dafür nicht gedacht sind. Be My Eyes rät zum Beispiel davon ab, damit eine Straße zu überqueren.'],
+          id: 'unterwegs', heading: 'Unterwegs: Orientierung und Navigation',
+          paragraphs: ['Es gibt Apps zum Vorbereiten von Wegen, zur Orientierung draußen und für ausgestattete Gebäude oder Haltestellen. Unser eigener Wegweiser erklärt unter anderem Lazarillo, BlindSquare, MyWay Pro, Soundscape, GoodMaps, NaviLens und LOC.id.', 'Eine Route, ein erkannter Eingang und ein hindernisfreier Weg sind verschiedene Dinge. Langstock, Führhund und Mobilitätstraining bleiben wichtig. Be My Eyes ist laut Anbieter zum Beispiel nicht zum Überqueren von Straßen gedacht.'],
+          links: [{ text: 'Orientierung und Navigation: Apps, örtliche Hilfen und Grenzen', href: '/de/navigation/' }],
         },
         {
           id: 'lookout', heading: 'Google Lookout',
@@ -249,7 +256,10 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
         {
           heading: 'In Ruhe ausprobieren',
           paragraphs: ['Beginne mit einer vertrauten Aufgabe, zum Beispiel dem Lesen einer bekannten Verpackung. So merkst du, ob dir Bedienung und Ansagen helfen.', 'Die Links führen zu anderen Anbietern und öffnen im selben Tab; mit „Zurück“ kommst du wieder hierher. Prüfe dort Geräteanforderungen, mögliche Kosten und den Umgang mit Kamerabildern. Fehlt eine Hilfe, die dir viel bringt? Schreib uns über den Kontakt im Impressum.'],
-          links: [{ text: 'Quellen und ausführlicher Vergleich im Projekt', href: `${repo}/blob/main/docs/existing-assistive-tools.md` }],
+          links: [
+            { text: 'Quellen und Vergleich der visuellen Alltagshilfen', href: `${repo}/blob/main/docs/existing-assistive-tools.md` },
+            { text: 'Erweiterte App-Recherche mit Navigation und Marktannahmen', href: `${repo}/blob/main/docs/assistive-app-landscape-2026-10.md` },
+          ],
         },
       ],
     },
@@ -273,6 +283,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
         { heading: 'Warum es Percepta gibt', paragraphs: [...home.de.why, `— ${home.de.whySignature}`], links: [{ text: 'Kontakt und Impressum', href: '/de/imprint/' }] },
         { heading: 'So gehen wir vor', items: ['Zuhören: Menschen erzählen von Situationen aus ihrem Alltag, in ihren eigenen Worten.', 'Gemeinsam auswählen: Mit Betroffenen suchen wir die Situationen aus, bei denen Hilfe am meisten bringt.', 'Ehrlich testen: Wir prüfen vorhandene Apps und neue Ideen an genau diesen Aufgaben. Wenn eine vorhandene Hilfe reicht, ist auch das ein gutes Ergebnis.'], paragraphs: ['Wir arbeiten offen: Pläne, Entscheidungen und Quellen liegen öffentlich auf GitHub. Partnerorganisationen gibt es bisher nicht.'] },
         { heading: 'Wo wir gerade stehen', paragraphs: ['Es gibt diese Website mit einem Wegweiser zu vorhandenen Hilfen und eine Gesprächshilfe, mit der du eine Alltagserfahrung beschreiben kannst. Als Nächstes führen wir erste Gespräche mit Betroffenen. Eine eigene Percepta-App gibt es noch nicht.'], links: [{ text: 'Projektstand und Entscheidungen auf GitHub', href: `${repo}/blob/main/state.md` }, { text: 'Recherche mit Quellen', href: `${repo}/blob/main/docs/research.md` }] },
+        { heading: 'Was die Recherche zu vorhandenen Apps zeigt', paragraphs: ['Viele Hilfen zum Lesen, Einkaufen und Verstehen visueller Informationen gibt es bereits. Bei Navigation unterscheiden sich Routenplanung, genaue Ankunft und sichere Bewegung. Einige Angebote funktionieren nur an erfassten oder ausgestatteten Orten.', 'Ob und wo Unterstützung fehlt, prüfen wir an vollständigen Alltagssituationen. Eine Herstellerbeschreibung, ein Forschungsprototyp oder eine große Zahl betroffener Menschen belegt noch keinen Nutzen einer neuen Percepta-App.'], links: [{ text: 'Vorhandene Hilfen für Orientierung und Navigation', href: '/de/navigation/' }, { text: 'Recherche zu Apps, Versorgungslücken und Marktannahmen', href: `${repo}/blob/main/docs/assistive-app-landscape-2026-10.md` }] },
         { heading: 'Vorsicht bei Bewegung und Verkehr', paragraphs: ['Einen Gegenstand beschreiben, eine Entfernung messen und eine Gehanweisung geben sind verschiedene Aufgaben. Percepta gibt keine Weganweisungen und ersetzt keine Mobilitätshilfen. In unseren Gesprächen leiten wir keine Versuche an Straßen, Treppen oder anderen gefährlichen Stellen an.'] },
         { id: 'mitwirken', heading: 'Mitwirken', items: ['Blinde und sehbehinderte Menschen: Erzähl uns von einer Situation aus deinem Alltag. Das geht ohne KI und ohne Konto.', 'Entwicklerinnen und Entwickler: Prüft die Website mit Tastatur und Screenreader, meldet Fehler und hinterfragt unsere Quellen. Bitte keine persönlichen Geschichten in öffentliche Issues.', 'Selbsthilfe, Forschung und Praxis: Wir suchen faire Wege, um Alltagsaufgaben gemeinsam auszuwählen und zu prüfen. Schreib uns.'], links: [{ text: 'Eine Erfahrung teilen', href: '/de/participate/' }, { text: 'Technische Issues auf GitHub', href: `${repo}/issues` }, { text: `E-Mail an ${operator.email}`, href: `mailto:${operator.email}` }] },
       ],
@@ -306,6 +317,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
     },
   },
   en: {
+    navigation: navigation.en,
     tools: {
       title: 'Apps and advice for blind and low-vision people.',
       intro: 'Which help suits you? Choose what you want to do right now. For each task you will find apps and advice services you can use today, with links to guides.',
@@ -319,9 +331,9 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
             { text: 'Look at something together with a sighted person', href: '#person' },
             { text: 'Find your own belongings', href: '#finding' },
             { text: 'New to sight loss: advice and training', href: '#advice' },
-            { text: 'Out and about: what apps cannot do', href: '#out-and-about' },
+            { text: 'Out and about: orientation, navigation and personal help', href: '#out-and-about' },
           ],
-          paragraphs: ['Last checked: 21 October 2026. The details come from the providers. We have not yet tested the apps ourselves with blind or low-vision people; the order is not a ranking. Advice and training services are listed for Germany.'],
+          paragraphs: ['Sources checked on 21 and 22 October 2026. The details come from providers and advice organisations. We have not yet tested the apps ourselves with blind or low-vision people; the order is not a ranking. Advice and training services are listed for Germany.'],
         },
         {
           id: 'reading', heading: 'Read text and letters',
@@ -353,8 +365,11 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
         },
         {
           id: 'person', heading: 'Look at something together with a sighted person',
-          paragraphs: ['Sometimes a person helps more than an AI. Be My Eyes connects you with volunteers by video call. They look through your camera and tell you what they see.'],
-          links: [{ text: 'More about Be My Eyes', href: '#be-my-eyes' }],
+          paragraphs: ['Be My Eyes connects you with volunteers by video call. They look through your camera and tell you what they see. Professional remote services also exist, such as German-speaking TOWER. Costs, language and service hours differ.'],
+          links: [
+            { text: 'More about Be My Eyes', href: '#be-my-eyes' },
+            { text: 'Professional remote assistance: services and limits', href: '/en/navigation/#remote-help' },
+          ],
         },
         {
           id: 'finding', heading: 'Find your own belongings',
@@ -366,7 +381,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
         },
         {
           id: 'advice', heading: 'New to sight loss: advice and training',
-          paragraphs: ['When your sight gets worse, familiar routes and everyday tasks can suddenly feel unsafe. There is advice from people who know this from their own experience, and training for getting around and daily life. Apps are only one part of it. The services below are in Germany; the websites are in German.'],
+          paragraphs: ['If your vision is changing, you can explore suitable help step by step. What you need depends on your daily life and experience. You do not have to learn several apps at once. Advice and training can support you. The services below are in Germany; the websites are in German.'],
           items: [
             'Blickpunkt Auge: free, independent advice about sight loss, mostly from people who are affected themselves. Relatives are welcome too. Phone +49 30 28 53 87-183; they put you in touch with advice near you or advise you by phone.',
             'Orientation and mobility training: a rehabilitation teacher practises the long cane and your routes with you, usually where you live. Statutory health insurance can cover the costs. This requires a medical prescription for the long cane and the training.',
@@ -385,8 +400,9 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
           ],
         },
         {
-          id: 'out-and-about', heading: 'Out and about: what apps cannot do',
-          paragraphs: ['Every app on this page can make mistakes. For traffic, stairs and obstacles, the long cane, guide dog and mobility training remain the proven aids. Several providers state explicitly that their apps are not meant for this. Be My Eyes, for example, advises against using it to cross a street.'],
+          id: 'out-and-about', heading: 'Out and about: orientation and navigation',
+          paragraphs: ['There are apps for preparing routes, outdoor orientation and equipped buildings or stops. Our dedicated guide covers services including Lazarillo, BlindSquare, MyWay Pro, Soundscape, GoodMaps, NaviLens and LOC.id.', 'A route, a recognised entrance and an obstacle-free path are different things. Canes, guide dogs and mobility training remain important. Be My Eyes, for example, is not intended for crossing streets.'],
+          links: [{ text: 'Orientation and navigation: apps, local support and limits', href: '/en/navigation/' }],
         },
         {
           id: 'lookout', heading: 'Google Lookout',
@@ -438,7 +454,10 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
         {
           heading: 'Try things at your own pace',
           paragraphs: ['Start with a familiar task, such as reading a package you know. That way you can tell whether the controls and announcements help you.', 'The links lead to other providers and open in the same tab; use “Back” to return here. Check device requirements, possible costs and how camera images are handled there. Is a tool missing that helps you a lot? Let us know via the contact details in the legal notice.'],
-          links: [{ text: 'Sources and detailed comparison (German)', href: `${repo}/blob/main/docs/existing-assistive-tools.md` }],
+          links: [
+            { text: 'Sources and comparison of visual everyday tools (German)', href: `${repo}/blob/main/docs/existing-assistive-tools.md` },
+            { text: 'Extended app research, navigation and market assumptions (German)', href: `${repo}/blob/main/docs/assistive-app-landscape-2026-10.md` },
+          ],
         },
       ],
     },
@@ -462,6 +481,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
         { heading: 'Why Percepta exists', paragraphs: [...home.en.why, `— ${home.en.whySignature}`], links: [{ text: 'Contact and legal notice', href: '/en/imprint/' }] },
         { heading: 'How we work', items: ['Listen: people describe situations from their everyday lives in their own words.', 'Choose together: with blind and low-vision people, we pick the situations where help matters most.', 'Test honestly: we check existing apps and new ideas against exactly these tasks. If an existing tool is good enough, that is a good result too.'], paragraphs: ['We work in the open: plans, decisions and sources are public on GitHub. There are no partner organisations yet.'] },
         { heading: 'Where we are now', paragraphs: ['There is this website with a guide to existing help and a conversation guide you can use to describe an everyday experience. Next, we will hold first conversations with blind and low-vision people. There is no Percepta app yet.'], links: [{ text: 'Project status and decisions on GitHub (German)', href: `${repo}/blob/main/state.md` }, { text: 'Research and sources (German)', href: `${repo}/blob/main/docs/research.md` }] },
+        { heading: 'What research on existing apps shows', paragraphs: ['Many tools for reading, shopping and understanding visual information already exist. For navigation, route planning, precise arrival and safe movement are different tasks. Some services work only at mapped or equipped locations.', 'We will examine complete everyday tasks to find out whether support is missing and where. A provider description, research prototype or large affected population does not establish the value of a new Percepta app.'], links: [{ text: 'Existing help for orientation and navigation', href: '/en/navigation/' }, { text: 'Research on apps, unmet needs and market assumptions (German)', href: `${repo}/blob/main/docs/assistive-app-landscape-2026-10.md` }] },
         { heading: 'Care around movement and traffic', paragraphs: ['Describing an object, measuring a distance and giving walking directions are different tasks. Percepta does not give directions and does not replace mobility aids. Our conversations never ask anyone to try anything at roads, stairs or other dangerous places.'] },
         { id: 'get-involved', heading: 'Get involved', items: ['Blind and low-vision people: tell us about one situation from your everyday life. No AI or account needed.', 'Developers: check the website with a keyboard and screen reader, report bugs and question our sources. Please do not post personal stories in public issues.', 'Self-help groups, research and practice: we are looking for fair ways to choose and test everyday tasks together. Get in touch.'], links: [{ text: 'Share an experience', href: '/en/participate/' }, { text: 'Technical issues on GitHub', href: `${repo}/issues` }, { text: `Email ${operator.email}`, href: `mailto:${operator.email}` }] },
       ],
