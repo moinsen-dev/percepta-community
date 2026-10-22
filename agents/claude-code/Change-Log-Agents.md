@@ -123,3 +123,10 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Prüfungen:** Check, Build, 44/44 Playwright zweimal (u. a. Mail ohne Name und Kontakt).
 - **Offen:** Secret `RESEND_API_KEY` durch den Projektverantwortlichen.
 - **Nachtrag:** Deploy `e01139b9-c090-4b92-9c7a-375dd8cea042` erfolgte nach einem Lauf mit 43/44 (ein Test fehlgeschlagen, zu spät bemerkt). Ursache nur in der Testumgebung: Browser-Anfragen ohne `CF-Connecting-IP` teilten sich ein Ratenlimit von 10 pro Minute. Browser-Tests erhalten jetzt eine eigene Kennung; danach fünf Läufe hintereinander 44/44. Live-Verhalten unverändert (Limit pro Besucheradresse).
+
+## 2026-10-22 — Review von PR #9 (Codex: App-Recherche und Navigationsseite)
+
+- **Harness / Modell:** Claude Code, Claude Opus 5.5. Ausgangs-Commit: PR-Branch `codex/app-research-navigation-2026-10-22` auf `dc567aa`.
+- **Prüfung:** Build (23 Seiten) und vollständige Playwright-/axe-Suite lokal: 48/48 bestanden, vor und nach der Änderung. Sprungziele `#beratung`, `#advice`, `#be-my-eyes` im Build vorhanden. Stichprobe gegen Quellen am 2026-10-22 bestätigt: Oko kostenlos seit Version 4.7.5 (App Store), TOWER-Servicezeiten Mo–Fr 9–19 Uhr (tower-assist.de), Be My Eyes schließt Straßenquerungen in den Nutzungsbedingungen aus. Übrige Quellen nicht einzeln geprüft.
+- **Änderung nach Auftrag des Projektverantwortlichen („mach es so wie vorgeschlagen“):** Website-Linktexte auf den Recherchebericht nennen keine „Marktannahmen“ mehr (`src/content/navigation.ts`, `src/content/site.ts`), Titel des Berichts neutraler (`docs/assistive-app-landscape-2026-10.md`); Inhalt des Berichts unverändert. Begründung: Rechenbeispiele zu Abos und Umsätzen, prominent von „Über Percepta“ verlinkt, können bei Betroffenen den Eindruck eines Verkaufsvorhabens wecken. Kopfzeile in `state.md` wieder als allgemeiner Stand statt laufender PR-Auftrag.
+- **Nächster Schritt:** Merge und Produktiv-Deploy nur nach Freigabe des Projektverantwortlichen.

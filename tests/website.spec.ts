@@ -124,3 +124,26 @@ test('robots and sitemap expose every public page without private API or error r
   expect(locations.sort()).toEqual(routes.filter(route => route !== '/404.html').map(route => `https://percepta.moinsen.dev${route}`).sort());
   expect(xml).not.toContain('/api/');
 });
+
+for (const lang of languages) {
+  test(`navigation guide is reachable, keyboard usable and translated without JavaScript: ${lang}`, async ({ browser }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    const page = await context.newPage();
+    await page.goto(`http://127.0.0.1:4321/${lang}/tools/`);
+    await page.locator(`.prose a[href="/${lang}/navigation/"]`).click();
+    await expect(page).toHaveURL(new RegExp(`/${lang}/navigation/$`));
+
+    const anchor = lang === 'de' ? 'draussen' : 'outdoors';
+    await page.locator(`.prose a[href="#${anchor}"]`).focus();
+    await page.keyboard.press('Enter');
+    await expect(page.locator(`#${anchor}`)).toBeFocused();
+
+    await page.locator('a.language').click();
+    const other = lang === 'de' ? 'en' : 'de';
+    await expect(page).toHaveURL(new RegExp(`/${other}/navigation/$`));
+    await expect(page.locator('html')).toHaveAttribute('lang', other);
+    await page.locator(`.prose a[href="/${other}/tools/"]`).click();
+    await expect(page).toHaveURL(new RegExp(`/${other}/tools/$`));
+    await context.close();
+  });
+}
