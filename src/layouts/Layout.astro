@@ -6,7 +6,7 @@ interface Props { lang: Lang; title: string; description: string; page?: string;
 const { lang, title, description, page = '', noindex = false } = Astro.props;
 const t = labels[lang];
 const other = lang === 'de' ? 'en' : 'de';
-const navigation = ['tools', 'participate', 'stories', 'people', 'about'] as const;
+const navigation = ['tools', 'tips', 'participate', 'stories', 'people', 'about'] as const;
 ---
 <!doctype html>
 <html lang={lang}>

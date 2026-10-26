@@ -20,6 +20,13 @@ const t = home[lang];
       {t.tasks.map(([text, id]) => <li><a href={`${pathFor(lang, 'tools')}#${id}`}>{text}<span aria-hidden="true"> →</span></a></li>)}
     </ul>
   </section>
+  <section class="section wrap" aria-labelledby="discover-title">
+    <h2 id="discover-title">{lang === 'de' ? 'Entdecken und ausprobieren' : 'Discover and try'}</h2>
+    <ul class="task-links">
+      <li><a href={pathFor(lang, 'tips')}>{lang === 'de' ? 'Tipps und Tricks: Apples Lupe Schritt für Schritt' : 'Tips and tricks: Apple’s Magnifier step by step'}<span aria-hidden="true"> →</span></a></li>
+      <li><a href={pathFor(lang, 'ideas')}>{lang === 'de' ? 'Ideen für die Zukunft: Brille, Smartphone und persönliche Hilfe' : 'Ideas for the future: glasses, a phone and personal assistance'}<span aria-hidden="true"> →</span></a></li>
+    </ul>
+  </section>
   <section class="story-band" aria-labelledby="why-title">
     <div class="wrap story-content">
       <h2 id="why-title">{t.whyTitle}</h2>
