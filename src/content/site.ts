@@ -1,4 +1,6 @@
 import { navigation } from './navigation';
+import { tips } from './tips';
+import { ideas } from './ideas';
 
 export type Lang = 'de' | 'en';
 export const languages: Lang[] = ['de', 'en'];
@@ -18,6 +20,7 @@ export const labels = {
   de: {
     skip: 'Zum Inhalt', home: 'Startseite', nav: 'Hauptnavigation', footer: 'Weitere Informationen',
     participate: 'Mitmachen', stories: 'Geschichten', people: 'Menschen', about: 'Über Percepta', tools: 'Hilfe finden', navigation: 'Orientierung und Navigation',
+    tips: 'Tipps und Tricks', ideas: 'Ideen für die Zukunft',
     accessibility: 'Barrierefreiheit', privacy: 'Datenschutz & Kontakt', imprint: 'Impressum',
     language: 'Read this page in English', languageShort: 'English',
     tagline: 'Alltag verstehen. Gemeinsam entwickeln.',
@@ -27,6 +30,7 @@ export const labels = {
   en: {
     skip: 'Skip to content', home: 'Home', nav: 'Main navigation', footer: 'More information',
     participate: 'Take part', stories: 'Stories', people: 'People', about: 'About', tools: 'Find help', navigation: 'Orientation and navigation',
+    tips: 'Tips and tricks', ideas: 'Ideas for the future',
     accessibility: 'Accessibility', privacy: 'Privacy & contact', imprint: 'Legal notice',
     language: 'Diese Seite auf Deutsch lesen', languageShort: 'Deutsch',
     tagline: 'Understand everyday life. Build together.',
@@ -114,11 +118,13 @@ export const home = {
   },
 };
 
-type Section = { id?: string; heading: string; paragraphs?: string[]; items?: string[]; links?: { text: string; href: string }[] };
+type Section = { id?: string; heading: string; paragraphs?: string[]; steps?: string[]; paragraphsAfter?: string[]; items?: string[]; links?: { text: string; href: string }[] };
 type Article = { title: string; intro: string; sections: Section[] };
-export type ArticleKey = 'about' | 'accessibility' | 'privacy' | 'imprint' | 'tools' | 'navigation';
+export type ArticleKey = 'about' | 'accessibility' | 'privacy' | 'imprint' | 'tools' | 'navigation' | 'tips' | 'ideas';
 export const articles: Record<Lang, Record<ArticleKey, Article>> = {
   de: {
+    tips: tips.de,
+    ideas: ideas.de,
     navigation: navigation.de,
     tools: {
       title: 'Apps und Beratung für blinde und sehbehinderte Menschen.',
@@ -134,6 +140,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
             { text: 'Eigene Gegenstände wiederfinden', href: '#wiederfinden' },
             { text: 'Neu mit Sehverlust: Beratung und Training', href: '#beratung' },
             { text: 'Unterwegs: Orientierung, Navigation und persönliche Hilfe', href: '#unterwegs' },
+            { text: 'Tipps und Tricks: Apples Lupe Schritt für Schritt', href: '/de/tips/' },
           ],
           paragraphs: ['Quellenstand: 21. und 22. Oktober 2026. Die Angaben stammen von den Anbietern und Beratungsorganisationen. Wir haben die Apps noch nicht selbst mit Betroffenen getestet; die Reihenfolge ist keine Rangliste.'],
         },
@@ -249,6 +256,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
           paragraphs: ['Wenn du ein iPhone nutzt, lohnt sich ein Blick auf die eingebauten Bedienungshilfen. Sie beschreiben die Umgebung; mit unterstützten Funktionen kannst du auch Fragen stellen.'],
           items: ['Voraussetzungen: Je nach Funktion sind eine bestimmte iOS-Version, Apple Intelligence oder besondere Sensoren nötig. Sprache und Region können die Verfügbarkeit einschränken.', 'Grenzen: Die Erkennung von Türen, Personen und Möbeln funktioniert nur auf unterstützten Geräten. Apple warnt davor, sich bei der Navigation auf die Erkennung zu verlassen.'],
           links: [
+            { text: 'Unsere Anleitung: Lupe öffnen und versteckte Erkennung finden', href: '/de/tips/#oeffnen' },
             { text: 'Apple-Anleitung: Umgebung mit VoiceOver erkennen', href: 'https://support.apple.com/de-de/guide/iphone/iph37e6b3844/ios' },
             { text: 'Apple stellt die neuen Bedienungshilfen vor', href: 'https://www.apple.com/de/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/' },
           ],
@@ -281,6 +289,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
       sections: [
         { heading: 'Worum es geht', paragraphs: ['Es geht um mehr als Navigation. Uns interessieren vier Bereiche des Alltags:'], items: ['Einkaufen: Produkte unterscheiden und Angaben lesen.', 'Fragen stellen: eine Situation verstehen und selbst entscheiden, welche Information gerade wichtig ist.', 'Mit Menschen sprechen: Begegnungen und Gespräche, ohne die eigene Entscheidung abzugeben.', 'Sich orientieren: Eingänge, Räume und Wege besser verstehen.'] },
         { heading: 'Warum es Percepta gibt', paragraphs: [...home.de.why, `— ${home.de.whySignature}`], links: [{ text: 'Kontakt und Impressum', href: '/de/imprint/' }] },
+        { heading: 'Ideen für eine persönliche Alltagshilfe', paragraphs: ['Eine freihändige Brille, das Smartphone als Begleiter und ein freiwilliges persönliches Gedächtnis zu Hause: Wir erkunden, wie solche Bausteine im Alltag helfen könnten. Das sind offene Ideen, noch keine entwickelte Assistenz-App.'], links: [{ text: 'Unsere Technikideen kennenlernen', href: '/de/ideas/' }] },
         { heading: 'So gehen wir vor', items: ['Zuhören: Menschen erzählen von Situationen aus ihrem Alltag, in ihren eigenen Worten.', 'Gemeinsam auswählen: Mit Betroffenen suchen wir die Situationen aus, bei denen Hilfe am meisten bringt.', 'Ehrlich testen: Wir prüfen vorhandene Apps und neue Ideen an genau diesen Aufgaben. Wenn eine vorhandene Hilfe reicht, ist auch das ein gutes Ergebnis.'], paragraphs: ['Wir arbeiten offen: Pläne, Entscheidungen und Quellen liegen öffentlich auf GitHub. Partnerorganisationen gibt es bisher nicht.'] },
         { heading: 'Wo wir gerade stehen', paragraphs: ['Es gibt diese Website mit einem Wegweiser zu vorhandenen Hilfen und eine Gesprächshilfe, mit der du eine Alltagserfahrung beschreiben kannst. Als Nächstes führen wir erste Gespräche mit Betroffenen. Eine eigene Percepta-App gibt es noch nicht.'], links: [{ text: 'Projektstand und Entscheidungen auf GitHub', href: `${repo}/blob/main/state.md` }, { text: 'Recherche mit Quellen', href: `${repo}/blob/main/docs/research.md` }] },
         { heading: 'Was die Recherche zu vorhandenen Apps zeigt', paragraphs: ['Viele Hilfen zum Lesen, Einkaufen und Verstehen visueller Informationen gibt es bereits. Bei Navigation unterscheiden sich Routenplanung, genaue Ankunft und sichere Bewegung. Einige Angebote funktionieren nur an erfassten oder ausgestatteten Orten.', 'Ob und wo Unterstützung fehlt, prüfen wir an vollständigen Alltagssituationen. Eine Herstellerbeschreibung, ein Forschungsprototyp oder eine große Zahl betroffener Menschen belegt noch keinen Nutzen einer neuen Percepta-App.'], links: [{ text: 'Vorhandene Hilfen für Orientierung und Navigation', href: '/de/navigation/' }, { text: 'Ausführliche Recherche mit Quellen', href: `${repo}/blob/main/docs/assistive-app-landscape-2026-10.md` }] },
@@ -317,6 +326,8 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
     },
   },
   en: {
+    tips: tips.en,
+    ideas: ideas.en,
     navigation: navigation.en,
     tools: {
       title: 'Apps and advice for blind and low-vision people.',
@@ -332,6 +343,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
             { text: 'Find your own belongings', href: '#finding' },
             { text: 'New to sight loss: advice and training', href: '#advice' },
             { text: 'Out and about: orientation, navigation and personal help', href: '#out-and-about' },
+            { text: 'Tips and tricks: Apple’s Magnifier step by step', href: '/en/tips/' },
           ],
           paragraphs: ['Sources checked on 21 and 22 October 2026. The details come from providers and advice organisations. We have not yet tested the apps ourselves with blind or low-vision people; the order is not a ranking. Advice and training services are listed for Germany.'],
         },
@@ -447,6 +459,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
           paragraphs: ['If you use an iPhone, the built-in accessibility features are worth a look. They describe your surroundings, and supported features let you ask questions.'],
           items: ['Requirements: depending on the feature, a specific iOS version, Apple Intelligence or particular sensors are needed. Language and region can limit availability.', 'Limits: detection of doors, people and furniture works only on supported devices. Apple warns against relying on detection for navigation.'],
           links: [
+            { text: 'Our guide: open Magnifier and find hidden detection tools', href: '/en/tips/#open' },
             { text: 'Apple guide: detect your surroundings with VoiceOver', href: 'https://support.apple.com/en-gb/guide/iphone/iph37e6b3844/ios' },
             { text: 'Apple announces its new accessibility features', href: 'https://www.apple.com/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/' },
           ],
@@ -479,6 +492,7 @@ export const articles: Record<Lang, Record<ArticleKey, Article>> = {
       sections: [
         { heading: 'What it is about', paragraphs: ['It is about more than navigation. We are interested in four areas of everyday life:'], items: ['Shopping: telling products apart and reading details.', 'Asking questions: understanding a situation and deciding for yourself which information matters right now.', 'Interacting with people: encounters and conversations, while keeping control of your own decisions.', 'Finding your way: understanding entrances, rooms and routes.'] },
         { heading: 'Why Percepta exists', paragraphs: [...home.en.why, `— ${home.en.whySignature}`], links: [{ text: 'Contact and legal notice', href: '/en/imprint/' }] },
+        { heading: 'Ideas for personal everyday assistance', paragraphs: ['Hands-free glasses, a phone as a companion and an optional personal memory at home: we are exploring how these building blocks might help. These are open ideas, not a developed assistance app.'], links: [{ text: 'Explore our technology ideas', href: '/en/ideas/' }] },
         { heading: 'How we work', items: ['Listen: people describe situations from their everyday lives in their own words.', 'Choose together: with blind and low-vision people, we pick the situations where help matters most.', 'Test honestly: we check existing apps and new ideas against exactly these tasks. If an existing tool is good enough, that is a good result too.'], paragraphs: ['We work in the open: plans, decisions and sources are public on GitHub. There are no partner organisations yet.'] },
         { heading: 'Where we are now', paragraphs: ['There is this website with a guide to existing help and a conversation guide you can use to describe an everyday experience. Next, we will hold first conversations with blind and low-vision people. There is no Percepta app yet.'], links: [{ text: 'Project status and decisions on GitHub (German)', href: `${repo}/blob/main/state.md` }, { text: 'Research and sources (German)', href: `${repo}/blob/main/docs/research.md` }] },
         { heading: 'What research on existing apps shows', paragraphs: ['Many tools for reading, shopping and understanding visual information already exist. For navigation, route planning, precise arrival and safe movement are different tasks. Some services work only at mapped or equipped locations.', 'We will examine complete everyday tasks to find out whether support is missing and where. A provider description, research prototype or large affected population does not establish the value of a new Percepta app.'], links: [{ text: 'Existing help for orientation and navigation', href: '/en/navigation/' }, { text: 'Detailed research with sources (German)', href: `${repo}/blob/main/docs/assistive-app-landscape-2026-10.md` }] },

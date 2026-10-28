@@ -12,6 +12,7 @@ Erfolg wird an verständlichem Projektstand und erfolgreich abgeschlossenen Teil
 
 ## Inhalte und Sprachen
 
+- Ergänzung vom 2026-10-26: „Tipps und Tricks“ unter `/de/tips/` und `/en/tips/`, mit Apple-Lupe als erster Anleitung (Öffnen, ausgeblendeter Erkennungsmodus, Text, LiDAR-Voraussetzungen, Schnellzugriff, Fehlerhilfe). Nummerierte Abläufe als HTML-Listen; sichtbar in Hauptnavigation, Startseite und Wegweiser. „Ideen für die Zukunft“ unter `/de/ideas/` und `/en/ideas/`, verlinkt aus Startseite und „Über Percepta“: Brille, Smartphone, optionaler persönlicher Heimserver und vorbereitete Räume, ausdrücklich Forschungsrichtungen ohne Funktions-/Sicherheitszusage. Beide Bereiche verwenden das bestehende Artikel-, Sprach- und SEO-System und bleiben ohne JavaScript lesbar. Apple-Quellenstand 26.10.2026, iOS 27; echte Geräte-/VoiceOver-Abnahme der Anleitung offen.
 - Gleichwertige deutsche und englische Seiten unter `/de/` und `/en/`; `/` bietet eine zugängliche Sprachauswahl.
 - Startseite: Problem, Projektphase, mögliche Hilfe und aktuelle Grenzen.
 - „Empfehlungen“ unter `/de/tools/` und `/en/tools/`: Lookout, Seeing AI, Guided Vision und Apples Bedienungshilfen, mit Auswahlhilfe, Sprunglinks, Geräte-/Sprachgrenzen und direkten Herstellerlinks. Vom Projektverantwortlichen am 2026-10-21 beauftragt. Herstellerbasierte Empfehlungen zum Ausprobieren; keine behaupteten eigenen App-Tests oder Rangliste. In der Hauptnavigation erreichbar, ohne JavaScript nutzbar.
