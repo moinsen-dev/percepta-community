@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { labels, languages, type Lang } from '../../content/site';
+import { usecases } from '../../content/usecases';
+export function getStaticPaths() {
+  return languages.map(lang => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Lang;
+const t = usecases[lang];
+const [mapId, crossId, flowId] = t.jump.map(link => link.href.slice(1));
+const sums = t.matrix.columns.map((_, i) => t.matrix.rows.reduce((sum, row) => sum + row.values[i], 0));
+const marks = ['–', '○', '●'];
+---
+<Layout lang={lang} page="usecases" title={t.title.replace(/\.$/, '')} description={t.intro}>
+  <article class="article wrap usecases">
+    <header class="article-header"><p class="eyebrow">{labels[lang].usecases}</p><h1>{t.title}</h1><p class="lede">{t.intro}</p></header>
+    <div class="notice">{t.status.map(text => <p>{text}</p>)}</div>
+    <ul class="resource-links">{t.jump.map(link => <li><a href={link.href}>{link.text}<span aria-hidden="true"> ↓</span></a></li>)}</ul>
+
+    <section class="usecase-section">
+      <h2 id={mapId} tabindex="-1">{t.branchesHeading}</h2>
+      <p>{t.branchesIntro}</p>
+      <div class="branches">
+        {t.branches.map(branch => <section class="branch" aria-labelledby={`branch-${branch.id}`}>
+          <h3 id={`branch-${branch.id}`}>{branch.heading}</h3>
+          {branch.intro && <p class="branch-intro">{branch.intro}</p>}
+          {branch.groups.map(group => <details>
+            <summary>{group.heading}</summary>
+            <ul>{group.items.map(item => <li>{item}</li>)}</ul>
+          </details>)}
+        </section>)}
+      </div>
+    </section>
+
+    <section class="usecase-section">
+      <h2 id={crossId} tabindex="-1">{t.matrix.heading}</h2>
+      <p>{t.matrix.intro}</p>
+      <div class="matrix-scroll" role="region" aria-labelledby="matrix-caption" tabindex="0">
+        <table class="matrix">
+          <caption id="matrix-caption">{t.matrix.caption}</caption>
+          <thead><tr><th scope="col">{t.matrix.rowHeader}</th>{t.matrix.columns.map(column => <th scope="col">{column}</th>)}</tr></thead>
+          <tbody>
+            {t.matrix.rows.map(row => <tr>
+              <th scope="row">{row.name}</th>
+              {row.values.map(value => <td class={`level-${value}`}><span aria-hidden="true">{marks[value]}</span><span class="visually-hidden">{t.matrix.levels[value]}</span></td>)}
+            </tr>)}
+          </tbody>
+          <tfoot><tr><th scope="row">{t.matrix.sumLabel}</th>{sums.map(sum => <td>{sum}</td>)}</tr></tfoot>
+        </table>
+      </div>
+      <p class="matrix-legend"><span aria-hidden="true">● {t.matrix.levels[2]} · ○ {t.matrix.levels[1]} · – {t.matrix.levels[0]}. </span>{t.matrix.legend}</p>
+
+      <h3 class="findings-heading">{t.findingsHeading}</h3>
+      <ul class="findings">{t.findings.map(finding => <li><h4>{finding.heading}</h4><p>{finding.text}</p></li>)}</ul>
+    </section>
+
+    <section class="usecase-section">
+      <h2 id={flowId} tabindex="-1">{t.flow.heading}</h2>
+      <p>{t.flow.intro}</p>
+      <ul class="speed-legend">{(['once', 'fast', 'slow'] as const).map(speed => <li><span class={`tag ${speed}`}>{t.flow.speeds[speed]}</span></li>)}</ul>
+      <ol class="flow" start="0">
+        {t.flow.steps.map(step => <li class={step.setup ? 'setup' : undefined}>
+          <p class="flow-say">{step.say}</p>
+          <p class="flow-how">{step.how}</p>
+          <ul class="tags">{step.tags.map(tag => <li><span class={`tag ${tag.speed}`}>{tag.label}<span class="visually-hidden">: {t.flow.speeds[tag.speed]}</span></span></li>)}</ul>
+        </li>)}
+      </ol>
+      <div class="notice"><p>{t.flow.note}</p></div>
+    </section>
+
+    <section class="usecase-section">
+      <h2>{t.next.heading}</h2>
+      {t.next.paragraphs.map(text => <p>{text}</p>)}
+      <ul class="resource-links">{t.next.links.map(link => <li><a href={link.href}>{link.text}<span aria-hidden="true"> →</span></a></li>)}</ul>
+    </section>
+  </article>
+</Layout>
