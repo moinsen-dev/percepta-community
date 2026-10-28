@@ -142,3 +142,11 @@ Der ausführende Harness hängt seine Einträge hier an. Die Vorlage ist kein Te
 - **Prüfungen:** `astro check` 0 Fehler, `npm run build` 29 Seiten, `git diff --check` sauber, Playwright 54/54 (axe WCAG 2.2 AA, keine Fremdanfragen, Links und Sprungziele, 320 px ohne horizontales Scrollen, Sitemap). Ein erster Lauf scheiterte an 320 px: visuell versteckte Zelltexte im scrollbaren Tabellenbereich verbreiterten die Seite; behoben mit `position: relative` am Tabellenrahmen. Inspector-Ports nur temporär auf 9241/9242 verlegt (9231 belegt), Konfiguration danach gelöscht.
 - **Nicht geprüft:** VoiceOver/TalkBack am Gerät, Live-Deploy, Modell-Lizenz.
 - **Nächster Schritt:** PR öffnen und Review; Deploy nur nach Freigabe des Projektverantwortlichen.
+
+## 2026-10-28 — Datenschutzhinweis für die Testversion „Percepta Hilfe“
+
+- **Harness / Modell:** Claude Code, Claude Opus 5.5. Ausgangs-Commit: `9e36f62` (`origin/main`), Worktree `.worktrees/privacy`, Branch `claude/privacy-percepta-hilfe-2026-10-28`.
+- **Auftrag:** Datenschutz-URL für den externen TestFlight-Test der Testversion „Percepta Hilfe“ (Bundle `dev.moinsen.liquidlfm3`, App-Store-Connect-ID 6827984561) vorbereiten.
+- **Geändert:** `src/content/site.ts` (neuer Abschnitt DE/EN vor „Verantwortlicher und Kontakt“), `state.md`.
+- **Belege:** App-Code der Test-App (Bildauswertung mit LFM3-VL über llama.cpp auf dem Gerät, `requiresOnDeviceRecognition` unter iOS, Gedächtnis als lokale Datei, Bilder im Cache mit anschließender Löschung, Modell-Download von huggingface.co). Apple „TestFlight & Privacy“ und Hugging-Face-Datenschutz am 28.10.2026 abgerufen (HTTP 200).
+- **Offen:** juristische Prüfung der Rechtsgrundlage (Art. 6 Abs. 1 lit. b DSGVO) durch den Projektverantwortlichen; Fußzeile „Es gibt noch keine nutzbare Assistenz-App“ unverändert, da die Testversion nicht öffentlich ist.
