@@ -26,6 +26,7 @@ Direktes Cloudflare-Ziel: [percepta.moinsen.dev](https://percepta.moinsen.dev/de
 - [Recherche und Evidenzstatus](docs/research.md)
 - [App-Angebot, Navigation und Marktannahmen — Recherche vom 22.10.2026](docs/assistive-app-landscape-2026-10.md)
 - [Technische Optionen: Brille, iPhone, persönlicher Heimserver und Raumsensorik — 26.10.2026](docs/technical-options-2026-10-26.md)
+- [Plan-Szenario: persönliche Alltagshilfe mit Brille, iPhone und Mac mini](docs/personal-assistant-plan-scenario.md)
 - [Bestehende Hilfen: Lookout, Seeing AI, Gemini und Apple](docs/existing-assistive-tools.md)
 - [Umfang der Astro-Website](docs/website-brief.md)
 - [Betreiberangaben und Quellen der Rechtstexte](docs/legal-sources.md)
