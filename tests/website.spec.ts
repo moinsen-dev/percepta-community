@@ -4,7 +4,7 @@ import { languages, articles } from '../src/content/site';
 import { readFileSync } from 'node:fs';
 
 const routes = ['/', '/404.html', ...languages.flatMap(lang =>
-  ['', 'participate', 'stories', 'people', ...Object.keys(articles[lang])].map(slug => `/${lang}/${slug ? `${slug}/` : ''}`),
+  ['', 'participate', 'stories', 'people', 'usecases', ...Object.keys(articles[lang])].map(slug => `/${lang}/${slug ? `${slug}/` : ''}`),
 )];
 
 for (const route of routes) {

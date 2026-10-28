@@ -20,7 +20,7 @@ export const labels = {
   de: {
     skip: 'Zum Inhalt', home: 'Startseite', nav: 'Hauptnavigation', footer: 'Weitere Informationen',
     participate: 'Mitmachen', stories: 'Geschichten', people: 'Menschen', about: 'Über Percepta', tools: 'Hilfe finden', navigation: 'Orientierung und Navigation',
-    tips: 'Tipps und Tricks', ideas: 'Ideen für die Zukunft',
+    tips: 'Tipps und Tricks', ideas: 'Ideen für die Zukunft', usecases: 'Use-Case-Karte',
     accessibility: 'Barrierefreiheit', privacy: 'Datenschutz & Kontakt', imprint: 'Impressum',
     language: 'Read this page in English', languageShort: 'English',
     tagline: 'Alltag verstehen. Gemeinsam entwickeln.',
@@ -30,7 +30,7 @@ export const labels = {
   en: {
     skip: 'Skip to content', home: 'Home', nav: 'Main navigation', footer: 'More information',
     participate: 'Take part', stories: 'Stories', people: 'People', about: 'About', tools: 'Find help', navigation: 'Orientation and navigation',
-    tips: 'Tips and tricks', ideas: 'Ideas for the future',
+    tips: 'Tips and tricks', ideas: 'Ideas for the future', usecases: 'Use-case map',
     accessibility: 'Accessibility', privacy: 'Privacy & contact', imprint: 'Legal notice',
     language: 'Diese Seite auf Deutsch lesen', languageShort: 'Deutsch',
     tagline: 'Understand everyday life. Build together.',

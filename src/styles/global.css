@@ -107,6 +107,49 @@ button { font: inherit; cursor: pointer; }
 button:disabled { cursor: wait; opacity: .65; }
 .language-choice { max-width: 850px; padding: 4rem 2rem; margin-inline: auto; }
 .language-choice h1 { margin-top: 2rem; max-width: none; font-size: clamp(2.3rem, 5vw, 3.5rem); }
+/* Use-case map: outline, cross-section table and flow. */
+.usecase-section { margin-top: 4rem; }
+.usecase-section > p { max-width: 66ch; }
+.usecases .notice { max-width: 850px; }
+.branches { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.branch { border-top: 3px solid var(--green); padding-top: 1rem; min-width: 0; }
+.branch h3 { font-size: 1.4rem; }
+.branch-intro { color: var(--muted); font-size: 1rem; }
+.branch details { border-bottom: 1px solid var(--line); }
+.branch summary { cursor: pointer; font-weight: 600; padding-block: .6rem; }
+.branch details ul { margin: 0 0 1rem; font-size: 1.02rem; }
+.matrix-scroll { position: relative; overflow-x: auto; margin-top: 2rem; border: 1px solid var(--line); background: #fffefb; }
+.matrix { border-collapse: collapse; width: 100%; min-width: 46rem; font-size: 1rem; }
+.matrix caption { text-align: left; padding: 1rem 1rem .5rem; color: var(--muted); caption-side: top; }
+.matrix th, .matrix td { padding: .65rem .8rem; border-bottom: 1px solid var(--line); text-align: center; }
+.matrix thead th { font-size: .85rem; font-weight: 650; color: var(--muted); }
+.matrix tbody th, .matrix tfoot th { text-align: left; font-weight: 600; }
+.matrix td { font-size: 1.35rem; line-height: 1; }
+.matrix td.level-0 { color: var(--line); }
+.matrix td.level-2 { color: var(--green); }
+.matrix tfoot td, .matrix tfoot th { font-size: 1rem; font-variant-numeric: tabular-nums; border-bottom: 0; color: var(--ink); font-weight: 650; }
+.matrix-legend { color: var(--muted); font-size: 1rem; margin-top: 1rem; }
+.findings-heading { margin-top: 3rem; font-size: 1.5rem; }
+.findings { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1.5rem; }
+.findings li { margin: 0; padding: 1.25rem 0 0; border-top: 2px solid var(--green); }
+.findings h4 { margin: 0 0 .5rem; font-size: 1.15rem; }
+.findings p { color: var(--muted); font-size: 1.05rem; margin: 0; }
+.speed-legend, .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.speed-legend li, .tags li { margin: 0; padding: 0; }
+.tag { display: inline-block; font-size: .85rem; font-weight: 600; border: 2px solid var(--green); border-radius: 1rem; padding: .1rem .7rem; }
+.tag.fast { background: var(--mint); }
+.tag.slow { background: var(--green); color: var(--paper); }
+.tag.once { border-style: dashed; }
+.flow { list-style: none; padding: 0; counter-reset: step -1; margin-top: 1.5rem; max-width: 850px; }
+.flow > li { counter-increment: step; position: relative; padding: 0 0 1.5rem 3.5rem; margin: 0; border-left: 2px solid var(--line); margin-left: 1.2rem; }
+.flow > li:last-child { border-left-color: transparent; }
+.flow > li::before { content: counter(step); position: absolute; left: -1.25rem; top: 0; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--green); color: var(--paper); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.flow > li.setup::before { background: var(--paper); color: var(--green); border: 2px dashed var(--green); }
+.flow-say { font-weight: 650; margin-bottom: .25rem; }
+.flow-how { color: var(--muted); font-size: 1.05rem; margin-bottom: .5rem; }
+@media (forced-colors: active) {
+  .tag, .flow > li::before { border: 2px solid CanvasText; }
+}
 @media (max-width: 1000px) {
   .site-header { flex-wrap: wrap; gap: .5rem 2rem; }
   .site-header nav { order: 3; width: 100%; margin-left: 0; }
