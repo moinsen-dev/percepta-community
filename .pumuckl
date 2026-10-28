@@ -1,0 +1,30 @@
+{
+  "git" : {
+    "current_branch" : "codex\/technical-options-2026-10-26",
+    "github_url" : "https:\/\/github.com\/moinsen-dev\/percepta-community",
+    "has_uncommitted_changes" : true,
+    "is_repo" : true,
+    "last_commit_author" : "Ulrich Diedrichsen",
+    "last_commit_date" : "2026-10-26T11:52:04Z",
+    "last_commit_message" : "Record deployment and live verification limits for tips and ideas",
+    "local_secret_files" : 18,
+    "stale_days" : 0,
+    "stash_count" : 0,
+    "total_commits" : 63,
+    "uncommitted_files_count" : 4,
+    "unpushed_commits" : 2
+  },
+  "last_scanned" : "2026-10-27T10:25:27Z",
+  "project_path" : "\/Users\/udi\/work\/moinsen\/opensource\/percepta-community",
+  "pumuckl_version" : 1,
+  "scan" : {
+    "git" : {
+      "at" : "2026-10-27T10:24:58Z",
+      "head" : "8cec8fb",
+      "mtime" : 1793018588.806353
+    }
+  },
+  "scoring" : {
+
+  }
+}
